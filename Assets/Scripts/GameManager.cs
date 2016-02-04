@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
 
 	private void Start()
 	{
-		InvokeRepeating ("SpawnCop", 0, spawnInterval);
+//		InvokeRepeating ("SpawnCop", 0, spawnInterval);
 	}
 
 
@@ -31,4 +31,10 @@ public class GameManager : MonoBehaviour
 		Cops.Add (cop);
 	}
 
+	private void Update () {
+		if (Input.GetKeyDown (KeyCode.P)) {
+			print ("space key was pressed");
+			SpawnCop ();
+		}
+	}
 }
