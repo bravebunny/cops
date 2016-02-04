@@ -270,7 +270,8 @@ namespace UnityStandardAssets.Vehicles.Car
         // these effects are controlled through the WheelEffects class
         private void CheckForWheelSpin()
         {
-            // loop through all wheels
+			return;
+			// loop through all wheels
             for (int i = 0; i < 4; i++)
             {
                 WheelHit wheelHit;
@@ -279,7 +280,7 @@ namespace UnityStandardAssets.Vehicles.Car
                 // is the tire slipping above the given threshhold
                 if (Mathf.Abs(wheelHit.forwardSlip) >= m_SlipLimit || Mathf.Abs(wheelHit.sidewaysSlip) >= m_SlipLimit)
                 {
-                    m_WheelEffects[i].EmitTyreSmoke();
+//                    m_WheelEffects[i].EmitTyreSmoke();
 
                     // avoiding all four tires screeching at the same time
                     // if they do it can lead to some strange audio artefacts
