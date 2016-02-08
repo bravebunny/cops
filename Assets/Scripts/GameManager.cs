@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
 			SpawnCop (Player.GetComponent<Rigidbody> ().position);
 		}
 
-		if (Input.GetMouseButtonDown(0)) {
+		if (Layout != 0 && Input.GetMouseButtonDown(0)) {
 			Vector3 pos = Input.mousePosition;
 			pos.z = 100;
 			pos = CopCam.ScreenToWorldPoint(pos);
