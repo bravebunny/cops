@@ -8,6 +8,7 @@ public class CarController : MonoBehaviour {
     public float SidewaysCompensation = 30;
     public float SuspensionStrength = 5;
     public float TurningSpeed = 2;
+    public bool DebugOn = true;
 
     private Rigidbody Body;
 
@@ -18,7 +19,7 @@ public class CarController : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
         float h = CrossPlatformInputManager.GetAxis("Horizontal");
         float v = CrossPlatformInputManager.GetAxis("Vertical");
 
@@ -27,21 +28,23 @@ public class CarController : MonoBehaviour {
 
     void Move (float steering, float accel) {
         
-
         RaycastHit raycastInfo = new RaycastHit();
         float raycastDistance = 2;
-        bool grounded = Physics.Raycast(Body.position, transform.rotation * -transform.up, out raycastInfo, raycastDistance);
+        bool grounded = Physics.Raycast(Body.position, -transform.up, out raycastInfo, raycastDistance);
 
-        Debug.DrawRay(Body.position, transform.rotation * -transform.up, Color.red);
+        //if (DebugOn) Debug.DrawRay(Body.position, -transform.up, Color.red);
 
         if (grounded) {
             Vector3 velocity = Body.velocity;
             float sidewaysVelocity = transform.InverseTransformDirection(Body.velocity).z;
 
-            Vector3 force = new Vector3(accel * Speed, 0, -sidewaysVelocity * SidewaysCompensation);
+            Vector3 force = transform.rotation * new Vector3(accel * Speed, 0, -sidewaysVelocity * SidewaysCompensation);
             Vector3 groundNormal = raycastInfo.normal;
+            if (DebugOn) Debug.DrawRay(raycastInfo.point, groundNormal, Color.green);
 
-            Vector3 projectedForce = transform.rotation * Vector3.ProjectOnPlane(force, groundNormal);
+
+            Vector3 projectedForce = Vector3.ProjectOnPlane(force, groundNormal);
+            if (DebugOn) Debug.DrawRay(Body.position, projectedForce, Color.blue);
 
             //Body.AddForceAtPosition();
             Body.AddForce(projectedForce);
