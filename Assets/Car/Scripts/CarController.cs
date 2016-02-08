@@ -53,12 +53,11 @@ public class CarController : MonoBehaviour {
 
 
     void Suspension (Vector3 origin) {
-        Vector3 direction = new Vector3(0, -1, 0);
+        Vector3 direction = -transform.up;
         RaycastHit info = new RaycastHit();
         float maxDistance = 1;
 
         Physics.Raycast(origin, direction, out info, maxDistance);
-        Debug.Log(info.distance);
         Vector3 push = transform.rotation * new Vector3(0, SuspensionStrength / info.distance, 0);
 
         //Body.AddForce(0, push, 0);
