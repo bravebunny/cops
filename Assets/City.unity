@@ -3578,6 +3578,10 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1761305787}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1804769596 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 141402, guid: 4423b943f62c06e4fa5bfe509d0bb2e0, type: 2}
+  m_PrefabInternal: {fileID: 1313036742}
 --- !u!1 &1815506224
 GameObject:
   m_ObjectHideFlags: 0
@@ -3667,9 +3671,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CopPrefab: {fileID: 123102, guid: 35cce5bc3a5af45fb89483d1646b9a4b, type: 2}
-  Player: {fileID: 143742134}
+  Player: {fileID: 1804769596}
   spawnInterval: 5
-  CopCam: {fileID: 0}
+  CopCam: {fileID: 1300996647}
+  Layout: 0
 --- !u!4 &1836816481
 Transform:
   m_ObjectHideFlags: 0
