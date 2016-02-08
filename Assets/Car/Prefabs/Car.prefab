@@ -184,10 +184,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerControlled: 1
-  Speed: 10
+  Speed: 50
   SidewaysCompensation: 30
-  SuspensionStrength: 5
-  TurningSpeed: 5
+  SuspensionStrength: 500
+  TurningSpeed: 20
+  DebugOn: 1
+  SuspensionHeight: 3
+  Drag: 5
 --- !u!124 &12489056
 Behaviour:
   m_ObjectHideFlags: 1
@@ -208,7 +211,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: TurningSpeed
-      value: 5
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Speed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: SuspensionStrength
+      value: 500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

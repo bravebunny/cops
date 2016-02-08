@@ -5,10 +5,12 @@ using UnityStandardAssets.CrossPlatformInput;
 public class CarController : MonoBehaviour {
     public bool playerControlled = false;
     public float Speed = 20;
-    public float SidewaysCompensation = 30;
+    public float SidewaysCompensation = 0;
     public float SuspensionStrength = 5;
     public float TurningSpeed = 2;
     public bool DebugOn = true;
+    public float SuspensionHeight = 3;
+    public float Drag = 5;
 
     private Rigidbody Body;
 
@@ -29,34 +31,40 @@ public class CarController : MonoBehaviour {
     void Move (float steering, float accel) {
         
         RaycastHit raycastInfo = new RaycastHit();
-        float raycastDistance = 2;
+        float raycastDistance = SuspensionHeight + 1;
         bool grounded = Physics.Raycast(Body.position, -transform.up, out raycastInfo, raycastDistance);
 
-        //if (DebugOn) Debug.DrawRay(Body.position, -transform.up, Color.red);
+        if (DebugOn) Debug.DrawRay(Body.position, -transform.up, Color.red, -1, false);
+
+        Body.AddRelativeTorque(0, steering * TurningSpeed, 0);
 
         if (grounded) {
+            Body.drag = 5;
+
             Vector3 velocity = Body.velocity;
             float sidewaysVelocity = transform.InverseTransformDirection(Body.velocity).z;
 
             Vector3 force = transform.rotation * new Vector3(accel * Speed, 0, -sidewaysVelocity * SidewaysCompensation);
             Vector3 groundNormal = raycastInfo.normal;
-            if (DebugOn) Debug.DrawRay(raycastInfo.point, groundNormal, Color.green);
-
+            if (DebugOn) Debug.DrawRay(raycastInfo.point, groundNormal, Color.green, -1, false);
 
             Vector3 projectedForce = Vector3.ProjectOnPlane(force, groundNormal);
-            if (DebugOn) Debug.DrawRay(Body.position, projectedForce, Color.blue);
+            if (DebugOn) Debug.DrawRay(Body.position, projectedForce, Color.blue, -1, false);
 
-            //Body.AddForceAtPosition();
-            Body.AddForce(projectedForce);
-            Vector3 forcePosition = Body.position + transform.rotation * new Vector3(0.5f, -0.2f, 0);
-            //Body.AddForceAtPosition(projectedForce, forcePosition);
+            int direction;
+            if (accel != 0) direction = (int)(accel / Mathf.Abs(accel));
+            else direction = 0;
 
-            Body.AddRelativeTorque(0, steering * TurningSpeed, 0);
+            Vector3 forcePosition = Body.position + transform.rotation * new Vector3(1.5f * direction, -0.2f, 0);
+            if (DebugOn) Debug.DrawLine(forcePosition, Body.position, Color.black, -1, false);
+            Body.AddForceAtPosition(projectedForce, forcePosition);
 
-            Suspension(Body.position + transform.rotation * new Vector3(1, 0, 1));
-            Suspension(Body.position + transform.rotation * new Vector3(-1, 0, 1));
-            Suspension(Body.position + transform.rotation * new Vector3(1, 0, -1));
-            Suspension(Body.position + transform.rotation * new Vector3(-1, 0, -1));
+            Suspension(Body.position + transform.rotation * new Vector3(1, 0, 1) * 1.3f);
+            Suspension(Body.position + transform.rotation * new Vector3(-1, 0, 1) * 1.3f);
+            Suspension(Body.position + transform.rotation * new Vector3(1, 0, -1) * 1.3f);
+            Suspension(Body.position + transform.rotation * new Vector3(-1, 0, -1) * 1.3f);
+        } else {
+            Body.drag = 0;
         }
     }
 
@@ -64,13 +72,21 @@ public class CarController : MonoBehaviour {
     void Suspension (Vector3 origin) {
         Vector3 direction = -transform.up;
         RaycastHit info = new RaycastHit();
-        float maxDistance = 1;
+        bool grounded = Physics.Raycast(origin, direction, out info, SuspensionHeight);
 
-        Physics.Raycast(origin, direction, out info, maxDistance);
-        float strength = SuspensionStrength / info.distance - SuspensionStrength;
-        Vector3 push = transform.rotation * new Vector3(0, strength, 0);
+        if (grounded) {
+            float strength = SuspensionStrength / info.distance - SuspensionStrength;
+            Vector3 push = transform.rotation * new Vector3(0, strength, 0);
+            //Body.AddForce(0, push, 0);
+            Body.AddForceAtPosition(push, origin);
+        }
 
-        //Body.AddForce(0, push, 0);
-        Body.AddForceAtPosition(push, origin);
+        if (DebugOn) {
+            if (grounded) {
+                Debug.DrawLine(origin, info.point, Color.white, -1, false);
+            } else {
+                Debug.DrawLine(origin, origin + direction * SuspensionHeight, Color.white, -1, false);
+            }
+        }
     }
 }
