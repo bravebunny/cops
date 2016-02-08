@@ -14,7 +14,7 @@ public class CarController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         Body = GetComponent< Rigidbody > ();
-        Body.centerOfMass.Set(0.5f, -0.3f, 0);
+        Body.centerOfMass = new Vector3(0, -1, 0);
     }
 	
 	// Update is called once per frame
@@ -31,6 +31,8 @@ public class CarController : MonoBehaviour {
         RaycastHit raycastInfo = new RaycastHit();
         float raycastDistance = 2;
         bool grounded = Physics.Raycast(Body.position, transform.rotation * -transform.up, out raycastInfo, raycastDistance);
+
+        Debug.DrawRay(Body.position, transform.rotation * -transform.up, Color.red);
 
         if (grounded) {
             Vector3 velocity = Body.velocity;
