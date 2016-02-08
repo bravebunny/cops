@@ -29,8 +29,20 @@ public class CarController : MonoBehaviour {
         Vector3 velocity = Body.velocity;
         float sidewaysVelocity = transform.InverseTransformDirection(Body.velocity).z;
 
+        Vector3 force = new Vector3(accel * Speed, 0, -sidewaysVelocity * SidewaysCompensation);
+
+        RaycastHit raycastInfo = new RaycastHit();
+        float raycastDistance = 2;
+        Physics.Raycast(Body.position, new Vector3(0, 1, 0), out raycastInfo, raycastDistance);
+        Vector3 groundNormal = raycastInfo.normal;
+
+        Vector3 projectedForce = Vector3.ProjectOnPlane(force, groundNormal);
+
         //Body.AddForceAtPosition();
-        Body.AddRelativeForce(accel * Speed, 0, -sidewaysVelocity * SidewaysCompensation);
+        Body.AddRelativeForce(projectedForce);
+        Vector3 forcePosition = Body.position + transform.rotation * new Vector3(0.5f, -0.2f, 0);
+        //Body.AddForceAtPosition(projectedForce, forcePosition);
+
         Body.AddRelativeTorque(0, steering * TurningSpeed, 0);
 
         Suspension(Body.position + transform.rotation * new Vector3(1, 0, 1));
@@ -47,7 +59,7 @@ public class CarController : MonoBehaviour {
 
         Physics.Raycast(origin, direction, out info, maxDistance);
         Debug.Log(info.distance);
-        Vector3 push = new Vector3(0, SuspensionStrength / info.distance, 0);
+        Vector3 push = transform.rotation * new Vector3(0, SuspensionStrength / info.distance, 0);
 
         //Body.AddForce(0, push, 0);
         Body.AddForceAtPosition(push, origin);
