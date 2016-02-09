@@ -8,17 +8,16 @@ using UnityStandardAssets.Vehicles.Car;
 public class GameManager : MonoBehaviour
 {
 	public GameObject CopPrefab;         
-	public GameObject Player;         
+	public GameObject Player;
 	public float spawnInterval;
-	public Camera CopCam;
+    public Camera CarCamera;
+    public Camera CopCam;
 	public int Layout = 0;
 
-	private Camera PlayerCam;
 	private List<GameObject> Cops = new List<GameObject> ();
 
 	private void Start()
 	{
-		PlayerCam = Player.GetComponentInChildren<Camera> ();
         Physics.gravity = new Vector3(0, -30.0f, 0);
 //		InvokeRepeating ("SpawnCop", 0, spawnInterval);
 	}
@@ -65,15 +64,15 @@ public class GameManager : MonoBehaviour
 
 		switch (Layout) {
 		case 0:
-			PlayerCam.rect = new Rect(0, 0, 1, 1);
+            CarCamera.rect = new Rect(0, 0, 1, 1);
 			CopCam.rect = new Rect(0, 0, 0, 0);
 			break;
 		case 1:
-			PlayerCam.rect = new Rect(0, 0, 0, 0);
+            CarCamera.rect = new Rect(0, 0, 0, 0);
 			CopCam.rect = new Rect(0, 0, 1, 1);
 			break;
 		case 2:
-			PlayerCam.rect = new Rect(0, 0, 0.5f, 1);
+            CarCamera.rect = new Rect(0, 0, 0.5f, 1);
 			CopCam.rect = new Rect(0.5f, 0, 0.5f, 1);
 			break;
 		}
