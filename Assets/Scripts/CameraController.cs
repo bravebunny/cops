@@ -3,24 +3,16 @@ using System.Collections;
 
 public class CameraController : MonoBehaviour {
 
-    public GameObject Car;
-    public float Distance = 5;
+    public Transform target;
+    public float SmoothTime = 0.3F;
+    public float Distance = 5.0F;
     public float Height = 10;
-
-    private Camera CarCamera;
-    private Vector3 offset;
-
-    // Use this for initialization
-    void Start () {
-        CarCamera = GetComponent<Camera>();
-	}
-
-    void LateUpdate () {
-        Vector3 offset = Car.transform.position - Car.transform.right * Distance;
-        Vector3 newPosition = new Vector3(offset.x, Height , offset.z);
-        transform.position = newPosition;
-        Quaternion rotation = new Quaternion(0, Car.transform.rotation.y, 0, Car.transform.rotation.w);
-        transform.rotation = rotation;
-        transform.Rotate(0, 90, 0);
+    private float yVelocity = 0.0F;
+    void Update() {
+        float yAngle = Mathf.SmoothDampAngle(transform.eulerAngles.y, target.eulerAngles.y + 90, ref yVelocity, SmoothTime);
+        Vector3 position = target.position;
+        position += Quaternion.Euler(0, yAngle, 0) * new Vector3(0, Height, -Distance);
+        transform.position = position;
+        transform.LookAt(target);
     }
 }
