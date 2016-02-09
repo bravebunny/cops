@@ -2,7 +2,6 @@
 using System.Collections;
 
 public class CameraController : MonoBehaviour {
-
     public GameObject Car;
     public float Distance = 5;
     public float Height = 10;
@@ -13,7 +12,7 @@ public class CameraController : MonoBehaviour {
     // Use this for initialization
     void Start () {
         CarCamera = GetComponent<Camera>();
-	}
+    }
 
     void LateUpdate () {
         Vector3 offset = Car.transform.position - Car.transform.right * Distance;
