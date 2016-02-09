@@ -16,7 +16,7 @@ public class CarController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        Body = GetComponent< Rigidbody > ();
+        Body = GetComponent<Rigidbody>();
         Body.centerOfMass = new Vector3(0, -1, 0);
     }
 	
