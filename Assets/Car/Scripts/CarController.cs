@@ -49,16 +49,17 @@ public class CarController : MonoBehaviour {
             if (DebugOn) Debug.DrawLine(forcePosition, Body.position, Color.black, -1, false);
             Body.AddForceAtPosition(projectedForce, forcePosition);
 
-            //distance of the wheels to the car
-            float xDist = 1f;
-            float yDist = 0.8f; 
-            Suspension(3, Body.position + transform.rotation * new Vector3(xDist, 0, yDist));
-            Suspension(4, Body.position + transform.rotation * new Vector3(-xDist, 0, yDist));
-            Suspension(1, Body.position + transform.rotation * new Vector3(xDist, 0, -yDist));
-            Suspension(2, Body.position + transform.rotation * new Vector3(-xDist, 0, -yDist));
         } else {
             Body.drag = 0;
         }
+
+        //distance of the wheels to the car
+        float xDist = 1f;
+        float yDist = 0.8f;
+        Suspension(3, Body.position + transform.rotation * new Vector3(xDist, 0, yDist));
+        Suspension(4, Body.position + transform.rotation * new Vector3(-xDist, 0, yDist));
+        Suspension(1, Body.position + transform.rotation * new Vector3(xDist, 0, -yDist));
+        Suspension(2, Body.position + transform.rotation * new Vector3(-xDist, 0, -yDist));
     }
 
 
