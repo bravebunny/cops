@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityStandardAssets.CrossPlatformInput;
 
 public class CarController : MonoBehaviour {
     public float Speed = 20;
@@ -10,6 +9,8 @@ public class CarController : MonoBehaviour {
     public bool DebugOn = true;
     public float SuspensionHeight = 3;
     public float Drag = 5;
+
+    public float CurrentSpeed{ get { return Body.velocity.magnitude*2.23693629f; }}
 
     private Rigidbody Body;
 
