@@ -3,7 +3,6 @@ using System.Collections;
 using UnityStandardAssets.CrossPlatformInput;
 
 public class CarController : MonoBehaviour {
-    public bool playerControlled = false;
     public float Speed = 20;
     public float SidewaysCompensation = 0;
     public float SuspensionStrength = 5;
@@ -20,15 +19,7 @@ public class CarController : MonoBehaviour {
         Body.centerOfMass = new Vector3(0, -1, 0);
     }
 
-    // Update is called once per frame
-    void FixedUpdate () {
-        float h = CrossPlatformInputManager.GetAxis("Horizontal");
-        float v = CrossPlatformInputManager.GetAxis("Vertical");
-
-        Move(h, v);
-    }
-
-    void Move (float steering, float accel) {
+    public void Move (float steering, float accel) {
         RaycastHit raycastInfo = new RaycastHit();
         float raycastDistance = SuspensionHeight + 1;
         bool grounded = Physics.Raycast(Body.position, -transform.up, out raycastInfo, raycastDistance);
