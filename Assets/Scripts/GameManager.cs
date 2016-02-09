@@ -3,7 +3,6 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections.Generic;
-using UnityStandardAssets.Vehicles.Car;
 
 public class GameManager : MonoBehaviour {
     public GameObject CopPrefab;
@@ -25,7 +24,7 @@ public class GameManager : MonoBehaviour {
 
         GameObject cop = Instantiate(CopPrefab, position, Player.GetComponent<Rigidbody>().rotation) as GameObject;
 
-        cop.GetComponent<CarAIControl>().SetTarget(Player.transform);
+        cop.GetComponent<CarAIController>().SetTarget(Player.transform);
 
         Cops.Add (cop);
     }
