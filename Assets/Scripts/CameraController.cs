@@ -4,6 +4,7 @@ using System.Collections;
 public class CameraController : MonoBehaviour {
 
     public GameObject Car;
+    public float Distance = 5;
 
     private Camera CarCamera;
     private Vector3 offset;
@@ -21,9 +22,7 @@ public class CameraController : MonoBehaviour {
     }
 
     void LateUpdate () {
-        //transform.Translate(transform.position - Car.transform.position);
-        Vector3 newPosition = CarCamera.transform.position;
-        Debug.Log(Car.transform.position);
-        CarCamera.transform.position = Car.transform.position;
+        transform.position = Car.transform.position + Car.transform.right * Distance;
+        transform.rotation = Car.transform.rotation;
     }
 }
