@@ -80,6 +80,8 @@ public class CarController : MonoBehaviour {
         } else {
             wheel.position = origin + direction * SuspensionHeight;
         }
+       
+        wheel.Rotate(new Vector3(0,0, CurrentSpeed));
 
         if (DebugOn) {
             if (grounded) {
