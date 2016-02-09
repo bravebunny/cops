@@ -2,7 +2,6 @@
 using System.Collections;
 
 public class CameraController : MonoBehaviour {
-
     public Transform target;
     public float SmoothTime = 0.3F;
     public float Distance = 5.0F;
