@@ -55,7 +55,7 @@ public class CarController : MonoBehaviour {
             if (accel != 0) direction = (int)(accel / Mathf.Abs(accel));
             else direction = 0;
 
-            Vector3 forcePosition = Body.position + transform.rotation * new Vector3(1.5f * direction, -0.2f, 0);
+            Vector3 forcePosition = Body.position + transform.rotation * new Vector3(5 * direction, -2f, 0);
             if (DebugOn) Debug.DrawLine(forcePosition, Body.position, Color.black, -1, false);
             Body.AddForceAtPosition(projectedForce, forcePosition);
 
