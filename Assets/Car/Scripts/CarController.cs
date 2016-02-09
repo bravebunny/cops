@@ -49,26 +49,34 @@ public class CarController : MonoBehaviour {
             if (DebugOn) Debug.DrawLine(forcePosition, Body.position, Color.black, -1, false);
             Body.AddForceAtPosition(projectedForce, forcePosition);
 
-            Suspension(Body.position + transform.rotation * new Vector3(1, 0, 1) * 1.3f);
-            Suspension(Body.position + transform.rotation * new Vector3(-1, 0, 1) * 1.3f);
-            Suspension(Body.position + transform.rotation * new Vector3(1, 0, -1) * 1.3f);
-            Suspension(Body.position + transform.rotation * new Vector3(-1, 0, -1) * 1.3f);
+            //distance of the wheels to the car
+            float xDist = 1f;
+            float yDist = 0.8f; 
+            Suspension(3, Body.position + transform.rotation * new Vector3(xDist, 0, yDist));
+            Suspension(4, Body.position + transform.rotation * new Vector3(-xDist, 0, yDist));
+            Suspension(1, Body.position + transform.rotation * new Vector3(xDist, 0, -yDist));
+            Suspension(2, Body.position + transform.rotation * new Vector3(-xDist, 0, -yDist));
         } else {
             Body.drag = 0;
         }
     }
 
 
-    void Suspension (Vector3 origin) {
+    void Suspension (int index, Vector3 origin) {
         Vector3 direction = -transform.up;
         RaycastHit info = new RaycastHit();
         bool grounded = Physics.Raycast(origin, direction, out info, SuspensionHeight);
+        Transform wheel = transform.GetChild(0).GetChild(index);
 
         if (grounded) {
+            float wheelHeight = 0.25f;
+            wheel.position = new Vector3(info.point.x, info.point.y + wheelHeight, info.point.z);
             float strength = SuspensionStrength / info.distance - SuspensionStrength;
             Vector3 push = transform.rotation * new Vector3(0, strength, 0);
             //Body.AddForce(0, push, 0);
             Body.AddForceAtPosition(push, origin);
+        } else {
+            wheel.position = origin + direction * SuspensionHeight;
         }
 
         if (DebugOn) {
