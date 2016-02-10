@@ -30,9 +30,8 @@ public class GameManager : MonoBehaviour {
     }
 
     private void Update () {
-        if (Input.GetKeyDown (KeyCode.P)) {
-            print ("space key was pressed");
-            SpawnCop (Player.GetComponent<Rigidbody> ().position);
+        if (Input.GetKeyDown (KeyCode.Return)) {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
         if (Layout != 0 && Input.GetMouseButtonDown(0)) {
