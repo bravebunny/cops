@@ -32,56 +32,71 @@ public class CarAIController : MonoBehaviour {
     {
         // get the car controller
         CarController = GetComponent<CarController>();
+
+        // give the random perlin a random value
+        RandomPerlin = Random.value*100;
     }
 
     // Update is called once per frame
     void FixedUpdate () {
         if (Target == null) {
             CarController.Move(0, 0);
+            return;
         }
-        else
+
+        NavMeshPath path = new NavMeshPath();
+        NavMesh.CalculatePath(transform.position, Target.position, -1, path);
+        int pathElements = path.corners.Length;
+
+        // Draw the path
+        for(int i=1;i<pathElements;++i) {
+            Debug.DrawLine(path.corners[i-1], path.corners[i], Color.green);
+        }
+
+        if (pathElements < 2) {
+            return;
+        }
+
+        // our target position starts off as the 'real' target position
+        Vector3 offsetTargetPos = path.corners[1];
+
+        // no need for evasive action, we can just wander across the path-to-target in a random way,
+        // which can help prevent AI from seeming too uniform and robotic in their driving
+        offsetTargetPos += Target.right*
+            (Mathf.PerlinNoise(Time.time*LateralWanderSpeed, RandomPerlin)*2 - 1)*
+            LateralWanderDistance;
+
+        float desiredSpeed = 100;
+
+        // use different sensitivity depending on whether accelerating or braking:
+        float accelBrakeSensitivity = (desiredSpeed < CarController.CurrentSpeed)
+            ? BrakeSensitivity
+            : AccelSensitivity;
+
+        // decide the actual amount of accel/brake input to achieve desired speed.
+        float accel = Mathf.Clamp((desiredSpeed - CarController.CurrentSpeed)*accelBrakeSensitivity, -1, 1);
+
+        // add acceleration 'wander', which also prevents AI from seeming too uniform and robotic in their driving
+        // i.e. increasing the accel wander amount can introduce jostling and bumps between AI cars in a race
+        accel *= (1 - AccelWanderAmount) +
+            (Mathf.PerlinNoise(Time.time*AccelWanderSpeed, RandomPerlin)*AccelWanderAmount);
+
+        // calculate the local-relative position of the target, to steer towards
+        Vector3 localTarget = transform.InverseTransformPoint(offsetTargetPos);
+
+        // work out the local angle towards the target
+        float targetAngle = -Mathf.Atan2(localTarget.z, localTarget.x)*Mathf.Rad2Deg;
+
+        // get the amount of steering needed to aim the car towards the target
+        float steer = Mathf.Clamp(targetAngle*SteerSensitivity, -1, 1)*Mathf.Sign(CarController.CurrentSpeed);
+
+        // feed input to the car controller.
+        CarController.Move(steer, accel);
+
+        // if appropriate, stop driving when we're close enough to the target.
+        if (StopWhenTargetReached && localTarget.magnitude < ReachTargetThreshold)
         {
-            // our target position starts off as the 'real' target position
-            Vector3 offsetTargetPos = Target.position;
-
-            // no need for evasive action, we can just wander across the path-to-target in a random way,
-            // which can help prevent AI from seeming too uniform and robotic in their driving
-            offsetTargetPos += Target.right*
-                (Mathf.PerlinNoise(Time.time*LateralWanderSpeed, RandomPerlin)*2 - 1)*
-                LateralWanderDistance;
-
-            float desiredSpeed = 100;
-
-            // use different sensitivity depending on whether accelerating or braking:
-            float accelBrakeSensitivity = (desiredSpeed < CarController.CurrentSpeed)
-                ? BrakeSensitivity
-                : AccelSensitivity;
-
-            // decide the actual amount of accel/brake input to achieve desired speed.
-            float accel = Mathf.Clamp((desiredSpeed - CarController.CurrentSpeed)*accelBrakeSensitivity, -1, 1);
-
-            // add acceleration 'wander', which also prevents AI from seeming too uniform and robotic in their driving
-            // i.e. increasing the accel wander amount can introduce jostling and bumps between AI cars in a race
-            accel *= (1 - AccelWanderAmount) +
-                (Mathf.PerlinNoise(Time.time*AccelWanderSpeed, RandomPerlin)*AccelWanderAmount);
-
-            // calculate the local-relative position of the target, to steer towards
-            Vector3 localTarget = transform.InverseTransformPoint(offsetTargetPos);
-
-            // work out the local angle towards the target
-            float targetAngle = -Mathf.Atan2(localTarget.z, localTarget.x)*Mathf.Rad2Deg;
-
-            // get the amount of steering needed to aim the car towards the target
-            float steer = Mathf.Clamp(targetAngle*SteerSensitivity, -1, 1)*Mathf.Sign(CarController.CurrentSpeed);
-
-            // feed input to the car controller.
-            CarController.Move(steer, accel);
-
-            // if appropriate, stop driving when we're close enough to the target.
-            if (StopWhenTargetReached && localTarget.magnitude < ReachTargetThreshold)
-            {
-                Driving = false;
-            }
+            Driving = false;
         }
     }
 
