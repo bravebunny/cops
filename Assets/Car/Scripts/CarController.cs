@@ -10,6 +10,7 @@ public class CarController : MonoBehaviour {
     public float SuspensionHeight = 3;
     public float Drag = 5;
 
+    [HideInInspector] public bool Blocked = false;
     public float CurrentSpeed{ get { return Body.velocity.magnitude*2.23693629f; }}
 
     private Rigidbody Body;
@@ -50,6 +51,9 @@ public class CarController : MonoBehaviour {
             if (DebugOn) Debug.DrawLine(forcePosition, Body.position, Color.black, -1, false);
             Body.AddForceAtPosition(projectedForce, forcePosition);
 
+            Blocked = (velocity.magnitude < 1 && force.magnitude >= Speed);
+
+            if (DebugOn && Blocked) Debug.Log("Blocked");
         } else {
             Body.drag = 0;
         }
