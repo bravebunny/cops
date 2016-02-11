@@ -1,1 +1,1 @@
-terrain_pattern_1:terrain_pattern_02:
+terrain_pattern_1:myPattern01:

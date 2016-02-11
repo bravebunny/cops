@@ -1,42 +1,27 @@
 fileFormatVersion: 2
-guid: 3b3dabaf0b5c1c14da83c9c766c5a210
-timeCreated: 1455223000
+guid: e9ac618987b5e254990c307cafbe070b
+timeCreated: 1455223174
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: auxBody
-    100002: Body
-    100004: //RootNode
-    100006: wheel0
-    100008: wheel1
-    100010: wheel2
-    100012: wheel3
-    400000: auxBody
-    400002: Body
-    400004: //RootNode
-    400006: wheel0
-    400008: wheel1
-    400010: wheel2
-    400012: wheel3
-    2300000: auxBody
-    2300002: Body
-    2300004: wheel0
-    2300006: wheel1
-    2300008: wheel2
-    2300010: wheel3
-    3300000: auxBody
-    3300002: Body
-    3300004: wheel0
-    3300006: wheel1
-    3300008: wheel2
-    3300010: wheel3
-    4300000: auxBody
-    4300002: wheel1
-    4300004: wheel3
-    4300006: wheel0
-    4300008: wheel2
-    4300010: Body
+    100000: Building
+    100002: Cube
+    100004: Roof
+    100006: //RootNode
+    400000: Building
+    400002: Cube
+    400004: Roof
+    400006: //RootNode
+    2300000: Building
+    2300002: Cube
+    2300004: Roof
+    3300000: Building
+    3300002: Cube
+    3300004: Roof
+    4300000: Building
+    4300002: Cube
+    4300004: Roof
   materials:
     importMaterials: 1
     materialName: 0
