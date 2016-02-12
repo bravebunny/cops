@@ -6,10 +6,9 @@ using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour {
     public GameObject CopPrefab;
-    public GameObject Player;
-    public float spawnInterval;
+    public GameObject Car;
     public Camera CarCamera;
-    public Camera CopCam;
+    public Camera CopCamera;
     public int Layout = 0;
 
     private List<GameObject> Cops = new List<GameObject> ();
@@ -22,9 +21,9 @@ public class GameManager : MonoBehaviour {
     private void SpawnCop(Vector3 position) {
         position.y = 2;
 
-        GameObject cop = Instantiate(CopPrefab, position, Player.GetComponent<Rigidbody>().rotation) as GameObject;
+        GameObject cop = Instantiate(CopPrefab, position, Car.GetComponent<Rigidbody>().rotation) as GameObject;
 
-        cop.GetComponent<CarAIController>().SetTarget(Player.transform);
+        cop.GetComponent<CarAIController>().SetTarget(Car.transform);
 
         Cops.Add (cop);
     }
@@ -37,7 +36,7 @@ public class GameManager : MonoBehaviour {
         if (Layout != 0 && Input.GetMouseButtonDown(0)) {
             Vector3 pos = Input.mousePosition;
             pos.z = 100;
-            pos = CopCam.ScreenToWorldPoint(pos);
+            pos = CopCamera.ScreenToWorldPoint(pos);
 
             SpawnCop (pos);
         }
@@ -59,15 +58,15 @@ public class GameManager : MonoBehaviour {
         switch (Layout) {
             case 0:
                 CarCamera.rect = new Rect(0, 0, 1, 1);
-                CopCam.rect = new Rect(0, 0, 0, 0);
+                CopCamera.rect = new Rect(0, 0, 0, 0);
                 break;
             case 1:
                 CarCamera.rect = new Rect(0, 0, 0, 0);
-                CopCam.rect = new Rect(0, 0, 1, 1);
+                CopCamera.rect = new Rect(0, 0, 1, 1);
                 break;
             case 2:
                 CarCamera.rect = new Rect(0, 0, 0.5f, 1);
-                CopCam.rect = new Rect(0.5f, 0, 0.5f, 1);
+                CopCamera.rect = new Rect(0.5f, 0, 0.5f, 1);
                 break;
         }
     }
