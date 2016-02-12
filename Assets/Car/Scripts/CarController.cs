@@ -30,9 +30,9 @@ public class CarController : MonoBehaviour {
 
         int direction;
         if (accel != 0) direction = (int)(accel / Mathf.Abs(accel));
-        else direction = 0;
+        else direction = 1;
 
-        Body.AddRelativeTorque(0, steering * TurningSpeed * direction, 0);
+        Body.AddRelativeTorque(0, steering * TurningSpeed * CurrentSpeed/Speed * direction, 0);
 
         if (grounded) {
             Body.drag = 5;

@@ -423,10 +423,10 @@ MonoBehaviour:
   Speed: 200
   SidewaysCompensation: 0
   SuspensionStrength: 40
-  TurningSpeed: 40
+  TurningSpeed: 200
   DebugOn: 1
   SuspensionHeight: 1
-  Drag: 5
+  Drag: 3
   Blocked: 0
 --- !u!114 &11495516
 MonoBehaviour:
