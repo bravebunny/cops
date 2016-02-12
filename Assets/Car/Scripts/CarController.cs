@@ -28,7 +28,11 @@ public class CarController : MonoBehaviour {
 
         if (DebugOn) Debug.DrawRay(Body.position, -transform.up, Color.red, -1, false);
 
-        Body.AddRelativeTorque(0, steering * TurningSpeed, 0);
+        int direction;
+        if (accel != 0) direction = (int)(accel / Mathf.Abs(accel));
+        else direction = 0;
+
+        Body.AddRelativeTorque(0, steering * TurningSpeed * direction, 0);
 
         if (grounded) {
             Body.drag = 5;
@@ -42,10 +46,6 @@ public class CarController : MonoBehaviour {
 
             Vector3 projectedForce = Vector3.ProjectOnPlane(force, groundNormal);
             if (DebugOn) Debug.DrawRay(Body.position, projectedForce, Color.blue, -1, false);
-
-            int direction;
-            if (accel != 0) direction = (int)(accel / Mathf.Abs(accel));
-            else direction = 0;
 
             Vector3 forcePosition = Body.position + transform.rotation * new Vector3(5 * direction, -2f, 0);
             if (DebugOn) Debug.DrawLine(forcePosition, Body.position, Color.black, -1, false);
