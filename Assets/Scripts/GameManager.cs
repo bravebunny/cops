@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour {
 
 
     private void SpawnCop(Vector3 position) {
-        position.y = 1;
+        position.y = 2;
 
         GameObject cop = Instantiate(CopPrefab, position, Player.GetComponent<Rigidbody>().rotation) as GameObject;
 
