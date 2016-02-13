@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using UnityEngine.Networking;
 
 public class GameManager : MonoBehaviour {
     public GameObject CopPrefab;
@@ -25,6 +26,7 @@ public class GameManager : MonoBehaviour {
 
         cop.GetComponent<CarAIController>().SetTarget(Car.transform);
 
+        NetworkServer.Spawn(cop);
         Cops.Add (cop);
     }
 

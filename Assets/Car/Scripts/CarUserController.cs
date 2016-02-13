@@ -14,9 +14,9 @@ public class CarUserController : NetworkBehaviour {
 
     // Update is called once per frame
     void FixedUpdate () {
-        if (!isLocalPlayer) {
-            return; 
-        }
+//        if (!isLocalPlayer) {
+//            return;
+//        }
 
         float h = CrossPlatformInputManager.GetAxis("Horizontal");
         float v = CrossPlatformInputManager.GetAxis("Vertical");
