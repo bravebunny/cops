@@ -41,9 +41,7 @@ public class CameraController : MonoBehaviour
 
         CheckColliding(target.position); //fixedUpdate because it uses rayCasts
         adjustmentDistance = GetAdjustedDistancewithRayFrom(target.position);
-    }
 
-    void Update() {
         position = target.position;
         position += Quaternion.Euler(target.eulerAngles.x, target.eulerAngles.y + 90, 0) * new Vector3(0, Height, -Distance);
 
@@ -51,8 +49,7 @@ public class CameraController : MonoBehaviour
             ajustedDestination = target.position;
             ajustedDestination += Quaternion.Euler(target.eulerAngles.x, target.eulerAngles.y + 90, 0) * new Vector3(0, Height + 2, -adjustmentDistance);
             transform.position = Vector3.SmoothDamp(transform.position, ajustedDestination, ref camVel, SmoothTime);
-        }
-        else {
+        } else {
             transform.position = Vector3.SmoothDamp(transform.position, position, ref camVel, SmoothTime);
         }
         transform.LookAt(target);
