@@ -5,14 +5,22 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using UnityEngine.Networking;
 
-public class GameManager : MonoBehaviour {
+public class GameManager : NetworkBehaviour {
     public GameObject CopPrefab;
     public GameObject Car;
     public Camera CarCamera;
     public Camera CopCamera;
     public int Layout = 0;
 
+    static public GameManager sInstance = null;
+
     private List<GameObject> Cops = new List<GameObject> ();
+    protected bool _running = true;
+
+    void Awake()
+    {
+        sInstance = this;
+    }
 
     private void Start() {
         Physics.gravity = new Vector3(0, -30.0f, 0);
