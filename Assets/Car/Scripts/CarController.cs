@@ -51,7 +51,7 @@ public class CarController : MonoBehaviour {
             if (DebugOn) Debug.DrawLine(forcePosition, Body.position, Color.black, -1, false);
             Body.AddForceAtPosition(projectedForce, forcePosition);
 
-            Blocked = (velocity.magnitude < 1 && force.magnitude >= Speed);
+            Blocked = (velocity.magnitude < 1 && force.magnitude >= 1);
 
             if (DebugOn && Blocked) Debug.Log("Blocked");
         } else {

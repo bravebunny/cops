@@ -45,7 +45,13 @@ public class CarAIController : MonoBehaviour {
         }
 
         NavMeshPath path = new NavMeshPath();
-        NavMesh.CalculatePath(transform.position, Target.position, -1, path);
+
+        if (CarController.Blocked) {
+            //NavMesh.CalculatePath(transform.position, transform.position - transform.forward * 5, -1, path);
+            CarController.Move(5, 0);
+        } else {
+            NavMesh.CalculatePath(transform.position, Target.position, -1, path);
+        }
         int pathElements = path.corners.Length;
 
         // Draw the path
