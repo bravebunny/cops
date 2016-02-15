@@ -24,7 +24,7 @@ public class CarController : MonoBehaviour {
     public void Move (float steering, float accel) {
         RaycastHit raycastInfo = new RaycastHit();
         float raycastDistance = SuspensionHeight + 1;
-        bool grounded = Physics.Raycast(Body.position, -transform.up, out raycastInfo, raycastDistance);
+        bool grounded = Physics.Raycast(Body.position, -Vector3.up, out raycastInfo, raycastDistance);
 
         if (DebugOn) Debug.DrawRay(Body.position, -transform.up, Color.red, -1, false);
 
@@ -51,7 +51,7 @@ public class CarController : MonoBehaviour {
             if (DebugOn) Debug.DrawLine(forcePosition, Body.position, Color.black, -1, false);
             Body.AddForceAtPosition(projectedForce, forcePosition);
 
-            Blocked = (velocity.magnitude < 1 && force.magnitude >= Speed);
+            Blocked = (velocity.magnitude < 1 && force.magnitude >= 1);
 
             if (DebugOn && Blocked) Debug.Log("Blocked");
         } else {

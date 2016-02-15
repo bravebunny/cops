@@ -410,8 +410,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.3, y: 0.8, z: 1.6}
-  m_Center: {x: -0.16, y: 0, z: 0}
+  m_Size: {x: 3.3, y: 0.8, z: 1.7}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &11444466
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -504,7 +504,7 @@ MonoBehaviour:
   Speed: 200
   SidewaysCompensation: 0
   SuspensionStrength: 40
-  TurningSpeed: 40
+  TurningSpeed: 80
   DebugOn: 1
   SuspensionHeight: 1
   Drag: 5
@@ -515,7 +515,19 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: TurningSpeed
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Size.z
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 127284}
