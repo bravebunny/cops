@@ -29,6 +29,11 @@ public class GameManager : NetworkBehaviour {
 
     private void Start() {
         Physics.gravity = new Vector3(0, -30.0f, 0);
+
+        NetworkLobbyManager lobby = GameObject.Find("LobbyManager").GetComponent<NetworkLobbyManager>();
+        CopPrefab = lobby.spawnPrefabs[0];
+
+        Debug.Log("YOLO");
     }
 
     public static int RegisterPlayer(NetworkPlayer player) {
@@ -49,7 +54,7 @@ public class GameManager : NetworkBehaviour {
 
         cop.GetComponent<CarAIController>().SetTarget(Car.transform);
 
-        Cops.Add (cop);
+//        Cops.Add (cop);
 
         return cop;
     }
@@ -134,7 +139,6 @@ public class GameManager : NetworkBehaviour {
                 Car = Players[i].gameObject;
             }
         }
-        Debug.Log(Car);
 
         CarCamera.GetComponent<CameraController>().SetTarget(Car.transform);
     }

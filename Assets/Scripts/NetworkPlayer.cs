@@ -51,11 +51,12 @@ public class NetworkPlayer : NetworkBehaviour {
                 pos.z = 100;
                 pos = GameManager.CopCamera.ScreenToWorldPoint(pos);
 
-                GameManager.SpawnCop (pos);
+                Debug.Log("Spawn cop!");
+//                GameManager.SpawnCop (pos);
 
                 // we call a Command, that will be executed only on server, to spawn a new bullet
                 // we pass the position&forward to be sure to shoot from the right one (server can lag one frame behind)
-                // CmdSpawnCop(pos, transform.forward, _rigidbody.velocity);
+                 CmdSpawnCop(pos);
             }
         }
     }
@@ -74,6 +75,7 @@ public class NetworkPlayer : NetworkBehaviour {
     public void SpawnCop(Vector3 position) {
         GameObject cop = GameManager.SpawnCop(position);
 
+        NetworkServer.Spawn(cop);
         //NetworkServer.SpawnWithClientAuthority(bullet, connectionToClient);
     }
 
@@ -87,7 +89,7 @@ public class NetworkPlayer : NetworkBehaviour {
 
     [ClientRpc]
     public void RpcSpawnCop(Vector3 position) {
-        SpawnCop(position);
+//        SpawnCop(position);
     }
 
 
