@@ -81,8 +81,9 @@ public class NetworkPlayer : NetworkBehaviour {
 
     [Command]
     public void CmdSpawnCop(Vector3 position) {
-        if (!isClient) // avoid to create bullet twice (here & in Rpc call) on hosting client
+        if (isServer) { // avoid to create bullet twice (here & in Rpc call) on hosting client
             SpawnCop(position);
+        }
 
         RpcSpawnCop(position);
     }
