@@ -423,6 +423,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Type: 
+  Index: 0
 --- !u!114 &11456848
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -454,7 +455,7 @@ MonoBehaviour:
     i14: 178
     i15: 224
   m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
+  m_LocalPlayerAuthority: 1
 --- !u!114 &11460174
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -467,7 +468,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TransformSyncMode: 3
-  m_SendInterval: 0.1
+  m_SendInterval: 0.04
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_SyncSpin: 0
@@ -519,11 +520,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_SendInterval
-      value: 0.04761905
+      value: 0.04
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_TransformSyncMode
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_RotationSyncCompression
@@ -531,6 +532,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalPlayerAuthority
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_InterpolateRotation
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

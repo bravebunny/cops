@@ -32,8 +32,6 @@ public class GameManager : NetworkBehaviour {
 
         NetworkLobbyManager lobby = GameObject.Find("LobbyManager").GetComponent<NetworkLobbyManager>();
         CopPrefab = lobby.spawnPrefabs[0];
-
-        Debug.Log("YOLO");
     }
 
     public static int RegisterPlayer(NetworkPlayer player) {
@@ -54,7 +52,7 @@ public class GameManager : NetworkBehaviour {
 
         cop.GetComponent<CarAIController>().SetTarget(Car.transform);
 
-//        Cops.Add (cop);
+        Cops.Add (cop);
 
         return cop;
     }
@@ -64,16 +62,18 @@ public class GameManager : NetworkBehaviour {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
-//        if (Layout != 0 && Input.GetMouseButtonDown(0)) {
-//            Vector3 pos = Input.mousePosition;
-//            pos.z = 100;
-//            pos = CopCamera.ScreenToWorldPoint(pos);
-//
-//            SpawnCop (pos);
-//        }
+        if (Input.GetKeyDown (KeyCode.Alpha1)) {
+            Layout = 0;
+        }
+        else if (Input.GetKeyDown (KeyCode.Alpha2)) {
+            Layout = 1;
+        }
+        else if (Input.GetKeyDown (KeyCode.Alpha3)) {
+            Layout = 2;
+        }
 
-//        if (CarCamera != null && CopCamera != null)
-//            UpdateCamera ();
+        if (CarCamera != null && CopCamera != null)
+            UpdateCamera ();
     }
 
     public static void SetLayoutByPlayerIndex (int index) {
@@ -87,16 +87,6 @@ public class GameManager : NetworkBehaviour {
     }
 
     private static void UpdateCamera () {
-//        if (Input.GetKeyDown (KeyCode.Alpha1)) {
-//            Layout = 0;
-//        }
-//        else if (Input.GetKeyDown (KeyCode.Alpha2)) {
-//            Layout = 1;
-//        }
-//        else if (Input.GetKeyDown (KeyCode.Alpha3)) {
-//            Layout = 2;
-//        }
-//
         switch (Layout) {
             case 0:
                 CarCamera.rect = new Rect(0, 0, 1, 1);
@@ -128,14 +118,11 @@ public class GameManager : NetworkBehaviour {
     }
 
     private static void SetPlayerTypes () {
-        Debug.Log("SetPlayerTypes " + Players.Count.ToString());
-
         for(int i = 0; i < Players.Count; ++i) {
             string type = GetPlayerType(i);
             Players[i].SetType(type);
 
             if (type == "CAR") {
-                Debug.Log("Get Car");
                 Car = Players[i].gameObject;
             }
         }

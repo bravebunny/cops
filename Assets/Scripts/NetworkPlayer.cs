@@ -10,15 +10,12 @@ public class NetworkPlayer : NetworkBehaviour {
     public int Index;
 
     protected Rigidbody _rigidbody;
-
-    protected bool canControl = true;
     protected CarController _carControlller; // the car controller we want to use
 
     float steering;
     float accel;
 
     void Awake() {
-        Debug.Log("NetworkPlayer Awake");
         //register the player in the gamemanager, that will allow to loop on it.
         Index = GameManager.RegisterPlayer(this);
 
@@ -51,12 +48,8 @@ public class NetworkPlayer : NetworkBehaviour {
                 pos.z = 100;
                 pos = GameManager.CopCamera.ScreenToWorldPoint(pos);
 
-                Debug.Log("Spawn cop!");
-//                GameManager.SpawnCop (pos);
-
                 // we call a Command, that will be executed only on server, to spawn a new bullet
-                // we pass the position&forward to be sure to shoot from the right one (server can lag one frame behind)
-                 CmdSpawnCop(pos);
+                CmdSpawnCop(pos);
             }
         }
     }
@@ -76,7 +69,7 @@ public class NetworkPlayer : NetworkBehaviour {
         GameObject cop = GameManager.SpawnCop(position);
 
         NetworkServer.Spawn(cop);
-        //NetworkServer.SpawnWithClientAuthority(bullet, connectionToClient);
+        //NetworkServer.SpawnWithClientAuthority(cop, connectionToClient);
     }
 
     [Command]
@@ -90,20 +83,17 @@ public class NetworkPlayer : NetworkBehaviour {
 
     [ClientRpc]
     public void RpcSpawnCop(Vector3 position) {
-//        SpawnCop(position);
+
     }
 
 
     // We can't disable the whole object, as it would impair synchronisation/communication
     // So disabling mean disabling collider & renderer only
     public void EnableCar(bool enable) {
-        Debug.Log("EnableCar " + Type + " " + enable.ToString());
-        GetComponent<Collider>().enabled = isServer && enable;
+        GetComponent<Collider>().enabled = enable;
         GetComponent<NetworkTransform>().enabled = enable;
         GetComponent<CarController>().enabled = enable;
         GetComponent<Rigidbody>().useGravity = enable;
-
-        canControl = enable;
 
         foreach (Renderer renderer in GetComponentsInChildren<Renderer>()) {
             renderer.enabled = enable;
@@ -114,9 +104,6 @@ public class NetworkPlayer : NetworkBehaviour {
 
     public void SetType (string newType) {
         Type = newType;
-
-        Debug.Log("SetType " + newType + " " + Type);
-
         EnableCar(Type == "CAR");
     }
 
@@ -124,6 +111,4 @@ public class NetworkPlayer : NetworkBehaviour {
     {
         GameManager.Players.Remove(this);
     }
-
-
 }
