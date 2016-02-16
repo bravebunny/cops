@@ -32,7 +32,8 @@ public class CarAIController : MonoBehaviour {
     {
         // get the car controller
         CarController = GetComponent<CarController>();
-
+        // Allows to disable camera collisions with cops
+        CarController.gameObject.layer = LayerMask.NameToLayer("Cop");
         // give the random perlin a random value
         RandomPerlin = Random.value*100;
     }

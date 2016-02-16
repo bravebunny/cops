@@ -489,10 +489,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 200
   SidewaysCompensation: 0
-  SuspensionStrength: 40
+  SuspensionStrength: 120
   TurningSpeed: 80
   DebugOn: 1
-  SuspensionHeight: 1
+  SuspensionHeight: 0.8
   Drag: 3
   Blocked: 0
 --- !u!1001 &100100000
