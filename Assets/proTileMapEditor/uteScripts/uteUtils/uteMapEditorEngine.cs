@@ -3007,8 +3007,11 @@ public class uteMapEditorEngine : MonoBehaviour {
 			endP -= new Vector3(0.0f,globalYSize,0.0f);
 			camEP -= new Vector3(0.0f,globalYSize,0.0f);
 		}
-		
-		while(true)
+
+        gridObj.transform.position = endP;
+        cam.transform.position = camEP;
+
+        /*while (true)
 		{
 			gridObj.transform.position = Vector3.Lerp(gridObj.transform.position,endP,Time.deltaTime * 10.0f);
 			cam.transform.position = Vector3.Lerp(cam.transform.position,camEP,Time.deltaTime * 10.0f);
@@ -3023,11 +3026,13 @@ public class uteMapEditorEngine : MonoBehaviour {
 			}
 			
 			yield return null;
-		}
+		}*/
 		
 		canBuild = true;
 		isCamGridMoving = false;
-	}
+
+        yield return null;
+    }
 
 	private void InitHelperLines()
 	{
