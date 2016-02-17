@@ -1,1 +1,1 @@
-1:rotR:auto:512:512:isometric-perspective:byname
+0.5:rotR:auto:512:512:isometric-perspective:byname
