@@ -15,10 +15,24 @@ public class CarController : MonoBehaviour {
 
     private Rigidbody Body;
 
+    private bool Finish = false;
+
     // Use this for initialization
     void Start () {
         Body = GetComponent<Rigidbody>();
         Body.centerOfMass = new Vector3(0, -1, 0);
+    }
+
+    void OnCollisionEnter(Collision collision) {
+        if (collision.gameObject.tag.Equals("Garage") == true)
+        {
+            var VecDist = collision.transform.position - Body.position;
+            if (VecDist.magnitude <= 7) {
+                Finish = true;
+                Debug.Log("Inside Garage");
+            }
+            // if (DebugOn)  Debug.Log("Distance To Garage: " + VecDist.magnitude);
+        }
     }
 
     public void Move (float steering, float accel) {
