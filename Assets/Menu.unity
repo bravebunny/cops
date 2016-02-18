@@ -238,6 +238,14 @@ Prefab:
       propertyPath: m_Text
       value: PLAY LOCAL
       objectReference: {fileID: 0}
+    - target: {fileID: 11416602, guid: d2091f594e690470db6fcb6867ccf5c4, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1850681296}
+    - target: {fileID: 11416602, guid: d2091f594e690470db6fcb6867ccf5c4, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadLocalGame
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d2091f594e690470db6fcb6867ccf5c4, type: 2}
   m_IsPrefabParent: 0
@@ -327,6 +335,14 @@ Prefab:
     - target: {fileID: 11435084, guid: d2091f594e690470db6fcb6867ccf5c4, type: 2}
       propertyPath: m_Text
       value: PLAY ONLINE
+      objectReference: {fileID: 0}
+    - target: {fileID: 11416602, guid: d2091f594e690470db6fcb6867ccf5c4, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1850681296}
+    - target: {fileID: 11416602, guid: d2091f594e690470db6fcb6867ccf5c4, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadNetworkGame
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d2091f594e690470db6fcb6867ccf5c4, type: 2}
