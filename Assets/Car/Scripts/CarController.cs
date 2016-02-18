@@ -59,10 +59,12 @@ public class CarController : MonoBehaviour {
             if (DebugOn) Debug.DrawRay(raycastInfo.point, groundNormal, Color.green, -1, false);
 
             Vector3 projectedForce = Vector3.ProjectOnPlane(force, groundNormal);
-            if (DebugOn) Debug.DrawRay(Body.position, projectedForce, Color.blue, -1, false);
 
-            Vector3 forcePosition = Body.position + transform.rotation * new Vector3(5 * direction, -2f, 0);
+            Vector3 forcePosition = Body.position + transform.rotation * new Vector3(8 * direction, -2f, 0);
+
             if (DebugOn) Debug.DrawLine(forcePosition, Body.position, Color.black, -1, false);
+            if (DebugOn) Debug.DrawRay(forcePosition, projectedForce, Color.blue, -1, false);
+
             Body.AddForceAtPosition(projectedForce, forcePosition);
 
             Blocked = (velocity.magnitude < 1 && force.magnitude >= 1);
