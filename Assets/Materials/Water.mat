@@ -97,26 +97,6 @@ Material:
         second: 1
       data:
         first:
-          name: _WaveLength
-        second: 2.5
-      data:
-        first:
-          name: _WaveHeight
-        second: 2
-      data:
-        first:
-          name: _WaveSpeed
-        second: 1
-      data:
-        first:
-          name: _RandomHeight
-        second: 1
-      data:
-        first:
-          name: _RandomSpeed
-        second: 3
-      data:
-        first:
           name: _Parallax
         second: 0.02
       data:
@@ -151,6 +131,26 @@ Material:
         first:
           name: _Metallic
         second: 0
+      data:
+        first:
+          name: _WaveLength
+        second: 2.5
+      data:
+        first:
+          name: _WaveHeight
+        second: 2
+      data:
+        first:
+          name: _WaveSpeed
+        second: 1
+      data:
+        first:
+          name: _RandomHeight
+        second: 1
+      data:
+        first:
+          name: _RandomSpeed
+        second: 3
     m_Colors:
       data:
         first:
