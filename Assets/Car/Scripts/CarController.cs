@@ -37,8 +37,8 @@ public class CarController : MonoBehaviour {
 
     public void Move (float steering, float accel) {
         RaycastHit raycastInfo = new RaycastHit();
-        float raycastDistance = SuspensionHeight + 1;
-        bool grounded = Physics.Raycast(Body.position, -Vector3.up, out raycastInfo, raycastDistance);
+        float raycastDistance = SuspensionHeight + 0.5f;
+        bool grounded = Physics.Raycast(Body.position, -transform.up, out raycastInfo, raycastDistance);
 
         if (DebugOn) Debug.DrawRay(Body.position, -transform.up, Color.red, -1, false);
 
@@ -60,7 +60,7 @@ public class CarController : MonoBehaviour {
 
             Vector3 projectedForce = Vector3.ProjectOnPlane(force, groundNormal);
 
-            Vector3 forcePosition = Body.position + transform.rotation * new Vector3(8 * direction, -2f, 0);
+            Vector3 forcePosition = Body.position + transform.rotation * new Vector3(2 * direction, -1.5f, 0);
 
             if (DebugOn) Debug.DrawLine(forcePosition, Body.position, Color.black, -1, false);
             if (DebugOn) Debug.DrawRay(forcePosition, projectedForce, Color.blue, -1, false);
