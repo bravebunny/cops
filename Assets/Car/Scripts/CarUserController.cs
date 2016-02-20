@@ -13,7 +13,7 @@ public class CarUserController : NetworkBehaviour {
     }
 
     // Update is called once per frame
-    void FixedUpdate () {
+    void Update () {
         if (!isLocalPlayer) {
             return;
         }
