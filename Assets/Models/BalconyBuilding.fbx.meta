@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 8a2ff5cbc949b4641a950c8c6611c15b
-timeCreated: 1455657536
+guid: c9efea1775f815843b295acaa595e1f5
+timeCreated: 1455718292
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -15,7 +15,7 @@ ModelImporter:
     3300000: Cube
     4300000: Cube
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:
@@ -54,8 +54,8 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 60
-    normalImportMode: 0
+    normalSmoothAngle: 0
+    normalImportMode: 1
     tangentImportMode: 3
   importAnimation: 1
   copyAvatar: 0

@@ -43,7 +43,7 @@ public class uteCameraMove : MonoBehaviour
 		gL = false;
 		rL = false;
 		rR = false;
-		mS = 0.3f;
+		mS = 1f;
 		rS = 70.0f;
 		sel = new Vector3(500.0f,0.0f,500.0f);
 		isInTopView = false;
@@ -137,7 +137,7 @@ public class uteCameraMove : MonoBehaviour
 			//pY = Input.acceleration.y;
 			//#endif
 
-			transform.Translate(new Vector3(((float)-pX)*0.7f,0,((float)-pY)*0.7f) * 1f);
+			transform.Translate(new Vector3(((float)-pX)*1.4f,0,((float)-pY)*0.7f) * 2f);
 		}
 
 		if(Input.GetMouseButtonDown(1))
@@ -316,19 +316,18 @@ public class uteCameraMove : MonoBehaviour
 				gB = isNotGrid;
 
 				if(!cam.orthographic)
-					this.transform.position += new Vector3(0.0f,0.1f,0.0f);
-				else
-					cam.orthographicSize += 0.1f;
-			}
+					this.transform.position += new Vector3(0.0f,0.5f,0.0f);
+				else cam.orthographicSize += 0.5f;
+            }
 			else
 			{
 				gF = isNotGrid;
 
 				if(!cam.orthographic)
-					this.transform.position -= new Vector3(0.0f,0.1f,0.0f);
-				else
-					cam.orthographicSize -= 0.1f;
-			}
+					this.transform.position -= new Vector3(0.0f,0.5f,0.0f);
+				else cam.orthographicSize -= 0.5f;
+
+            }
 			
 			yield return 0;
 		}

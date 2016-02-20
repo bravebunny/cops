@@ -22,7 +22,6 @@ public class NetworkPlayer : NetworkBehaviour {
         Index = GameManager.RegisterPlayer(this);
 
         isLocalGame = GameManager.isLocalGame;
-        Debug.Log("isLocalGame " + isLocalGame.ToString());
 
         _rigidbody = GetComponent<Rigidbody>();
         _carControlller = GetComponent<CarController>();

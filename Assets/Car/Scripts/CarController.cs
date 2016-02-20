@@ -15,10 +15,24 @@ public class CarController : MonoBehaviour {
 
     private Rigidbody Body;
 
+    private bool Finish = false;
+
     // Use this for initialization
     void Start () {
         Body = GetComponent<Rigidbody>();
         Body.centerOfMass = new Vector3(0, -1, 0);
+    }
+
+    void OnCollisionEnter(Collision collision) {
+        if (collision.gameObject.tag.Equals("Garage") == true)
+        {
+            var VecDist = collision.transform.position - Body.position;
+            if (VecDist.magnitude <= 7) {
+                Finish = true;
+                Debug.Log("Inside Garage");
+            }
+            // if (DebugOn)  Debug.Log("Distance To Garage: " + VecDist.magnitude);
+        }
     }
 
     public void Move (float steering, float accel) {
@@ -45,10 +59,12 @@ public class CarController : MonoBehaviour {
             if (DebugOn) Debug.DrawRay(raycastInfo.point, groundNormal, Color.green, -1, false);
 
             Vector3 projectedForce = Vector3.ProjectOnPlane(force, groundNormal);
-            if (DebugOn) Debug.DrawRay(Body.position, projectedForce, Color.blue, -1, false);
 
-            Vector3 forcePosition = Body.position + transform.rotation * new Vector3(5 * direction, -2f, 0);
+            Vector3 forcePosition = Body.position + transform.rotation * new Vector3(8 * direction, -2f, 0);
+
             if (DebugOn) Debug.DrawLine(forcePosition, Body.position, Color.black, -1, false);
+            if (DebugOn) Debug.DrawRay(forcePosition, projectedForce, Color.blue, -1, false);
+
             Body.AddForceAtPosition(projectedForce, forcePosition);
 
             Blocked = (velocity.magnitude < 1 && force.magnitude >= 1);
