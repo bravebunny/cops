@@ -94,7 +94,9 @@ GameObject:
   - 65: {fileID: 6534278}
   - 54: {fileID: 5431648}
   - 114: {fileID: 11468602}
-  - 114: {fileID: 11495516}
+  - 114: {fileID: 11456848}
+  - 114: {fileID: 11460174}
+  - 114: {fileID: 11413188}
   m_Layer: 0
   m_Name: Car
   m_TagString: Untagged
@@ -409,6 +411,71 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.3, y: 0.8, z: 1.7}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &11413188
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 177384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3940e874b62d8455ca836da6d346748d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 
+  Index: 0
+--- !u!114 &11456848
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 177384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 68
+    i1: 35
+    i2: 185
+    i3: 67
+    i4: 246
+    i5: 44
+    i6: 6
+    i7: 228
+    i8: 250
+    i9: 91
+    i10: 254
+    i11: 80
+    i12: 157
+    i13: 11
+    i14: 178
+    i15: 224
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 1
+--- !u!114 &11460174
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 177384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 3
+  m_SendInterval: 0.04
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
 --- !u!114 &11468602
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -428,17 +495,6 @@ MonoBehaviour:
   SuspensionHeight: 0.8
   Drag: 3
   Blocked: 0
---- !u!114 &11495516
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 177384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b2be246cd28c41b6bb699a61c36b137, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -461,6 +517,30 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: SuspensionStrength
       value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_SendInterval
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_TransformSyncMode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_RotationSyncCompression
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalPlayerAuthority
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_InterpolateRotation
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Mass

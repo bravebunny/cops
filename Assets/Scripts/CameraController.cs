@@ -7,7 +7,6 @@ public class CameraController : MonoBehaviour
     public float SmoothTime = 0.3F;
     public float Distance = 5.0F;
     public float Height = 10;
-    private float yVelocity = 0.0F;
 
     public LayerMask collisionLayer;
     public bool debugDesiredCam;
@@ -29,6 +28,10 @@ public class CameraController : MonoBehaviour
     }
 
     void FixedUpdate() {
+        if (target == null) {
+            return;
+        }
+     
         UpdateCameraClipPoints(transform.position, transform.rotation, ref adjustedCameraClipPoints);
         UpdateCameraClipPoints(position, transform.rotation, ref desiredCameraClipPoints);
 
@@ -104,6 +107,10 @@ public class CameraController : MonoBehaviour
     public void CheckColliding(Vector3 targetPosition) {
         if (CollisionDetectedAtClipPoints(desiredCameraClipPoints, targetPosition)) colliding = true;
         else colliding = false;
+    }
+
+    public void SetTarget(Transform newTarget) {
+        target = newTarget;
     }
 }
 
