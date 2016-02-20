@@ -9,6 +9,8 @@ public class NetworkPlayer : NetworkBehaviour {
     public string Type = null;
     public int Index;
 
+    public static bool isLocalGame;
+
     protected Rigidbody _rigidbody;
     protected CarController _carControlller; // the car controller we want to use
 
@@ -18,6 +20,9 @@ public class NetworkPlayer : NetworkBehaviour {
     void Awake() {
         //register the player in the gamemanager, that will allow to loop on it.
         Index = GameManager.RegisterPlayer(this);
+
+        isLocalGame = GameManager.isLocalGame;
+        Debug.Log("isLocalGame " + isLocalGame.ToString());
 
         _rigidbody = GetComponent<Rigidbody>();
         _carControlller = GetComponent<CarController>();
@@ -29,13 +34,13 @@ public class NetworkPlayer : NetworkBehaviour {
             EnableCar(Type == "CAR");
         }
 
-        if (isLocalPlayer)
+        if (isLocalPlayer && !isLocalGame)
             GameManager.SetLayoutByPlayerIndex(Index);
     }
 
-    [ClientCallback]
+//    [ClientCallback]
     void Update() {
-        if (!isLocalPlayer) {
+        if (!isLocalPlayer && !isLocalGame) {
             return;
         }
 
@@ -48,16 +53,19 @@ public class NetworkPlayer : NetworkBehaviour {
                 pos.z = 100;
                 pos = GameManager.CopCamera.ScreenToWorldPoint(pos);
 
-                // we call a Command, that will be executed only on server, to spawn a new bullet
-                CmdSpawnCop(pos);
+                // we call a Command, that will be executed only on server, to spawn a new cop
+                if (!isLocalGame)
+                    CmdSpawnCop(pos);
+                else
+                    SpawnCop(pos);
             }
         }
     }
 
 
-    [ClientCallback]
+//    [ClientCallback]
     void FixedUpdate() {
-        if (!isLocalPlayer)
+        if (!isLocalPlayer && !isLocalGame)
             return;
 
         if (Type == "CAR") {
@@ -68,8 +76,11 @@ public class NetworkPlayer : NetworkBehaviour {
     public void SpawnCop(Vector3 position) {
         GameObject cop = GameManager.SpawnCop(position);
 
+        if (isLocalGame)
+            return;
+
         NetworkServer.Spawn(cop);
-        //NetworkServer.SpawnWithClientAuthority(cop, connectionToClient);
+        // NetworkServer.SpawnWithClientAuthority(cop, connectionToClient);
     }
 
     [Command]

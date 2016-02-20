@@ -6,7 +6,11 @@ using System.Collections.Generic;
 using UnityEngine.Networking;
 
 public class GameManager : NetworkBehaviour {
-    public static GameObject CopPrefab;
+    public GameObject CopPrefab;
+    public GameObject LocalPlayerPrefab;
+
+    public static bool isLocalGame = true;
+    public static GameObject StaticCopPrefab;
     public static GameObject Car;
     public static Camera CarCamera;
     public static Camera CopCamera;
@@ -17,21 +21,33 @@ public class GameManager : NetworkBehaviour {
     static public List<GameObject> Cops = new List<GameObject> ();
     static public GameManager sInstance = null;
 
-    protected bool _running = true;
-
-    void Awake()
-    {
+    void Awake() {
         sInstance = this;
 
         CarCamera = GameObject.Find("CarCamera").GetComponent<Camera>();
         CopCamera = GameObject.Find("CopCamera").GetComponent<Camera>();
+
+        StaticCopPrefab = CopPrefab;
     }
 
     private void Start() {
         Physics.gravity = new Vector3(0, -30.0f, 0);
 
-        NetworkLobbyManager lobby = GameObject.Find("LobbyManager").GetComponent<NetworkLobbyManager>();
-        CopPrefab = lobby.spawnPrefabs[0];
+        GameObject lobby = GameObject.Find("LobbyManager");
+        isLocalGame = (lobby == null);
+
+        Debug.Log("isLocalGame " + isLocalGame.ToString());
+
+        Transform startPosition = GameObject.FindObjectOfType<NetworkStartPosition>().transform;
+
+        if (isLocalGame) {
+            Layout = 2;
+
+            for (int i = 0; i < 2; i++) {
+                Instantiate(LocalPlayerPrefab, startPosition.position, Quaternion.identity);
+            }
+
+        }
     }
 
     public static int RegisterPlayer(NetworkPlayer player) {
@@ -48,7 +64,7 @@ public class GameManager : NetworkBehaviour {
     public static GameObject SpawnCop(Vector3 position) {
         position.y = 2;
 
-        GameObject cop = Instantiate(CopPrefab, position, Car.GetComponent<Rigidbody>().rotation) as GameObject;
+        GameObject cop = Instantiate(StaticCopPrefab, position, Car.GetComponent<Rigidbody>().rotation) as GameObject;
 
         cop.GetComponent<CarAIController>().SetTarget(Car.transform);
 
