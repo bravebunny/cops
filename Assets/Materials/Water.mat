@@ -97,6 +97,10 @@ Material:
         second: 1
       data:
         first:
+          name: _Metallic
+        second: 0
+      data:
+        first:
           name: _Parallax
         second: 0.02
       data:
@@ -129,10 +133,6 @@ Material:
         second: 0
       data:
         first:
-          name: _Metallic
-        second: 0
-      data:
-        first:
           name: _WaveLength
         second: 2.5
       data:
@@ -159,8 +159,8 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: 0.31336507, g: 0.67277175, b: 0.9264706, a: 1}
+        second: {r: 0.035467125, g: 0.21341422, b: 0.30147058, a: 1}
       data:
         first:
           name: _SpecColor
-        second: {r: 0.5381704, g: 0.705995, b: 0.9264706, a: 1}
+        second: {r: 0.12975776, g: 0.58823526, b: 0.32263446, a: 1}
