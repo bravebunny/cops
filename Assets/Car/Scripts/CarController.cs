@@ -54,20 +54,18 @@ public class CarController : MonoBehaviour {
         float xDist = 1.2f;
         float yDist = 0.8f;
 
-        ArrayList suspensionInfo = new ArrayList();
+        RaycastHit[] suspensionInfo = new RaycastHit[4];
 
-
-        Suspension(3, Body.position + transform.rotation * new Vector3(xDist, 0, yDist), ref suspensionInfo);
-        Suspension(4, Body.position + transform.rotation * new Vector3(-xDist, 0, yDist), ref suspensionInfo);
-        Suspension(1, Body.position + transform.rotation * new Vector3(xDist, 0, -yDist), ref suspensionInfo);
-        Suspension(2, Body.position + transform.rotation * new Vector3(-xDist, 0, -yDist), ref suspensionInfo);
+        Suspension(3, Body.position + transform.rotation * new Vector3(xDist, 0, yDist), ref suspensionInfo[0]);
+        Suspension(4, Body.position + transform.rotation * new Vector3(-xDist, 0, yDist), ref suspensionInfo[1]);
+        Suspension(1, Body.position + transform.rotation * new Vector3(xDist, 0, -yDist), ref suspensionInfo[2]);
+        Suspension(2, Body.position + transform.rotation * new Vector3(-xDist, 0, -yDist), ref suspensionInfo[3]);
 
         Vector3 groundNormal = Vector3.zero;
-        bool grounded = false;
-        foreach (RaycastHit r in suspensionInfo) {
+        bool grounded = true;
+        for (int i = 0; i < suspensionInfo.Length; i++) {
             grounded = true;
-            groundNormal += r.normal;
-            Debug.Log(r);
+            groundNormal += suspensionInfo[i].normal;
         }
         groundNormal.Normalize();
 
@@ -109,9 +107,8 @@ public class CarController : MonoBehaviour {
     }
 
 
-    bool Suspension (int index, Vector3 origin, ref ArrayList infoList) {
+    bool Suspension (int index, Vector3 origin, ref RaycastHit info) {
         Vector3 direction = -transform.up;
-        RaycastHit info = new RaycastHit();
         bool grounded = Physics.Raycast(origin, direction, out info, SuspensionHeight);
         Transform wheel = transform.GetChild(0).GetChild(index);
 
@@ -121,7 +118,6 @@ public class CarController : MonoBehaviour {
             float strength = SuspensionStrength / (info.distance / SuspensionHeight) - SuspensionStrength;
             Vector3 push = transform.rotation * new Vector3(0, strength, 0);
             Body.AddForceAtPosition(push, origin);
-            infoList.Add(info);
         } else {
             wheel.position = origin + direction * SuspensionHeight * 0.75f;
         }
