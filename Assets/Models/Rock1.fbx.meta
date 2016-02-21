@@ -12,7 +12,9 @@ ModelImporter:
     400002: Icosphere
     400004: //RootNode
     2300000: Icosphere
+    2300002: //RootNode
     3300000: Icosphere
+    3300002: //RootNode
     4300000: Icosphere
   materials:
     importMaterials: 0
