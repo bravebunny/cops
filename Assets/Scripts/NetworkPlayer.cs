@@ -14,6 +14,8 @@ public class NetworkPlayer : NetworkBehaviour {
     protected Rigidbody _rigidbody;
     protected CarController _carControlller; // the car controller we want to use
 
+    int bustedLevel = 0;
+
     float steering;
     float accel;
 
@@ -22,6 +24,8 @@ public class NetworkPlayer : NetworkBehaviour {
         Index = GameManager.RegisterPlayer(this);
 
         isLocalGame = GameManager.isLocalGame;
+
+        EnableCar(false);
 
         _rigidbody = GetComponent<Rigidbody>();
         _carControlller = GetComponent<CarController>();
@@ -37,6 +41,14 @@ public class NetworkPlayer : NetworkBehaviour {
             GameManager.SetLayoutByPlayerIndex(Index);
     }
 
+    void OnCollisionStay(Collision collisionInfo) {
+        if (collisionInfo.collider.tag != "Cop")
+            return;
+
+        bustedLevel += 5;
+    }
+
+
 //    [ClientCallback]
     void Update() {
         if (!isLocalPlayer && !isLocalGame) {
@@ -46,6 +58,11 @@ public class NetworkPlayer : NetworkBehaviour {
         if (Type == "CAR") {
             steering = CrossPlatformInputManager.GetAxis("Horizontal");
             accel = CrossPlatformInputManager.GetAxis("Vertical");
+
+            if (bustedLevel > 0) {
+                bustedLevel--;
+                print("bustedLevel " + bustedLevel.ToString());
+            }
         } else {
             if (GameManager.Layout != 0 && Input.GetMouseButtonDown(0)) {
                 Vector3 pos = Input.mousePosition;
