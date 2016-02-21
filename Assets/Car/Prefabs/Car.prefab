@@ -424,6 +424,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 
   Index: 0
+  bustedLevel: 0
 --- !u!114 &11456848
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -490,8 +491,8 @@ MonoBehaviour:
   Speed: 150
   SidewaysCompensation: 0
   SuspensionStrength: 100
-  TurningSpeed: 50
-  DebugOn: 1
+  TurningSpeed: 40
+  DebugOn: 0
   SuspensionHeight: 0.8
   Drag: 3
   Blocked: 0
@@ -508,7 +509,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: TurningSpeed
-      value: 50
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: Speed
@@ -553,6 +554,18 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: SuspensionHeight
       value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Drag
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: DebugOn
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: SidewaysCompensation
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
