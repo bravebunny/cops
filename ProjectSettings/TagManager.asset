@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Garage
+  - Cop
   layers:
   - Default
   - TransparentFX

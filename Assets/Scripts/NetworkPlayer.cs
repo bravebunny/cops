@@ -14,7 +14,7 @@ public class NetworkPlayer : NetworkBehaviour {
     protected Rigidbody _rigidbody;
     protected CarController _carControlller; // the car controller we want to use
 
-    int bustedLevel = 0;
+    public int bustedLevel = 0;
 
     float steering;
     float accel;
@@ -61,7 +61,7 @@ public class NetworkPlayer : NetworkBehaviour {
 
             if (bustedLevel > 0) {
                 bustedLevel--;
-                print("bustedLevel " + bustedLevel.ToString());
+//                print("bustedLevel " + bustedLevel.ToString());
             }
         } else {
             if (GameManager.Layout != 0 && Input.GetMouseButtonDown(0)) {

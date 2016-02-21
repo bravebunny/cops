@@ -8,6 +8,7 @@ using UnityEngine.Networking;
 public class GameManager : NetworkBehaviour {
     public GameObject CopPrefab;
     public GameObject LocalPlayerPrefab;
+    public Slider BustedSlider;
 
     public static bool isLocalGame = true;
     public static GameObject StaticCopPrefab;
@@ -18,6 +19,8 @@ public class GameManager : NetworkBehaviour {
     public static int Round = 0;
 
     static public List<NetworkPlayer> Players = new List<NetworkPlayer>();
+    static public NetworkPlayer CarPlayer;
+    static public NetworkPlayer CopPlayer;
     static public List<GameObject> Cops = new List<GameObject> ();
     static public GameManager sInstance = null;
 
@@ -90,6 +93,13 @@ public class GameManager : NetworkBehaviour {
 
         if (CarCamera != null && CopCamera != null)
             UpdateCamera ();
+
+        if (CarPlayer.bustedLevel > 0) {
+            BustedSlider.gameObject.SetActive(true);
+            BustedSlider.value = CarPlayer.bustedLevel;
+        } else {
+            BustedSlider.gameObject.SetActive(false);
+        }
     }
 
     public static void SetLayoutByPlayerIndex (int index) {
@@ -140,6 +150,9 @@ public class GameManager : NetworkBehaviour {
 
             if (type == "CAR") {
                 Car = Players[i].gameObject;
+                CarPlayer = Players[i];
+            } else {
+                CopPlayer = Players[i];
             }
         }
 
