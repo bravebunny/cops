@@ -27,11 +27,11 @@ public class CarController : MonoBehaviour {
         if (collision.gameObject.tag.Equals("Garage") == true)
         {
             var VecDist = collision.transform.position - Body.position;
-            if (VecDist.magnitude <= 7) {
+            if (VecDist.magnitude <= 3) {
                 Finish = true;
                 Debug.Log("Inside Garage");
             }
-            // if (DebugOn)  Debug.Log("Distance To Garage: " + VecDist.magnitude);
+            if (DebugOn)  Debug.Log("Distance To Garage: " + VecDist.magnitude);
         }
     }
 
