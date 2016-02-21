@@ -14,6 +14,7 @@ public class CarController : MonoBehaviour {
     public float CurrentSpeed{ get { return Body.velocity.magnitude*2.23693629f; }}
 
     private Rigidbody Body;
+    private int directionVal;
 
     private bool Finish = false;
 
@@ -31,7 +32,7 @@ public class CarController : MonoBehaviour {
                 Finish = true;
                 Debug.Log("Inside Garage");
             }
-            if (DebugOn)  Debug.Log("Distance To Garage: " + VecDist.magnitude);
+            // if (DebugOn)  Debug.Log("Distance To Garage: " + VecDist.magnitude);
         }
     }
 
@@ -42,11 +43,10 @@ public class CarController : MonoBehaviour {
 
         if (DebugOn) Debug.DrawRay(Body.position, -transform.up, Color.red, -1, false);
 
-        int direction;
-        if (accel != 0) direction = (int)(accel / Mathf.Abs(accel));
-        else direction = 1;
+        if (accel != 0) directionVal = (int)(accel / Mathf.Abs(accel));
+        else directionVal = 1;
 
-        Body.AddRelativeTorque(0, steering * TurningSpeed * direction, 0);
+        Body.AddRelativeTorque(0, steering * TurningSpeed * directionVal, 0);
 
         if (grounded) {
             Body.drag = 5;
@@ -60,7 +60,7 @@ public class CarController : MonoBehaviour {
 
             Vector3 projectedForce = Vector3.ProjectOnPlane(force, groundNormal);
 
-            Vector3 forcePosition = Body.position + transform.rotation * new Vector3(2 * direction, -1.5f, 0);
+            Vector3 forcePosition = Body.position + transform.rotation * new Vector3(2 * directionVal, -1.5f, 0);
 
             if (DebugOn) Debug.DrawLine(forcePosition, Body.position, Color.black, -1, false);
             if (DebugOn) Debug.DrawRay(forcePosition, projectedForce, Color.blue, -1, false);
@@ -100,7 +100,7 @@ public class CarController : MonoBehaviour {
             wheel.position = origin + direction * SuspensionHeight * 0.75f;
         }
        
-        wheel.Rotate(new Vector3(0,0, CurrentSpeed * 0.5f));
+        wheel.Rotate(new Vector3(0,0, CurrentSpeed * 0.5f * directionVal));
 
         if (DebugOn) {
             if (grounded) {
