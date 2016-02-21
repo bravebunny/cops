@@ -49,7 +49,7 @@ public class CarController : MonoBehaviour {
         Body.AddRelativeTorque(0, steering * TurningSpeed * directionVal, 0);
 
         if (grounded) {
-            Body.drag = 5;
+            Body.drag = Drag;
 
             Vector3 velocity = Body.velocity;
             float sidewaysVelocity = transform.InverseTransformDirection(Body.velocity).z;
@@ -71,6 +71,9 @@ public class CarController : MonoBehaviour {
 
             if (DebugOn && Blocked) Debug.Log("Blocked");
         } else {
+            Debug.Log(Body.rotation.eulerAngles.z);
+            float angleZ = Body.rotation.eulerAngles.z;
+            if (angleZ > 350 || angleZ < 60) Body.AddRelativeTorque(0, 0, -20);
             Body.drag = 0;
         }
 
