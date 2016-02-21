@@ -15,6 +15,8 @@ public class CarController : MonoBehaviour {
 
     private Rigidbody Body;
     private int directionVal;
+    private float AngleZ = 0;
+    private float AngleX = 0;
 
     private bool Finish = false;
 
@@ -67,14 +69,20 @@ public class CarController : MonoBehaviour {
 
             Body.AddForceAtPosition(projectedForce, forcePosition);
 
+
             Blocked = (velocity.magnitude < 1 && force.magnitude >= 1);
 
             if (DebugOn && Blocked) Debug.Log("Blocked");
         } else {
-            Debug.Log(Body.rotation.eulerAngles.z);
-            float angleZ = Body.rotation.eulerAngles.z;
-            if (angleZ > 350 || angleZ < 60) Body.AddRelativeTorque(0, 0, -20);
+            Vector3 angles = transform.eulerAngles;
+            float angleZ = angles.z;
+            float angleX = angles.x;
+            //if (angleZ > 350 || angleZ < 60) Body.AddRelativeTorque(0, 0, -20);
             Body.drag = 0;
+            float newAngleZ = Mathf.SmoothDampAngle(angleZ, -15, ref AngleZ, 1f);
+            float newAngleX = Mathf.SmoothDampAngle(angleX, 0, ref AngleX, 1f);
+
+            transform.eulerAngles = new Vector3 (newAngleX, angles.y, newAngleZ);
         }
 
         //distance of the wheels to the car
