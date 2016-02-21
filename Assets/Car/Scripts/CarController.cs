@@ -40,8 +40,9 @@ public class CarController : MonoBehaviour {
 
     public void Move (float steering, float accel) {
         RaycastHit raycastInfo = new RaycastHit();
-        float raycastDistance = SuspensionHeight + 0.5f;
+        float raycastDistance = SuspensionHeight + 1f;
         bool grounded = Physics.Raycast(Body.position, -transform.up, out raycastInfo, raycastDistance);
+        bool notClimbing = Physics.Raycast(Body.position, -Vector3.up, out raycastInfo, raycastDistance);
 
         if (DebugOn) Debug.DrawRay(Body.position, -transform.up, Color.red, -1, false);
 
@@ -50,7 +51,7 @@ public class CarController : MonoBehaviour {
 
         Body.AddRelativeTorque(0, steering * TurningSpeed * directionVal, 0);
 
-        if (grounded) {
+        if (grounded && notClimbing) {
             Body.drag = Drag;
 
             Vector3 velocity = Body.velocity;
@@ -79,14 +80,14 @@ public class CarController : MonoBehaviour {
             float angleX = angles.x;
             //if (angleZ > 350 || angleZ < 60) Body.AddRelativeTorque(0, 0, -20);
             Body.drag = 0;
-            float newAngleZ = Mathf.SmoothDampAngle(angleZ, -15, ref AngleZ, 1f);
+            float newAngleZ = Mathf.SmoothDampAngle(angleZ, -25, ref AngleZ, 1f);
             float newAngleX = Mathf.SmoothDampAngle(angleX, 0, ref AngleX, 1f);
 
             transform.eulerAngles = new Vector3 (newAngleX, angles.y, newAngleZ);
         }
 
         //distance of the wheels to the car
-        float xDist = 1f;
+        float xDist = 1.2f;
         float yDist = 0.8f;
         Suspension(3, Body.position + transform.rotation * new Vector3(xDist, 0, yDist));
         Suspension(4, Body.position + transform.rotation * new Vector3(-xDist, 0, yDist));
