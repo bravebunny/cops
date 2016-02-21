@@ -7,7 +7,7 @@ public class CarController : MonoBehaviour {
     public float SuspensionStrength = 5;
     public float TurningSpeed = 2;
     public bool DebugOn = true;
-    public float SuspensionHeight = 3;
+    public float SuspensionHeight = 1;
     public float Drag = 5;
 
     [HideInInspector] public bool Blocked = false;
