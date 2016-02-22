@@ -47,8 +47,16 @@ public class CarController : MonoBehaviour {
     void OnTriggerEnter(Collider collider) {
         if (collider.gameObject.tag.Equals("Destructible")) {
             foreach (Transform child in collider.transform) {
+                //enable physics
                 child.GetComponent<Rigidbody>().isKinematic = false;
-                child.GetComponent<BoxCollider>().enabled = true;
+
+                //enable collisions if usnig box collider
+                if (child.GetComponent<BoxCollider>())
+                    child.GetComponent<BoxCollider>().enabled = true;
+
+                //enable collisions if using mesh collider
+                /*else if (child.GetComponent<MeshCollider>())
+                    child.GetComponent<MeshCollider>().enabled = true;*/
             }
         }
     }
