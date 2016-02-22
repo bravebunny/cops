@@ -36,8 +36,19 @@ public class CarController : MonoBehaviour {
                 }
                 break;
             case "Destructible":
-                collision.rigidbody.constraints = RigidbodyConstraints.None;
+                collision.collider.enabled = false;
+                foreach (Rigidbody child in collision.transform.GetComponentsInChildren<Rigidbody>()) {
+                    child.constraints = RigidbodyConstraints.None;
+                }
                 break;
+        }
+    }
+
+    void OnTriggerEnter(Collider collider) {
+        if (collider.gameObject.tag.Equals("Destructible")) {
+            foreach (Rigidbody child in collider.transform.GetComponentsInChildren<Rigidbody>()) {
+                child.constraints = RigidbodyConstraints.None;
+            }
         }
     }
 
