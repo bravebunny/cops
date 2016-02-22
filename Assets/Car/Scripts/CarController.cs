@@ -27,14 +27,17 @@ public class CarController : MonoBehaviour {
     }
 
     void OnCollisionEnter(Collision collision) {
-        if (collision.gameObject.tag.Equals("Garage") == true)
-        {
-            var VecDist = collision.transform.position - Body.position;
-            if (VecDist.magnitude <= 3) {
-                Finish = true;
-                Debug.Log("Inside Garage");
-            }
-            // if (DebugOn)  Debug.Log("Distance To Garage: " + VecDist.magnitude);
+        switch (collision.gameObject.tag) {
+            case "Garage":
+                var VecDist = collision.transform.position - Body.position;
+                if (VecDist.magnitude <= 3) {
+                    Finish = true;
+                    Debug.Log("Inside Garage");
+                }
+                break;
+            case "Destructible":
+                collision.rigidbody.constraints = RigidbodyConstraints.None;
+                break;
         }
     }
 
@@ -51,7 +54,7 @@ public class CarController : MonoBehaviour {
 
         Body.AddRelativeTorque(0, steering * TurningSpeed * directionVal, 0);
 
-        if (grounded && notClimbing) {
+        if (grounded) {
             Body.drag = Drag;
 
             Vector3 velocity = Body.velocity;
