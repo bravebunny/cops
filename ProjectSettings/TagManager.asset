@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Garage
   - Cop
+  - Destructible
   layers:
   - Default
   - TransparentFX
