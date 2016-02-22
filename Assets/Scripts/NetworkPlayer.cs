@@ -15,6 +15,8 @@ public class NetworkPlayer : NetworkBehaviour {
     protected CarController _carControlller; // the car controller we want to use
 
     public int bustedLevel = 0;
+    public bool insideGarage = false;
+
 
     float steering;
     float accel;
@@ -41,11 +43,25 @@ public class NetworkPlayer : NetworkBehaviour {
             GameManager.SetLayoutByPlayerIndex(Index);
     }
 
-    void OnCollisionStay(Collision collisionInfo) {
-        if (collisionInfo.collider.tag != "Cop")
-            return;
+    void OnCollisionEnter(Collision collision) {
+        switch (collision.gameObject.tag) {
+            case "Garage":
+                var VecDist = collision.transform.position - _rigidbody.position;
+                if (VecDist.magnitude <= 3) {
+                    insideGarage = true;
+                    Debug.Log("Inside Garage");
+                }
+                break;
+        }
+    }
 
-        bustedLevel += 5;
+    void OnCollisionStay(Collision collision) {
+        switch (collision.gameObject.tag) {
+            case "Cop":
+                bustedLevel += 5;
+                break;
+        }
+
     }
 
 
@@ -58,11 +74,6 @@ public class NetworkPlayer : NetworkBehaviour {
         if (Type == "CAR") {
             steering = CrossPlatformInputManager.GetAxis("Horizontal");
             accel = CrossPlatformInputManager.GetAxis("Vertical");
-
-            if (bustedLevel > 0) {
-                bustedLevel--;
-//                print("bustedLevel " + bustedLevel.ToString());
-            }
         } else {
             if (GameManager.Layout != 0 && Input.GetMouseButtonDown(0)) {
                 Vector3 pos = Input.mousePosition;
@@ -86,6 +97,11 @@ public class NetworkPlayer : NetworkBehaviour {
 
         if (Type == "CAR") {
             _carControlller.Move(steering, accel);
+
+            if (bustedLevel > 0) {
+                bustedLevel--;
+                //                print("bustedLevel " + bustedLevel.ToString());
+            }
         }
     }
 

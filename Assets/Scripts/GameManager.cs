@@ -9,6 +9,7 @@ public class GameManager : NetworkBehaviour {
     public GameObject CopPrefab;
     public GameObject LocalPlayerPrefab;
     public Slider BustedSlider;
+    public Text EndText;
 
     public static bool isLocalGame = true;
     public static GameObject StaticCopPrefab;
@@ -35,6 +36,7 @@ public class GameManager : NetworkBehaviour {
 
     private void Start() {
         Physics.gravity = new Vector3(0, -30.0f, 0);
+        Time.timeScale = 1;
 
         GameObject lobby = GameObject.Find("LobbyManager");
         isLocalGame = (lobby == null);
@@ -94,12 +96,30 @@ public class GameManager : NetworkBehaviour {
         if (CarCamera != null && CopCamera != null)
             UpdateCamera ();
 
-        if (CarPlayer.bustedLevel > 0) {
+        if (CarPlayer.insideGarage) {
+            EndRound(false);
+        } else if (CarPlayer.bustedLevel > 0) {
             BustedSlider.gameObject.SetActive(true);
             BustedSlider.value = CarPlayer.bustedLevel;
+
+            if (CarPlayer.bustedLevel >= BustedSlider.maxValue) {
+                EndRound(true);
+            }
         } else {
             BustedSlider.gameObject.SetActive(false);
         }
+    }
+
+    void EndRound (bool busted) {
+        Time.timeScale = 0;
+        EndText.gameObject.SetActive(true);
+
+        if (busted) {
+            EndText.text = "COP WINS!";
+        } else {
+            EndText.text = "CAR WINS!";
+        }
+
     }
 
     public static void SetLayoutByPlayerIndex (int index) {

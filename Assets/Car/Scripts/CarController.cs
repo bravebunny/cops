@@ -18,8 +18,6 @@ public class CarController : MonoBehaviour {
     private float AngleZ = 0;
     private float AngleX = 0;
 
-    private bool Finish = false;
-
     // Use this for initialization
     void Start () {
         Body = GetComponent<Rigidbody>();
@@ -28,13 +26,6 @@ public class CarController : MonoBehaviour {
 
     void OnCollisionEnter(Collision collision) {
         switch (collision.gameObject.tag) {
-            case "Garage":
-                var VecDist = collision.transform.position - Body.position;
-                if (VecDist.magnitude <= 3) {
-                    Finish = true;
-                    Debug.Log("Inside Garage");
-                }
-                break;
             case "Destructible":
                 collision.collider.enabled = false;
                 foreach (Rigidbody child in collision.transform.GetComponentsInChildren<Rigidbody>()) {
