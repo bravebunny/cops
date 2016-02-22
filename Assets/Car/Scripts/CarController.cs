@@ -53,6 +53,9 @@ public class CarController : MonoBehaviour {
     }
 
     public void Move (float steering, float accel) {
+        if (Body == null)
+            return;
+
         RaycastHit raycastInfo = new RaycastHit();
         float raycastDistance = SuspensionHeight + 1f;
         bool grounded = Physics.Raycast(Body.position, -transform.up, out raycastInfo, raycastDistance);
