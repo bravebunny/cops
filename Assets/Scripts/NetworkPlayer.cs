@@ -58,11 +58,6 @@ public class NetworkPlayer : NetworkBehaviour {
         if (Type == "CAR") {
             steering = CrossPlatformInputManager.GetAxis("Horizontal");
             accel = CrossPlatformInputManager.GetAxis("Vertical");
-
-            if (bustedLevel > 0) {
-                bustedLevel--;
-//                print("bustedLevel " + bustedLevel.ToString());
-            }
         } else {
             if (GameManager.Layout != 0 && Input.GetMouseButtonDown(0)) {
                 Vector3 pos = Input.mousePosition;
@@ -86,6 +81,11 @@ public class NetworkPlayer : NetworkBehaviour {
 
         if (Type == "CAR") {
             _carControlller.Move(steering, accel);
+
+            if (bustedLevel > 0) {
+                bustedLevel--;
+                //                print("bustedLevel " + bustedLevel.ToString());
+            }
         }
     }
 
