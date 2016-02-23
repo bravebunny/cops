@@ -74,19 +74,19 @@ public class CarController : MonoBehaviour {
             Vector3 velocity = Body.velocity;
             float sidewaysVelocity = transform.InverseTransformDirection(Body.velocity).z;
 
-            Vector3 force = transform.rotation * new Vector3(accel * Speed, 0, -sidewaysVelocity * SidewaysCompensation);
+            Vector3 force = transform.right * accel * Speed;
+            //Vector3 force = transform.rotation * new Vector3(accel * Speed, 0, -sidewaysVelocity * SidewaysCompensation);
             Vector3 groundNormal = raycastInfo.normal;
             if (DebugOn) Debug.DrawRay(raycastInfo.point, groundNormal, Color.green, -1, false);
 
             Vector3 projectedForce = Vector3.ProjectOnPlane(force, groundNormal);
 
-            Vector3 forcePosition = Body.position + transform.rotation * new Vector3(2 * directionVal, -1.5f, 0);
+            Vector3 forcePosition = Body.position + transform.rotation * new Vector3(-2 * directionVal, 0, 0);
 
             if (DebugOn) Debug.DrawLine(forcePosition, Body.position, Color.black, -1, false);
             if (DebugOn) Debug.DrawRay(forcePosition, projectedForce, Color.blue, -1, false);
 
-            Body.AddForceAtPosition(projectedForce, forcePosition);
-
+            Body.AddForce(projectedForce);
 
             Blocked = (velocity.magnitude < 1 && force.magnitude >= 1);
         } else {
@@ -121,7 +121,8 @@ public class CarController : MonoBehaviour {
             float wheelHeight = 0.25f;
             wheel.position = new Vector3(info.point.x, info.point.y + wheelHeight, info.point.z);
             float strength = SuspensionStrength / (info.distance / SuspensionHeight) - SuspensionStrength;
-            Vector3 push = transform.rotation * new Vector3(0, strength, 0);
+            //Vector3 push = transform.rotation * new Vector3(0, strength, 0);
+            Vector3 push = transform.up * strength;
             Body.AddForceAtPosition(push, origin);
         } else {
             wheel.position = origin + direction * SuspensionHeight * 0.75f;
