@@ -89,8 +89,6 @@ public class CarController : MonoBehaviour {
 
 
             Blocked = (velocity.magnitude < 1 && force.magnitude >= 1);
-
-            if (DebugOn && Blocked) Debug.Log("Blocked");
         } else {
             Vector3 angles = transform.eulerAngles;
             float angleZ = angles.z;

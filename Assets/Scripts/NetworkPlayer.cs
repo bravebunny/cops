@@ -25,6 +25,8 @@ public class NetworkPlayer : NetworkBehaviour {
         //register the player in the gamemanager, that will allow to loop on it.
         Index = GameManager.RegisterPlayer(this);
 
+        DontDestroyOnLoad(this.gameObject);
+
         isLocalGame = GameManager.isLocalGame;
 
         EnableCar(false);
@@ -32,7 +34,7 @@ public class NetworkPlayer : NetworkBehaviour {
         _rigidbody = GetComponent<Rigidbody>();
         _carControlller = GetComponent<CarController>();
     }
-        
+
     // Use this for initialization
     void Start () {
         if (Type != null) {
@@ -133,6 +135,8 @@ public class NetworkPlayer : NetworkBehaviour {
     // We can't disable the whole object, as it would impair synchronisation/communication
     // So disabling mean disabling collider & renderer only
     public void EnableCar(bool enable) {
+        gameObject.SetActive(true);
+
         GetComponent<Collider>().enabled = enable;
         GetComponent<NetworkTransform>().enabled = enable;
         GetComponent<CarController>().enabled = enable;
@@ -148,10 +152,18 @@ public class NetworkPlayer : NetworkBehaviour {
     public void SetType (string newType) {
         Type = newType;
         EnableCar(Type == "CAR");
+
+        bustedLevel = 0;
+        insideGarage = false;
+
+        if (_rigidbody != null) {
+            Transform startPosition = GameObject.FindObjectOfType<NetworkStartPosition>().transform;
+            _rigidbody.position = startPosition.position;
+            _rigidbody.rotation = Quaternion.identity;
+        }
     }
 
-    void OnDestroy()
-    {
+    void OnDestroy() {
         GameManager.Players.Remove(this);
     }
 }

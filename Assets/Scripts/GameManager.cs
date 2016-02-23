@@ -8,8 +8,10 @@ using UnityEngine.Networking;
 public class GameManager : NetworkBehaviour {
     public GameObject CopPrefab;
     public GameObject LocalPlayerPrefab;
+    public Canvas UI;
     public Slider BustedSlider;
     public Text EndText;
+    public Text RoundText;
 
     public static bool isLocalGame = true;
     public static GameObject StaticCopPrefab;
@@ -25,11 +27,30 @@ public class GameManager : NetworkBehaviour {
     static public List<GameObject> Cops = new List<GameObject> ();
     static public GameManager sInstance = null;
 
+    private bool duplicate = false;
+    private bool roundEnded = false;
+
+
     void Awake() {
         sInstance = this;
 
         CarCamera = GameObject.Find("CarCamera").GetComponent<Camera>();
         CopCamera = GameObject.Find("CopCamera").GetComponent<Camera>();
+
+        var managers = GameObject.FindObjectsOfType<GameManager>();
+        var canvases = GameObject.FindObjectsOfType<Canvas>();
+
+        if (managers.Length == 1) {
+            // this is the first instance - make it persist
+            DontDestroyOnLoad(this.gameObject);
+            DontDestroyOnLoad(UI);
+        } else {
+            // this must be a duplicate from a scene reload - DESTROY!
+            Destroy(this.gameObject);
+            Destroy(canvases[1].gameObject);
+            duplicate = true;
+            return;
+        }
 
         StaticCopPrefab = CopPrefab;
     }
@@ -51,8 +72,26 @@ public class GameManager : NetworkBehaviour {
             for (int i = 0; i < 2; i++) {
                 Instantiate(LocalPlayerPrefab, startPosition.position, Quaternion.identity);
             }
-
         }
+    }
+
+    void OnLevelWasLoaded() {
+        if (duplicate)
+            return;
+
+        StartRound();
+    }
+
+    void StartRound () {
+        Time.timeScale = 1;
+        EndText.gameObject.SetActive(false);
+        roundEnded = false;
+        Round++;
+        SetPlayerTypes();
+
+        RoundText.text = "ROUND #" + Round.ToString();
+
+        Layout = 2 + Round % 2;
     }
 
     public static int RegisterPlayer(NetworkPlayer player) {
@@ -92,6 +131,9 @@ public class GameManager : NetworkBehaviour {
         else if (Input.GetKeyDown (KeyCode.Alpha3)) {
             Layout = 2;
         }
+        else if (Input.GetKeyDown (KeyCode.Alpha4)) {
+            Layout = 3;
+        }
 
         if (CarCamera != null && CopCamera != null)
             UpdateCamera ();
@@ -113,13 +155,13 @@ public class GameManager : NetworkBehaviour {
     void EndRound (bool busted) {
         Time.timeScale = 0;
         EndText.gameObject.SetActive(true);
+        roundEnded = true;
 
         if (busted) {
             EndText.text = "COP WINS!";
         } else {
             EndText.text = "CAR WINS!";
         }
-
     }
 
     public static void SetLayoutByPlayerIndex (int index) {
@@ -145,6 +187,10 @@ public class GameManager : NetworkBehaviour {
             case 2:
                 CarCamera.rect = new Rect(0, 0, 0.5f, 1);
                 CopCamera.rect = new Rect(0.5f, 0, 0.5f, 1);
+                break;
+            case 3:
+                CarCamera.rect = new Rect(0.5f, 0, 0.5f, 1);
+                CopCamera.rect = new Rect(0, 0, 0.5f, 1);
                 break;
         }
     }
