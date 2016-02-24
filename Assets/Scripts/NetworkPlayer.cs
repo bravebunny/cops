@@ -109,6 +109,7 @@ public class NetworkPlayer : NetworkBehaviour {
     }
 
     public void SpawnCop(Vector3 position) {
+        position.y = 2;
         GameObject cop = GameManager.SpawnCop(position);
 
         if (isLocalGame)
