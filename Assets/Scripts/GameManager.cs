@@ -15,6 +15,8 @@ public class GameManager : NetworkBehaviour {
     public Text PlayerAWinsText;
     public Text PlayerBWinsText;
 
+    public int MinCopDistance = 10;
+
     public static bool isLocalGame = true;
     public static GameObject StaticCopPrefab;
     public static GameObject Car;
@@ -108,8 +110,6 @@ public class GameManager : NetworkBehaviour {
 
 
     public static GameObject SpawnCop(Vector3 position) {
-        position.y = 2;
-
         GameObject cop = Instantiate(StaticCopPrefab, position, Car.GetComponent<Rigidbody>().rotation) as GameObject;
 
         cop.GetComponent<CarAIController>().SetTarget(Car.transform);
@@ -156,6 +156,8 @@ public class GameManager : NetworkBehaviour {
         } else {
             BustedSlider.gameObject.SetActive(false);
         }
+
+        TriggerSpawner();
     }
 
     void EndRound (bool busted) {
@@ -241,5 +243,40 @@ public class GameManager : NetworkBehaviour {
         }
 
         CarCamera.GetComponent<CameraController>().SetTarget(Car.transform);
+    }
+
+    GameObject GetClosestSpawner() {
+        GameObject[] spawners = GameObject.FindGameObjectsWithTag("CopSpawn");
+        GameObject bestTarget = null;
+        float closestDistanceSqr = Mathf.Infinity;
+        Vector3 currentPosition = Car.transform.position;
+        foreach (GameObject potentialTarget in spawners) {
+            Vector3 directionToTarget = potentialTarget.transform.position - currentPosition;
+            float dSqrToTarget = directionToTarget.sqrMagnitude;
+            if (dSqrToTarget < closestDistanceSqr && dSqrToTarget < MinCopDistance) {
+                closestDistanceSqr = dSqrToTarget;
+                bestTarget = potentialTarget;
+            }
+        }
+
+        return bestTarget;
+    }
+
+    void TriggerSpawner() {
+        GameObject spawner = GetClosestSpawner();
+        if (spawner == null) return;
+
+        spawner.tag = "CopSpawnDisabled";
+        Vector3 position = spawner.transform.position;
+
+        StartCoroutine(SpawnMultipleCops(10, position, -spawner.transform.eulerAngles, 0.2f));
+    }
+
+    IEnumerator SpawnMultipleCops(int quantity, Vector3 position, Vector3 eulerAngles, float rate) {
+        for (int i = 0; i < quantity; i++) {
+            GameObject cop = SpawnCop(position);
+            cop.transform.eulerAngles = eulerAngles;
+            yield return new WaitForSeconds(rate);
+        }
     }
 }

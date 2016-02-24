@@ -424,7 +424,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 
   Index: 0
+  Wins: 0
   bustedLevel: 0
+  insideGarage: 0
 --- !u!114 &11456848
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -492,9 +494,9 @@ MonoBehaviour:
   SidewaysCompensation: 0
   SuspensionStrength: 100
   TurningSpeed: 40
-  DebugOn: 0
+  DebugOn: 1
   SuspensionHeight: 0.8
-  Drag: 3
+  Drag: 5
   Blocked: 0
 --- !u!1001 &100100000
 Prefab:
@@ -557,11 +559,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: Drag
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: DebugOn
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: SidewaysCompensation
