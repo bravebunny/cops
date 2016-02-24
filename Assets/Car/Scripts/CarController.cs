@@ -14,9 +14,10 @@ public class CarController : MonoBehaviour {
     public float CurrentSpeed{ get { return Body.velocity.magnitude*2.23693629f; }}
 
     private Rigidbody Body;
-    private int directionVal;
+    private int DirectionVal;
     private float AngleZ = 0;
     private float AngleX = 0;
+    private float RotationDirection;
 
     // Use this for initialization
     void Start () {
@@ -63,10 +64,10 @@ public class CarController : MonoBehaviour {
 
         if (DebugOn) Debug.DrawRay(Body.position, -transform.up, Color.red, -1, false);
 
-        if (accel != 0) directionVal = (int)(accel / Mathf.Abs(accel));
-        else directionVal = 1;
+        if (accel != 0) DirectionVal = (int)(accel / Mathf.Abs(accel));
+        else DirectionVal = 1;
 
-        Body.AddRelativeTorque(0, steering * TurningSpeed * directionVal, 0);
+        Body.AddRelativeTorque(0, steering * TurningSpeed * DirectionVal, 0);
 
         if (grounded) {
             Body.drag = Drag;
@@ -81,7 +82,7 @@ public class CarController : MonoBehaviour {
 
             Vector3 projectedForce = Vector3.ProjectOnPlane(force, groundNormal);
 
-            Vector3 forcePosition = Body.position + transform.rotation * new Vector3(-2 * directionVal, 0, 0);
+            Vector3 forcePosition = Body.position + transform.rotation * new Vector3(-2 * DirectionVal, 0, 0);
 
             if (DebugOn) Debug.DrawLine(forcePosition, Body.position, Color.black, -1, false);
             if (DebugOn) Debug.DrawRay(forcePosition, projectedForce, Color.blue, -1, false);
@@ -122,14 +123,13 @@ public class CarController : MonoBehaviour {
             wheel.position = new Vector3(info.point.x, info.point.y + wheelHeight, info.point.z);
             float strength = SuspensionStrength / (info.distance / SuspensionHeight) - SuspensionStrength;
             strength = Mathf.Min(strength, 30);
-            Debug.Log(strength);
             Vector3 push = transform.up * strength;
             Body.AddForceAtPosition(push, origin);
         } else {
             wheel.position = origin + direction * SuspensionHeight * 0.75f;
         }
        
-        wheel.Rotate(new Vector3(0,0, CurrentSpeed * 0.5f * directionVal));
+        wheel.Rotate(new Vector3(0,0, transform.InverseTransformDirection(Body.velocity).x * 0.5f));
 
         if (DebugOn) {
             if (grounded) {
