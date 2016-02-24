@@ -12,6 +12,8 @@ public class GameManager : NetworkBehaviour {
     public Slider BustedSlider;
     public Text EndText;
     public Text RoundText;
+    public Text PlayerAWinsText;
+    public Text PlayerBWinsText;
 
     public static bool isLocalGame = true;
     public static GameObject StaticCopPrefab;
@@ -138,6 +140,10 @@ public class GameManager : NetworkBehaviour {
         if (CarCamera != null && CopCamera != null)
             UpdateCamera ();
 
+        if (roundEnded)
+            return;
+
+
         if (CarPlayer.insideGarage) {
             EndRound(false);
         } else if (CarPlayer.bustedLevel > 0) {
@@ -159,9 +165,21 @@ public class GameManager : NetworkBehaviour {
 
         if (busted) {
             EndText.text = "COP WINS!";
+            CopPlayer.Wins++;
         } else {
             EndText.text = "CAR WINS!";
+            CarPlayer.Wins++;
         }
+
+        PlayerAWinsText.text = WinsText(Players[0].Wins);
+        PlayerBWinsText.text = WinsText(Players[1].Wins);
+    }
+
+    string WinsText (int wins) {
+        if (wins == 1)
+            return wins.ToString() + " WIN";
+
+        return wins.ToString() + " WINS";
     }
 
     public static void SetLayoutByPlayerIndex (int index) {

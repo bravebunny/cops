@@ -8,6 +8,7 @@ using UnityStandardAssets.CrossPlatformInput;
 public class NetworkPlayer : NetworkBehaviour {
     public string Type = null;
     public int Index;
+    public int Wins = 0;
 
     public static bool isLocalGame;
 
