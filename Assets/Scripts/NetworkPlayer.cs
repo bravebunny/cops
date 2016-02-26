@@ -61,7 +61,7 @@ public class NetworkPlayer : NetworkBehaviour {
     void OnCollisionStay(Collision collision) {
         switch (collision.gameObject.tag) {
             case "Cop":
-                bustedLevel += 5;
+                bustedLevel += 3;
                 break;
         }
 

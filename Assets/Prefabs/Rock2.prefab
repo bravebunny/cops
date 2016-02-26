@@ -25,6 +25,7 @@ GameObject:
   - 4: {fileID: 425202}
   - 33: {fileID: 3337662}
   - 23: {fileID: 2314026}
+  - 64: {fileID: 6433536}
   m_Layer: 0
   m_Name: Icosphere
   m_TagString: Untagged
@@ -117,6 +118,18 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 149246}
+  m_Mesh: {fileID: 4300000, guid: 7211681b70d0a774fb68bfe0aabc07a7, type: 3}
+--- !u!64 &6433536
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 149246}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
   m_Mesh: {fileID: 4300000, guid: 7211681b70d0a774fb68bfe0aabc07a7, type: 3}
 --- !u!1001 &100100000
 Prefab:
