@@ -25,17 +25,6 @@ public class CarController : MonoBehaviour {
         Body.centerOfMass = new Vector3(0, -1, 0);
     }
 
-    void OnCollisionEnter(Collision collision) {
-        switch (collision.gameObject.tag) {
-            case "Destructible":
-                collision.collider.enabled = false;
-                foreach (Rigidbody child in collision.transform.GetComponentsInChildren<Rigidbody>()) {
-                    child.constraints = RigidbodyConstraints.None;
-                }
-                break;
-        }
-    }
-
     void OnTriggerEnter(Collider collider) {
         if (collider.gameObject.tag.Equals("Destructible")) {
             foreach (Transform child in collider.transform) {
@@ -91,15 +80,16 @@ public class CarController : MonoBehaviour {
 
             Blocked = (velocity.magnitude < 1 && force.magnitude >= 1);
         } else {
-            Vector3 angles = transform.eulerAngles;
+            Body.drag = 0;
+            /*Vector3 angles = transform.eulerAngles;
             float angleZ = angles.z;
             float angleX = angles.x;
             //if (angleZ > 350 || angleZ < 60) Body.AddRelativeTorque(0, 0, -20);
-            Body.drag = 0;
+            
             float newAngleZ = Mathf.SmoothDampAngle(angleZ, -25, ref AngleZ, 1f);
             float newAngleX = Mathf.SmoothDampAngle(angleX, 0, ref AngleX, 1f);
 
-            transform.eulerAngles = new Vector3 (newAngleX, angles.y, newAngleZ);
+            transform.eulerAngles = new Vector3 (newAngleX, angles.y, newAngleZ);*/
         }
 
         //distance of the wheels to the car
