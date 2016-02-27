@@ -46,7 +46,7 @@ public class CameraController : MonoBehaviour
         adjustmentDistance = GetAdjustedDistancewithRayFrom(target.position);
 
         position = target.position;
-        position += Quaternion.Euler(target.eulerAngles.x, target.eulerAngles.y + 90, 0) * new Vector3(0, Height, -Distance);
+        position += Quaternion.Euler(target.eulerAngles.x, target.eulerAngles.y, 0) * new Vector3(0, Height, -Distance);
 
         if (colliding) {
             ajustedDestination = target.position;

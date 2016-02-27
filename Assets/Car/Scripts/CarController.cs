@@ -22,7 +22,7 @@ public class CarController : MonoBehaviour {
     // Use this for initialization
     void Start () {
         Body = GetComponent<Rigidbody>();
-        Body.centerOfMass = new Vector3(0, -1, 0);
+        Body.centerOfMass = Vector3.down;
     }
 
     void OnTriggerEnter(Collider collider) {
@@ -58,13 +58,13 @@ public class CarController : MonoBehaviour {
 
         Body.AddRelativeTorque(0, steering * TurningSpeed * DirectionVal, 0);
 
-        if (grounded) {
+        if (grounded && notClimbing) {
             Body.drag = Drag;
 
             Vector3 velocity = Body.velocity;
-            float sidewaysVelocity = transform.InverseTransformDirection(Body.velocity).z;
+            float sidewaysVelocity = transform.InverseTransformDirection(Body.velocity).x;
 
-            Vector3 force = transform.right * accel * Speed;
+            Vector3 force = transform.forward * accel * Speed;
             //Vector3 force = transform.rotation * new Vector3(accel * Speed, 0, -sidewaysVelocity * SidewaysCompensation);
             Vector3 groundNormal = raycastInfo.normal;
             if (DebugOn) Debug.DrawRay(raycastInfo.point, groundNormal, Color.green, -1, false);
@@ -81,24 +81,15 @@ public class CarController : MonoBehaviour {
             Blocked = (velocity.magnitude < 1 && force.magnitude >= 1);
         } else {
             Body.drag = 0;
-            /*Vector3 angles = transform.eulerAngles;
-            float angleZ = angles.z;
-            float angleX = angles.x;
-            //if (angleZ > 350 || angleZ < 60) Body.AddRelativeTorque(0, 0, -20);
-            
-            float newAngleZ = Mathf.SmoothDampAngle(angleZ, -25, ref AngleZ, 1f);
-            float newAngleX = Mathf.SmoothDampAngle(angleX, 0, ref AngleX, 1f);
-
-            transform.eulerAngles = new Vector3 (newAngleX, angles.y, newAngleZ);*/
         }
 
         //distance of the wheels to the car
-        float xDist = 1.2f;
-        float yDist = 0.8f;
-        Suspension(3, Body.position + transform.rotation * new Vector3(xDist, 0, yDist));
-        Suspension(4, Body.position + transform.rotation * new Vector3(-xDist, 0, yDist));
-        Suspension(1, Body.position + transform.rotation * new Vector3(xDist, 0, -yDist));
-        Suspension(2, Body.position + transform.rotation * new Vector3(-xDist, 0, -yDist));
+        Vector3 xDist = transform.forward;
+        Vector3 zDist = -transform.right * 0.8f;
+        Suspension(3, Body.position + (xDist + zDist));
+        Suspension(4, Body.position + (-xDist + zDist));
+        Suspension(1, Body.position + (xDist - zDist));
+        Suspension(2, Body.position + (-xDist - zDist));
     }
 
 
@@ -119,7 +110,7 @@ public class CarController : MonoBehaviour {
             wheel.position = origin + direction * SuspensionHeight * 0.75f;
         }
        
-        wheel.Rotate(new Vector3(0,0, transform.InverseTransformDirection(Body.velocity).x * 0.5f));
+        wheel.Rotate(new Vector3(0,0, transform.InverseTransformDirection(Body.velocity).z * 0.5f));
 
         if (DebugOn) {
             if (grounded) {

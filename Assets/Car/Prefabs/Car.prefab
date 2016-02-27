@@ -91,12 +91,12 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 435458}
-  - 65: {fileID: 6534278}
   - 54: {fileID: 5431648}
   - 114: {fileID: 11468602}
   - 114: {fileID: 11456848}
   - 114: {fileID: 11460174}
   - 114: {fileID: 11413188}
+  - 65: {fileID: 6503564}
   m_Layer: 0
   m_Name: Car
   m_TagString: Untagged
@@ -163,8 +163,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 177384}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000016292068}
-  m_LocalPosition: {x: -68.2, y: 37.6, z: -221.3}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -65.14212, y: 2.3, z: -102.62029}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 448158}
@@ -188,8 +188,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 161676}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000016292068}
-  m_LocalPosition: {x: -0.478, y: 0.927, z: -0}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071067}
+  m_LocalPosition: {x: 0, y: 0.927, z: -0.45}
   m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_Children:
   - {fileID: 405666}
@@ -399,18 +399,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &6534278
+--- !u!65 &6503564
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 177384}
-  m_Material: {fileID: 13400000, guid: 35de9c987699d454f82d703834681462, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.3, y: 0.8, z: 1.7}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.5999753, y: 0.89999914, z: 3.300003}
+  m_Center: {x: 0, y: 0.05000019, z: 0.049995422}
 --- !u!114 &11413188
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -568,6 +568,26 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: SidewaysCompensation
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalPosition.z
+      value: -0.45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
