@@ -430,10 +430,10 @@ MonoBehaviour:
   SteerSensitivity: 0.05
   AccelSensitivity: 0.04
   BrakeSensitivity: 1
-  LateralWanderDistance: 3
-  LateralWanderSpeed: 0.1
-  AccelWanderAmount: 0.1
-  AccelWanderSpeed: 0.1
+  LateralWanderDistance: 10
+  LateralWanderSpeed: 0.5
+  AccelWanderAmount: 0.5
+  AccelWanderSpeed: 0.5
   Driving: 0
   Target: {fileID: 0}
   StopWhenTargetReached: 0
@@ -571,6 +571,22 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Mass
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: LateralWanderDistance
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: LateralWanderSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: AccelWanderAmount
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: AccelWanderSpeed
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
