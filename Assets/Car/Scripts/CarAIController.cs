@@ -69,7 +69,7 @@ public class CarAIController : MonoBehaviour {
 
         // no need for evasive action, we can just wander across the path-to-target in a random way,
         // which can help prevent AI from seeming too uniform and robotic in their driving
-        offsetTargetPos += Target.right*
+        offsetTargetPos += Target.forward*
             (Mathf.PerlinNoise(Time.time*LateralWanderSpeed, RandomPerlin)*2 - 1)*
             LateralWanderDistance;
 
@@ -92,7 +92,7 @@ public class CarAIController : MonoBehaviour {
         Vector3 localTarget = transform.InverseTransformPoint(offsetTargetPos);
 
         // work out the local angle towards the target
-        float targetAngle = -Mathf.Atan2(localTarget.z, localTarget.x)*Mathf.Rad2Deg;
+        float targetAngle = -Mathf.Atan2(localTarget.z, localTarget.x)*Mathf.Rad2Deg + 90;
 
         // get the amount of steering needed to aim the car towards the target
         float steer = Mathf.Clamp(targetAngle*SteerSensitivity, -1, 1)*Mathf.Sign(CarController.CurrentSpeed);
