@@ -484,6 +484,6 @@ PlayerSettings:
   WebGL::template: APPLICATION:Default
   additionalIl2CppArgs::additionalIl2CppArgs: 
   cloudProjectId: fed9d9f3-32be-4e45-ac3a-aa78d22b3949
-  projectName: cops
+  projectName: Pursuit rush
   organizationId: brave-bunny
   cloudEnabled: 0

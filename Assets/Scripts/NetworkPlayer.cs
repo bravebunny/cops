@@ -78,7 +78,12 @@ public class NetworkPlayer : NetworkBehaviour {
             steering = CrossPlatformInputManager.GetAxis("Horizontal");
             accel = CrossPlatformInputManager.GetAxis("Vertical");
         } else {
-            if (GameManager.Layout != 0 && Input.GetMouseButtonDown(0)) {
+            if (GameManager.Layout != 0 
+                && Input.GetMouseButtonDown(0) 
+                && !RectTransformUtility.RectangleContainsScreenPoint(
+                        GameManager.CopPanel.GetComponent<RectTransform>(), 
+                        Input.mousePosition, 
+                        GameManager.CopCamera)) {
                 Vector3 pos = Input.mousePosition;
                 pos.z = 100;
                 pos = GameManager.CopCamera.ScreenToWorldPoint(pos);

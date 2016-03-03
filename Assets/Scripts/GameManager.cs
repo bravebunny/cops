@@ -7,6 +7,7 @@ using UnityEngine.Networking;
 
 public class GameManager : NetworkBehaviour {
     public GameObject CopPrefab;
+    public GameObject SpikesPrefab;
     public GameObject LocalPlayerPrefab;
     public Canvas UI;
     public Slider BustedSlider;
@@ -14,16 +15,19 @@ public class GameManager : NetworkBehaviour {
     public Text RoundText;
     public Text PlayerAWinsText;
     public Text PlayerBWinsText;
-
     public int MinCopDistance = 10;
 
     public static bool isLocalGame = true;
     public static GameObject StaticCopPrefab;
+    public static GameObject StaticSpikesPrefab;
     public static GameObject Car;
     public static Camera CarCamera;
     public static Camera CopCamera;
+    public static GameObject CopPanel;
+
     public static int Layout = 0;
     public static int Round = 0;
+    public static string Weapon = "CAR";
 
     static public List<NetworkPlayer> Players = new List<NetworkPlayer>();
     static public NetworkPlayer CarPlayer;
@@ -40,6 +44,7 @@ public class GameManager : NetworkBehaviour {
 
         CarCamera = GameObject.Find("CarCamera").GetComponent<Camera>();
         CopCamera = GameObject.Find("CopCamera").GetComponent<Camera>();
+        CopPanel = GameObject.Find("CopPanel");
 
         var managers = GameObject.FindObjectsOfType<GameManager>();
         var canvases = GameObject.FindObjectsOfType<Canvas>();
@@ -57,6 +62,7 @@ public class GameManager : NetworkBehaviour {
         }
 
         StaticCopPrefab = CopPrefab;
+        StaticSpikesPrefab = SpikesPrefab;
     }
 
     private void Start() {
@@ -110,13 +116,19 @@ public class GameManager : NetworkBehaviour {
 
 
     public static GameObject SpawnCop(Vector3 position) {
-        GameObject cop = Instantiate(StaticCopPrefab, position, Car.GetComponent<Rigidbody>().rotation) as GameObject;
+        if (Weapon == "CAR") {
+            GameObject cop = Instantiate(StaticCopPrefab, position, Car.GetComponent<Rigidbody>().rotation) as GameObject;
 
-        cop.GetComponent<CarAIController>().SetTarget(Car.transform);
+            cop.GetComponent<CarAIController>().SetTarget(Car.transform);
 
-        Cops.Add (cop);
+            Cops.Add (cop);
 
-        return cop;
+            return cop;
+        }
+
+        GameObject spike = Instantiate(StaticSpikesPrefab, position, Quaternion.identity) as GameObject;
+
+        return spike;
     }
 
     private void Update () {
@@ -278,5 +290,13 @@ public class GameManager : NetworkBehaviour {
             cop.transform.eulerAngles = eulerAngles;
             yield return new WaitForSeconds(rate);
         }
+    }
+
+    public void SelectCar () {
+        Weapon = "CAR";
+    }
+
+    public void SelectSpikes () {
+        Weapon = "SPIKES";
     }
 }
