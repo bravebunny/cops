@@ -50,7 +50,7 @@ public class CameraController : MonoBehaviour
 
         if (colliding) {
             ajustedDestination = target.position;
-            ajustedDestination += Quaternion.Euler(target.eulerAngles.x, target.eulerAngles.y + 90, 0) * new Vector3(0, Height + 2, -adjustmentDistance);
+            ajustedDestination += Quaternion.Euler(target.eulerAngles.x, target.eulerAngles.y, 0) * new Vector3(0, Height + 2, -adjustmentDistance);
             transform.position = Vector3.SmoothDamp(transform.position, ajustedDestination, ref camVel, SmoothTime);
         } else {
             transform.position = Vector3.SmoothDamp(transform.position, position, ref camVel, SmoothTime);
