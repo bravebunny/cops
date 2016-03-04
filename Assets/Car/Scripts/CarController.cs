@@ -19,6 +19,8 @@ public class CarController : MonoBehaviour {
     private float AngleX = 0;
     private float RotationDirection;
 
+    public float carMovementDirection = 0;
+
     // Use this for initialization
     void Start () {
         Body = GetComponent<Rigidbody>();
@@ -63,6 +65,7 @@ public class CarController : MonoBehaviour {
 
             Vector3 velocity = Body.velocity;
             float sidewaysVelocity = transform.InverseTransformDirection(Body.velocity).x;
+            carMovementDirection = transform.InverseTransformDirection(Body.velocity).z;
 
             Vector3 force = transform.forward * accel * Speed;
             //Vector3 force = transform.rotation * new Vector3(accel * Speed, 0, -sidewaysVelocity * SidewaysCompensation);
