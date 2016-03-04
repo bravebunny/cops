@@ -104,7 +104,7 @@ public class CarController : MonoBehaviour {
             wheel.position = new Vector3(info.point.x, info.point.y + wheelHeight, info.point.z);
             float strength = SuspensionStrength / (info.distance / SuspensionHeight) - SuspensionStrength;
             strength = Mathf.Min(strength, 30);
-            Vector3 push = transform.up * strength;
+            Vector3 push = Vector3.up * strength;
             Body.AddForceAtPosition(push, origin);
         } else {
             wheel.position = origin + direction * SuspensionHeight * 0.75f;
