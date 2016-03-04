@@ -10,8 +10,7 @@ GameObject:
   - 4: {fileID: 457006}
   - 33: {fileID: 3374900}
   - 23: {fileID: 2332914}
-  - 65: {fileID: 6555794}
-  - 65: {fileID: 6524236}
+  - 64: {fileID: 6416950}
   m_Layer: 0
   m_Name: Spikes
   m_TagString: Untagged
@@ -25,9 +24,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 173758}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071067}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.7588196, y: 8.44, z: -18.743896}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -41,8 +40,8 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
+  - {fileID: 2100000, guid: 151f7fcb2aaea8046b9ab9785c45a0f5, type: 2}
   - {fileID: 2100000, guid: 4192614fc70fb43f5b10b36a3f954140, type: 2}
-  - {fileID: 2100000, guid: d58e04edddca9d941b332e9d0bf97b6a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -64,9 +63,9 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 173758}
-  m_Mesh: {fileID: 4300000, guid: 63fd381eb81fdc54bae08901975feef9, type: 3}
---- !u!65 &6524236
-BoxCollider:
+  m_Mesh: {fileID: 4300002, guid: 63fd381eb81fdc54bae08901975feef9, type: 3}
+--- !u!64 &6416950
+MeshCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -75,20 +74,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.072000004, y: 0.016000004, z: 0.012000004}
-  m_Center: {x: 1.5049779e-15, y: -0.000000059604645, z: 0.0040000007}
---- !u!65 &6555794
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 173758}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.072000004, y: 0.016000004, z: 0.003999993}
-  m_Center: {x: -1.3995043e-13, y: -0.00000007629395, z: 0.000000007748578}
+  m_Convex: 0
+  m_Mesh: {fileID: 4300002, guid: 63fd381eb81fdc54bae08901975feef9, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
