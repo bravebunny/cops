@@ -18,6 +18,13 @@ public class NetworkPlayer : NetworkBehaviour {
     public int bustedLevel = 0;
     public bool insideGarage = false;
 
+    float cameraDistanceMax = 300f;
+    float cameraDistanceMin = 20f;
+    float cameraDistance = 220f;
+    float scrollSpeed = 10f;
+
+    float cameraBounds = 0.3f;
+    float cameraSpeed = 20f;
 
     float steering;
     float accel;
@@ -110,6 +117,29 @@ public class NetworkPlayer : NetworkBehaviour {
                 bustedLevel--;
                 //                print("bustedLevel " + bustedLevel.ToString());
             }
+        } else {
+            cameraDistance += Input.GetAxis("Mouse ScrollWheel") * scrollSpeed;
+            cameraDistance = Mathf.Clamp(cameraDistance, cameraDistanceMin, cameraDistanceMax);
+
+            Vector3 carPosition = GameManager.CopCamera.WorldToViewportPoint(GameManager.Car.transform.position);
+            Vector3 cameraPostion = GameManager.CopCamera.transform.position;
+
+            float min = cameraBounds;
+            float max = 1f - cameraBounds;
+
+            if (carPosition.x < min)
+                cameraPostion.x -= GameManager.CopCamera.aspect * (min - carPosition.x) * cameraSpeed;
+            else if (carPosition.x > max)
+                cameraPostion.x += GameManager.CopCamera.aspect * (carPosition.x - max) * cameraSpeed;
+
+            if (carPosition.y < min)
+                cameraPostion.z -= GameManager.CopCamera.aspect * (min - carPosition.y) * cameraSpeed;
+            else if (carPosition.y > max)
+                cameraPostion.z += GameManager.CopCamera.aspect * (carPosition.y -max) * cameraSpeed;
+
+            GameManager.CopCamera.transform.position = cameraPostion;
+
+            GameManager.CopCamera.orthographicSize = cameraDistance;
         }
     }
 
