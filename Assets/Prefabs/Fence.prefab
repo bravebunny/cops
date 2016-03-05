@@ -12,7 +12,7 @@ GameObject:
   - 23: {fileID: 2395306}
   - 65: {fileID: 6546744}
   - 54: {fileID: 5474836}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31,7 +31,7 @@ GameObject:
   - 23: {fileID: 2398996}
   - 65: {fileID: 6533078}
   - 54: {fileID: 5425614}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50,7 +50,7 @@ GameObject:
   - 23: {fileID: 2360564}
   - 65: {fileID: 6575368}
   - 54: {fileID: 5475668}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66,7 +66,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 401798}
   - 65: {fileID: 6597452}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Fence
   m_TagString: Destructible
   m_Icon: {fileID: 0}
@@ -85,7 +85,7 @@ GameObject:
   - 23: {fileID: 2311390}
   - 65: {fileID: 6553246}
   - 54: {fileID: 5459840}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube.011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   - 23: {fileID: 2333720}
   - 65: {fileID: 6530992}
   - 54: {fileID: 5411860}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,8 +129,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 181100}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071067}
-  m_LocalPosition: {x: 64.76, y: 0, z: -47.91}
+  m_LocalRotation: {x: 0, y: 0.7071073, z: 0, w: -0.7071063}
+  m_LocalPosition: {x: -119.4, y: 0, z: -48.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 454370}
