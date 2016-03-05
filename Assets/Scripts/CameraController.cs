@@ -9,6 +9,7 @@ public class CameraController : MonoBehaviour
     public float Height = 10;
 
     public LayerMask collisionLayer;
+    public bool cameraBack = true;
     public bool debugDesiredCam;
     public bool debugAdjustedCam;
 
@@ -36,12 +37,20 @@ public class CameraController : MonoBehaviour
         carDirection = target.GetComponent<CarController>().carMovementDirection;
         carDirection = System.Math.Round(carDirection * 10) / 10;
 
-        if (carDirection >= 0)
-        {
-            carDirection = 1;
-        }
-        else {
-            carDirection = System.Math.Max(1, target.GetComponent<CarController>().carMovementDirection*-0.1);
+        if (cameraBack) {
+            if (carDirection >= 0) {
+                carDirection = 1;
+            }
+            else {
+                carDirection = System.Math.Max(1, target.GetComponent<CarController>().carMovementDirection * -0.1);
+            }
+        } else {
+            if (carDirection < 0) {
+                carDirection = 1;
+            }
+            else {
+                carDirection = System.Math.Max(1, target.GetComponent<CarController>().carMovementDirection * 0.1);
+            }
         }
 
         UpdateCameraClipPoints(transform.position, transform.rotation, ref adjustedCameraClipPoints);
@@ -58,7 +67,10 @@ public class CameraController : MonoBehaviour
         adjustmentDistance = GetAdjustedDistancewithRayFrom(target.position);
 
         position = target.position;
-        position += Quaternion.Euler(target.eulerAngles.x, target.eulerAngles.y, 0) * new Vector3(0, Height, -Distance * (float) carDirection);
+        if (cameraBack)
+            position += Quaternion.Euler(target.eulerAngles.x, target.eulerAngles.y, 0) * new Vector3(0, Height, -Distance * (float) carDirection);
+        else
+            position += Quaternion.Euler(target.eulerAngles.x, target.eulerAngles.y, 0) * new Vector3(0, Height, -Distance * (float)-carDirection);
 
         if (colliding) {
             ajustedDestination = target.position;
