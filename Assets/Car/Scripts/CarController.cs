@@ -22,6 +22,8 @@ public class CarController : MonoBehaviour {
     private float HydrantStrenght = 100;
     private bool InHydrant = false;
     private Vector3 HydrantPosition;
+    private float TorqueForce = 0, TorqueVelocity = 0;
+
 
     public float carMovementDirection = 0;
 
@@ -108,6 +110,15 @@ public class CarController : MonoBehaviour {
             if (DebugOn) Debug.DrawRay(forcePosition, projectedForce, Color.blue, -1, false);
 
             Body.AddForce(projectedForce);
+            float maxTorque = 100;
+            if (accel == 0) {
+                TorqueForce = 0;
+                TorqueVelocity = 0;
+            }
+            TorqueForce = Mathf.SmoothDamp(TorqueForce, maxTorque, ref TorqueVelocity, 0.2f);
+            float torqueStrength = (maxTorque - TorqueForce) * -accel;
+            Body.AddRelativeTorque(Vector3.right * torqueStrength, ForceMode.Acceleration);
+            Debug.Log(TorqueForce);
 
             Blocked = (velocity.magnitude < 1 && force.magnitude >= 1);
         } else {
