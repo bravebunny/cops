@@ -72,7 +72,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 108558}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000016292068}
-  m_LocalPosition: {x: -92, y: 1.59, z: -76}
+  m_LocalPosition: {x: -92.65109, y: 1.61, z: -74.66754}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 487294}
@@ -86,7 +86,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 130278}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -3.87, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 465288}
@@ -106,13 +106,13 @@ ParticleAnimator:
     rgba: 3036676095
   colorAnimation[2]:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4294960570
   colorAnimation[3]:
     serializedVersion: 2
-    rgba: 3036676095
+    rgba: 3036669370
   colorAnimation[4]:
     serializedVersion: 2
-    rgba: 184549375
+    rgba: 184542650
   worldRotationAxis: {x: 0, y: 0, z: 0}
   localRotationAxis: {x: 0, y: 0, z: 0}
   sizeGrow: 0
@@ -243,7 +243,7 @@ MeshParticleEmitter:
   minEnergy: 0
   maxEnergy: 2
   minEmission: 0
-  maxEmission: 1000
+  maxEmission: 2000
   worldVelocity: {x: 0, y: 20, z: 0}
   localVelocity: {x: 0, y: 0, z: 0}
   rndVelocity: {x: 0, y: 5, z: 0}
@@ -258,7 +258,7 @@ MeshParticleEmitter:
   m_Systematic: 1
   m_MinNormalVelocity: 5
   m_MaxNormalVelocity: 5
-  m_Mesh: {fileID: 4300000, guid: caa8cc60717fdec4c80f0c75fffb3a73, type: 3}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
