@@ -16,6 +16,7 @@ public class GameManager : NetworkBehaviour {
     public Text PlayerAWinsText;
     public Text PlayerBWinsText;
     public int MinCopDistance = 10;
+    public bool AutoSpawnCops = false;
 
     public static bool isLocalGame = true;
     public static GameObject StaticCopPrefab;
@@ -169,7 +170,7 @@ public class GameManager : NetworkBehaviour {
             BustedSlider.gameObject.SetActive(false);
         }
 
-        TriggerSpawner();
+        if (AutoSpawnCops) TriggerSpawner();
     }
 
     void EndRound (bool busted) {
