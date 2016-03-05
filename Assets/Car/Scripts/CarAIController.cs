@@ -60,13 +60,13 @@ public class CarAIController : MonoBehaviour {
             Debug.DrawLine(path.corners[i-1], path.corners[i], Color.green);
         }
 
-        if (pathElements < 2) {
-            return;
+        // our target position starts off as the 'real' target position
+        Vector3 offsetTargetPos = Target.position;
+        if (pathElements >= 2) {
+            offsetTargetPos = path.corners[1];
         }
 
-        // our target position starts off as the 'real' target position
-        Vector3 offsetTargetPos = path.corners[1];
-
+       
         // no need for evasive action, we can just wander across the path-to-target in a random way,
         // which can help prevent AI from seeming too uniform and robotic in their driving
         offsetTargetPos += Target.forward*
