@@ -10,6 +10,7 @@ TagManager:
   - CopSpawn
   - CopSpawnDisabled
   - FireHydrant
+  - UI
   layers:
   - Default
   - TransparentFX
