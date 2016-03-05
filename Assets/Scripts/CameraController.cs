@@ -20,7 +20,7 @@ public class CameraController : MonoBehaviour
     private Vector3 ajustedDestination = Vector3.zero;
     private Vector3 camVel = Vector3.zero;
     private float adjustmentDistance = -10;
-    private float carDirection = 0;
+    private double carDirection = 0;
 
     void Start() {
         camera = GetComponentInChildren<Camera>();
@@ -34,12 +34,14 @@ public class CameraController : MonoBehaviour
         }
 
         carDirection = target.GetComponent<CarController>().carMovementDirection;
-        if (carDirection > 0)
+        carDirection = System.Math.Round(carDirection * 10) / 10;
+
+        if (carDirection >= 0)
         {
             carDirection = 1;
         }
         else {
-            carDirection = 2;
+            carDirection = System.Math.Max(1, target.GetComponent<CarController>().carMovementDirection*-0.1);
         }
 
         UpdateCameraClipPoints(transform.position, transform.rotation, ref adjustedCameraClipPoints);
@@ -56,7 +58,7 @@ public class CameraController : MonoBehaviour
         adjustmentDistance = GetAdjustedDistancewithRayFrom(target.position);
 
         position = target.position;
-        position += Quaternion.Euler(target.eulerAngles.x, target.eulerAngles.y, 0) * new Vector3(0, Height, -Distance * carDirection);
+        position += Quaternion.Euler(target.eulerAngles.x, target.eulerAngles.y, 0) * new Vector3(0, Height, -Distance * (float) carDirection);
 
         if (colliding) {
             ajustedDestination = target.position;
