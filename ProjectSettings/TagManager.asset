@@ -9,6 +9,8 @@ TagManager:
   - Destructible
   - CopSpawn
   - CopSpawnDisabled
+  - FireHydrant
+  - UI
   layers:
   - Default
   - TransparentFX
@@ -18,7 +20,7 @@ TagManager:
   - UI
   - 
   - 
-  - Cop
+  - CameraIgnore
   - 
   - 
   - 

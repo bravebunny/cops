@@ -12,7 +12,7 @@ GameObject:
   - 23: {fileID: 2317936}
   - 54: {fileID: 5423146}
   - 65: {fileID: 6530888}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Leaf2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 406070}
   - 65: {fileID: 6500992}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DubleTree
   m_TagString: Destructible
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ GameObject:
   - 23: {fileID: 2353342}
   - 54: {fileID: 5463650}
   - 65: {fileID: 6546834}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trunk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66,7 +66,7 @@ GameObject:
   - 23: {fileID: 2370232}
   - 54: {fileID: 5441812}
   - 65: {fileID: 6539356}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Leaf1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79,8 +79,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 126266}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 72.63105, y: 0.12473202, z: -59.369648}
+  m_LocalRotation: {x: 0, y: 0.38268414, z: 0, w: 0.92387927}
+  m_LocalPosition: {x: 117.2, y: 0.1, z: -33.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 495394}
@@ -186,7 +186,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
+  - {fileID: 2100000, guid: d58e04edddca9d941b332e9d0bf97b6a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1

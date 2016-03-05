@@ -12,7 +12,7 @@ GameObject:
   - 23: {fileID: 2351346}
   - 54: {fileID: 5447398}
   - 65: {fileID: 6526180}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Leaf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31,7 +31,7 @@ GameObject:
   - 23: {fileID: 2319148}
   - 54: {fileID: 5405764}
   - 65: {fileID: 6541368}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trunk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 456480}
   - 65: {fileID: 6519926}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SingleTree
   m_TagString: Destructible
   m_Icon: {fileID: 0}
