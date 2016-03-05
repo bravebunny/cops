@@ -47,7 +47,7 @@ public class GameManager : NetworkBehaviour {
         CopPanel = GameObject.Find("CopPanel");
 
         var managers = GameObject.FindObjectsOfType<GameManager>();
-        var canvases = GameObject.FindObjectsOfType<Canvas>();
+        var canvases = GameObject.FindGameObjectsWithTag("UI");
 
         if (managers.Length == 1) {
             // this is the first instance - make it persist
