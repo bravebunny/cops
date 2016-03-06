@@ -14,8 +14,6 @@ public class HelicopterController : MonoBehaviour {
     private Rigidbody Rotor;
     private Rigidbody BackRotor;
 
-    private Vector3 camVel = Vector3.zero;
-
     // Use this for initialization
     void Start () {
         Body = GetComponent<Rigidbody>();
@@ -27,14 +25,33 @@ public class HelicopterController : MonoBehaviour {
         if (Body == null)
             return;
 
+        Vector3 relativeTorque = new Vector3(0f, steering * TurningSpeed, attack * AttackSpeed);
+
         float xCompensation = (transform.eulerAngles.x / 360);
         if (xCompensation > 0.5)
             xCompensation = xCompensation - 1;
         xCompensation *= 4;
 
-        Body.AddRelativeTorque(-xCompensation * SmoothSpeed, steering * TurningSpeed, attack * AttackSpeed);
+        relativeTorque.x = -xCompensation * SmoothSpeed;
 
-        Body.AddRelativeForce(0f, lift * Speed, 0f);
+        if (attack == 0) {
+            float zCompensation = (transform.eulerAngles.z / 360);
+            if (zCompensation > 0.5)
+                zCompensation = zCompensation - 1;
+            zCompensation *= 4;
+
+            relativeTorque.z = -zCompensation * SmoothSpeed;
+        }
+
+        Body.AddRelativeTorque(relativeTorque);
+
+        Vector3 relativeForce = new Vector3(0f, lift * Speed, 0f);
+
+        if (lift == 0) {
+            relativeForce.y = - Physics.gravity.y - Body.velocity.y * Speed;
+        }
+
+        Body.AddRelativeForce(relativeForce);
 
         Rotor.transform.eulerAngles = new Vector3(Rotor.transform.eulerAngles.x, Rotor.transform.eulerAngles.y, Rotor.transform.eulerAngles.z - (RotorBaseSpeed + lift * RotorSpeed));
         BackRotor.transform.eulerAngles = new Vector3(BackRotor.transform.eulerAngles.x, BackRotor.transform.eulerAngles.y, BackRotor.transform.eulerAngles.z - (steering * BackRotorSpeed));

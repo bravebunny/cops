@@ -21,9 +21,9 @@ public class HelicopterUserController : MonoBehaviour {
         float v = CrossPlatformInputManager.GetAxis("Vertical");
 
         float attack = 0f;
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKey(KeyCode.E))
             attack = 1f;
-        else if (Input.GetKeyDown(KeyCode.Q))
+        else if (Input.GetKey(KeyCode.Q))
             attack = -1f;
 
         Heli.Move(v, h, attack);
