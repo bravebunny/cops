@@ -118,7 +118,6 @@ public class CarController : MonoBehaviour {
             TorqueForce = Mathf.SmoothDamp(TorqueForce, maxTorque, ref TorqueVelocity, 0.2f);
             float torqueStrength = (maxTorque - TorqueForce) * -accel;
             Body.AddRelativeTorque(Vector3.right * torqueStrength, ForceMode.Acceleration);
-            Debug.Log(TorqueForce);
 
             Blocked = (velocity.magnitude < 1 && force.magnitude >= 1);
         } else {
