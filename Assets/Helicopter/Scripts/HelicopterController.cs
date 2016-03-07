@@ -2,13 +2,13 @@
 using System.Collections;
 
 public class HelicopterController : MonoBehaviour {
-    public float Speed = 100;
-    public float TurningSpeed = 100;
-    public float AttackSpeed = 100;
+    public float Speed = 50;
+    public float TurningSpeed = 5;
+    public float AttackSpeed = 10;
     public float RotorBaseSpeed = 20;
-    public float RotorSpeed = 20;
-    public float BackRotorSpeed = 50;
-    public float SmoothSpeed = 20f;
+    public float RotorSpeed = 10;
+    public float BackRotorSpeed = 30;
+    public float SmoothSpeed = 20;
 
     private Rigidbody Body;
     private Rigidbody Rotor;
