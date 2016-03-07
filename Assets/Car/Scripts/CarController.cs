@@ -36,12 +36,12 @@ public class CarController : MonoBehaviour {
     void OnCollisionEnter(Collision collision) {
         string tag = collision.gameObject.tag;
         float speed = collision.relativeVelocity.magnitude;
-        if (tag == "FireHydrant") Debug.Log(speed);
-        if (tag == "FireHydrant" && speed > 23) {
+        if (tag == "FireHydrant" && speed > 25) {
             collision.gameObject.tag = "Untagged";
             collision.rigidbody.isKinematic = false;
             collision.rigidbody.centerOfMass = Vector3.forward;
-            collision.rigidbody.AddForce(Vector3.up, ForceMode.Impulse);
+            collision.rigidbody.AddForce(-collision.relativeVelocity * 0.01f + Vector3.up * 0.5f, ForceMode.Impulse);
+            collision.rigidbody.AddTorque(Quaternion.Euler(0, 90, 0) * collision.relativeVelocity);
             GameObject water = collision.transform.parent.FindChild("Water").gameObject;
             StartCoroutine(ActivateWithDelay(water, 0.3f));
         }
