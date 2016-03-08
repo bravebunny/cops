@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 482030}
   - 33: {fileID: 3317146}
   - 23: {fileID: 2387988}
+  - 64: {fileID: 6491614}
   m_Layer: 0
   m_Name: Base
   m_TagString: Untagged
@@ -31,6 +32,8 @@ GameObject:
   - 65: {fileID: 6530464}
   - 65: {fileID: 6580652}
   - 65: {fileID: 6524012}
+  - 54: {fileID: 5498268}
+  - 75: {fileID: 7563278}
   m_Layer: 0
   m_Name: Wing.
   m_TagString: Untagged
@@ -83,8 +86,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 192816}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -83.810936, y: 0.00000047683716, z: -42.59172}
+  m_LocalRotation: {x: 0, y: 0.84484196, z: 0, w: 0.53501594}
+  m_LocalPosition: {x: 87.06, y: 0, z: -33.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 482030}
@@ -161,6 +164,33 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 148780}
   m_Mesh: {fileID: 4300000, guid: f713ef561cc818745a07328320a111b5, type: 3}
+--- !u!54 &5498268
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 148780}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 110
+  m_CollisionDetection: 0
+--- !u!64 &6491614
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 144328}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_Mesh: {fileID: 4300002, guid: f713ef561cc818745a07328320a111b5, type: 3}
 --- !u!65 &6524012
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -209,6 +239,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.04, y: 0.023, z: 0.02}
   m_Center: {x: -0.01805741, y: 0.010815517, z: 0.013872542}
+--- !u!75 &7563278
+ConstantForce:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 148780}
+  m_Enabled: 1
+  m_Force: {x: 0, y: 0, z: 0}
+  m_RelativeForce: {x: 0, y: 0, z: 0}
+  m_Torque: {x: 0, y: 0, z: 0}
+  m_RelativeTorque: {x: 5, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
