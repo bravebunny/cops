@@ -133,10 +133,10 @@ public class CarController : MonoBehaviour {
         //distance of the wheels to the car
         Vector3 xDist = transform.forward;
         Vector3 zDist = -transform.right * 0.8f;
-        Suspension(3, Body.position + (xDist + zDist));
-        Suspension(4, Body.position + (-xDist + zDist));
-        Suspension(1, Body.position + (xDist - zDist));
-        Suspension(2, Body.position + (-xDist - zDist));
+        Suspension(2, Body.position + (xDist + zDist));
+        Suspension(3, Body.position + (-xDist + zDist));
+        Suspension(0, Body.position + (xDist - zDist));
+        Suspension(1, Body.position + (-xDist - zDist));
     }
 
 
@@ -144,7 +144,7 @@ public class CarController : MonoBehaviour {
         Vector3 direction = -transform.up;
         RaycastHit info = new RaycastHit();
         bool grounded = Physics.Raycast(origin, direction, out info, SuspensionHeight);
-        Transform wheel = transform.GetChild(0).GetChild(index);
+        Transform wheel = transform.GetChild(0).FindChild("Wheel" + index);
 
         if (grounded) {
             float wheelHeight = 0.25f;
