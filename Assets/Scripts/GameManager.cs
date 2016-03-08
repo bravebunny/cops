@@ -8,6 +8,7 @@ using UnityEngine.Networking;
 public class GameManager : NetworkBehaviour {
     public GameObject CopPrefab;
     public GameObject SpikesPrefab;
+    public GameObject HelicopterPrefab;
     public GameObject LocalPlayerPrefab;
     public Canvas UI;
     public Slider BustedSlider;
@@ -21,6 +22,7 @@ public class GameManager : NetworkBehaviour {
     public static bool isLocalGame = true;
     public static GameObject StaticCopPrefab;
     public static GameObject StaticSpikesPrefab;
+    public static GameObject StaticHelicopterPrefab;
     public static GameObject Car;
     public static Camera CarCamera;
     public static Camera CopCamera;
@@ -64,6 +66,7 @@ public class GameManager : NetworkBehaviour {
 
         StaticCopPrefab = CopPrefab;
         StaticSpikesPrefab = SpikesPrefab;
+        StaticHelicopterPrefab = HelicopterPrefab;
     }
 
     private void Start() {
@@ -117,19 +120,29 @@ public class GameManager : NetworkBehaviour {
 
 
     public static GameObject SpawnCop(Vector3 position) {
-        if (Weapon == "CAR") {
-            GameObject cop = Instantiate(StaticCopPrefab, position, Car.GetComponent<Rigidbody>().rotation) as GameObject;
+        switch(Weapon) {
+            default:
+            case "CAR":
+                GameObject cop = Instantiate(StaticCopPrefab, position, Car.GetComponent<Rigidbody>().rotation) as GameObject;
 
-            cop.GetComponent<CarAIController>().SetTarget(Car.transform);
+                cop.GetComponent<CarAIController>().SetTarget(Car.transform);
 
-            Cops.Add (cop);
+                Cops.Add(cop);
 
-            return cop;
+                return cop;
+            case "HELICOPTER":
+                GameObject heli = Instantiate(StaticHelicopterPrefab, position, Car.GetComponent<Rigidbody>().rotation) as GameObject;
+
+                heli.GetComponent<HelicopterAIController>().SetTarget(Car.transform);
+
+//                Cops.Add(cop);
+
+                return heli;
+            case "SPIKES":
+                GameObject spike = Instantiate(StaticSpikesPrefab, position, Quaternion.identity) as GameObject;
+
+                return spike;
         }
-
-        GameObject spike = Instantiate(StaticSpikesPrefab, position, Quaternion.identity) as GameObject;
-
-        return spike;
     }
 
     private void Update () {
@@ -299,5 +312,9 @@ public class GameManager : NetworkBehaviour {
 
     public void SelectSpikes () {
         Weapon = "SPIKES";
+    }
+
+    public void SelectHelicopter () {
+        Weapon = "HELICOPTER";
     }
 }
