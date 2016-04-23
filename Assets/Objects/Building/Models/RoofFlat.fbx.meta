@@ -1,24 +1,16 @@
 fileFormatVersion: 2
-guid: 0c43986713555784a82c66b869745f9f
-timeCreated: 1455226005
+guid: af93b93832db26e41a83e0e03487a6a5
+timeCreated: 1461396222
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Chimney
-    100002: //RootNode
-    100004: Roof
-    400000: Chimney
-    400002: //RootNode
-    400004: Roof
-    2300000: Chimney
-    2300002: Roof
-    2300004: //RootNode
-    3300000: Chimney
-    3300002: Roof
-    3300004: //RootNode
-    4300000: Chimney
-    4300002: Roof
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Roof
+    4300002: RoofFlat
   materials:
     importMaterials: 0
     materialName: 0

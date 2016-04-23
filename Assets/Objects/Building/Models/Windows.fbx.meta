@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 88fd9823037071a47a3708b5169fb10c
-timeCreated: 1456151942
+guid: acebf2fed75a05b4685f56fee0ce6950
+timeCreated: 1461396222
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -9,7 +9,8 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Roof
+    4300000: Cube
+    4300002: Windows
   materials:
     importMaterials: 0
     materialName: 0
