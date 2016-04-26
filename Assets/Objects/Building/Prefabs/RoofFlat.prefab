@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 403374}
   - 33: {fileID: 3328626}
   - 23: {fileID: 2349228}
+  - 64: {fileID: 6498906}
   m_Layer: 0
   m_Name: RoofFlat
   m_TagString: Untagged
@@ -24,7 +25,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 140772}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 10.165112, y: -0.8799982, z: 21.036285}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -62,7 +63,19 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 140772}
-  m_Mesh: {fileID: 4300000, guid: af93b93832db26e41a83e0e03487a6a5, type: 3}
+  m_Mesh: {fileID: 4300002, guid: af93b93832db26e41a83e0e03487a6a5, type: 3}
+--- !u!64 &6498906
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 140772}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_Mesh: {fileID: 4300002, guid: af93b93832db26e41a83e0e03487a6a5, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -77,7 +90,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 4300000, guid: c48fa4b6f0e4d1f488e11f4b01308264, type: 3}
+      objectReference: {fileID: 4300002, guid: af93b93832db26e41a83e0e03487a6a5, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 140772}
