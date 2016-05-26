@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class MapLoader : MonoBehaviour {
 
-    // Each color is mapped to the object in the same position
+    // Each color is mapped to an object
     public Tile[] tiles;
 
     public Texture2D texture;

@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &147808
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 488148}
+  - 114: {fileID: 11450874}
+  m_Layer: 0
+  m_Name: MapLoader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &488148
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 147808}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 171.35757, y: -25.734388, z: 74.59157}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11450874
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 147808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a8167d03aa6ef94f872e307ce1fa2f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Map: {fileID: 4900000, guid: 8753f56fd41ec3543af8b69d2c243465, type: 3}
+  Tiles:
+  - angle: 0
+    obj: {fileID: 136728, guid: ef9f0c02f2561384e80c6e7cf6b2c262, type: 2}
+  - angle: 0
+    obj: {fileID: 0}
+  - angle: 0
+    obj: {fileID: 158958, guid: 4abe55708356c7745938f99d53e53670, type: 2}
+  - angle: 0
+    obj: {fileID: 0}
+  - angle: 0
+    obj: {fileID: 0}
+  - angle: 0
+    obj: {fileID: 0}
+  - angle: 0
+    obj: {fileID: 0}
+  - angle: 0
+    obj: {fileID: 0}
+  - angle: 0
+    obj: {fileID: 0}
+  - angle: 0
+    obj: {fileID: 0}
+  - angle: 0
+    obj: {fileID: 0}
+  - angle: 0
+    obj: {fileID: 0}
+  - angle: 0
+    obj: {fileID: 0}
+  - angle: 0
+    obj: {fileID: 0}
+  - angle: 0
+    obj: {fileID: 0}
+  - angle: 0
+    obj: {fileID: 0}
+  - angle: 0
+    obj: {fileID: 0}
+  - angle: 0
+    obj: {fileID: 0}
+  - angle: 0
+    obj: {fileID: 0}
+  - angle: 0
+    obj: {fileID: 0}
+  TileSize: 4
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 147808}
+  m_IsPrefabParent: 1
