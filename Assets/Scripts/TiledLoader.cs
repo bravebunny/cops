@@ -30,13 +30,12 @@ public class TiledLoader : MonoBehaviour {
                 int i = x + y * width;
 
                 int tile = map[i].AsInt - 1;
-                Debug.Log("tile: " + tile);
                 GameObject obj = Tiles[tile].obj;
                 if (obj == null) continue; // skip if undefined
                 float angle = Tiles[tile].angle;
 
                 Vector3 position = new Vector3(x * TileSize, 0, y * TileSize);
-                Quaternion rotation = new Quaternion(0, angle, 0, 0);
+                Quaternion rotation = Quaternion.Euler(0, angle, 0);
                 Instantiate(obj, position, rotation);
             }
         }
