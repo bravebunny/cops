@@ -24,12 +24,15 @@ public class CarController : MonoBehaviour {
     private Vector3 HydrantPosition;
     private float TorqueForce = 0, TorqueVelocity = 0;
 
+    private AudioSource EngineSound;
+
 
     public float carMovementDirection = 0;
 
     // Use this for initialization
     void Start () {
         Body = GetComponent<Rigidbody>();
+        EngineSound = GetComponent<AudioSource>();
         Body.centerOfMass = Vector3.down;
     }
 
@@ -76,6 +79,10 @@ public class CarController : MonoBehaviour {
         }
     }
 
+    public void Update() {
+
+    }
+
     public void FixedUpdate() {
         if (InHydrant) Body.AddForceAtPosition(Vector3.up * HydrantStrenght, HydrantPosition);
     }
@@ -83,6 +90,9 @@ public class CarController : MonoBehaviour {
     public void Move (float steering, float accel) {
         if (Body == null)
             return;
+
+        EngineSound.volume = CurrentSpeed / 60 - 0.1f;
+        EngineSound.pitch = (CurrentSpeed / 60) * 6 - 3;
 
         RaycastHit raycastInfo = new RaycastHit();
         float raycastDistance = SuspensionHeight + 1f;

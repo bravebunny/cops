@@ -8,9 +8,7 @@ public class TiledLoader : MonoBehaviour {
     public TextAsset Map; // json file generated with Tiled
     public Tile[] Tiles; // index in this array should match the tile index in the tilemap
     public float TileSize = 4; // height/width of the tiles in the scene
-
-    private int height;
-    private int width;
+    public float LayerHeight = 1; // height difference between Tiled layers
 
     [System.Serializable]
     public class Tile {
