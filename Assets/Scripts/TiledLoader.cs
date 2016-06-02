@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using SimpleJSON;
+using System.Collections.Generic;
 
 public class TiledLoader : MonoBehaviour {
 
@@ -17,7 +18,9 @@ public class TiledLoader : MonoBehaviour {
         public GameObject obj; // object to use as tile
     }
 
-    void Start () {
+    public void Build () {
+
+        Clear(); // delete everything in the map before loading the tiles
 
         JSONNode json = JSON.Parse(Map.ToString());
         JSONArray map = json["layers"][0]["data"].AsArray;
@@ -36,8 +39,15 @@ public class TiledLoader : MonoBehaviour {
 
                 Vector3 position = new Vector3(x * TileSize, 0, y * TileSize);
                 Quaternion rotation = Quaternion.Euler(0, angle, 0);
-                Instantiate(obj, position, rotation);
+                GameObject instance = (GameObject) Instantiate(obj, position, rotation);
+                instance.transform.parent = transform;
             }
         }
+    }
+
+    public void Clear() {
+        var children = new List<GameObject>();
+        foreach (Transform child in transform) children.Add(child.gameObject);
+        children.ForEach(child => DestroyImmediate(child));
     }
 }
