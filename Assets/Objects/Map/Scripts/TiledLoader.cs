@@ -7,7 +7,7 @@ public class TiledLoader : MonoBehaviour {
 
     public TextAsset Map; // json file generated with Tiled
     public Tile[] Tiles; // index in this array should match the tile index in the tilemap
-    public float TileSize = 4; // height/width of the tiles in the scene
+    public float TileSize = 4; // height/width of the tiles in the scene (in world units)
     public float LayerHeight = 1; // height difference between Tiled layers
 
     [System.Serializable]
@@ -31,6 +31,8 @@ public class TiledLoader : MonoBehaviour {
                 int i = x + y * width;
 
                 int tile = map[i].AsInt - 1;
+                if (tile == -1) continue;
+
                 GameObject obj = Tiles[tile].obj;
                 if (obj == null) continue; // skip if undefined
                 float angle = Tiles[tile].angle;

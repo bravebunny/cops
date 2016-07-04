@@ -11,27 +11,37 @@ ModelImporter:
     100006: //RootNode
     100008: Straight
     100010: Turn
+    100012: Slope
+    100014: SlopeCorner
     400000: Deadend
     400002: Intersection
     400004: Junction
     400006: //RootNode
     400008: Straight
     400010: Turn
+    400012: Slope
+    400014: SlopeCorner
     2300000: Deadend
     2300002: Intersection
     2300004: Junction
     2300006: Straight
     2300008: Turn
+    2300010: Slope
+    2300012: SlopeCorner
     3300000: Deadend
     3300002: Intersection
     3300004: Junction
     3300006: Straight
     3300008: Turn
+    3300010: Slope
+    3300012: SlopeCorner
     4300000: Intersection
     4300002: Junction
     4300004: Turn
     4300006: Straight
     4300008: Deadend
+    4300010: SlopeCorner
+    4300012: Slope
     6400000: Deadend
     6400002: Intersection
     6400004: Junction
