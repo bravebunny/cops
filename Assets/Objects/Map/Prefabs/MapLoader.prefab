@@ -94,8 +94,10 @@ MonoBehaviour:
     obj: {fileID: 181748, guid: 1af7478b0643bfb47be67fa9bfe8945a, type: 2}
   - angle: -90
     obj: {fileID: 169608, guid: a08a99926c220c148b9a17fa3d997bfa, type: 2}
-  - angle: 90
+  - angle: -90
     obj: {fileID: 154724, guid: 47312868a7edca442ad6a27d659b520b, type: 2}
+  - angle: 90
+    obj: {fileID: 169608, guid: a08a99926c220c148b9a17fa3d997bfa, type: 2}
   TileSize: 8
   LayerHeight: 1
 --- !u!1001 &100100000
