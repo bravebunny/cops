@@ -38,7 +38,11 @@ public class TiledLoader : MonoBehaviour {
                     if (obj == null) continue; // skip if undefined
                     float angle = Tiles[tile].angle;
 
-                    Vector3 position = new Vector3(x * TileSize, d * LayerDepth, y * TileSize);
+                    float objectX = (x - width / 2) * TileSize;
+                    float objectY = d * LayerDepth;
+                    float objectZ = (y - height / 2) * TileSize;
+
+                    Vector3 position = new Vector3(objectX, objectY, objectZ) + transform.position;
                     Quaternion rotation = Quaternion.Euler(0, angle, 0);
                     GameObject instance = (GameObject)Instantiate(obj, position, rotation);
                     instance.transform.parent = transform;
