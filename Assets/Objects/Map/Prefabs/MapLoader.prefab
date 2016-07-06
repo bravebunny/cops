@@ -44,7 +44,7 @@ MonoBehaviour:
   Tiles:
   - angle: 0
     obj: {fileID: 152214, guid: 6b81b63505ef9ab4192a5f3cf8449715, type: 2}
-  - angle: 0
+  - angle: -90
     obj: {fileID: 139192, guid: 6497ea82d58fcc94c997c4d130a70f75, type: 2}
   - angle: 90
     obj: {fileID: 152214, guid: 6b81b63505ef9ab4192a5f3cf8449715, type: 2}
@@ -56,7 +56,7 @@ MonoBehaviour:
     obj: {fileID: 139192, guid: 6497ea82d58fcc94c997c4d130a70f75, type: 2}
   - angle: 0
     obj: {fileID: 195182, guid: 34424a64e6dce6a42ae70ef0dfeb48c5, type: 2}
-  - angle: 0
+  - angle: 180
     obj: {fileID: 139192, guid: 6497ea82d58fcc94c997c4d130a70f75, type: 2}
   - angle: 180
     obj: {fileID: 149502, guid: 8343eab1efdc094408cb14aac11dcb63, type: 2}
@@ -64,7 +64,7 @@ MonoBehaviour:
     obj: {fileID: 149502, guid: 8343eab1efdc094408cb14aac11dcb63, type: 2}
   - angle: 0
     obj: {fileID: 195182, guid: 34424a64e6dce6a42ae70ef0dfeb48c5, type: 2}
-  - angle: 0
+  - angle: 90
     obj: {fileID: 139192, guid: 6497ea82d58fcc94c997c4d130a70f75, type: 2}
   - angle: 0
     obj: {fileID: 0}
