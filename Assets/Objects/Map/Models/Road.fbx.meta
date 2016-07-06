@@ -13,6 +13,7 @@ ModelImporter:
     100010: Turn
     100012: Slope
     100014: SlopeCorner
+    100016: SlopeCornerDown
     400000: Deadend
     400002: Intersection
     400004: Junction
@@ -21,6 +22,7 @@ ModelImporter:
     400010: Turn
     400012: Slope
     400014: SlopeCorner
+    400016: SlopeCornerDown
     2300000: Deadend
     2300002: Intersection
     2300004: Junction
@@ -28,6 +30,7 @@ ModelImporter:
     2300008: Turn
     2300010: Slope
     2300012: SlopeCorner
+    2300014: SlopeCornerDown
     3300000: Deadend
     3300002: Intersection
     3300004: Junction
@@ -35,6 +38,7 @@ ModelImporter:
     3300008: Turn
     3300010: Slope
     3300012: SlopeCorner
+    3300014: SlopeCornerDown
     4300000: Intersection
     4300002: Junction
     4300004: Turn
@@ -42,6 +46,7 @@ ModelImporter:
     4300008: Deadend
     4300010: SlopeCorner
     4300012: Slope
+    4300014: SlopeCornerDown
     6400000: Deadend
     6400002: Intersection
     6400004: Junction

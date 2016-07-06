@@ -67,37 +67,41 @@ MonoBehaviour:
   - angle: 0
     obj: {fileID: 139192, guid: 6497ea82d58fcc94c997c4d130a70f75, type: 2}
   - angle: 0
+    obj: {fileID: 0}
+  - angle: 0
+    obj: {fileID: 181748, guid: 1af7478b0643bfb47be67fa9bfe8945a, type: 2}
+  - angle: 90
+    obj: {fileID: 181748, guid: 1af7478b0643bfb47be67fa9bfe8945a, type: 2}
+  - angle: -90
+    obj: {fileID: 169608, guid: a08a99926c220c148b9a17fa3d997bfa, type: 2}
+  - angle: 90
+    obj: {fileID: 154724, guid: 47312868a7edca442ad6a27d659b520b, type: 2}
+  - angle: 180
+    obj: {fileID: 169608, guid: a08a99926c220c148b9a17fa3d997bfa, type: 2}
+  - angle: 180
+    obj: {fileID: 181748, guid: 1af7478b0643bfb47be67fa9bfe8945a, type: 2}
+  - angle: -90
+    obj: {fileID: 181748, guid: 1af7478b0643bfb47be67fa9bfe8945a, type: 2}
+  - angle: 180
+    obj: {fileID: 154724, guid: 47312868a7edca442ad6a27d659b520b, type: 2}
+  - angle: 0
     obj: {fileID: 120358, guid: f0c94c70fa726df4f99393abbeb16aa0, type: 2}
   - angle: 0
-    obj: {fileID: 181748, guid: 1af7478b0643bfb47be67fa9bfe8945a, type: 2}
-  - angle: 90
-    obj: {fileID: 181748, guid: 1af7478b0643bfb47be67fa9bfe8945a, type: 2}
-  - angle: -90
-    obj: {fileID: 169608, guid: a08a99926c220c148b9a17fa3d997bfa, type: 2}
-  - angle: 90
-    obj: {fileID: 154724, guid: 47312868a7edca442ad6a27d659b520b, type: 2}
-  - angle: 180
-    obj: {fileID: 169608, guid: a08a99926c220c148b9a17fa3d997bfa, type: 2}
-  - angle: 180
-    obj: {fileID: 181748, guid: 1af7478b0643bfb47be67fa9bfe8945a, type: 2}
-  - angle: -90
-    obj: {fileID: 181748, guid: 1af7478b0643bfb47be67fa9bfe8945a, type: 2}
-  - angle: 180
     obj: {fileID: 154724, guid: 47312868a7edca442ad6a27d659b520b, type: 2}
   - angle: -90
-    obj: {fileID: 181748, guid: 1af7478b0643bfb47be67fa9bfe8945a, type: 2}
-  - angle: 0
-    obj: {fileID: 154724, guid: 47312868a7edca442ad6a27d659b520b, type: 2}
-  - angle: -90
-    obj: {fileID: 181748, guid: 1af7478b0643bfb47be67fa9bfe8945a, type: 2}
-  - angle: -90
-    obj: {fileID: 181748, guid: 1af7478b0643bfb47be67fa9bfe8945a, type: 2}
+    obj: {fileID: 173852, guid: 707880784c8cf0f428bf8868cec881e0, type: 2}
+  - angle: 180
+    obj: {fileID: 173852, guid: 707880784c8cf0f428bf8868cec881e0, type: 2}
   - angle: 0
     obj: {fileID: 169608, guid: a08a99926c220c148b9a17fa3d997bfa, type: 2}
   - angle: -90
     obj: {fileID: 154724, guid: 47312868a7edca442ad6a27d659b520b, type: 2}
   - angle: 90
     obj: {fileID: 169608, guid: a08a99926c220c148b9a17fa3d997bfa, type: 2}
+  - angle: 0
+    obj: {fileID: 173852, guid: 707880784c8cf0f428bf8868cec881e0, type: 2}
+  - angle: 90
+    obj: {fileID: 173852, guid: 707880784c8cf0f428bf8868cec881e0, type: 2}
   TileSize: 8
   LayerDepth: 6
 --- !u!1001 &100100000
