@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 456182}
   - 33: {fileID: 3309892}
   - 23: {fileID: 2308408}
+  - 64: {fileID: 6470246}
   m_Layer: 0
   m_Name: GroundSlopeCorner
   m_TagString: Untagged
@@ -62,6 +63,18 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169608}
+  m_Mesh: {fileID: 4300010, guid: 2f1cdf33f347d5143bcd60558517aa04, type: 3}
+--- !u!64 &6470246
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 169608}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
   m_Mesh: {fileID: 4300010, guid: 2f1cdf33f347d5143bcd60558517aa04, type: 3}
 --- !u!1001 &100100000
 Prefab:

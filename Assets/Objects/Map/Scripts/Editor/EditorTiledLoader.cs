@@ -11,5 +11,8 @@ public class ObjectBuilderEditor : Editor {
         if (GUILayout.Button("Load Map")) {
             myScript.Build();
         }
+        if (GUILayout.Button("Clear")) {
+            myScript.Clear();
+        }
     }
 }
