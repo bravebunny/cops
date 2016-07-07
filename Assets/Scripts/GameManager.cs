@@ -76,7 +76,7 @@ public class GameManager : NetworkBehaviour {
         GameObject lobby = GameObject.Find("LobbyManager");
         isLocalGame = (lobby == null);
 
-        Debug.Log("isLocalGame " + isLocalGame.ToString());
+        //Debug.Log("isLocalGame " + isLocalGame.ToString());
 
         Transform startPosition = GameObject.FindObjectOfType<NetworkStartPosition>().transform;
 

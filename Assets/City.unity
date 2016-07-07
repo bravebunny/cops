@@ -2684,7 +2684,7 @@ GameObject:
   - 222: {fileID: 85260271}
   - 114: {fileID: 85260270}
   - 114: {fileID: 85260269}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: HeliButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4742,7 +4742,7 @@ GameObject:
   - 222: {fileID: 135959876}
   - 114: {fileID: 135959875}
   - 114: {fileID: 135959877}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16180,7 +16180,7 @@ GameObject:
   - 222: {fileID: 538136217}
   - 114: {fileID: 538136216}
   - 114: {fileID: 538136215}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: SpikesButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17544,7 +17544,7 @@ GameObject:
   - 224: {fileID: 580192617}
   - 222: {fileID: 580192619}
   - 114: {fileID: 580192618}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: CopPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32198,7 +32198,7 @@ GameObject:
   - 223: {fileID: 1041024608}
   - 114: {fileID: 1041024607}
   - 114: {fileID: 1041024606}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34656,7 +34656,7 @@ GameObject:
   - 222: {fileID: 1126460642}
   - 114: {fileID: 1126460641}
   - 114: {fileID: 1126460640}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40198,7 +40198,7 @@ GameObject:
   - 20: {fileID: 1300996647}
   - 124: {fileID: 1300996646}
   - 92: {fileID: 1300996645}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: CopCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40262,7 +40262,7 @@ Transform:
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
   m_LocalPosition: {x: 0, y: 50, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 89.980194, y: 0, z: 0}
   m_Children:
   - {fileID: 1041024605}
   m_Father: {fileID: 0}
@@ -51122,7 +51122,7 @@ GameObject:
   - 222: {fileID: 1650517968}
   - 114: {fileID: 1650517967}
   - 114: {fileID: 1650517966}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: CarButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54548,7 +54548,7 @@ GameObject:
   - 222: {fileID: 1772820457}
   - 114: {fileID: 1772820456}
   - 114: {fileID: 1772820458}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
