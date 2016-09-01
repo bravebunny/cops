@@ -11,9 +11,10 @@ GameObject:
   - 33: {fileID: 3376432}
   - 23: {fileID: 2398548}
   - 64: {fileID: 6412552}
+  - 114: {fileID: 11427660}
   m_Layer: 0
   m_Name: Turn
-  m_TagString: Untagged
+  m_TagString: Road
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -77,6 +78,21 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 4300004, guid: 2f1cdf33f347d5143bcd60558517aa04, type: 3}
+--- !u!114 &11427660
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 149502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7fa45060ba0ba940bd622aac7fc96e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Connections: []
+  RoadLayers:
+    serializedVersion: 2
+    m_Bits: 2560
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

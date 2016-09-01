@@ -21,7 +21,7 @@ public class NetworkPlayer : NetworkBehaviour {
     float cameraDistanceMax = 300f;
     float cameraDistanceMin = 20f;
     float cameraDistance = 220f;
-    float scrollSpeed = 10f;
+    float scrollSpeed = 100f;
 
     float cameraBounds = 0.3f;
     float cameraSpeed = 20f;
