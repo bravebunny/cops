@@ -29,18 +29,21 @@ public class FollowPath : MonoBehaviour {
         Vector3 target = Target + transform.right * LaneWidth;
         Vector3 targetDirection;
         Vector3 forward;
+        Vector3 projectedForward = Vector3.ProjectOnPlane(transform.forward, Vector3.up);
 
         bool targetBehind = Util.IsInFront(transform.position + transform.forward * 2, target, transform.forward);
         if (targetBehind) {
-            forward = Vector3.ProjectOnPlane(transform.forward, Vector3.up);
             targetDirection = -transform.right;
+            forward = projectedForward;
         } else {
             targetDirection = Vector3.ProjectOnPlane((target - transform.position), Vector3.up);
             forward = targetDirection;
         }
         Body.AddForce(forward.normalized * Speed, ForceMode.VelocityChange);
         Body.angularVelocity = Vector3.zero;
-        Body.AddTorque(Vector3.Cross(Vector3.ProjectOnPlane(transform.forward, Vector3.up), targetDirection) * RotationSpeed, ForceMode.Acceleration);
+        Body.AddTorque(Vector3.Cross(projectedForward, targetDirection) * RotationSpeed, ForceMode.Acceleration);
+        Body.AddTorque(Vector3.Cross(transform.up, Vector3.up) * RotationSpeed);
+
     }
 
     // pick one of the connections randomly
