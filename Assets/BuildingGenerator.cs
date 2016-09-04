@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class BuildingGenerator : MonoBehaviour {
     public GameObject[] Walls;
+    public GameObject[] UpperOnlyWalls;
+    public GameObject[] GroundOnlyWalls;
     public GameObject[] Roofs;
     [Range(1,50)]
     public int MaxFloor = 4;
@@ -45,15 +48,19 @@ public class BuildingGenerator : MonoBehaviour {
         float angle = 0;
         foreach (Vector3 corner in Corners) {
             Vector3 pos = corner * Scale + Vector3.up * floor * FloorHeight;
-            AddWall(pos, angle);
+            AddWall(pos, angle, floor == 0);
             angle += 90;
-            AddWall(pos, angle);
+            AddWall(pos, angle, floor == 0);
         }
     }
 
-    void AddWall(Vector3 pos, float angle) {
-        int index = Random.Range(0, Walls.Length);
-        GameObject wall = Walls[index];
+    void AddWall(Vector3 pos, float angle, bool groundLevel) {
+        List<GameObject> pool = new List<GameObject>(Walls);
+        if (groundLevel) pool.AddRange(GroundOnlyWalls);
+        else pool.AddRange(UpperOnlyWalls);
+
+        int index = Random.Range(0, pool.Count);
+        GameObject wall = pool[index];
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.up);
         AddObject(wall, transform.position + pos, rotation);
     }
