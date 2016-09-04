@@ -64,7 +64,9 @@ public class CombineChildren : MonoBehaviour {
                 go.transform.localScale = Vector3.one;
 
                 var filter = go.AddComponent<MeshFilter>();
-                filter.mesh.CombineMeshes(combines[m.name + i].ToArray(), true, true);
+                Mesh mesh = new Mesh();
+                mesh.CombineMeshes(combines[m.name + i].ToArray(), true, true);
+                filter.sharedMesh = mesh;
 
                 var arenderer = go.AddComponent<MeshRenderer>();
                 arenderer.material = m;
