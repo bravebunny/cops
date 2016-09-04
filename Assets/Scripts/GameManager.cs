@@ -81,7 +81,7 @@ public class GameManager : NetworkBehaviour {
         Transform startPosition = GameObject.FindObjectOfType<NetworkStartPosition>().transform;
 
         if (isLocalGame) {
-            Layout = 2;
+            Layout = 0;
 
             for (int i = 0; i < 2; i++) {
                 Instantiate(LocalPlayerPrefab, startPosition.position, Quaternion.identity);
