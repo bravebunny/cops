@@ -9,6 +9,7 @@ public class TiledLoader : MonoBehaviour {
     public Tile[] Tiles; // index in this array should match the tile index in the tilemap
     public float TileSize = 4; // height/width of the tiles in the scene (in world units)
     public float LayerDepth = 1; // depth difference between Tiled layers
+    public bool CombineMeshes = true;
 
     [System.Serializable]
     public class Tile {
@@ -59,7 +60,7 @@ public class TiledLoader : MonoBehaviour {
                 }
             }
         }
-        GetComponent<CombineChildren>().Combine();
+        if (CombineMeshes) GetComponent<CombineChildren>().Combine();
     }
 
     public void Clear() {
