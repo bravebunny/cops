@@ -1,0 +1,148 @@
+fileFormatVersion: 2
+guid: 2f1cdf33f347d5143bcd60558517aa04
+timeCreated: 1464818956
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Deadend
+    100002: Intersection
+    100004: Junction
+    100006: //RootNode
+    100008: Straight
+    100010: Turn
+    100012: Slope
+    100014: SlopeCorner
+    100016: SlopeCornerDown
+    100018: Ground
+    100020: Deadend.001
+    100022: Intersection.001
+    100024: Junction.001
+    100026: Straight.001
+    100028: Turn.001
+    400000: Deadend
+    400002: Intersection
+    400004: Junction
+    400006: //RootNode
+    400008: Straight
+    400010: Turn
+    400012: Slope
+    400014: SlopeCorner
+    400016: SlopeCornerDown
+    400018: Ground
+    400020: Deadend.001
+    400022: Intersection.001
+    400024: Junction.001
+    400026: Straight.001
+    400028: Turn.001
+    2300000: Deadend
+    2300002: Intersection
+    2300004: Junction
+    2300006: Straight
+    2300008: Turn
+    2300010: Slope
+    2300012: SlopeCorner
+    2300014: SlopeCornerDown
+    2300016: Ground
+    2300018: Deadend.001
+    2300020: Intersection.001
+    2300022: Junction.001
+    2300024: Straight.001
+    2300026: Turn.001
+    3300000: Deadend
+    3300002: Intersection
+    3300004: Junction
+    3300006: Straight
+    3300008: Turn
+    3300010: Slope
+    3300012: SlopeCorner
+    3300014: SlopeCornerDown
+    3300016: Ground
+    3300018: Deadend.001
+    3300020: Intersection.001
+    3300022: Junction.001
+    3300024: Straight.001
+    3300026: Turn.001
+    4300000: Intersection
+    4300002: Junction
+    4300004: Turn
+    4300006: Straight
+    4300008: Deadend
+    4300010: SlopeCorner
+    4300012: Slope
+    4300014: SlopeCornerDown
+    4300016: Ground
+    4300018: Deadend.001
+    4300020: Straight.001
+    4300022: Turn.001
+    4300024: Junction.001
+    4300026: Intersection.001
+    6400000: Deadend
+    6400002: Intersection
+    6400004: Junction
+    6400006: Straight
+    6400008: Turn
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 3
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 0
+    normalImportMode: 0
+    tangentImportMode: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
