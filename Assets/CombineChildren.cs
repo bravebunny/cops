@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using System;
 
 [AddComponentMenu("Mesh/Combine Children")]
 public class CombineChildren : MonoBehaviour {
@@ -8,8 +9,10 @@ public class CombineChildren : MonoBehaviour {
         Matrix4x4 myTransform = transform.worldToLocalMatrix;
         Dictionary<string, List<CombineInstance>> combines = new Dictionary<string, List<CombineInstance>>();
         Dictionary<string, Material> namedMaterials = new Dictionary<string, Material>();
+        Dictionary<string, int> vertexCount = new Dictionary<string, int>();
         MeshRenderer[] meshRenderers = GetComponentsInChildren<MeshRenderer>();
         List<GameObject> toDestroy = new List<GameObject>();
+
         foreach (var meshRenderer in meshRenderers) {
             foreach (var material in meshRenderer.sharedMaterials)
                 if (material != null && !combines.ContainsKey(material.name)) {
@@ -34,7 +37,13 @@ public class CombineChildren : MonoBehaviour {
                 mesh = filter.sharedMesh,
                 transform = myTransform * filter.transform.localToWorldMatrix
             };
-            combines[filterRenderer.sharedMaterial.name].Add(ci);
+
+            // keep count of the vertex count for each material to avoid going over the vertex limit
+            string name = filterRenderer.sharedMaterial.name;
+            if (!vertexCount.ContainsKey(name)) vertexCount.Add(name, 0);
+            vertexCount[name] += filter.sharedMesh.vertexCount;
+            if (vertexCount[name] >= UInt16.MaxValue) continue;
+            combines[name].Add(ci);
 
             DestroyImmediate(filterRenderer);
         }
