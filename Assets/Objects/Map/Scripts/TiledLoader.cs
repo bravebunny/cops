@@ -21,12 +21,14 @@ public class TiledLoader : MonoBehaviour {
         Clear(); // delete everything in the map before loading the tiles
 
         JSONNode json = JSON.Parse(Map.ToString());
-        int depth = json["layers"].Count;
+        int layerCount = json["layers"].Count;
         int width = json["width"].AsInt;
         int height = json["height"].AsInt;
 
-        for (int d = 0; d < depth; d++) {
-            JSONArray map = json["layers"][d]["data"].AsArray;
+        for (int layer = 0; layer < layerCount; layer++) {
+            JSONArray map = json["layers"][layer]["data"].AsArray;
+            string layerName = json["layers"][layer]["name"];
+            int depth = int.Parse(layerName);
             for (int x = 0; x < width; x++) {
                 for (int y = 0; y < height; y++) {
                     int i = x + y * width;
@@ -36,16 +38,24 @@ public class TiledLoader : MonoBehaviour {
 
                     GameObject obj = Tiles[tile].obj;
                     if (obj == null) continue; // skip if undefined
+
+
                     float angle = Tiles[tile].angle;
 
                     float objectX = (x - width / 2) * TileSize;
-                    float objectY = d * LayerDepth;
+                    float objectY = depth * LayerDepth;
                     float objectZ = (y - height / 2) * TileSize;
 
                     Vector3 position = new Vector3(objectX, objectY, objectZ) + transform.position;
                     Quaternion rotation = Quaternion.Euler(0, angle, 0);
                     GameObject instance = (GameObject)Instantiate(obj, position, rotation);
+
                     instance.transform.parent = transform;
+
+                    // if this is a building, we need to generate all the parts
+                    BuildingGenerator bg = instance.GetComponent<BuildingGenerator>();
+                    if (bg != null) bg.Generate();
+
                 }
             }
         }

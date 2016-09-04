@@ -16,7 +16,7 @@ public class BuildingGenerator : MonoBehaviour {
         Vector3.left + Vector3.back,
     };
 
-	void Start () {
+	public void Generate() {
         int height = Random.Range(1, MaxFloor);
 
         for (int floor = 0; floor < height; floor++) {
@@ -25,11 +25,20 @@ public class BuildingGenerator : MonoBehaviour {
         AddCeilling(height);
 	}
 
+    void AddObject(GameObject original, Vector3 position, Quaternion rotation) {
+        GameObject obj = (GameObject)Instantiate(original, position, rotation);
+        obj.transform.parent = transform;
+    }
+
+    void AddObject(GameObject original, Vector3 position) {
+        AddObject(original, position, Quaternion.identity);
+    }
+
     void AddCeilling(int height) {
         int index = Random.Range(0, Roofs.Length);
         GameObject roof = Roofs[index];
         Vector3 position = transform.position + Vector3.up * height * FloorHeight;
-        Instantiate(roof, position, Quaternion.identity);
+        AddObject(roof, position);
     }
 
     void AddWalls(int floor) {
@@ -46,7 +55,6 @@ public class BuildingGenerator : MonoBehaviour {
         int index = Random.Range(0, Walls.Length);
         GameObject wall = Walls[index];
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.up);
-        GameObject obj = (GameObject) Instantiate(wall, transform.position + pos, rotation);
-        obj.transform.parent = transform;
+        AddObject(wall, transform.position + pos, rotation);
     }
 }
