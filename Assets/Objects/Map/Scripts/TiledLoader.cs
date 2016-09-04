@@ -59,6 +59,7 @@ public class TiledLoader : MonoBehaviour {
                 }
             }
         }
+        GetComponent<CombineChildren>().Combine();
     }
 
     public void Clear() {

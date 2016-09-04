@@ -6,11 +6,25 @@ ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Chimney
+    100004: RoofFlat
+    100006: Floor
     400000: //RootNode
+    400002: Chimney
+    400004: RoofFlat
+    400006: Floor
     2300000: //RootNode
+    2300002: Chimney
+    2300004: RoofFlat
+    2300006: Floor
     3300000: //RootNode
+    3300002: Chimney
+    3300004: RoofFlat
+    3300006: Floor
     4300000: Roof
     4300002: RoofFlat
+    4300004: Chimney
+    4300006: Floor
   materials:
     importMaterials: 0
     materialName: 0

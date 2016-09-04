@@ -9,6 +9,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 412046}
   - 114: {fileID: 11475004}
+  - 33: {fileID: 3336172}
+  - 23: {fileID: 2316442}
   m_Layer: 0
   m_Name: Building
   m_TagString: Untagged
@@ -29,6 +31,39 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!23 &2316442
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 102990}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!33 &3336172
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 102990}
+  m_Mesh: {fileID: 0}
 --- !u!114 &11475004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -41,12 +76,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Walls:
-  - {fileID: 100002, guid: 7e14a69f9e5346044b0f2f1fc8561af1, type: 3}
-  - {fileID: 100004, guid: 7e14a69f9e5346044b0f2f1fc8561af1, type: 3}
+  - {fileID: 128110, guid: b9b823dbe2fd6e04ca18e48cc42682ff, type: 2}
+  - {fileID: 132246, guid: 578301fbc6f81d746bf282d67a0cce6e, type: 2}
   Roofs:
   - {fileID: 140772, guid: 9f0fab2da4131c54c85cb1966f0fc34b, type: 2}
   - {fileID: 158958, guid: 4abe55708356c7745938f99d53e53670, type: 2}
-  MaxFloor: 2
+  MaxFloor: 3
   FloorHeight: 4
 --- !u!1001 &100100000
 Prefab:

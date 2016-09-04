@@ -6,11 +6,25 @@ ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Chimney
+    100004: RoofPitched
+    100006: Window
     400000: //RootNode
+    400002: Chimney
+    400004: RoofPitched
+    400006: Window
     2300000: //RootNode
+    2300002: Chimney
+    2300004: RoofPitched
+    2300006: Window
     3300000: //RootNode
+    3300002: Chimney
+    3300004: RoofPitched
+    3300006: Window
     4300000: Roof
     4300002: RoofPitched
+    4300004: Chimney
+    4300006: Window
   materials:
     importMaterials: 0
     materialName: 0
