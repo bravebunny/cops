@@ -20,7 +20,9 @@ public class CombineChildren : MonoBehaviour {
 
         MeshFilter[] meshFilters = GetComponentsInChildren<MeshFilter>();
         foreach (var filter in meshFilters) {
+            if (filter.gameObject.GetComponent<Road>() != null) continue;
             toDestroy.Add(filter.gameObject);
+
             if (filter.sharedMesh == null)
                 continue;
             var filterRenderer = filter.GetComponent<Renderer>();
