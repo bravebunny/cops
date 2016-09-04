@@ -10,23 +10,33 @@ ModelImporter:
     100004: Window
     100006: Glass
     100008: Balcony
+    100010: Door
+    100012: DoorFrame
     400000: //RootNode
     400002: Flat
     400004: Window
     400006: Glass
     400008: Balcony
+    400010: Door
+    400012: DoorFrame
     2300000: Flat
     2300002: Window
     2300004: Glass
     2300006: Balcony
+    2300008: Door
+    2300010: DoorFrame
     3300000: Flat
     3300002: Window
     3300004: Glass
     3300006: Balcony
+    3300008: Door
+    3300010: DoorFrame
     4300000: Flat
     4300002: Window
     4300004: Glass
     4300006: Balcony
+    4300008: DoorFrame
+    4300010: Door
   materials:
     importMaterials: 0
     materialName: 0

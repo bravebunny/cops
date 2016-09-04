@@ -79,6 +79,7 @@ MonoBehaviour:
   - {fileID: 128110, guid: b9b823dbe2fd6e04ca18e48cc42682ff, type: 2}
   - {fileID: 132246, guid: 578301fbc6f81d746bf282d67a0cce6e, type: 2}
   - {fileID: 108760, guid: f6477f286b9679742839114106ea28fa, type: 2}
+  - {fileID: 105198, guid: a45d1b72829e33943b5bcfaf0caf56d0, type: 2}
   Roofs:
   - {fileID: 140772, guid: 9f0fab2da4131c54c85cb1966f0fc34b, type: 2}
   - {fileID: 158958, guid: 4abe55708356c7745938f99d53e53670, type: 2}
