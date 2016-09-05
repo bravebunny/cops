@@ -11,7 +11,9 @@ public class CarController : MonoBehaviour {
     public float Drag = 5;
 
     [HideInInspector] public bool Blocked = false;
-    public float CurrentSpeed{ get { return Body.velocity.magnitude*2.23693629f; }}
+    public float CurrentSpeed{ get {
+            return transform.InverseTransformDirection(Body.velocity).z;
+        } }
 
     private Rigidbody Body;
     private int DirectionVal;
@@ -91,8 +93,8 @@ public class CarController : MonoBehaviour {
         if (Body == null)
             return;
 
-        EngineSound.volume = CurrentSpeed / 60 - 0.1f;
-        EngineSound.pitch = (CurrentSpeed / 60) * 6 - 3;
+        EngineSound.volume = Mathf.Abs(CurrentSpeed) / 30 - 0.1f;
+        EngineSound.pitch =( Mathf.Abs(CurrentSpeed) / 30) * 6 - 1;
 
         RaycastHit raycastInfo = new RaycastHit();
         float raycastDistance = SuspensionHeight + 1f;
@@ -104,7 +106,7 @@ public class CarController : MonoBehaviour {
         if (accel != 0) DirectionVal = (int)(accel / Mathf.Abs(accel));
         else DirectionVal = 1;
 
-        Body.AddRelativeTorque(0, steering * TurningSpeed * DirectionVal, 0);
+        Body.AddRelativeTorque(0, steering * TurningSpeed * CurrentSpeed, 0);
 
         if (grounded && notClimbing) {
             Body.drag = Drag;
