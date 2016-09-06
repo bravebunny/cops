@@ -42,7 +42,7 @@ public class CarController : MonoBehaviour {
     void OnCollisionEnter(Collision collision) {
         string tag = collision.gameObject.tag;
         float speed = collision.relativeVelocity.magnitude;
-        if (tag == "FireHydrant" && speed > 25) {
+        if (tag == "FireHydrant" && speed > 20) {
             collision.gameObject.tag = "Untagged";
             collision.rigidbody.isKinematic = false;
             collision.rigidbody.centerOfMass = Vector3.forward;
