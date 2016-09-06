@@ -6,6 +6,7 @@ public class CarController : MonoBehaviour {
     public float SidewaysCompensation = 0;
     public float SuspensionStrength = 5;
     public float TurningSpeed = 2;
+    public bool MultiplyTurningByMovement; // if true, car turns more the faster it is moving
     public bool DebugOn = true;
     public float SuspensionHeight = 1;
     public float Drag = 5;
@@ -106,7 +107,8 @@ public class CarController : MonoBehaviour {
         if (accel != 0) DirectionVal = (int)(accel / Mathf.Abs(accel));
         else DirectionVal = 1;
 
-        Body.AddRelativeTorque(0, steering * TurningSpeed * CurrentSpeed, 0);
+        float TurnMultiplier = MultiplyTurningByMovement ? CurrentSpeed : 1;
+        Body.AddRelativeTorque(0, steering * TurningSpeed * TurnMultiplier, 0);
 
         if (grounded && notClimbing) {
             Body.drag = Drag;

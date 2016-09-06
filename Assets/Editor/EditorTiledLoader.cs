@@ -10,9 +10,12 @@ public class ObjectBuilderEditor : Editor {
         TiledLoader myScript = (TiledLoader)target;
         if (GUILayout.Button("Load Map")) {
             myScript.Build();
+            NavMeshBuilder.BuildNavMesh();
+            myScript.Combine();
         }
         if (GUILayout.Button("Clear")) {
             myScript.Clear();
+            NavMeshBuilder.ClearAllNavMeshes();
         }
     }
 }

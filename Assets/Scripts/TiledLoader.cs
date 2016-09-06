@@ -60,6 +60,9 @@ public class TiledLoader : MonoBehaviour {
                 }
             }
         }
+    }
+
+    public void Combine() {
         if (CombineMeshes) GetComponent<CombineChildren>().Combine();
     }
 
