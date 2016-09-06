@@ -589,6 +589,7 @@ MonoBehaviour:
   SidewaysCompensation: 0
   SuspensionStrength: 100
   TurningSpeed: 1.5
+  MultiplyTurningByMovement: 1
   DebugOn: 1
   SuspensionHeight: 0.8
   Drag: 5
