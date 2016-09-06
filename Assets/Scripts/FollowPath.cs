@@ -26,7 +26,7 @@ public class FollowPath : MonoBehaviour {
         if (Grounded) MoveTowardsTarget();
         if (IsBlocked()) {
             Body.velocity = Vector3.zero;
-            Target -= transform.forward * 10;
+            Target -= transform.forward * 3;
         }
 	}
 
@@ -61,6 +61,11 @@ public class FollowPath : MonoBehaviour {
             bool inFront = Util.IsInFront(connection, transform.position - transform.forward * 2, transform.forward);
             if (inFront) targets.Add(connection);
         }
+        int count = targets.Count;
+        if (count == 0) {
+            CurrentRoad = null;
+            return Vector3.zero;
+         }
         int index = Random.Range(0, targets.Count);
         return targets[index];
     }

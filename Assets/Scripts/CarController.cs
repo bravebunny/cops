@@ -114,7 +114,7 @@ public class CarController : MonoBehaviour {
             Body.drag = Drag;
 
             Vector3 velocity = Body.velocity;
-            float sidewaysVelocity = transform.InverseTransformDirection(Body.velocity).x;
+            //float sidewaysVelocity = transform.InverseTransformDirection(Body.velocity).x;
             carMovementDirection = transform.InverseTransformDirection(Body.velocity).z;
 
             Vector3 force = transform.forward * accel * Speed;
