@@ -28,6 +28,7 @@ ModelImporter:
     2300008: Windows
     2300010: WindowsBool
     2300012: WheelPlate
+    2300014: //RootNode
     3300000: CarBody
     3300002: Cylinder
     3300004: Wheel
@@ -35,6 +36,7 @@ ModelImporter:
     3300008: Windows
     3300010: WindowsBool
     3300012: WheelPlate
+    3300014: //RootNode
     4300000: Cylinder
     4300002: CarBody
     4300004: Wheel
@@ -42,6 +44,7 @@ ModelImporter:
     4300008: Windows
     4300010: WindowsBool
     4300012: WheelPlate
+    4300014: TrafficCar
   materials:
     importMaterials: 0
     materialName: 0

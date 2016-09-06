@@ -10,9 +10,11 @@ public class RandomizeColor : MonoBehaviour {
         Renderer[] renderers = GetComponentsInChildren<Renderer>();
         foreach (Renderer renderer in renderers) {
             for (int i = 0; i < renderer.sharedMaterials.Length; i++) {
-                Material shared = renderer.sharedMaterials[i];
                 Material instance = renderer.materials[i];
-                if (Materials.Contains(shared)) Randomize(instance);
+                foreach (Material material in Materials) {
+                    if (instance.name == material.name + " (Instance)") Randomize(instance);
+                }
+                
             }
         }
 	}
