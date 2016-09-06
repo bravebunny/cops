@@ -19,6 +19,7 @@ public class GameManager : NetworkBehaviour {
     public Text CarsCaughtText;
     public int MinCopDistance = 10;
     public bool AutoSpawnCops = false;
+	public int CopsPerSpawn = 3;
 
     public static bool isLocalGame = true;
     public static GameObject StaticCopPrefab;
@@ -300,7 +301,7 @@ public class GameManager : NetworkBehaviour {
         spawner.tag = "CopSpawnDisabled";
         Vector3 position = spawner.transform.position;
 
-        StartCoroutine(SpawnMultipleCops(10, position, -spawner.transform.eulerAngles, 0.2f));
+        StartCoroutine(SpawnMultipleCops(CopsPerSpawn, position, -spawner.transform.eulerAngles, 0.2f));
     }
 
     IEnumerator SpawnMultipleCops(int quantity, Vector3 position, Vector3 eulerAngles, float rate) {
