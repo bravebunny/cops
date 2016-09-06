@@ -13,7 +13,7 @@ public class CarController : MonoBehaviour {
 
     [HideInInspector] public bool Blocked = false;
     public float CurrentSpeed{ get {
-            return transform.InverseTransformDirection(Body.velocity).z;
+            return Vector3.ProjectOnPlane(transform.InverseTransformDirection(Body.velocity), Vector3.up).z;
         } }
 
     private Rigidbody Body;
@@ -82,10 +82,6 @@ public class CarController : MonoBehaviour {
         }
     }
 
-    public void Update() {
-
-    }
-
     public void FixedUpdate() {
         if (InHydrant) Body.AddForceAtPosition(Vector3.up * HydrantStrenght, HydrantPosition);
     }
@@ -94,8 +90,6 @@ public class CarController : MonoBehaviour {
         if (Body == null)
             return;
 
-        EngineSound.volume = Mathf.Abs(CurrentSpeed) / 30 - 0.1f;
-        EngineSound.pitch =( Mathf.Abs(CurrentSpeed) / 30) * 6 - 1;
 
         RaycastHit raycastInfo = new RaycastHit();
         float raycastDistance = SuspensionHeight + 1f;
@@ -111,6 +105,8 @@ public class CarController : MonoBehaviour {
         Body.AddRelativeTorque(0, steering * TurningSpeed * TurnMultiplier, 0);
 
         if (grounded && notClimbing) {
+            EngineSound.volume = Mathf.Abs(CurrentSpeed) / 60 - 0.1f;
+            EngineSound.pitch =( Mathf.Abs(CurrentSpeed) / 30) * 6 - 1;
             Body.drag = Drag;
 
             Vector3 velocity = Body.velocity;
