@@ -182,6 +182,7 @@ public class NetworkPlayer : NetworkBehaviour {
         GetComponent<NetworkTransform>().enabled = enable;
         GetComponent<CarController>().enabled = enable;
         GetComponent<AudioSource>().enabled = enable;
+		GetComponent<AudioListener>().enabled = enable;
         GetComponent<Rigidbody>().useGravity = enable;
 
         foreach (Renderer renderer in GetComponentsInChildren<Renderer>()) {

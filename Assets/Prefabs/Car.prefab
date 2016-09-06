@@ -99,6 +99,7 @@ GameObject:
   - 65: {fileID: 6503564}
   - 65: {fileID: 6563556}
   - 82: {fileID: 8297780}
+  - 81: {fileID: 8104566}
   m_Layer: 0
   m_Name: Car
   m_TagString: Player
@@ -432,6 +433,13 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.5936544, y: 1.4758344, z: 1.5037341}
   m_Center: {x: 0.0043945312, y: 0.3429029, z: -0.53430176}
+--- !u!81 &8104566
+AudioListener:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 177384}
+  m_Enabled: 0
 --- !u!82 &8297780
 AudioSource:
   m_ObjectHideFlags: 1
@@ -522,6 +530,7 @@ MonoBehaviour:
   Wins: 0
   bustedLevel: 0
   insideGarage: 0
+  carsCaught: 0
 --- !u!114 &11456848
 MonoBehaviour:
   m_ObjectHideFlags: 1
