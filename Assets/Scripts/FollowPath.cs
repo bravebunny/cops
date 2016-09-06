@@ -7,6 +7,7 @@ public class FollowPath : MonoBehaviour {
     public float MaxGroundDistance = 0.5f;
     public float RotationSpeed = 150;
     public float LaneWidth = 2.5f;
+    float ForwardCheckLength = 4f;
     Rigidbody Body;
     Road CurrentRoad;
     bool Grounded;
@@ -23,6 +24,10 @@ public class FollowPath : MonoBehaviour {
             Target = PickTarget();
         }
         if (Grounded) MoveTowardsTarget();
+        if (IsBlocked()) {
+            Body.velocity = Vector3.zero;
+            Target -= transform.forward * 10;
+        }
 	}
 
     void MoveTowardsTarget() {
@@ -69,5 +74,14 @@ public class FollowPath : MonoBehaviour {
         Debug.DrawLine(origin, origin + direction * MaxGroundDistance);
         if (!Grounded) return null;
         return hit.transform.GetComponent<Road>();
+    }
+
+    bool IsBlocked() {
+        RaycastHit hit;
+        Vector3 origin = transform.position + transform.forward + Vector3.up;
+        Vector3 direction = Vector3.ProjectOnPlane(transform.forward, Vector3.up); ;
+        Debug.DrawLine(origin, origin + direction * ForwardCheckLength);
+        bool ray = Physics.Raycast(origin, direction, out hit, ForwardCheckLength);
+        return ray;
     }
 }
