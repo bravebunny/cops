@@ -105,6 +105,8 @@ MonoBehaviour:
     obj: {fileID: 173852, guid: 707880784c8cf0f428bf8868cec881e0, type: 2}
   - angle: 0
     obj: {fileID: 102990, guid: ef7282dc9814b1848a5c0b0f7a8e6c26, type: 2}
+  - angle: 0
+    obj: {fileID: 159496, guid: 90c9f1a17a3480143920ea9d6dbb4f0d, type: 2}
   TileSize: 12
   LayerDepth: 6
   CombineMeshes: 1

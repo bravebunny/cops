@@ -27,7 +27,7 @@ public class CombineChildren : MonoBehaviour {
 
         MeshFilter[] meshFilters = GetComponentsInChildren<MeshFilter>();
         foreach (var filter in meshFilters) {
-            if (filter.gameObject.GetComponent<Road>() != null) continue;
+            if (filter.gameObject.GetComponent<Road>() != null || filter.tag == "CopSpawn") continue;
             toDestroy.Add(filter.gameObject);
 
             if (filter.sharedMesh == null)
