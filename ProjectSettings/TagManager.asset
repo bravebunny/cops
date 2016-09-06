@@ -12,6 +12,7 @@ TagManager:
   - FireHydrant
   - UI
   - Road
+  - Target
   layers:
   - Default
   - TransparentFX

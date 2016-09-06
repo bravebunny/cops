@@ -17,6 +17,7 @@ public class NetworkPlayer : NetworkBehaviour {
 
     public int bustedLevel = 0;
     public bool insideGarage = false;
+    public int carsCaught = 0;
 
     float cameraDistanceMax = 300f;
     float cameraDistanceMin = 20f;
@@ -61,6 +62,9 @@ public class NetworkPlayer : NetworkBehaviour {
                     insideGarage = true;
                     Debug.Log("Inside Garage");
                 }
+                break;
+            case "Target":
+                carsCaught += 1;
                 break;
         }
     }

@@ -16,6 +16,7 @@ public class GameManager : NetworkBehaviour {
     public Text RoundText;
     public Text PlayerAWinsText;
     public Text PlayerBWinsText;
+    public Text CarsCaughtText;
     public int MinCopDistance = 10;
     public bool AutoSpawnCops = false;
 
@@ -181,6 +182,10 @@ public class GameManager : NetworkBehaviour {
             }
         } else {
             BustedSlider.gameObject.SetActive(false);
+        }
+
+        if (CarPlayer.carsCaught > 0) {
+            CarsCaughtText.GetComponent<Text>().text = "Cars caught: " + CarPlayer.carsCaught;
         }
 
         if (AutoSpawnCops) TriggerSpawner();
