@@ -96,10 +96,9 @@ GameObject:
   - 114: {fileID: 11456848}
   - 114: {fileID: 11460174}
   - 114: {fileID: 11413188}
-  - 65: {fileID: 6503564}
-  - 65: {fileID: 6563556}
   - 82: {fileID: 8297780}
   - 81: {fileID: 8104566}
+  - 136: {fileID: 13661472}
   m_Layer: 0
   m_Name: Car
   m_TagString: Player
@@ -170,7 +169,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 177384}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -91.92779, y: 0.97, z: -87.11565}
+  m_LocalPosition: {x: -200.11983, y: 0.7091761, z: -94.64906}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -409,30 +408,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &6503564
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 177384}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.5999753, y: 0.57851887, z: 3.300003}
-  m_Center: {x: 0, y: -0.11073995, z: 0.049995422}
---- !u!65 &6563556
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 177384}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.5936544, y: 1.4758344, z: 1.5037341}
-  m_Center: {x: 0.0043945312, y: 0.3429029, z: -0.53430176}
 --- !u!81 &8104566
 AudioListener:
   m_ObjectHideFlags: 1
@@ -602,8 +577,22 @@ MonoBehaviour:
   DebugOn: 1
   SuspensionHeight: 0.8
   Drag: 5
+  StabilisationStrenght: 40
   Blocked: 0
   carMovementDirection: 0
+--- !u!136 &13661472
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 177384}
+  m_Material: {fileID: 13400000, guid: 9745de242b937c649913c1a6442c66c1, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.94152546
+  m_Height: 3.2639542
+  m_Direction: 2
+  m_Center: {x: 0, y: 0.35, z: 0.05}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
