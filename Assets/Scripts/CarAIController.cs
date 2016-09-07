@@ -27,8 +27,11 @@ public class CarAIController : MonoBehaviour {
     private float AvoidOtherCarSlowdown;    // how much to slow down due to colliding with another car, whilst avoiding
     private float AvoidPathOffset;          // direction (-1 or 1) in which to offset path to avoid other car, whilst avoiding
     private Rigidbody Rigidbody;
+    Vector3 TargetPosition;
 
-    private void Awake()
+    public float PathFindingInterval = 1;
+
+    void Awake()
     {
         // get the car controller
         CarController = GetComponent<CarController>();
@@ -38,40 +41,45 @@ public class CarAIController : MonoBehaviour {
         RandomPerlin = Random.value*100;
     }
 
+    void Start() {
+        InvokeRepeating("CalculatePath", Random.Range(0, PathFindingInterval), PathFindingInterval);
+        TargetPosition = Target.position;
+    }
+
+    void CalculatePath() {
+        if (CarController.Blocked) return;
+        NavMeshPath path = new NavMeshPath();
+        NavMesh.CalculatePath(transform.position, Target.position, -1, path);
+        int pathElements = path.corners.Length;
+
+        // Draw the path
+        for (int i = 1; i < pathElements; ++i) {
+            Debug.DrawLine(path.corners[i - 1], path.corners[i], Color.green);
+        }
+
+        // our target position starts off as the 'real' target position
+        if (pathElements >= 2) {
+            TargetPosition = path.corners[1];
+        }
+
+        // no need for evasive action, we can just wander across the path-to-target in a random way,
+        // which can help prevent AI from seeming too uniform and robotic in their driving
+        TargetPosition += Target.forward *
+            (Mathf.PerlinNoise(Time.time * LateralWanderSpeed, RandomPerlin) * 2 - 1) *
+            LateralWanderDistance;
+    }
+
     // Update is called once per frame
-    void FixedUpdate () {
+    void FixedUpdate() {
         if (Target == null) {
             CarController.Move(0, 0);
             return;
         }
 
-        NavMeshPath path = new NavMeshPath();
-
         if (CarController.Blocked) {
             //NavMesh.CalculatePath(transform.position, transform.position - transform.forward * 5, -1, path);
             CarController.Move(5, 0);
-        } else {
-            NavMesh.CalculatePath(transform.position, Target.position, -1, path);
         }
-        int pathElements = path.corners.Length;
-
-        // Draw the path
-        for(int i=1;i<pathElements;++i) {
-            Debug.DrawLine(path.corners[i-1], path.corners[i], Color.green);
-        }
-
-        // our target position starts off as the 'real' target position
-        Vector3 offsetTargetPos = Target.position;
-        if (pathElements >= 2) {
-            offsetTargetPos = path.corners[1];
-        }
-
-       
-        // no need for evasive action, we can just wander across the path-to-target in a random way,
-        // which can help prevent AI from seeming too uniform and robotic in their driving
-        offsetTargetPos += Target.forward*
-            (Mathf.PerlinNoise(Time.time*LateralWanderSpeed, RandomPerlin)*2 - 1)*
-            LateralWanderDistance;
 
         float desiredSpeed = 100;
 
@@ -89,7 +97,7 @@ public class CarAIController : MonoBehaviour {
             (Mathf.PerlinNoise(Time.time*AccelWanderSpeed, RandomPerlin)*AccelWanderAmount);
 
         // calculate the local-relative position of the target, to steer towards
-        Vector3 localTarget = transform.InverseTransformPoint(offsetTargetPos);
+        Vector3 localTarget = transform.InverseTransformPoint(TargetPosition);
 
         // work out the local angle towards the target
         float targetAngle = -Mathf.Atan2(localTarget.z, localTarget.x)*Mathf.Rad2Deg + 90;
