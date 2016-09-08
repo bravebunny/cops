@@ -577,7 +577,7 @@ MonoBehaviour:
   DebugOn: 1
   SuspensionHeight: 0.8
   Drag: 5
-  StabilisationStrenght: 40
+  StabilisationStrenght: 30
   Blocked: 0
   carMovementDirection: 0
 --- !u!136 &13661472
