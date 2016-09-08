@@ -99,5 +99,6 @@ public class GameManager : MonoBehaviour {
         Time.timeScale = 0;
         GameOverText.gameObject.SetActive(true);
         roundEnded = true;
+        GetComponent<AudioSource>().Play();
     }
 }
