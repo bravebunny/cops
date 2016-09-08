@@ -9,11 +9,13 @@ public class GameManager : MonoBehaviour {
     public Slider BustedSlider;
     public Text GameOverText;
     public Text ScoreText;
+    public Text CopCountText;
 
     public static bool isLocalGame = true;
     public static CarUserController Player;
     public CarUserController PlayerInstance;
     public static int Score;
+    public static int CopCount;
 
     static public GameManager sInstance = null;
 
@@ -60,7 +62,8 @@ public class GameManager : MonoBehaviour {
         GameOverText.gameObject.SetActive(false);
         roundEnded = false;
         Score = 0;
-        UpdateScoreText();
+        CopCount = 0;
+        UpdateText();
     }
 
     private void Update () {
@@ -77,28 +80,22 @@ public class GameManager : MonoBehaviour {
             BustedSlider.value = Player.BustedLevel;
 
             if (Player.BustedLevel >= BustedSlider.maxValue) {
-                EndRound(true);
+                EndRound();
             }
         } else {
             BustedSlider.gameObject.SetActive(false);
         }
-        UpdateScoreText();
+        UpdateText();
     }
 
-    void UpdateScoreText() {
-        ScoreText.GetComponent<Text>().text = "Score: " + Score;
+    void UpdateText() {
+        ScoreText.text = "Score: " + Score;
+        CopCountText.text = "Cops: " + CopCount;
     }
 
-    void EndRound (bool busted) {
+    void EndRound () {
         Time.timeScale = 0;
         GameOverText.gameObject.SetActive(true);
         roundEnded = true;
-    }
-
-    string WinsText (int wins) {
-        if (wins == 1)
-            return wins.ToString() + " WIN";
-
-        return wins.ToString() + " WINS";
     }
 }

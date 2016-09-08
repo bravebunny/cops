@@ -20,6 +20,9 @@ public class CarUserController : MonoBehaviour {
         Car.Move(h, v);
 
         if (BustedLevel > 0) BustedLevel -= BustedDecRate;
+
+        // temporary way to drown player
+        if (transform.position.y < -10) BustedLevel = int.MaxValue;
     }
 
     void OnCollisionStay(Collision collision) {

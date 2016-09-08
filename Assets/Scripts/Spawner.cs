@@ -7,6 +7,7 @@ public class Spawner : MonoBehaviour {
 
 	void Spawn() {
         for (int i = 0; i < Rate; i++) {
+            GameManager.CopCount++;
             Instantiate(Original, transform.position, Quaternion.identity);
         }
     }
