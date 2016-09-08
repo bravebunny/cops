@@ -169,7 +169,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0.70710677, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -199.4817, y: 0.70917404, z: -100.08838}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
   m_Children:
   - {fileID: 448158}
   m_Father: {fileID: 0}
@@ -229,7 +229,7 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_Materials:
   - {fileID: 2100000, guid: 50961b4c7b46043f2bc10106c9f4f421, type: 2}
-  - {fileID: 2100000, guid: 236199405a766478faa145afc45dc899, type: 2}
+  - {fileID: 2100000, guid: 3185d69ce56d3452b936bdc3ae627ca9, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -256,7 +256,7 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_Materials:
   - {fileID: 2100000, guid: 50961b4c7b46043f2bc10106c9f4f421, type: 2}
-  - {fileID: 2100000, guid: 236199405a766478faa145afc45dc899, type: 2}
+  - {fileID: 2100000, guid: 3185d69ce56d3452b936bdc3ae627ca9, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -283,7 +283,7 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_Materials:
   - {fileID: 2100000, guid: 50961b4c7b46043f2bc10106c9f4f421, type: 2}
-  - {fileID: 2100000, guid: 236199405a766478faa145afc45dc899, type: 2}
+  - {fileID: 2100000, guid: 3185d69ce56d3452b936bdc3ae627ca9, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -310,9 +310,9 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_Materials:
   - {fileID: 2100000, guid: 281c624d1c39ddf47ae92d98e43a0450, type: 2}
-  - {fileID: 2100000, guid: 236199405a766478faa145afc45dc899, type: 2}
   - {fileID: 2100000, guid: 4192614fc70fb43f5b10b36a3f954140, type: 2}
   - {fileID: 2100000, guid: 151f7fcb2aaea8046b9ab9785c45a0f5, type: 2}
+  - {fileID: 2100000, guid: 236199405a766478faa145afc45dc899, type: 2}
   - {fileID: 2100000, guid: 0e43d72b32cd244f79adc3f434f88fb3, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
@@ -340,7 +340,7 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_Materials:
   - {fileID: 2100000, guid: 50961b4c7b46043f2bc10106c9f4f421, type: 2}
-  - {fileID: 2100000, guid: 236199405a766478faa145afc45dc899, type: 2}
+  - {fileID: 2100000, guid: 3185d69ce56d3452b936bdc3ae627ca9, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -498,6 +498,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b2be246cd28c41b6bb699a61c36b137, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BustedLevel: 0
+  BustedIncRate: 3
+  BustedDecRate: 1
 --- !u!114 &11468602
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -509,10 +512,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32b449f4adf5bc4b9e8438de830039a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 115
+  Speed: 100
   SidewaysCompensation: 0
   SuspensionStrength: 100
-  TurningSpeed: 1.5
+  TurningSpeed: 1
   MultiplyTurningByMovement: 1
   DebugOn: 1
   SuspensionHeight: 0.8
