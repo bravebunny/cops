@@ -67,9 +67,11 @@ public class GameManager : MonoBehaviour {
     }
 
     private void Update () {
-        if (Input.GetKeyDown (KeyCode.Return)) {
+        if (Input.GetKeyDown(KeyCode.Return)) {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape)) Application.Quit();
 
         if (roundEnded)
             return;

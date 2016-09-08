@@ -6,23 +6,23 @@ public class Targets : MonoBehaviour {
     public Transform TargetMarker;
     public float MarkerHeight = 2;
     Transform Target;
+    AudioSource CollectSound;
 
 	void Start() {
+        CollectSound = GetComponent<AudioSource>();
         NewTarget();
 	}
 
     public void NewTarget() {
-
         // remove goal behavior from previous target
         if (Target) {
-            Target.gameObject.tag = "Untagged";
+            CollectSound.Play();
             Destroy(Target.GetComponent<Goal>());
         }
 
         // pick new target randomly from children
         int index = Random.Range(0, transform.childCount);
         Target = transform.GetChild(index);
-        Target.gameObject.tag = "Target";
 
         // add goal behavior to new target
         Goal goal = Target.gameObject.AddComponent<Goal>();
