@@ -799,7 +799,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32b449f4adf5bc4b9e8438de830039a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 130
+  Speed: 150
   SidewaysCompensation: 0
   SuspensionStrength: 40
   TurningSpeed: 80
