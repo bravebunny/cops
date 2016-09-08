@@ -10,7 +10,6 @@ GameObject:
   - 4: {fileID: 436626}
   - 33: {fileID: 3380294}
   - 23: {fileID: 2346414}
-  - 222: {fileID: 22220684}
   - 114: {fileID: 11438422}
   m_Layer: 0
   m_Name: Arrow
@@ -77,12 +76,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
---- !u!222 &22220684
-CanvasRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 113658}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
