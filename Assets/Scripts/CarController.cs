@@ -127,13 +127,14 @@ public class CarController : MonoBehaviour {
             if (DebugOn) Debug.DrawRay(forcePosition, projectedForce, Color.blue, -1, false);
 
             Body.AddForce(projectedForce);
-            float maxTorque = 100;
+            float maxTorque = 30;
+            int torqueSignal = 0;
             if (accel == 0) {
                 TorqueForce = 0;
                 TorqueVelocity = 0;
-            }
+            } else torqueSignal = accel > 0 ? -1 : 1;
             TorqueForce = Mathf.SmoothDamp(TorqueForce, maxTorque, ref TorqueVelocity, 0.2f);
-            float torqueStrength = (maxTorque - TorqueForce) * -accel;
+            float torqueStrength = (maxTorque - TorqueForce) * torqueSignal;
             Body.AddRelativeTorque(Vector3.right * torqueStrength, ForceMode.Acceleration);
 
             Blocked = (velocity.magnitude < 1 && force.magnitude >= 1);
