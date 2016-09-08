@@ -14,10 +14,12 @@ public class CarUserController : MonoBehaviour {
     }
 
     void FixedUpdate () {
-        float h = CrossPlatformInputManager.GetAxis("Horizontal");
-        float v = CrossPlatformInputManager.GetAxis("Vertical");
+        float steering = CrossPlatformInputManager.GetAxis("Steering");
+        float positive = CrossPlatformInputManager.GetAxis("Accelarate");
+        float negative = CrossPlatformInputManager.GetAxis("Reverse");
+        float accel = positive - negative;
 
-        Car.Move(h, v);
+        Car.Move(steering, accel);
 
         if (BustedLevel > 0) BustedLevel -= BustedDecRate;
 
