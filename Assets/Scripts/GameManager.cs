@@ -7,10 +7,7 @@ using System.Collections.Generic;
 public class GameManager : MonoBehaviour {
     public Canvas UI;
     public Slider BustedSlider;
-    public Text EndText;
-    public Text RoundText;
-    public Text PlayerAWinsText;
-    public Text PlayerBWinsText;
+    public Text GameOverText;
     public Text ScoreText;
 
     public static bool isLocalGame = true;
@@ -60,7 +57,7 @@ public class GameManager : MonoBehaviour {
 
     void StartRound () {
         Time.timeScale = 1;
-        EndText.gameObject.SetActive(false);
+        GameOverText.gameObject.SetActive(false);
         roundEnded = false;
         Score = 0;
         UpdateScoreText();
@@ -94,19 +91,8 @@ public class GameManager : MonoBehaviour {
 
     void EndRound (bool busted) {
         Time.timeScale = 0;
-        EndText.gameObject.SetActive(true);
+        GameOverText.gameObject.SetActive(true);
         roundEnded = true;
-
-        /*if (busted) {
-            EndText.text = "COP WINS!";
-            CopPlayer.Wins++;
-        } else {
-            EndText.text = "CAR WINS!";
-            CarPlayer.Wins++;
-        }
-
-        PlayerAWinsText.text = WinsText(Players[0].Wins);
-        PlayerBWinsText.text = WinsText(Players[1].Wins);*/
     }
 
     string WinsText (int wins) {
