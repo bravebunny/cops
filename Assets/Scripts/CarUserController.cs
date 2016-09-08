@@ -3,24 +3,31 @@ using System.Collections;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityEngine.Networking;
 
-public class CarUserController : NetworkBehaviour {
-    private CarController Car; // the car controller we want to use
+public class CarUserController : MonoBehaviour {
+    CarController Car;
+    [HideInInspector] public float BustedLevel = 0;
+    public float BustedIncRate = 3;
+    public float BustedDecRate = 1;
 
-    private void Awake()
-    {
-        // get the car controller
+    void Awake() {
         Car = GetComponent<CarController>();
     }
 
-    // Update is called once per frame
-    void Update () {
-        if (!isLocalPlayer) {
-            return;
-        }
-
+    void FixedUpdate () {
         float h = CrossPlatformInputManager.GetAxis("Horizontal");
         float v = CrossPlatformInputManager.GetAxis("Vertical");
 
         Car.Move(h, v);
+
+        if (BustedLevel > 0) BustedLevel -= BustedDecRate;
+    }
+
+    void OnCollisionStay(Collision collision) {
+        switch (collision.gameObject.tag) {
+            case "Cop":
+                BustedLevel += BustedIncRate;
+                break;
+        }
+
     }
 }

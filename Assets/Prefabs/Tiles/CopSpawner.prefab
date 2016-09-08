@@ -11,9 +11,11 @@ GameObject:
   - 33: {fileID: 3344602}
   - 23: {fileID: 2340728}
   - 64: {fileID: 6459596}
+  - 114: {fileID: 11453974}
+  - 135: {fileID: 13551332}
   m_Layer: 0
   m_Name: CopSpawner
-  m_TagString: CopSpawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25,7 +27,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 159496}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -206.24051, y: 0.0000033032538, z: -127.02763}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -76,6 +78,31 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 4300000, guid: 48d6089816847f042be1147ffd823fc3, type: 3}
+--- !u!114 &11453974
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 159496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0092f220ccb7ae74d9c2ffdd35aae0d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Original: {fileID: 127284, guid: a79dd81451c4440c8a018f2fbb97f00c, type: 2}
+  Rate: 4
+--- !u!135 &13551332
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 159496}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 30
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

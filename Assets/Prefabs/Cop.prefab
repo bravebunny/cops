@@ -719,9 +719,9 @@ MonoBehaviour:
   AccelWanderAmount: 0.5
   AccelWanderSpeed: 0.5
   Driving: 0
-  Target: {fileID: 0}
   StopWhenTargetReached: 0
   ReachTargetThreshold: 2
+  PathFindingInterval: 1
 --- !u!114 &11447592
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -807,6 +807,7 @@ MonoBehaviour:
   DebugOn: 1
   SuspensionHeight: 1
   Drag: 5
+  StabilisationStrenght: 40
   Blocked: 0
   carMovementDirection: 0
 --- !u!1001 &100100000

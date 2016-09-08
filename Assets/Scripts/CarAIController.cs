@@ -17,7 +17,6 @@ public class CarAIController : MonoBehaviour {
     [SerializeField] [Range(0, 1)] private float AccelWanderAmount = 0.1f;                  // how much the cars acceleration will wander
     [SerializeField] private float AccelWanderSpeed = 0.1f;                                 // how fast the cars acceleration wandering will fluctuate
     [SerializeField] private bool Driving;                                                  // whether the AI is currently actively driving or stopped.
-    [SerializeField] private Transform Target;                                              // 'target' the target object to aim for.
     [SerializeField] private bool StopWhenTargetReached;                                    // should we stop driving when we reach the target?
     [SerializeField] private float ReachTargetThreshold = 2;                                // proximity to target to consider we 'reached' it, and stop driving.
 
@@ -27,12 +26,13 @@ public class CarAIController : MonoBehaviour {
     private float AvoidOtherCarSlowdown;    // how much to slow down due to colliding with another car, whilst avoiding
     private float AvoidPathOffset;          // direction (-1 or 1) in which to offset path to avoid other car, whilst avoiding
     private Rigidbody Rigidbody;
+    private Transform Target;                                                               // 'target' the target object to aim for.
     Vector3 TargetPosition;
 
     public float PathFindingInterval = 1;
 
-    void Awake()
-    {
+    void Awake() {
+        Target = GameManager.Player.transform;
         // get the car controller
         CarController = GetComponent<CarController>();
         // Allows to disable camera collisions with cops
