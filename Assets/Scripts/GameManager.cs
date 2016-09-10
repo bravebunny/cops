@@ -10,12 +10,14 @@ public class GameManager : MonoBehaviour {
     public Text GameOverText;
     public Text ScoreText;
     public Text CopCountText;
+    public Text BombCountText;
 
-    public static bool isLocalGame = true;
     public static CarUserController Player;
     public CarUserController PlayerInstance;
+
     public static int Score;
     public static int CopCount;
+    public static int BombCount = 10;
 
     static public GameManager sInstance = null;
 
@@ -47,7 +49,6 @@ public class GameManager : MonoBehaviour {
         Physics.gravity = new Vector3(0, -30.0f, 0);
         Time.timeScale = 1;
         GameObject lobby = GameObject.Find("LobbyManager");
-        isLocalGame = (lobby == null);
     }
 
     void OnLevelWasLoaded() {
@@ -62,6 +63,7 @@ public class GameManager : MonoBehaviour {
         GameOverText.gameObject.SetActive(false);
         roundEnded = false;
         Score = 0;
+        BombCount = 0;
         CopCount = 0;
         UpdateText();
     }
@@ -93,6 +95,7 @@ public class GameManager : MonoBehaviour {
     void UpdateText() {
         ScoreText.text = "Score: " + Score;
         CopCountText.text = "Cops: " + CopCount;
+        BombCountText.text = "Bombs: " + BombCount;
     }
 
     void EndRound () {
