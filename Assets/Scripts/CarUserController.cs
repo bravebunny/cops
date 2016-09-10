@@ -4,27 +4,28 @@ using UnityStandardAssets.CrossPlatformInput;
 using UnityEngine.Networking;
 
 public class CarUserController : MonoBehaviour {
-    CarController Car;
-    Rigidbody Body;
-    [HideInInspector] public float BustedLevel = 0;
     public float BustedIncRate = 3;
     public float BustedDecRate = 1;
     public float ExplostionRadius = 10;
     public float ExplosionPower = 10;
     public GameObject Explosion;
+    [HideInInspector] public float BustedLevel = 0;
+
+    CarController Car;
+    Rigidbody Body;
+    float Steering;
+    float Accel;
 
     void Awake() {
         Car = GetComponent<CarController>();
         Body = GetComponent<Rigidbody>();
     }
 
-    void FixedUpdate () {
-        float steering = CrossPlatformInputManager.GetAxis("Steering");
+    void Update() {
+        Steering = CrossPlatformInputManager.GetAxis("Steering");
         float positive = CrossPlatformInputManager.GetAxis("Accelarate");
         float negative = CrossPlatformInputManager.GetAxis("Reverse");
-        float accel = positive - negative;
-
-        Car.Move(steering, accel);
+        Accel = positive - negative;
 
         if (CrossPlatformInputManager.GetButtonDown("Bomb")) Bomb();
 
@@ -32,6 +33,10 @@ public class CarUserController : MonoBehaviour {
 
         // temporary way to drown player
         if (transform.position.y < -10) BustedLevel = int.MaxValue;
+    }
+
+    void FixedUpdate() {
+        Car.Move(Steering, Accel);
     }
 
     void OnCollisionStay(Collision collision) {
