@@ -501,8 +501,9 @@ MonoBehaviour:
   BustedLevel: 0
   BustedIncRate: 3
   BustedDecRate: 1
-  ExplostionRadius: 40
+  ExplostionRadius: 100
   ExplosionPower: 4000
+  Explosion: {fileID: 136990, guid: ee50d64cd8a647145a669be56d20bd3d, type: 2}
 --- !u!114 &11468602
 MonoBehaviour:
   m_ObjectHideFlags: 1

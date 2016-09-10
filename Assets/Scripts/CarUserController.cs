@@ -11,6 +11,7 @@ public class CarUserController : MonoBehaviour {
     public float BustedDecRate = 1;
     public float ExplostionRadius = 10;
     public float ExplosionPower = 10;
+    public GameObject Explosion;
 
     void Awake() {
         Car = GetComponent<CarController>();
@@ -45,14 +46,13 @@ public class CarUserController : MonoBehaviour {
     void Bomb() {
         if (GameManager.BombCount <= 0) return;
         GameManager.BombCount--;
-
+        Instantiate(Explosion, transform.position, Quaternion.identity);
         Collider[] colliders = Physics.OverlapSphere(transform.position, ExplostionRadius);
         foreach (Collider hit in colliders) {
             Rigidbody rb = hit.GetComponent<Rigidbody>();
             if (rb != null) {
                 rb.AddExplosionForce(ExplosionPower, transform.position, ExplostionRadius, 0F);
             }
-
         }
     }
 }
