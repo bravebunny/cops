@@ -6,19 +6,17 @@ using UnityEngine.Networking;
 public class CarUserController : MonoBehaviour {
     public float BustedIncRate = 3;
     public float BustedDecRate = 1;
-    public float ExplostionRadius = 10;
-    public float ExplosionPower = 10;
-    public GameObject Explosion;
+
     [HideInInspector] public float BustedLevel = 0;
 
     CarController Car;
-    Rigidbody Body;
+    Explosion Explosion;
     float Steering;
     float Accel;
 
     void Awake() {
         Car = GetComponent<CarController>();
-        Body = GetComponent<Rigidbody>();
+        Explosion = GetComponent<Explosion>();
     }
 
     void Update() {
@@ -27,7 +25,7 @@ public class CarUserController : MonoBehaviour {
         float negative = CrossPlatformInputManager.GetAxis("Reverse");
         Accel = positive - negative;
 
-        if (CrossPlatformInputManager.GetButtonDown("Bomb")) Bomb();
+        if (CrossPlatformInputManager.GetButtonDown("Bomb")) Explosion.Explode();
 
         if (BustedLevel > 0) BustedLevel -= BustedDecRate;
 
@@ -48,16 +46,5 @@ public class CarUserController : MonoBehaviour {
 
     }
 
-    void Bomb() {
-        if (GameManager.BombCount <= 0) return;
-        GameManager.BombCount--;
-        Instantiate(Explosion, transform.position, Quaternion.identity);
-        Collider[] colliders = Physics.OverlapSphere(transform.position, ExplostionRadius);
-        foreach (Collider hit in colliders) {
-            Rigidbody rb = hit.GetComponent<Rigidbody>();
-            if (rb != null) {
-                rb.AddExplosionForce(ExplosionPower, transform.position, ExplostionRadius, 0F);
-            }
-        }
-    }
+
 }
