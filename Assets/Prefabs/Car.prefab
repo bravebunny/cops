@@ -499,10 +499,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63ea15519e02f3d4b8708f8ec7f47eb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Original: {fileID: 136990, guid: ee50d64cd8a647145a669be56d20bd3d, type: 2}
+  Particles: {fileID: 136990, guid: ee50d64cd8a647145a669be56d20bd3d, type: 2}
   Radius: 50
   Power: 2000
   VerticalModifier: 5
+  Camera: {fileID: 0}
 --- !u!114 &11438122
 MonoBehaviour:
   m_ObjectHideFlags: 1
