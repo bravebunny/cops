@@ -2,13 +2,17 @@
 using System.Collections;
 
 public class Explosion : MonoBehaviour {
-    Rigidbody CarBody;
     public float Radius = 50;
     public float Power = 2000;
     public float VerticalModifier = 5;
+    public Light Glow;
+
+    Rigidbody CarBody;
+    ParticleEmitter Particles;
 
     void Start () {
         CarBody = GameManager.Player.GetComponent<Rigidbody>();
+        Particles = GetComponent<ParticleEmitter>();
         Explode();
     }
 
@@ -24,5 +28,9 @@ public class Explosion : MonoBehaviour {
                 rb.AddExplosionForce(Power, transform.position, Radius, VerticalModifier);
             }
         }
+    }
+
+    public void Update() {
+        Glow.intensity = (Particles.particleCount - 1000)*0.004f;
     }
 }
