@@ -15,11 +15,14 @@ public class GameManager : MonoBehaviour {
     public static CarUserController Player;
     public CarUserController PlayerInstance;
 
+    public Camera CameraInstance;
+    public static Camera GameCamera;
+
     public static int Score;
     public static int CopCount;
     public static int BombCount = 10;
 
-    static public GameManager sInstance = null;
+    public static GameManager sInstance = null;
 
     bool duplicate = false;
     bool roundEnded = false;
@@ -28,6 +31,7 @@ public class GameManager : MonoBehaviour {
     void Awake() {
         sInstance = this;
         Player = PlayerInstance;
+        GameCamera = CameraInstance;
 
         var managers = GameObject.FindObjectsOfType<GameManager>();
         var canvases = GameObject.FindGameObjectsWithTag("UI");

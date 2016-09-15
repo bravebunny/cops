@@ -3,27 +3,18 @@ using System.Collections;
 
 public class Explosion : MonoBehaviour {
     Rigidbody CarBody;
-    public GameObject Particles;
     public float Radius = 50;
     public float Power = 2000;
     public float VerticalModifier = 5;
-    public CameraShake Camera;
 
     void Start () {
-        CarBody = GetComponent<Rigidbody>();
+        CarBody = GameManager.Player.GetComponent<Rigidbody>();
+        Explode();
     }
 
     public void Explode() {
-        if (GameManager.BombCount <= 0) return;
-
         // shake the camera
-        Camera.Shake();
-
-        // decrease bomb counter
-        GameManager.BombCount--;
-
-        // spawn explosion particles
-        Instantiate(Particles, transform.position, Quaternion.identity);
+        GameManager.GameCamera.GetComponent<CameraShake>().Shake();
 
         // apply explosion force to surrounding objects
         Collider[] colliders = Physics.OverlapSphere(transform.position, Radius);

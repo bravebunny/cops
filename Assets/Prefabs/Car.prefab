@@ -97,7 +97,6 @@ GameObject:
   - 81: {fileID: 8104566}
   - 136: {fileID: 13661472}
   - 114: {fileID: 11438122}
-  - 114: {fileID: 11416746}
   m_Layer: 0
   m_Name: Car
   m_TagString: Player
@@ -488,22 +487,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &11416746
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 177384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63ea15519e02f3d4b8708f8ec7f47eb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Particles: {fileID: 136990, guid: ee50d64cd8a647145a669be56d20bd3d, type: 2}
-  Radius: 50
-  Power: 2000
-  VerticalModifier: 5
-  Camera: {fileID: 0}
 --- !u!114 &11438122
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -517,6 +500,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BustedIncRate: 3
   BustedDecRate: 1
+  Explosion: {fileID: 136990, guid: ee50d64cd8a647145a669be56d20bd3d, type: 2}
   BustedLevel: 0
 --- !u!114 &11468602
 MonoBehaviour:
