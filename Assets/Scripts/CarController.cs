@@ -24,9 +24,6 @@ public class CarController : MonoBehaviour {
     private float AngleX = 0;
     private float RotationDirection;
 
-    private float HydrantStrenght = 100;
-    private bool InHydrant = false;
-    private Vector3 HydrantPosition;
     private float TorqueForce = 0, TorqueVelocity = 0;
 
     private AudioSource EngineSound;
@@ -41,25 +38,6 @@ public class CarController : MonoBehaviour {
         Body.centerOfMass = Vector3.down;
     }
 
-    void OnCollisionEnter(Collision collision) {
-        string tag = collision.gameObject.tag;
-        float speed = collision.relativeVelocity.magnitude;
-        if (tag == "FireHydrant" && speed > 20) {
-            collision.gameObject.tag = "Untagged";
-            collision.rigidbody.isKinematic = false;
-            collision.rigidbody.centerOfMass = Vector3.forward;
-            collision.rigidbody.AddForce(-collision.relativeVelocity * 0.01f + Vector3.up * 0.5f, ForceMode.Impulse);
-            collision.rigidbody.AddTorque(Quaternion.Euler(0, 90, 0) * collision.relativeVelocity);
-            GameObject water = collision.transform.parent.FindChild("Water").gameObject;
-            StartCoroutine(ActivateWithDelay(water, 0.3f));
-        }
-    }
-
-    IEnumerator ActivateWithDelay(GameObject obj, float delay) {
-        yield return new WaitForSeconds(delay);
-        obj.SetActive(true);
-    }
-
     void OnTriggerEnter(Collider collider) {
         string tag = collider.gameObject.tag;
         if (tag == "Destructible") {
@@ -71,21 +49,7 @@ public class CarController : MonoBehaviour {
                 if (child.GetComponent<BoxCollider>())
                     child.GetComponent<BoxCollider>().enabled = true;
             }
-        } else if (tag == "FireHydrant") {
-            InHydrant = true;
-            HydrantPosition = collider.transform.position;
         }
-    }
-
-    void OnTriggerExit(Collider collider) {
-        string tag = collider.gameObject.tag;
-        if (tag == "FireHydrant") {
-            InHydrant = false;
-        }
-    }
-
-    public void FixedUpdate() {
-        if (InHydrant) Body.AddForceAtPosition(Vector3.up * HydrantStrenght, HydrantPosition);
     }
 
     public void Move (float steering, float accel) {

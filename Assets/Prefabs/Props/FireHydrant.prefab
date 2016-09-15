@@ -28,6 +28,7 @@ GameObject:
   - 87: {fileID: 8795478}
   - 65: {fileID: 6597884}
   - 82: {fileID: 8270540}
+  - 114: {fileID: 11482288}
   m_Layer: 8
   m_Name: Water
   m_TagString: FireHydrant
@@ -49,6 +50,7 @@ GameObject:
   - 65: {fileID: 6552800}
   - 114: {fileID: 11430002}
   - 82: {fileID: 8273806}
+  - 114: {fileID: 11462192}
   m_Layer: 8
   m_Name: Sphere
   m_TagString: FireHydrant
@@ -106,7 +108,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 108558}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000016292068}
-  m_LocalPosition: {x: 41, y: 0, z: -96}
+  m_LocalPosition: {x: -188.85, y: 0.20000194, z: -100.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
   m_Children:
@@ -494,6 +496,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff4fc8974ec98774288279e583ccdece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11462192
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 163264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3646dc7dfaebc46852763b4e2dee01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Water: {fileID: 130278}
+  MinColVelocity: 15
+  ActivationDelay: 0.3
+--- !u!114 &11482288
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 130278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d28f4221c15c8949a57506037c7316d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ImpulseStrenght: 100
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
