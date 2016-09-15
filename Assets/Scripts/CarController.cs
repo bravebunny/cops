@@ -11,6 +11,7 @@ public class CarController : MonoBehaviour {
     public float SuspensionHeight = 1;
     public float Drag = 5;
     public float StabilisationStrenght = 40;
+    public bool Stabilise = true;
 
     [HideInInspector] public bool Blocked = false;
     public float CurrentSpeed{ get {
@@ -141,7 +142,8 @@ public class CarController : MonoBehaviour {
         } else {
             Body.drag = 0;
             // make car stand up
-            Body.AddTorque(Vector3.Cross(transform.up, Vector3.up) * StabilisationStrenght);
+            if (Stabilise)
+                Body.AddTorque(Vector3.Cross(transform.up, Vector3.up) * StabilisationStrenght);
         }
 
         //distance of the wheels to the car

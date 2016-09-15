@@ -45,11 +45,10 @@ GameObject:
   - 54: {fileID: 5438350}
   - 114: {fileID: 11474422}
   - 114: {fileID: 11444466}
-  - 114: {fileID: 11447592}
-  - 114: {fileID: 11467648}
   - 82: {fileID: 8222806}
   - 82: {fileID: 8201856}
   - 114: {fileID: 11454206}
+  - 114: {fileID: 11495004}
   m_Layer: 0
   m_Name: Cop
   m_TagString: Cop
@@ -215,7 +214,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 127284}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.28241712, y: 0, z: 41.854767}
+  m_LocalPosition: {x: -197.79, y: 1.2, z: -154.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -467,7 +466,7 @@ Rigidbody:
   m_AngularDrag: 7
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &6592554
@@ -722,38 +721,6 @@ MonoBehaviour:
   StopWhenTargetReached: 0
   ReachTargetThreshold: 2
   PathFindingInterval: 1
---- !u!114 &11447592
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 127284}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 167
-    i1: 157
-    i2: 216
-    i3: 20
-    i4: 81
-    i5: 196
-    i6: 68
-    i7: 12
-    i8: 138
-    i9: 1
-    i10: 143
-    i11: 47
-    i12: 187
-    i13: 151
-    i14: 240
-    i15: 12
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
 --- !u!114 &11454206
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -768,26 +735,6 @@ MonoBehaviour:
   Red: {fileID: 10898384}
   Blue: {fileID: 10871168}
   Rate: 0.3
---- !u!114 &11467648
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 127284}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 3
-  m_SendInterval: 0.04
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
 --- !u!114 &11474422
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -808,8 +755,23 @@ MonoBehaviour:
   SuspensionHeight: 1
   Drag: 5
   StabilisationStrenght: 40
+  Stabilise: 1
   Blocked: 0
   carMovementDirection: 0
+--- !u!114 &11495004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 127284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7c11f639cee0c54d9cb91ad3b810ca8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MinImpulse: 5
+  Explosion: {fileID: 136990, guid: ee50d64cd8a647145a669be56d20bd3d, type: 2}
+  Enabled: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -20,29 +20,32 @@ public class CarAIController : MonoBehaviour {
     [SerializeField] private bool StopWhenTargetReached;                                    // should we stop driving when we reach the target?
     [SerializeField] private float ReachTargetThreshold = 2;                                // proximity to target to consider we 'reached' it, and stop driving.
 
-    private float RandomPerlin;             // A random value for the car to base its wander on (so that AI cars don't all wander in the same pattern)
-    private CarController CarController;    // Reference to actual car controller we are controlling
-    private float AvoidOtherCarTime;        // time until which to avoid the car we recently collided with
-    private float AvoidOtherCarSlowdown;    // how much to slow down due to colliding with another car, whilst avoiding
-    private float AvoidPathOffset;          // direction (-1 or 1) in which to offset path to avoid other car, whilst avoiding
-    private Rigidbody Rigidbody;
-    private Transform Target;                                                               // 'target' the target object to aim for.
+    float RandomPerlin;             // A random value for the car to base its wander on (so that AI cars don't all wander in the same pattern)
+    CarController CarController;    // Reference to actual car controller we are controlling
+    float AvoidOtherCarTime;        // time until which to avoid the car we recently collided with
+    float AvoidOtherCarSlowdown;    // how much to slow down due to colliding with another car, whilst avoiding
+    float AvoidPathOffset;          // direction (-1 or 1) in which to offset path to avoid other car, whilst avoiding
+    Rigidbody Body;
+    ExplodeOnImpact ImpactExplosion;
+    Transform Target;                                                               // 'target' the target object to aim for.
     Vector3 TargetPosition;
 
     public float PathFindingInterval = 1;
 
     void Awake() {
-        Target = GameManager.Player.transform;
         // get the car controller
         CarController = GetComponent<CarController>();
         // Allows to disable camera collisions with cops
         CarController.gameObject.layer = LayerMask.NameToLayer("CameraIgnore");
         // give the random perlin a random value
         RandomPerlin = Random.value*100;
+        Body = GetComponent<Rigidbody>();
+        ImpactExplosion = GetComponent<ExplodeOnImpact>();
     }
 
     void Start() {
         InvokeRepeating("CalculatePath", Random.Range(0, PathFindingInterval), PathFindingInterval);
+        Target = GameManager.Player.transform;
         TargetPosition = Target.position;
     }
 
@@ -118,5 +121,12 @@ public class CarAIController : MonoBehaviour {
     public void SetTarget(Transform target)
     {
         Target = target;
+    }
+
+    public void OnTriggerEnter(Collider col) {
+        if (!col.CompareTag("FireHydrant")) return;
+
+        ImpactExplosion.Enabled = true;
+        CarController.Stabilise = false;
     }
 }
