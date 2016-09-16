@@ -24,9 +24,11 @@ public class Explosion : MonoBehaviour {
         Collider[] colliders = Physics.OverlapSphere(transform.position, Radius);
         foreach (Collider hit in colliders) {
             Rigidbody rb = hit.GetComponent<Rigidbody>();
-            if (rb != null && rb != CarBody) {
+            if (rb != null && rb != CarBody)
                 rb.AddExplosionForce(Power, transform.position, Radius, VerticalModifier);
-            }
+            ExplodeOnImpact eoi = hit.GetComponent<ExplodeOnImpact>();
+            if (eoi != null)
+                eoi.Enabled = true;
         }
     }
 
