@@ -16,5 +16,14 @@ public class ObjectBuilderEditor : Editor {
             myScript.Clear();
             NavMeshBuilder.ClearAllNavMeshes();
         }
+        if (GUILayout.Button("Update A*")) {
+            NavMeshTriangulation triangles = NavMesh.CalculateTriangulation();
+            Mesh mesh = new Mesh();
+            mesh.vertices = triangles.vertices;
+            mesh.triangles = triangles.indices;
+            
+            AssetDatabase.CreateAsset(mesh, "Assets/Resources/navmesh.asset");
+            AssetDatabase.SaveAssets();
+        }
     }
 }
