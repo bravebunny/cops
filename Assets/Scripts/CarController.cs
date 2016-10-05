@@ -32,7 +32,7 @@ public class CarController : MonoBehaviour {
     public float carMovementDirection = 0;
 
     // Use this for initialization
-    void Start () {
+    void Awake () {
         Body = GetComponent<Rigidbody>();
         EngineSound = GetComponent<AudioSource>();
         Body.centerOfMass = Vector3.down;

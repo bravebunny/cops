@@ -109,9 +109,6 @@ public class AIPath : MonoBehaviour {
 	/** Current path which is followed */
 	protected Path path;
 
-	/** Cached CharacterController component */
-	protected CharacterController controller;
-
 
 	/** Cached Rigidbody component */
 	protected Rigidbody rigid;
@@ -126,7 +123,7 @@ public class AIPath : MonoBehaviour {
 	/** Only when the previous path has been returned should be search for a new path */
 	protected bool canSearchAgain = true;
 
-	protected Vector3 lastFoundWaypointPosition;
+	public Vector3 lastFoundWaypointPosition;
 	protected float lastFoundWaypointTime = -9999;
 
 	/** Returns if the end-of-path has been reached
@@ -153,7 +150,6 @@ public class AIPath : MonoBehaviour {
 		tr = transform;
 
 		//Cache some other components (not all are necessarily there)
-		controller = GetComponent<CharacterController>();
 		rigid = GetComponent<Rigidbody>();
 	}
 
@@ -309,10 +305,6 @@ public class AIPath : MonoBehaviour {
 	}
 
 	public virtual Vector3 GetFeetPosition () {
-		if (controller != null) {
-			return tr.position - Vector3.up*controller.height*0.5F;
-		}
-
 		return tr.position;
 	}
 
@@ -324,9 +316,7 @@ public class AIPath : MonoBehaviour {
 		//Rotate towards targetDirection (filled in by CalculateVelocity)
 		RotateTowards(targetDirection);
 
-		if (controller != null) {
-			controller.SimpleMove(dir);
-		} else if (rigid != null) {
+		if (rigid != null) {
 			rigid.AddForce(dir);
 		} else {
 			tr.Translate(dir*Time.deltaTime, Space.World);

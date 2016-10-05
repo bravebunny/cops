@@ -29,11 +29,12 @@ public class CarAIController : MonoBehaviour {
     ExplodeOnImpact ImpactExplosion;
     Transform Target;                                                               // 'target' the target object to aim for.
     Vector3 TargetPosition;
+    AIPath Path;
 
     public float PathFindingInterval = 1;
 
     void Awake() {
-        // get the car controller
+        Path = GetComponent<AIPath>();
         CarController = GetComponent<CarController>();
         // Allows to disable camera collisions with cops
         CarController.gameObject.layer = LayerMask.NameToLayer("CameraIgnore");
@@ -51,25 +52,7 @@ public class CarAIController : MonoBehaviour {
 
     void CalculatePath() {
         if (CarController.Blocked) return;
-        NavMeshPath path = new NavMeshPath();
-        NavMesh.CalculatePath(transform.position, Target.position, -1, path);
-        int pathElements = path.corners.Length;
-
-        // Draw the path
-        for (int i = 1; i < pathElements; ++i) {
-            Debug.DrawLine(path.corners[i - 1], path.corners[i], Color.green);
-        }
-
-        // our target position starts off as the 'real' target position
-        if (pathElements >= 2) {
-            TargetPosition = path.corners[1];
-        }
-
-        // no need for evasive action, we can just wander across the path-to-target in a random way,
-        // which can help prevent AI from seeming too uniform and robotic in their driving
-        TargetPosition += Target.forward *
-            (Mathf.PerlinNoise(Time.time * LateralWanderSpeed, RandomPerlin) * 2 - 1) *
-            LateralWanderDistance;
+        TargetPosition = Path.lastFoundWaypointPosition;
     }
 
     // Update is called once per frame
