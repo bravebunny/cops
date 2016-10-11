@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 488148}
   - 114: {fileID: 11450874}
   - 114: {fileID: 11487940}
+  - 114: {fileID: 11485280}
   m_Layer: 9
   m_Name: MapLoader
   m_TagString: Untagged
@@ -108,8 +109,96 @@ MonoBehaviour:
   - angle: 0
     obj: {fileID: 159496, guid: 90c9f1a17a3480143920ea9d6dbb4f0d, type: 2}
   TileSize: 12
-  LayerDepth: 6
+  LayerDepth: 3
   CombineMeshes: 1
+--- !u!114 &11485280
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 147808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78396926cbbfc4ac3b48fc5fc34a87d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  astarData:
+    dataString: UEsDBBQAAAgIAAAIIex2f8Zs9wAAAHMBAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1T8tOwzAQ/JXIZ1O5QoQoUk6o6gERKlG4b+11sXDWkR+BtOq/Y6dCcEEr7WFmZ2fmzI7JKNae2QQ2IWuZapRqaiXupboDOIgboRqh5e26QV3XshHswllwyUt8wvBepD0MRUkwDQXhbD+PBXglE+cNHQ3hqtzy6g/Cqzf0wTjqxGoZXj0kG5PHjjBFD5ZXu3SwRj7ivHcfSB0la4u70zpgLM5frBWczcs+5Z1J7yLE/PYfOkiwOduaM5AyeYjYI3gMsXcq49En5MzkmAbsDglsvMrdiPRD07VvD1NptfUwltLKw+fWnAYXft9o9yI9Ij0vag024OUbUEsDBBQAAAgIAAAIIeww+UUYdwAAAIYAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BHYyxDsIgEED/5eZKrjbipauDk4276YDcURiEptAmxvjvFrc3vPc+sMmSQ4rQQ6dIHaGBaTGzz9C3O66Bd3oAEzNpxrPlkzFPPCATOtu1JE5rSwhjA+U9y2Be8i/upngXIoc4qcFsN8n+WsdVjInlktZYqonj9wdQSwECLQAUAAAICAAACCHsdn/GbPcAAABzAQAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAACCHsMPlFGHcAAACGAAAACQAkAAAAAAAAAAAAAABEAQAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAAYCAAAAAA==
+    upgradeData: 
+    data_backup: 
+    file_cachedStartup: {fileID: 0}
+    data_cachedStartup: 
+    cacheStartup: 0
+  showNavGraphs: 0
+  showUnwalkableNodes: 1
+  debugMode: 0
+  debugFloor: 0
+  debugRoof: 1
+  manualDebugFloorRoof: 0
+  showSearchTree: 1
+  unwalkableNodeDebugSize: 0.3
+  logPathResults: 2
+  maxNearestNodeDistance: 10
+  scanOnStartup: 1
+  fullGetNearestSearch: 0
+  prioritizeGraphs: 0
+  prioritizeGraphsLimit: 1
+  colorSettings:
+    _NodeConnection: {r: 0, g: 1, b: 0, a: 0.5}
+    _UnwalkableNode: {r: 1, g: 0, b: 0, a: 0.5}
+    _BoundsHandles: {r: 0.29, g: 0.454, b: 0.741, a: 0.9}
+    _ConnectionLowLerp: {r: 0, g: 1, b: 0, a: 0.5}
+    _ConnectionHighLerp: {r: 1, g: 0, b: 0, a: 0.5}
+    _MeshEdgeColor: {r: 0, g: 0, b: 0, a: 0.5}
+    _MeshColor: {r: 0.125, g: 0.686, b: 0, a: 0.19}
+    _AreaColors: []
+  tagNames:
+  - Basic Ground
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  - 18
+  - 19
+  - 20
+  - 21
+  - 22
+  - 23
+  - 24
+  - 25
+  - 26
+  - 27
+  - 28
+  - 29
+  - 30
+  - 31
+  heuristic: 2
+  heuristicScale: 1
+  threadCount: 0
+  maxFrameTime: 1
+  minAreaSize: 10
+  batchGraphUpdates: 0
+  graphUpdateBatchingInterval: 0.2
+  euclideanEmbedding:
+    mode: 0
+    seed: 0
+    pivotPointRoot: {fileID: 0}
+    spreadOutCount: 1
+  showGraphs: 1
+  lastUniqueAreaIndex: 0
 --- !u!114 &11487940
 MonoBehaviour:
   m_ObjectHideFlags: 1

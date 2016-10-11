@@ -85,7 +85,7 @@ MonoBehaviour:
   Roofs:
   - {fileID: 140772, guid: 9f0fab2da4131c54c85cb1966f0fc34b, type: 2}
   - {fileID: 158958, guid: 4abe55708356c7745938f99d53e53670, type: 2}
-  MaxFloor: 3
+  MaxFloor: 4
   FloorHeight: 4
 --- !u!1001 &100100000
 Prefab:

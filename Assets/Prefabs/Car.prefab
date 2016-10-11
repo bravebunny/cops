@@ -522,6 +522,7 @@ MonoBehaviour:
   SuspensionHeight: 0.8
   Drag: 5
   StabilisationStrenght: 30
+  Stabilise: 1
   Blocked: 0
   carMovementDirection: 0
 --- !u!136 &13661472
