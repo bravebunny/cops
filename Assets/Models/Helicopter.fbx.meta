@@ -9,19 +9,39 @@ ModelImporter:
     100002: 'Body '
     100004: //RootNode
     100006: Rotor
+    100008: HeliBody
+    100010: MainPropeller
+    100012: Paddles
+    100014: SmallPropeller
     400000: BackRotor
     400002: 'Body '
     400004: //RootNode
     400006: Rotor
+    400008: HeliBody
+    400010: MainPropeller
+    400012: Paddles
+    400014: SmallPropeller
     2300000: BackRotor
     2300002: 'Body '
     2300004: Rotor
+    2300006: HeliBody
+    2300008: MainPropeller
+    2300010: Paddles
+    2300012: SmallPropeller
     3300000: BackRotor
     3300002: 'Body '
     3300004: Rotor
+    3300006: HeliBody
+    3300008: MainPropeller
+    3300010: Paddles
+    3300012: SmallPropeller
     4300000: BackRotor
     4300002: Rotor
     4300004: 'Body '
+    4300006: Paddles
+    4300008: SmallPropeller
+    4300010: MainPropeller
+    4300012: HeliBody
   materials:
     importMaterials: 0
     materialName: 0
@@ -29,7 +49,7 @@ ModelImporter:
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
-    resampleRotations: 1
+    resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
     animationImportErrors: 
@@ -46,7 +66,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 2
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
