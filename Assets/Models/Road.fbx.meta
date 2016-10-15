@@ -20,6 +20,10 @@ ModelImporter:
     100024: Junction.001
     100026: Straight.001
     100028: Turn.001
+    100030: TrainCurve
+    100032: TrainStraight
+    100034: CurveIron
+    100036: StraightIron
     400000: Deadend
     400002: Intersection
     400004: Junction
@@ -35,6 +39,10 @@ ModelImporter:
     400024: Junction.001
     400026: Straight.001
     400028: Turn.001
+    400030: TrainCurve
+    400032: TrainStraight
+    400034: CurveIron
+    400036: StraightIron
     2300000: Deadend
     2300002: Intersection
     2300004: Junction
@@ -49,6 +57,10 @@ ModelImporter:
     2300022: Junction.001
     2300024: Straight.001
     2300026: Turn.001
+    2300028: TrainCurve
+    2300030: TrainStraight
+    2300032: CurveIron
+    2300034: StraightIron
     3300000: Deadend
     3300002: Intersection
     3300004: Junction
@@ -63,6 +75,10 @@ ModelImporter:
     3300022: Junction.001
     3300024: Straight.001
     3300026: Turn.001
+    3300028: TrainCurve
+    3300030: TrainStraight
+    3300032: CurveIron
+    3300034: StraightIron
     4300000: Intersection
     4300002: Junction
     4300004: Turn
@@ -77,6 +93,10 @@ ModelImporter:
     4300022: Turn.001
     4300024: Junction.001
     4300026: Intersection.001
+    4300028: TrainCurve
+    4300030: TrainStraight
+    4300032: CurveIron
+    4300034: StraightIron
     6400000: Deadend
     6400002: Intersection
     6400004: Junction
@@ -89,7 +109,7 @@ ModelImporter:
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
-    resampleRotations: 1
+    resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
     animationImportErrors: 
