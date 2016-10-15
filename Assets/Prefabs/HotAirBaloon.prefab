@@ -19,7 +19,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012817415780}
-  - 95: {fileID: 95000012596303160}
   m_Layer: 0
   m_Name: HotAirBaloon
   m_TagString: Untagged
@@ -179,20 +178,3 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011250360528}
   m_Mesh: {fileID: 4300000, guid: b216dfd2e924638449dee49323c88d96, type: 3}
---- !u!95 &95000012596303160
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010579924466}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: b216dfd2e924638449dee49323c88d96, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
