@@ -12,7 +12,7 @@ TagManager:
   - FireHydrant
   - UI
   - Road
-  - Target
+  - TrainCurve
   layers:
   - Default
   - TransparentFX
@@ -25,7 +25,7 @@ TagManager:
   - CameraIgnore
   - Ground
   - HideInGame
-  - 
+  - Train
   - 
   - 
   - 
