@@ -139,6 +139,7 @@ GameObject:
   - 4: {fileID: 4000012937984576}
   - 33: {fileID: 33000010039574674}
   - 23: {fileID: 23000012892324978}
+  - 114: {fileID: 114000011457083054}
   m_Layer: 11
   m_Name: Iron1
   m_TagString: Untagged
@@ -685,6 +686,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Sensor: {fileID: 4000012895228550}
+--- !u!114 &114000011457083054
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012673152042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e51068bc4c4dcf45b64d0fb4e084e76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Pivot: {fileID: 4000011237630474}
+  Speed: 10
 --- !u!198 &198000010890106982
 ParticleSystem:
   m_ObjectHideFlags: 1

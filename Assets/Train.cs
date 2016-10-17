@@ -28,7 +28,7 @@ public class Train : MonoBehaviour {
         Vector3 origin = Sensor.position;
         Vector3 direction = -transform.up;
         bool grounded = Physics.Raycast(origin, direction, out hit, MaxGroundDistance);
-        Debug.DrawLine(origin, origin + direction * MaxGroundDistance);
+        //Debug.DrawLine(origin, origin + direction * MaxGroundDistance);
         if (!grounded) return false;
         bool curveAhead = hit.transform.CompareTag("TrainCurve");
         if (curveAhead) CurveAngle = hit.transform.parent.eulerAngles.y;

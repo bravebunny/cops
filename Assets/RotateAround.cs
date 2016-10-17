@@ -11,7 +11,7 @@ public class RotateAround : MonoBehaviour {
     }
 	
 	void FixedUpdate() {
-        transform.RotateAround(Pivot.position, transform.parent.forward, Speed);
+        transform.RotateAround(Pivot.position, transform.parent.right, Speed);
         transform.localRotation = InitialRotation;
     }
 }
