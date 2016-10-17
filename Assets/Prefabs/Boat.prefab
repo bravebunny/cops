@@ -21,6 +21,7 @@ GameObject:
   - 4: {fileID: 4000013148504678}
   - 33: {fileID: 33000012423623288}
   - 23: {fileID: 23000011901780456}
+  - 114: {fileID: 114000013470300332}
   m_Layer: 0
   m_Name: Boat
   m_TagString: Untagged
@@ -34,9 +35,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010321629146}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -79.6647, y: -0.4, z: -188.24}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.1158514, y: -1.6659422, z: -205.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -54,12 +55,12 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
+  - {fileID: 2100000, guid: 4192614fc70fb43f5b10b36a3f954140, type: 2}
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 4192614fc70fb43f5b10b36a3f954140, type: 2}
   - {fileID: 2100000, guid: 236199405a766478faa145afc45dc899, type: 2}
-  - {fileID: 2100000, guid: 4192614fc70fb43f5b10b36a3f954140, type: 2}
-  - {fileID: 2100000, guid: 4192614fc70fb43f5b10b36a3f954140, type: 2}
-  - {fileID: 2100000, guid: e82e1dfe0f60c344eaf6358231950034, type: 2}
-  - {fileID: 2100000, guid: e82e1dfe0f60c344eaf6358231950034, type: 2}
-  - {fileID: 2100000, guid: 50961b4c7b46043f2bc10106c9f4f421, type: 2}
+  - {fileID: 2100000, guid: 3185d69ce56d3452b936bdc3ae627ca9, type: 2}
+  - {fileID: 2100000, guid: 9e044f7a92b27624b8f63b45d785c052, type: 2}
   - {fileID: 2100000, guid: 0e43d72b32cd244f79adc3f434f88fb3, type: 2}
   - {fileID: 2100000, guid: 151f7fcb2aaea8046b9ab9785c45a0f5, type: 2}
   m_SubsetIndices: 
@@ -83,4 +84,19 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010321629146}
-  m_Mesh: {fileID: 4300000, guid: 1373ebdf7b03c6f49b8affef65a7ef8f, type: 3}
+  m_Mesh: {fileID: 4300000, guid: e4332c457b4d7c345977f8228f5a985d, type: 3}
+--- !u!114 &114000013470300332
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010321629146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 935c6ddb99ef46746807d548ff1a3807, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  degreesPerSecond: 1
+  amplitudeY: 5
+  velocityY: 1
+  target: {x: 2, y: 8, z: 8}
