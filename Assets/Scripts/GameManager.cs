@@ -26,9 +26,11 @@ public class GameManager : MonoBehaviour {
 
     bool duplicate = false;
     bool roundEnded = false;
+    float InitialTimeScale;
 
 
     void Awake() {
+        InitialTimeScale = Time.timeScale;
         sInstance = this;
         Player = PlayerInstance;
         GameCamera = CameraInstance;
@@ -51,7 +53,7 @@ public class GameManager : MonoBehaviour {
 
     private void Start() {
         Physics.gravity = new Vector3(0, -30.0f, 0);
-        Time.timeScale = 1;
+        Time.timeScale = InitialTimeScale;
         GameObject lobby = GameObject.Find("LobbyManager");
     }
 

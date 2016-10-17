@@ -4,7 +4,7 @@ using System.Collections;
 public class Train : MonoBehaviour {
     public Transform Sensor;
     float MaxGroundDistance = 10;
-    float Speed = 20;
+    public float Speed = 20;
     Rigidbody Body;
     float CurveAngle;
 
