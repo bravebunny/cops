@@ -12,6 +12,10 @@ ModelImporter:
     100008: Joint.001
     100010: Machine
     100012: //RootNode
+    100014: BWheels2.002
+    100016: BWheels2.003
+    100018: Joint.002
+    100020: Machine.001
     400000: BWheels2
     400002: FWhells1
     400004: FWhells1.001
@@ -19,24 +23,40 @@ ModelImporter:
     400008: Joint.001
     400010: Machine
     400012: //RootNode
+    400014: BWheels2.002
+    400016: BWheels2.003
+    400018: Joint.002
+    400020: Machine.001
     2300000: BWheels2
     2300002: FWhells1
     2300004: FWhells1.001
     2300006: Joint
     2300008: Joint.001
     2300010: Machine
+    2300012: BWheels2.002
+    2300014: BWheels2.003
+    2300016: Joint.002
+    2300018: Machine.001
     3300000: BWheels2
     3300002: FWhells1
     3300004: FWhells1.001
     3300006: Joint
     3300008: Joint.001
     3300010: Machine
+    3300012: BWheels2.002
+    3300014: BWheels2.003
+    3300016: Joint.002
+    3300018: Machine.001
     4300000: Machine
     4300002: Joint
     4300004: FWhells1.001
     4300006: FWhells1
     4300008: BWheels2
     4300010: Joint.001
+    4300012: BWheels2.003
+    4300014: BWheels2.002
+    4300016: Joint.002
+    4300018: Machine.001
   materials:
     importMaterials: 0
     materialName: 0
