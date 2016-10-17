@@ -78,11 +78,4 @@ public class CombineChildren : MonoBehaviour {
             DestroyImmediate(g);
         }
     }
-
-    bool ShouldDestroy(GameObject gameObject) {
-        foreach (GameObject o in DontDestroy) {
-            if (o == UnityEditor.PrefabUtility.GetPrefabParent(gameObject)) return false;
-        }
-        return true;
-    }
 }
