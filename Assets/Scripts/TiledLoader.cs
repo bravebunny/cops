@@ -52,7 +52,6 @@ public class TiledLoader : MonoBehaviour {
                     GameObject instance = (GameObject)Instantiate(obj, position, rotation);
 
                     instance.transform.parent = transform;
-                    instance.isStatic = true;
                     // if this is a building, we need to generate all the parts
                     BuildingGenerator bg = instance.GetComponent<BuildingGenerator>();
                     if (bg != null) bg.Generate();

@@ -4,7 +4,6 @@ using System;
 
 [AddComponentMenu("Mesh/Combine Children")]
 public class CombineChildren : MonoBehaviour {
-
     public void Combine() {
         Matrix4x4 myTransform = transform.worldToLocalMatrix;
         Dictionary<string, List<CombineInstance>> combines = new Dictionary<string, List<CombineInstance>>();
@@ -27,7 +26,7 @@ public class CombineChildren : MonoBehaviour {
 
         MeshFilter[] meshFilters = GetComponentsInChildren<MeshFilter>();
         foreach (var filter in meshFilters) {
-            if (filter.gameObject.GetComponent<Road>() != null || filter.gameObject.GetComponent<Spawner>() != null) continue;
+            if (!filter.gameObject.isStatic) continue;
             toDestroy.Add(filter.gameObject);
 
             if (filter.sharedMesh == null)
@@ -78,5 +77,12 @@ public class CombineChildren : MonoBehaviour {
         foreach (GameObject g in toDestroy) {
             DestroyImmediate(g);
         }
+    }
+
+    bool ShouldDestroy(GameObject gameObject) {
+        foreach (GameObject o in DontDestroy) {
+            if (o == UnityEditor.PrefabUtility.GetPrefabParent(gameObject)) return false;
+        }
+        return true;
     }
 }
