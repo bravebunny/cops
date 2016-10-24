@@ -4,6 +4,8 @@ using System;
 
 [AddComponentMenu("Mesh/Combine Children")]
 public class CombineChildren : MonoBehaviour {
+    public int MaxVertexCount = 10000;
+
     public void Combine() {
         Matrix4x4 myTransform = transform.worldToLocalMatrix;
         Dictionary<string, List<CombineInstance>> combines = new Dictionary<string, List<CombineInstance>>();
@@ -44,7 +46,7 @@ public class CombineChildren : MonoBehaviour {
             // keep count of the vertex count for each material to avoid going over the vertex limit
             string name = filterRenderer.sharedMaterial.name;
             vertexCount[name] += filter.sharedMesh.vertexCount;
-            if (vertexCount[name] >= UInt16.MaxValue) {
+            if (vertexCount[name] >= MaxVertexCount) {
                 matIndexes[name]++;
                 vertexCount[name] = filter.sharedMesh.vertexCount;
                 combines.Add(name + matIndexes[name], new List<CombineInstance>());
