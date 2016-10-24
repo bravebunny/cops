@@ -7,18 +7,20 @@ public class Corn : MonoBehaviour {
     Rigidbody Body;
     BoxCollider Collider;
     public float Speed = 0.01F;
-    float AngleRandomness = 0.1f;
+    float Randomness = 0.1f;
 	
     void Start() {
         Body = GetComponent<Rigidbody>();
         Collider = GetComponent<BoxCollider>();
-        RandomizeAngle();
+        Randomize();
     }
 
-    void RandomizeAngle() {
-        float x = Random.Range(-AngleRandomness, AngleRandomness);
-        float z = Random.Range(-AngleRandomness, AngleRandomness);
-        transform.up = new Vector3(x, 1, z);
+    void Randomize() {
+        float x = Random.Range(-Randomness, Randomness);
+        float z = Random.Range(-Randomness, Randomness);
+        Vector3 random = new Vector3(x, 0, z);
+        transform.up += random;
+        transform.position += random;
     }
 
 	void FixedUpdate () {
