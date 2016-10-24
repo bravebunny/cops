@@ -37,19 +37,19 @@ public class Train : MonoBehaviour {
 
     // checks if the difference between angles A and B is less than delta
     bool SimilarAngle(float a, float b, float delta) {
-        Debug.Log("a: " + a + ", b: " + b + ", delta: " + delta);
+        //Debug.Log("a: " + a + ", b: " + b + ", delta: " + delta);
         float abs = Mathf.Abs((a % 360) - (b % 360));
         return abs < delta || abs > (360 - delta);
     }
 
     void TurnRight() {
-        Debug.Log("turn right");
+        //Debug.Log("turn right");
         transform.eulerAngles += Vector3.up * 90;
         UpdateVelocity();
     }
 
     void TurnLeft() {
-        Debug.Log("turn left");
+        //Debug.Log("turn left");
         transform.eulerAngles -= Vector3.up * 90;
         UpdateVelocity();
     }
