@@ -8,7 +8,7 @@ public class CloudGenerator : MonoBehaviour {
     
 	void Start () {
         float radius = GetComponent<Renderer>().bounds.extents.x;
-        Debug.Log("Radius: " + radius);
+        //Debug.Log("Radius: " + radius);
         for (int i = 0; i < NumberOfParts; i++) {
             // create the new cloud part
             GameObject part = Instantiate<GameObject>(CloudPart);
