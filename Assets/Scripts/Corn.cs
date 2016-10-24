@@ -7,10 +7,18 @@ public class Corn : MonoBehaviour {
     Rigidbody Body;
     BoxCollider Collider;
     public float Speed = 0.01F;
+    float AngleRandomness = 0.1f;
 	
     void Start() {
         Body = GetComponent<Rigidbody>();
         Collider = GetComponent<BoxCollider>();
+        RandomizeAngle();
+    }
+
+    void RandomizeAngle() {
+        float x = Random.Range(-AngleRandomness, AngleRandomness);
+        float z = Random.Range(-AngleRandomness, AngleRandomness);
+        transform.up = new Vector3(x, 1, z);
     }
 
 	void FixedUpdate () {
@@ -20,8 +28,8 @@ public class Corn : MonoBehaviour {
     }
 
     void OnTriggerEnter(Collider coll) {
+        if (coll.GetComponent<Corn>() != null) return;
         Collider.enabled = false;
-        //Body.isKinematic = false;
         Fall = true;
         Direction = (transform.position - coll.transform.position).normalized;
     }
