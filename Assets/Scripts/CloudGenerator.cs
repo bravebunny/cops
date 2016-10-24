@@ -8,17 +8,18 @@ public class CloudGenerator : MonoBehaviour {
     
 	void Start () {
         float radius = GetComponent<Renderer>().bounds.extents.x;
+        Debug.Log("Radius: " + radius);
         for (int i = 0; i < NumberOfParts; i++) {
             // create the new cloud part
             GameObject part = Instantiate<GameObject>(CloudPart);
 
             // generate a random number to slightly vary the scale of each part
-            float randomness = 1 - Random.Range(-ScaleRandomness, ScaleRandomness);
+            float randomness = 1 + Random.Range(-ScaleRandomness, ScaleRandomness);
 
             // position the new part around the center of the cloud
             float angle = (360 / NumberOfParts) * i;
             part.transform.parent = transform;
-            part.transform.localPosition = Vector3.forward * radius * randomness;
+            part.transform.position = transform.position + Vector3.forward * radius * randomness;
             part.transform.RotateAround(transform.position, Vector3.up, angle);
 
             // change the scale
