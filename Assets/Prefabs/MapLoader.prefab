@@ -224,6 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73230c4a44225574bb6b590d2bfbd761, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxVertexCount: 1000
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
