@@ -4,9 +4,15 @@ using System.Collections.Generic;
 
 public class RandomizeColor : MonoBehaviour {
     public List<Material> Materials; // randomize parts of the object with this material
+    public int MinHue = 0;
+    public int MaxHue = 255;
+    public int MinSat = 0;
+    public int MaxSat = 255;
+    public int MinVal = 0;
+    public int MaxVal = 255;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         Renderer[] renderers = GetComponentsInChildren<Renderer>();
         foreach (Renderer renderer in renderers) {
             for (int i = 0; i < renderer.sharedMaterials.Length; i++) {
@@ -20,9 +26,9 @@ public class RandomizeColor : MonoBehaviour {
 	}
 
     void Randomize(Material material) {
-        float r = Random.value;
-        float g = Random.value;
-        float b = Random.value;
-        material.color = new Color(r, g, b);
+        float h = Random.Range((float)MinHue, (float)MaxHue) / 255;
+        float s = Random.Range((float)MinSat, (float)MaxSat) / 255;
+        float v = Random.Range((float)MinVal, (float)MaxVal) / 255;
+        material.color = Color.HSVToRGB(h, s, v);
     }
 }

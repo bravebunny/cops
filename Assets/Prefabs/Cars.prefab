@@ -3153,6 +3153,9 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 50961b4c7b46043f2bc10106c9f4f421, type: 2}
   - {fileID: 2100000, guid: 3185d69ce56d3452b936bdc3ae627ca9, type: 2}
@@ -3161,13 +3164,13 @@ MeshRenderer:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -3183,6 +3186,9 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 50961b4c7b46043f2bc10106c9f4f421, type: 2}
   - {fileID: 2100000, guid: 3185d69ce56d3452b936bdc3ae627ca9, type: 2}
@@ -3191,13 +3197,13 @@ MeshRenderer:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -3213,6 +3219,9 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 50961b4c7b46043f2bc10106c9f4f421, type: 2}
   - {fileID: 2100000, guid: 3185d69ce56d3452b936bdc3ae627ca9, type: 2}
@@ -3221,13 +3230,13 @@ MeshRenderer:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -3243,6 +3252,9 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 50961b4c7b46043f2bc10106c9f4f421, type: 2}
   - {fileID: 2100000, guid: 3185d69ce56d3452b936bdc3ae627ca9, type: 2}
@@ -3251,13 +3263,13 @@ MeshRenderer:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -3273,6 +3285,9 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 50961b4c7b46043f2bc10106c9f4f421, type: 2}
   - {fileID: 2100000, guid: 3185d69ce56d3452b936bdc3ae627ca9, type: 2}
@@ -3281,13 +3296,13 @@ MeshRenderer:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -3303,6 +3318,9 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 50961b4c7b46043f2bc10106c9f4f421, type: 2}
   - {fileID: 2100000, guid: 3185d69ce56d3452b936bdc3ae627ca9, type: 2}
@@ -3311,13 +3329,13 @@ MeshRenderer:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -3333,6 +3351,9 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 50961b4c7b46043f2bc10106c9f4f421, type: 2}
   - {fileID: 2100000, guid: 3185d69ce56d3452b936bdc3ae627ca9, type: 2}
@@ -3341,13 +3362,13 @@ MeshRenderer:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -3363,6 +3384,9 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 50961b4c7b46043f2bc10106c9f4f421, type: 2}
   - {fileID: 2100000, guid: 3185d69ce56d3452b936bdc3ae627ca9, type: 2}
@@ -3371,13 +3395,13 @@ MeshRenderer:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -3393,6 +3417,9 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 50961b4c7b46043f2bc10106c9f4f421, type: 2}
   - {fileID: 2100000, guid: 3185d69ce56d3452b936bdc3ae627ca9, type: 2}
@@ -3401,13 +3428,13 @@ MeshRenderer:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -3423,6 +3450,9 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 50961b4c7b46043f2bc10106c9f4f421, type: 2}
   - {fileID: 2100000, guid: 3185d69ce56d3452b936bdc3ae627ca9, type: 2}
@@ -3431,13 +3461,13 @@ MeshRenderer:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -3453,6 +3483,9 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 50961b4c7b46043f2bc10106c9f4f421, type: 2}
   - {fileID: 2100000, guid: 3185d69ce56d3452b936bdc3ae627ca9, type: 2}
@@ -3461,13 +3494,13 @@ MeshRenderer:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -3483,6 +3516,9 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 50961b4c7b46043f2bc10106c9f4f421, type: 2}
   - {fileID: 2100000, guid: 3185d69ce56d3452b936bdc3ae627ca9, type: 2}
@@ -3491,13 +3527,13 @@ MeshRenderer:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -3513,6 +3549,9 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 50961b4c7b46043f2bc10106c9f4f421, type: 2}
   - {fileID: 2100000, guid: 3185d69ce56d3452b936bdc3ae627ca9, type: 2}
@@ -3521,13 +3560,13 @@ MeshRenderer:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -3543,6 +3582,9 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 50961b4c7b46043f2bc10106c9f4f421, type: 2}
   - {fileID: 2100000, guid: 3185d69ce56d3452b936bdc3ae627ca9, type: 2}
@@ -3551,13 +3593,13 @@ MeshRenderer:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -3573,6 +3615,9 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 50961b4c7b46043f2bc10106c9f4f421, type: 2}
   - {fileID: 2100000, guid: 3185d69ce56d3452b936bdc3ae627ca9, type: 2}
@@ -3581,13 +3626,13 @@ MeshRenderer:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -3603,6 +3648,9 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 50961b4c7b46043f2bc10106c9f4f421, type: 2}
   - {fileID: 2100000, guid: 3185d69ce56d3452b936bdc3ae627ca9, type: 2}
@@ -3611,13 +3659,13 @@ MeshRenderer:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -3633,6 +3681,9 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 50961b4c7b46043f2bc10106c9f4f421, type: 2}
   - {fileID: 2100000, guid: 3185d69ce56d3452b936bdc3ae627ca9, type: 2}
@@ -3641,13 +3692,13 @@ MeshRenderer:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -3663,6 +3714,9 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 50961b4c7b46043f2bc10106c9f4f421, type: 2}
   - {fileID: 2100000, guid: 3185d69ce56d3452b936bdc3ae627ca9, type: 2}
@@ -3671,13 +3725,13 @@ MeshRenderer:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -3693,6 +3747,9 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 50961b4c7b46043f2bc10106c9f4f421, type: 2}
   - {fileID: 2100000, guid: 3185d69ce56d3452b936bdc3ae627ca9, type: 2}
@@ -3701,13 +3758,13 @@ MeshRenderer:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -3723,6 +3780,9 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 50961b4c7b46043f2bc10106c9f4f421, type: 2}
   - {fileID: 2100000, guid: 3185d69ce56d3452b936bdc3ae627ca9, type: 2}
@@ -3731,13 +3791,13 @@ MeshRenderer:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -3753,6 +3813,9 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 50961b4c7b46043f2bc10106c9f4f421, type: 2}
   - {fileID: 2100000, guid: 3185d69ce56d3452b936bdc3ae627ca9, type: 2}
@@ -3761,13 +3824,13 @@ MeshRenderer:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -3783,6 +3846,9 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 50961b4c7b46043f2bc10106c9f4f421, type: 2}
   - {fileID: 2100000, guid: 3185d69ce56d3452b936bdc3ae627ca9, type: 2}
@@ -3791,13 +3857,13 @@ MeshRenderer:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -3813,6 +3879,9 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 50961b4c7b46043f2bc10106c9f4f421, type: 2}
   - {fileID: 2100000, guid: 3185d69ce56d3452b936bdc3ae627ca9, type: 2}
@@ -3821,13 +3890,13 @@ MeshRenderer:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -3843,6 +3912,9 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 50961b4c7b46043f2bc10106c9f4f421, type: 2}
   - {fileID: 2100000, guid: 3185d69ce56d3452b936bdc3ae627ca9, type: 2}
@@ -3851,13 +3923,13 @@ MeshRenderer:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -3873,6 +3945,9 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 50961b4c7b46043f2bc10106c9f4f421, type: 2}
   - {fileID: 2100000, guid: 3185d69ce56d3452b936bdc3ae627ca9, type: 2}
@@ -3881,13 +3956,13 @@ MeshRenderer:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -3903,6 +3978,9 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 50961b4c7b46043f2bc10106c9f4f421, type: 2}
   - {fileID: 2100000, guid: 3185d69ce56d3452b936bdc3ae627ca9, type: 2}
@@ -3911,13 +3989,13 @@ MeshRenderer:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -3933,6 +4011,9 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 50961b4c7b46043f2bc10106c9f4f421, type: 2}
   - {fileID: 2100000, guid: 3185d69ce56d3452b936bdc3ae627ca9, type: 2}
@@ -3941,13 +4022,13 @@ MeshRenderer:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -3963,6 +4044,9 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 50961b4c7b46043f2bc10106c9f4f421, type: 2}
   - {fileID: 2100000, guid: 3185d69ce56d3452b936bdc3ae627ca9, type: 2}
@@ -3971,13 +4055,13 @@ MeshRenderer:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -3993,6 +4077,9 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 50961b4c7b46043f2bc10106c9f4f421, type: 2}
   - {fileID: 2100000, guid: 3185d69ce56d3452b936bdc3ae627ca9, type: 2}
@@ -4001,13 +4088,13 @@ MeshRenderer:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -4023,6 +4110,9 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 50961b4c7b46043f2bc10106c9f4f421, type: 2}
   - {fileID: 2100000, guid: 3185d69ce56d3452b936bdc3ae627ca9, type: 2}
@@ -4031,13 +4121,13 @@ MeshRenderer:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -4053,6 +4143,9 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 50961b4c7b46043f2bc10106c9f4f421, type: 2}
   - {fileID: 2100000, guid: 3185d69ce56d3452b936bdc3ae627ca9, type: 2}
@@ -4061,13 +4154,13 @@ MeshRenderer:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -4083,6 +4176,9 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 50961b4c7b46043f2bc10106c9f4f421, type: 2}
   - {fileID: 2100000, guid: 3185d69ce56d3452b936bdc3ae627ca9, type: 2}
@@ -4091,13 +4187,13 @@ MeshRenderer:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -4113,6 +4209,9 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 50961b4c7b46043f2bc10106c9f4f421, type: 2}
   - {fileID: 2100000, guid: 3185d69ce56d3452b936bdc3ae627ca9, type: 2}
@@ -4121,13 +4220,13 @@ MeshRenderer:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -4143,6 +4242,9 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 50961b4c7b46043f2bc10106c9f4f421, type: 2}
   - {fileID: 2100000, guid: 3185d69ce56d3452b936bdc3ae627ca9, type: 2}
@@ -4151,13 +4253,13 @@ MeshRenderer:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -4173,6 +4275,9 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 50961b4c7b46043f2bc10106c9f4f421, type: 2}
   - {fileID: 2100000, guid: 3185d69ce56d3452b936bdc3ae627ca9, type: 2}
@@ -4181,13 +4286,13 @@ MeshRenderer:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -4203,6 +4308,9 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 50961b4c7b46043f2bc10106c9f4f421, type: 2}
   - {fileID: 2100000, guid: 3185d69ce56d3452b936bdc3ae627ca9, type: 2}
@@ -4211,13 +4319,13 @@ MeshRenderer:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -4233,6 +4341,9 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 50961b4c7b46043f2bc10106c9f4f421, type: 2}
   - {fileID: 2100000, guid: 3185d69ce56d3452b936bdc3ae627ca9, type: 2}
@@ -4241,13 +4352,13 @@ MeshRenderer:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -4263,6 +4374,9 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 50961b4c7b46043f2bc10106c9f4f421, type: 2}
   - {fileID: 2100000, guid: 3185d69ce56d3452b936bdc3ae627ca9, type: 2}
@@ -4271,13 +4385,13 @@ MeshRenderer:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -4293,6 +4407,9 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 50961b4c7b46043f2bc10106c9f4f421, type: 2}
   - {fileID: 2100000, guid: 3185d69ce56d3452b936bdc3ae627ca9, type: 2}
@@ -4301,13 +4418,13 @@ MeshRenderer:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -4323,6 +4440,9 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 50961b4c7b46043f2bc10106c9f4f421, type: 2}
   - {fileID: 2100000, guid: 3185d69ce56d3452b936bdc3ae627ca9, type: 2}
@@ -4331,13 +4451,13 @@ MeshRenderer:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -4353,17 +4473,20 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 0
   m_Materials:
   - {fileID: 2100000, guid: 151f7fcb2aaea8046b9ab9785c45a0f5, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 0
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -4379,6 +4502,9 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 50961b4c7b46043f2bc10106c9f4f421, type: 2}
   - {fileID: 2100000, guid: 3185d69ce56d3452b936bdc3ae627ca9, type: 2}
@@ -4387,13 +4513,13 @@ MeshRenderer:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -4409,6 +4535,9 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 50961b4c7b46043f2bc10106c9f4f421, type: 2}
   - {fileID: 2100000, guid: 3185d69ce56d3452b936bdc3ae627ca9, type: 2}
@@ -4417,13 +4546,13 @@ MeshRenderer:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -4439,6 +4568,9 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 50961b4c7b46043f2bc10106c9f4f421, type: 2}
   - {fileID: 2100000, guid: 3185d69ce56d3452b936bdc3ae627ca9, type: 2}
@@ -4447,13 +4579,13 @@ MeshRenderer:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -4469,6 +4601,9 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 50961b4c7b46043f2bc10106c9f4f421, type: 2}
   - {fileID: 2100000, guid: 3185d69ce56d3452b936bdc3ae627ca9, type: 2}
@@ -4477,13 +4612,13 @@ MeshRenderer:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -4499,6 +4634,9 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 50961b4c7b46043f2bc10106c9f4f421, type: 2}
   - {fileID: 2100000, guid: 3185d69ce56d3452b936bdc3ae627ca9, type: 2}
@@ -4507,13 +4645,13 @@ MeshRenderer:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -4529,6 +4667,9 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 50961b4c7b46043f2bc10106c9f4f421, type: 2}
   - {fileID: 2100000, guid: 3185d69ce56d3452b936bdc3ae627ca9, type: 2}
@@ -4537,13 +4678,13 @@ MeshRenderer:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -9642,6 +9783,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Materials:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
+  MinHue: 0
+  MaxHue: 0
+  MinSat: 0
+  MaxSat: 0
+  MinVal: 0
+  MaxVal: 0
 --- !u!114 &11402402
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9655,6 +9802,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Materials:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
+  MinHue: 0
+  MaxHue: 0
+  MinSat: 0
+  MaxSat: 0
+  MinVal: 0
+  MaxVal: 0
 --- !u!114 &11402444
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9668,6 +9821,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Materials:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
+  MinHue: 0
+  MaxHue: 0
+  MinSat: 0
+  MaxSat: 0
+  MinVal: 0
+  MaxVal: 0
 --- !u!114 &11402712
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9681,6 +9840,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Materials:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
+  MinHue: 0
+  MaxHue: 0
+  MinSat: 0
+  MaxSat: 0
+  MinVal: 0
+  MaxVal: 0
 --- !u!114 &11402940
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9710,6 +9875,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Materials:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
+  MinHue: 0
+  MaxHue: 0
+  MinSat: 0
+  MaxSat: 0
+  MinVal: 0
+  MaxVal: 0
 --- !u!114 &11404038
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9723,6 +9894,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Materials:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
+  MinHue: 0
+  MaxHue: 0
+  MinSat: 0
+  MaxSat: 0
+  MinVal: 0
+  MaxVal: 0
 --- !u!114 &11405090
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9890,6 +10067,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Materials:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
+  MinHue: 0
+  MaxHue: 0
+  MinSat: 0
+  MaxSat: 0
+  MinVal: 0
+  MaxVal: 0
 --- !u!114 &11413446
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9903,6 +10086,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Materials:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
+  MinHue: 0
+  MaxHue: 0
+  MinSat: 0
+  MaxSat: 0
+  MinVal: 0
+  MaxVal: 0
 --- !u!114 &11413546
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9964,6 +10153,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Materials:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
+  MinHue: 0
+  MaxHue: 0
+  MinSat: 0
+  MaxSat: 0
+  MinVal: 0
+  MaxVal: 0
 --- !u!114 &11419806
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9977,6 +10172,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Materials:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
+  MinHue: 0
+  MaxHue: 0
+  MinSat: 0
+  MaxSat: 0
+  MinVal: 0
+  MaxVal: 0
 --- !u!114 &11419878
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9990,6 +10191,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Materials:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
+  MinHue: 0
+  MaxHue: 0
+  MinSat: 0
+  MaxSat: 0
+  MinVal: 0
+  MaxVal: 0
 --- !u!114 &11420630
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10035,6 +10242,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Materials:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
+  MinHue: 0
+  MaxHue: 0
+  MinSat: 0
+  MaxSat: 0
+  MinVal: 0
+  MaxVal: 0
 --- !u!114 &11421188
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10106,6 +10319,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Materials:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
+  MinHue: 0
+  MaxHue: 0
+  MinSat: 0
+  MaxSat: 0
+  MinVal: 0
+  MaxVal: 0
 --- !u!114 &11427408
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10119,6 +10338,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Materials:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
+  MinHue: 0
+  MaxHue: 0
+  MinSat: 0
+  MaxSat: 0
+  MinVal: 0
+  MaxVal: 0
 --- !u!114 &11427700
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10132,6 +10357,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Materials:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
+  MinHue: 0
+  MaxHue: 0
+  MinSat: 0
+  MaxSat: 0
+  MinVal: 0
+  MaxVal: 0
 --- !u!114 &11428548
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10221,6 +10452,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Materials:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
+  MinHue: 0
+  MaxHue: 0
+  MinSat: 0
+  MaxSat: 0
+  MinVal: 0
+  MaxVal: 0
 --- !u!114 &11430984
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10250,6 +10487,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Materials:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
+  MinHue: 0
+  MaxHue: 0
+  MinSat: 0
+  MaxSat: 0
+  MinVal: 0
+  MaxVal: 0
 --- !u!114 &11434100
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10309,6 +10552,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Materials:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
+  MinHue: 0
+  MaxHue: 0
+  MinSat: 0
+  MaxSat: 0
+  MinVal: 0
+  MaxVal: 0
 --- !u!114 &11437176
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10338,6 +10587,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Materials:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
+  MinHue: 0
+  MaxHue: 0
+  MinSat: 0
+  MaxSat: 0
+  MinVal: 0
+  MaxVal: 0
 --- !u!114 &11437744
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10441,6 +10696,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Materials:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
+  MinHue: 0
+  MaxHue: 0
+  MinSat: 0
+  MaxSat: 0
+  MinVal: 0
+  MaxVal: 0
 --- !u!114 &11442352
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10514,6 +10775,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Materials:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
+  MinHue: 0
+  MaxHue: 0
+  MinSat: 0
+  MaxSat: 0
+  MinVal: 0
+  MaxVal: 0
 --- !u!114 &11445358
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10557,6 +10824,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Materials:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
+  MinHue: 0
+  MaxHue: 0
+  MinSat: 0
+  MaxSat: 0
+  MinVal: 0
+  MaxVal: 0
 --- !u!114 &11446774
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10570,6 +10843,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Materials:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
+  MinHue: 0
+  MaxHue: 0
+  MinSat: 0
+  MaxSat: 0
+  MinVal: 0
+  MaxVal: 0
 --- !u!114 &11447336
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10655,6 +10934,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Materials:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
+  MinHue: 0
+  MaxHue: 0
+  MinSat: 0
+  MaxSat: 0
+  MinVal: 0
+  MaxVal: 0
 --- !u!114 &11452598
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10668,6 +10953,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Materials:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
+  MinHue: 0
+  MaxHue: 0
+  MinSat: 0
+  MaxSat: 0
+  MinVal: 0
+  MaxVal: 0
 --- !u!114 &11452710
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10725,6 +11016,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Materials:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
+  MinHue: 0
+  MaxHue: 0
+  MinSat: 0
+  MaxSat: 0
+  MinVal: 0
+  MaxVal: 0
 --- !u!114 &11453940
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10754,6 +11051,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Materials:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
+  MinHue: 0
+  MaxHue: 0
+  MinSat: 0
+  MaxSat: 0
+  MinVal: 0
+  MaxVal: 0
 --- !u!114 &11457490
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10783,6 +11086,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Materials:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
+  MinHue: 0
+  MaxHue: 0
+  MinSat: 0
+  MaxSat: 0
+  MinVal: 0
+  MaxVal: 0
 --- !u!114 &11458756
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10810,6 +11119,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Materials:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
+  MinHue: 0
+  MaxHue: 0
+  MinSat: 0
+  MaxSat: 0
+  MinVal: 0
+  MaxVal: 0
 --- !u!114 &11458954
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10823,6 +11138,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Materials:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
+  MinHue: 0
+  MaxHue: 0
+  MinSat: 0
+  MaxSat: 0
+  MinVal: 0
+  MaxVal: 0
 --- !u!114 &11459290
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10866,6 +11187,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Materials:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
+  MinHue: 0
+  MaxHue: 0
+  MinSat: 0
+  MaxSat: 0
+  MinVal: 0
+  MaxVal: 0
 --- !u!114 &11461148
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10895,6 +11222,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Materials:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
+  MinHue: 0
+  MaxHue: 0
+  MinSat: 0
+  MaxSat: 0
+  MinVal: 0
+  MaxVal: 0
 --- !u!114 &11464920
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10908,6 +11241,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Materials:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
+  MinHue: 0
+  MaxHue: 0
+  MinSat: 0
+  MaxSat: 0
+  MinVal: 0
+  MaxVal: 0
 --- !u!114 &11465932
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10937,6 +11276,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Materials:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
+  MinHue: 0
+  MaxHue: 0
+  MinSat: 0
+  MaxSat: 0
+  MinVal: 0
+  MaxVal: 0
 --- !u!114 &11466874
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11022,6 +11367,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Materials:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
+  MinHue: 0
+  MaxHue: 0
+  MinSat: 0
+  MaxSat: 0
+  MinVal: 0
+  MaxVal: 0
 --- !u!114 &11471342
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11035,6 +11386,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Materials:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
+  MinHue: 0
+  MaxHue: 0
+  MinSat: 0
+  MaxSat: 0
+  MinVal: 0
+  MaxVal: 0
 --- !u!114 &11475198
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11064,6 +11421,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Materials:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
+  MinHue: 0
+  MaxHue: 0
+  MinSat: 0
+  MaxSat: 0
+  MinVal: 0
+  MaxVal: 0
 --- !u!114 &11476604
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11119,6 +11482,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Materials:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
+  MinHue: 0
+  MaxHue: 0
+  MinSat: 0
+  MaxSat: 0
+  MinVal: 0
+  MaxVal: 0
 --- !u!114 &11478042
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11178,6 +11547,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Materials:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
+  MinHue: 0
+  MaxHue: 0
+  MinSat: 0
+  MaxSat: 0
+  MinVal: 0
+  MaxVal: 0
 --- !u!114 &11478862
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11275,6 +11650,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Materials:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
+  MinHue: 0
+  MaxHue: 0
+  MinSat: 0
+  MaxSat: 0
+  MinVal: 0
+  MaxVal: 0
 --- !u!114 &11481462
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11288,6 +11669,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Materials:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
+  MinHue: 0
+  MaxHue: 0
+  MinSat: 0
+  MaxSat: 0
+  MinVal: 0
+  MaxVal: 0
 --- !u!114 &11482510
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11373,6 +11760,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Materials:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
+  MinHue: 0
+  MaxHue: 0
+  MinSat: 0
+  MaxSat: 0
+  MinVal: 0
+  MaxVal: 0
 --- !u!114 &11487858
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11418,6 +11811,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Materials:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
+  MinHue: 0
+  MaxHue: 0
+  MinSat: 0
+  MaxSat: 0
+  MinVal: 0
+  MaxVal: 0
 --- !u!114 &11489054
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11447,6 +11846,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Materials:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
+  MinHue: 0
+  MaxHue: 0
+  MinSat: 0
+  MaxSat: 0
+  MinVal: 0
+  MaxVal: 0
 --- !u!114 &11489728
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11460,6 +11865,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Materials:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
+  MinHue: 0
+  MaxHue: 0
+  MinSat: 0
+  MaxSat: 0
+  MinVal: 0
+  MaxVal: 0
 --- !u!114 &11490430
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11591,6 +12002,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Materials:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
+  MinHue: 0
+  MaxHue: 255
+  MinSat: 0
+  MaxSat: 255
+  MinVal: 0
+  MaxVal: 255
 --- !u!114 &11499462
 MonoBehaviour:
   m_ObjectHideFlags: 1
