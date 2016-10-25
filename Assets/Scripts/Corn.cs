@@ -29,7 +29,7 @@ public class Corn : MonoBehaviour {
 
     void OnTriggerEnter(Collider coll) {
         if (coll.GetComponent<Corn>() != null) return;
-        GetComponent<LookAtDelay>().enabled = false;
+        if(GetComponent<LookAtDelay>()) GetComponent<LookAtDelay>().enabled = false;
         Collider.enabled = false;
         Fall = true;
         Direction = (transform.position - coll.transform.position).normalized;
