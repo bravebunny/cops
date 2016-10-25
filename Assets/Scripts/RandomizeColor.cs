@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class RandomizeColor : MonoBehaviour {
     public List<Material> Materials; // randomize parts of the object with this material
     public int MinHue = 0;
-    public int MaxHue = 255;
+    public int MaxHue = 360;
     public int MinSat = 0;
     public int MaxSat = 255;
     public int MinVal = 0;
@@ -26,7 +26,7 @@ public class RandomizeColor : MonoBehaviour {
 	}
 
     void Randomize(Material material) {
-        float h = Random.Range((float)MinHue, (float)MaxHue) / 255;
+        float h = Random.Range((float)MinHue, (float)MaxHue) / 360;
         float s = Random.Range((float)MinSat, (float)MaxSat) / 255;
         float v = Random.Range((float)MinVal, (float)MaxVal) / 255;
         material.color = Color.HSVToRGB(h, s, v);
