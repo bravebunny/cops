@@ -4,13 +4,11 @@ using System.Collections;
 public class Corn : MonoBehaviour {
     bool Fall;
     Vector3 Direction;
-    Rigidbody Body;
     BoxCollider Collider;
     public float Speed = 0.01F;
     float Randomness = 0.1f;
 	
     void Start() {
-        Body = GetComponent<Rigidbody>();
         Collider = GetComponent<BoxCollider>();
         Randomize();
     }
@@ -31,6 +29,7 @@ public class Corn : MonoBehaviour {
 
     void OnTriggerEnter(Collider coll) {
         if (coll.GetComponent<Corn>() != null) return;
+        GetComponent<LookAtDelay>().enabled = false;
         Collider.enabled = false;
         Fall = true;
         Direction = (transform.position - coll.transform.position).normalized;
