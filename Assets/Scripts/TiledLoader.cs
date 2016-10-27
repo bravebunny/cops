@@ -4,7 +4,6 @@ using SimpleJSON;
 using System.Collections.Generic;
 
 public class TiledLoader : MonoBehaviour {
-
     public TextAsset Map; // json file generated with Tiled
     public Tile[] Tiles; // index in this array should match the tile index in the tilemap
     public float TileSize = 4; // height/width of the tiles in the scene (in world units)
