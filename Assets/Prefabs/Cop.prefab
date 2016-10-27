@@ -41,7 +41,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 424260}
-  - 65: {fileID: 6592554}
   - 54: {fileID: 5438350}
   - 114: {fileID: 11474422}
   - 114: {fileID: 11444466}
@@ -49,8 +48,7 @@ GameObject:
   - 82: {fileID: 8201856}
   - 114: {fileID: 11454206}
   - 114: {fileID: 11495004}
-  - 114: {fileID: 11438584}
-  - 114: {fileID: 11404722}
+  - 136: {fileID: 136000012094319620}
   m_Layer: 0
   m_Name: Cop
   m_TagString: Cop
@@ -216,7 +214,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 127284}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -89.93, y: 1.51, z: -119.2}
+  m_LocalPosition: {x: -202.95316, y: 1.12, z: -111.95}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -486,18 +484,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &6592554
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 127284}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.5999753, y: 0.89999914, z: 3.300003}
-  m_Center: {x: 0, y: 0.05000019, z: 0.049995422}
 --- !u!82 &8201856
 AudioSource:
   m_ObjectHideFlags: 1
@@ -714,44 +700,6 @@ Light:
   m_BounceIntensity: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &11404722
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 127284}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da2040d4bc2ebb7419692c84a2f2c0ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &11438584
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 127284}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  drawGizmos: 1
-  detailedGizmos: 0
-  startEndModifier:
-    addPoints: 0
-    exactStartPoint: 3
-    exactEndPoint: 3
-    useRaycasting: 0
-    mask:
-      serializedVersion: 2
-      m_Bits: 4294967295
-    useGraphRaycasting: 0
-  traversableTags: -1
-  traversableTagsCompatibility:
-    tagsChange: -1
-    tagsSet: -1
-  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 --- !u!114 &11444466
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -764,7 +712,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
-  PathFindingInterval: 1
 --- !u!114 &11454206
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -785,20 +732,20 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 127284}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a32b449f4adf5bc4b9e8438de830039a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 100
   SidewaysCompensation: 0
-  SuspensionStrength: 40
+  SuspensionStrength: 100
   TurningSpeed: 80
-  MultiplyTurningByMovement: 0
+  MultiplyTurningByMovement: 1
   DebugOn: 1
-  SuspensionHeight: 1
+  SuspensionHeight: 0.8
   Drag: 5
-  StabilisationStrenght: 40
+  StabilisationStrenght: 30
   Stabilise: 1
   Blocked: 0
   carMovementDirection: 0
@@ -899,3 +846,16 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 127284}
   m_IsPrefabParent: 1
+--- !u!136 &136000012094319620
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 127284}
+  m_Material: {fileID: 13400000, guid: 9745de242b937c649913c1a6442c66c1, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.94152546
+  m_Height: 3.2639542
+  m_Direction: 2
+  m_Center: {x: 0, y: 0.35, z: 0.05}
