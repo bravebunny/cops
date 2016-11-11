@@ -11,6 +11,8 @@ public class Destructible : MonoBehaviour {
             //enable collisions if usnig box collider
             if (child.GetComponent<BoxCollider>())
                 child.GetComponent<BoxCollider>().enabled = true;
+            if (child.GetComponent<MeshCollider>())
+                child.GetComponent<MeshCollider>().enabled = true;
         }
     }
 }
