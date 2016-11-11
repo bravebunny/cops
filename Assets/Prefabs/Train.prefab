@@ -72,7 +72,6 @@ GameObject:
   - 33: {fileID: 33000010626330768}
   - 23: {fileID: 23000010699986320}
   - 64: {fileID: 64000010344791684}
-  - 114: {fileID: 114000011344684482}
   m_Layer: 11
   m_Name: Machine
   m_TagString: Untagged
@@ -144,6 +143,23 @@ GameObject:
   - 82: {fileID: 82000013250256366}
   m_Layer: 11
   m_Name: Train
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1000012549050882
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000010532686004}
+  - 65: {fileID: 65000012946766158}
+  - 114: {fileID: 114000013266484396}
+  m_Layer: 11
+  m_Name: Front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -260,6 +276,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4000013886315278}
   m_RootOrder: 2
+--- !u!4 &4000010532686004
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012549050882}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000013886315278}
+  m_RootOrder: 10
 --- !u!4 &4000010533106314
 Transform:
   m_ObjectHideFlags: 1
@@ -413,6 +442,7 @@ Transform:
   - {fileID: 4000012527582114}
   - {fileID: 4000012895228550}
   - {fileID: 4000012622009662}
+  - {fileID: 4000010532686004}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!23 &23000010699986320
@@ -723,6 +753,18 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 1
   m_Mesh: {fileID: 4300004, guid: eb5d1b4f6a184c54a9006a5308e824e9, type: 3}
+--- !u!65 &65000012946766158
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012549050882}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.17, y: 2.02, z: 1.03}
+  m_Center: {x: 0, y: -0.67, z: 5.73}
 --- !u!82 &82000013250256366
 AudioSource:
   m_ObjectHideFlags: 1
@@ -823,18 +865,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Pivot: {fileID: 4000010533106314}
---- !u!114 &114000011344684482
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011459101004}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99b67ae1003beaf4d9260ff7537a81d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ImpulseStrength: 38
 --- !u!114 &114000011457083054
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -896,6 +926,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speeds: {x: 0, y: 0, z: 10}
+--- !u!114 &114000013266484396
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012549050882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99b67ae1003beaf4d9260ff7537a81d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ImpulseStrength: 38
 --- !u!198 &198000010890106982
 ParticleSystem:
   m_ObjectHideFlags: 1
