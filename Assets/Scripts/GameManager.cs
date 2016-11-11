@@ -54,7 +54,6 @@ public class GameManager : MonoBehaviour {
     private void Start() {
         Physics.gravity = new Vector3(0, -30.0f, 0);
         Time.timeScale = InitialTimeScale;
-        GameObject lobby = GameObject.Find("LobbyManager");
     }
 
     void OnLevelWasLoaded() {

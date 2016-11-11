@@ -12,6 +12,7 @@ public class CarController : MonoBehaviour {
     public float Drag = 5;
     public float StabilisationStrenght = 40;
     public bool Stabilise = true;
+    public bool Grounded = false;
 
     [HideInInspector] public bool Blocked = false;
     public float CurrentSpeed{ get {
@@ -59,7 +60,7 @@ public class CarController : MonoBehaviour {
 
         RaycastHit raycastInfo = new RaycastHit();
         float raycastDistance = SuspensionHeight + 1f;
-        bool grounded = Physics.Raycast(Body.position, -transform.up, out raycastInfo, raycastDistance);
+        Grounded = Physics.Raycast(Body.position, -transform.up, out raycastInfo, raycastDistance);
         bool notClimbing = Physics.Raycast(Body.position, -Vector3.up, out raycastInfo, raycastDistance);
 
         if (DebugOn) Debug.DrawRay(Body.position, -transform.up, Color.red, -1, false);
@@ -70,7 +71,7 @@ public class CarController : MonoBehaviour {
         float TurnMultiplier = MultiplyTurningByMovement ? CurrentSpeed : 1;
         Body.AddRelativeTorque(0, steering * TurningSpeed * TurnMultiplier, 0);
 
-        if (grounded && notClimbing) {
+        if (Grounded && notClimbing) {
             EngineSound.volume = Mathf.Abs(CurrentSpeed) / 60 - 0.1f;
             EngineSound.pitch =( Mathf.Abs(CurrentSpeed) / 30) * 6 - 1;
             Body.drag = Drag;
