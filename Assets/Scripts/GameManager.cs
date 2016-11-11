@@ -27,10 +27,9 @@ public class GameManager : MonoBehaviour {
 
     bool duplicate = false;
     bool roundEnded = false;
-    float InitialTimeScale;
+    float InitialTimeScale = 1;
 
     void Awake() {
-        InitialTimeScale = Time.timeScale;
         sInstance = this;
         GameObject playerObject = Instantiate<GameObject>(PlayerPrefab);
         playerObject.transform.position = StartPosition.position;
