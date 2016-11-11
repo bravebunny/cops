@@ -132,9 +132,5 @@ public class CameraController : MonoBehaviour
         if (CollisionDetectedAtClipPoints(desiredCameraClipPoints, targetPosition)) colliding = true;
         else colliding = false;
     }
-
-    public void SetTarget(Transform newTarget) {
-        target = newTarget;
-    }
 }
 

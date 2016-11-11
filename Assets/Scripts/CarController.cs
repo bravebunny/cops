@@ -21,8 +21,6 @@ public class CarController : MonoBehaviour {
 
     private Rigidbody Body;
     private int DirectionVal;
-    private float AngleZ = 0;
-    private float AngleX = 0;
     private float RotationDirection;
 
     private float TorqueForce = 0, TorqueVelocity = 0;

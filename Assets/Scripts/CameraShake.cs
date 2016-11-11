@@ -10,8 +10,6 @@ public class CameraShake : MonoBehaviour {
 	public float DecreaseFactor = 1.0f;
 
     float CurrentTime = 0;
-	
-	Vector3 OriginalPos;
 
 	void Update() {
 		if (CurrentTime > 0) {
@@ -21,7 +19,6 @@ public class CameraShake : MonoBehaviour {
 	}
 
     public void Shake() {
-        OriginalPos = transform.localPosition;
         CurrentTime = ShakeDuration;
     }
 }

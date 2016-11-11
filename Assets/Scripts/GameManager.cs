@@ -12,8 +12,9 @@ public class GameManager : MonoBehaviour {
     public Text CopCountText;
     public Text BombCountText;
 
+    public GameObject PlayerPrefab;
     public static CarUserController Player;
-    public CarUserController PlayerInstance;
+    public Transform StartPosition;
 
     public Camera CameraInstance;
     public static Camera GameCamera;
@@ -28,27 +29,16 @@ public class GameManager : MonoBehaviour {
     bool roundEnded = false;
     float InitialTimeScale;
 
-
     void Awake() {
         InitialTimeScale = Time.timeScale;
         sInstance = this;
-        Player = PlayerInstance;
+        GameObject playerObject = Instantiate<GameObject>(PlayerPrefab);
+        playerObject.transform.position = StartPosition.position;
+        playerObject.transform.rotation = StartPosition.transform.rotation;
+        Player = playerObject.GetComponent<CarUserController>();
+        StartPosition.gameObject.SetActive(false);
         GameCamera = CameraInstance;
-
-        var managers = GameObject.FindObjectsOfType<GameManager>();
-        var canvases = GameObject.FindGameObjectsWithTag("UI");
-
-        if (managers.Length == 1) {
-            // this is the first instance - make it persist
-            DontDestroyOnLoad(this.gameObject);
-            DontDestroyOnLoad(UI);
-        } else {
-            // this must be a duplicate from a scene reload - DESTROY!
-            Destroy(this.gameObject);
-            Destroy(canvases[1].gameObject);
-            duplicate = true;
-            return;
-        }
+        CameraInstance.GetComponent<CameraController>().target = Player.transform;
     }
 
     private void Start() {
