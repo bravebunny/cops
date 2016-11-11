@@ -47,7 +47,7 @@ Transform:
   m_GameObject: {fileID: 143026}
   m_LocalRotation: {x: 0, y: 0.000000029802322, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6666667, y: 0.6666667, z: 0.6666667}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 421224}
@@ -237,7 +237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afeb89d6a5e97cd43acce760c30cdfa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 1
+  Speed: 1.4
   MaxGroundDistance: 0.5
   RotationSpeed: 150
   LaneWidth: 2.5
@@ -254,8 +254,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinImpulse: 5
+  MinHeight: 10
   Explosion: {fileID: 136990, guid: ee50d64cd8a647145a669be56d20bd3d, type: 2}
-  Enabled: 0
+  CheckRate: 0.5
 --- !u!136 &13646008
 CapsuleCollider:
   m_ObjectHideFlags: 1

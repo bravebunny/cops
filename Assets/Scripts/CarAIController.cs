@@ -23,8 +23,7 @@ public class CarAIController : MonoBehaviour {
 
     public void OnTriggerEnter(Collider col) {
         if (!col.CompareTag("FireHydrant")) return;
-
-        ImpactExplosion.Enabled = true;
         CarController.Stabilise = false;
+        // TODO move this away from here
     }
 }
