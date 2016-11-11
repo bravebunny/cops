@@ -31,6 +31,7 @@ GameObject:
   - 4: {fileID: 406070}
   - 65: {fileID: 6500992}
   - 114: {fileID: 114000013234755282}
+  - 114: {fileID: 114000011763235804}
   m_Layer: 8
   m_Name: DubleTree
   m_TagString: Destructible
@@ -606,6 +607,17 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 126266}
   m_IsPrefabParent: 1
+--- !u!114 &114000011763235804
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 126266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fab82e630c5ed8046a432894b22e178e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000013234755282
 MonoBehaviour:
   m_ObjectHideFlags: 1

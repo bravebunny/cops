@@ -48,6 +48,7 @@ GameObject:
   - 4: {fileID: 456480}
   - 65: {fileID: 6519926}
   - 114: {fileID: 114000014015449614}
+  - 114: {fileID: 114000012165749528}
   m_Layer: 8
   m_Name: SingleTree
   m_TagString: Destructible
@@ -249,6 +250,17 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 161854}
   m_IsPrefabParent: 1
+--- !u!114 &114000012165749528
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 161854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fab82e630c5ed8046a432894b22e178e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000014015449614
 MonoBehaviour:
   m_ObjectHideFlags: 1

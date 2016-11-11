@@ -28,7 +28,7 @@ public class KnockDown : MonoBehaviour {
     }
 
     void OnTriggerEnter(Collider coll) {
-        if (coll.GetComponent<KnockDown>() != null) return;
+        if (coll.isTrigger) return;
         if(GetComponent<LookAtDelay>()) GetComponent<LookAtDelay>().enabled = false;
         Collider.enabled = false;
         Fall = true;

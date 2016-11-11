@@ -37,20 +37,6 @@ public class CarController : MonoBehaviour {
         Body.centerOfMass = Vector3.down;
     }
 
-    void OnTriggerEnter(Collider collider) {
-        string tag = collider.gameObject.tag;
-        if (tag == "Destructible") {
-            foreach (Transform child in collider.transform) {
-                //enable physics
-                child.GetComponent<Rigidbody>().isKinematic = false;
-
-                //enable collisions if usnig box collider
-                if (child.GetComponent<BoxCollider>())
-                    child.GetComponent<BoxCollider>().enabled = true;
-            }
-        }
-    }
-
     public void Move (float steering, float accel) {
         if (Body == null)
             return;
