@@ -1824,6 +1824,10 @@ MonoBehaviour:
   Jump: {fileID: 82000013509232630}
   Main: {fileID: 82000010299836456}
   Movement: {fileID: 82000014263444718}
+  FewCops: {fileID: 82000010516372240}
+  ManyCops: {fileID: 82000011208220250}
+  MinCopsFew: 1
+  MinCopsMany: 10
   MinMovementSpeed: 5
   FadeSpeed: 0.003
   MaxVolume: 0.3

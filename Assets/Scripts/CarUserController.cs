@@ -7,6 +7,8 @@ public class CarUserController : MonoBehaviour {
     public float BustedIncRate = 3;
     public float BustedDecRate = 1;
     public GameObject Explosion;
+    public int CopCount; // number of cops nearby
+    public SphereCollider CopCountArea;
 
     [HideInInspector] public float BustedLevel = 0;
 
@@ -53,5 +55,15 @@ public class CarUserController : MonoBehaviour {
 
         // create the explosion object
         Instantiate(Explosion, transform.position, Quaternion.identity);
+    }
+
+    void OnTriggerEnter(Collider col) {
+        CarAIController cop = col.GetComponent<CarAIController>();
+        if (cop != null) CopCount++;
+    }
+
+    void OnTriggerExit(Collider col) {
+        CarAIController cop = col.GetComponent<CarAIController>();
+        if (cop != null) CopCount--;
     }
 }
