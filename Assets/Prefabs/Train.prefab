@@ -72,6 +72,7 @@ GameObject:
   - 33: {fileID: 33000010626330768}
   - 23: {fileID: 23000010699986320}
   - 64: {fileID: 64000010344791684}
+  - 114: {fileID: 114000011344684482}
   m_Layer: 11
   m_Name: Machine
   m_TagString: Untagged
@@ -398,7 +399,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012299350894}
   m_LocalRotation: {x: -0, y: -1, z: 0, w: -0.00003482915}
-  m_LocalPosition: {x: -108.19, y: 3.045685, z: 159.1}
+  m_LocalPosition: {x: -108.19, y: 3.045685, z: 184.19}
   m_LocalScale: {x: 1.5000014, y: 1.5, z: 1.5000014}
   m_LocalEulerAnglesHint: {x: 0, y: -180.004, z: 0}
   m_Children:
@@ -808,8 +809,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Sensor: {fileID: 4000012895228550}
-  Speed: 0.3
-  RotationSpeed: 0.04
+  Speed: 0.5
+  RotationSpeed: 0.1
 --- !u!114 &114000011316732186
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -822,6 +823,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Pivot: {fileID: 4000010533106314}
+--- !u!114 &114000011344684482
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011459101004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99b67ae1003beaf4d9260ff7537a81d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ImpulseStrength: 38
 --- !u!114 &114000011457083054
 MonoBehaviour:
   m_ObjectHideFlags: 1

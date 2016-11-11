@@ -125,7 +125,7 @@ MonoBehaviour:
   GameOverText: {fileID: 114000013095300362}
   ScoreText: {fileID: 114000012529535180}
   CopCountText: {fileID: 114000011847680336}
-  KilledCopsText: {fileID: 0}
+  KilledCopsText: {fileID: 114000010195799080}
   PlayerPrefab: {fileID: 177384, guid: 4423b943f62c06e4fa5bfe509d0bb2e0, type: 2}
   StartPosition: {fileID: 4000011673445542}
   CameraInstance: {fileID: 20000011774472094}
