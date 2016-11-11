@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour {
     public Text GameOverText;
     public Text ScoreText;
     public Text CopCountText;
-    public Text BombCountText;
+    public Text KilledCopsText;
 
     public GameObject PlayerPrefab;
     public static CarUserController Player;
@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour {
 
     public static int Score;
     public static int CopCount;
-    public static int BombCount = 10;
+    public static int KilledCops = 10;
 
     public static GameManager sInstance = null;
 
@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour {
         GameOverText.gameObject.SetActive(false);
         roundEnded = false;
         Score = 0;
-        BombCount = 0;
+        KilledCops = 0;
         CopCount = 0;
         UpdateText();
     }
@@ -87,8 +87,8 @@ public class GameManager : MonoBehaviour {
 
     void UpdateText() {
         ScoreText.text = "Score: " + Score;
-        CopCountText.text = "Cops: " + CopCount;
-        BombCountText.text = "Bombs: " + BombCount;
+        CopCountText.text = "Active Cops: " + CopCount;
+        KilledCopsText.text = "Destroyed Cops: " + KilledCops;
     }
 
     void EndRound () {

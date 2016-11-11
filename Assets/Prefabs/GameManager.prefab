@@ -125,7 +125,7 @@ MonoBehaviour:
   GameOverText: {fileID: 114000013095300362}
   ScoreText: {fileID: 114000012529535180}
   CopCountText: {fileID: 114000011847680336}
-  BombCountText: {fileID: 114000010195799080}
+  KilledCopsText: {fileID: 0}
   PlayerPrefab: {fileID: 177384, guid: 4423b943f62c06e4fa5bfe509d0bb2e0, type: 2}
   StartPosition: {fileID: 4000011673445542}
   CameraInstance: {fileID: 20000011774472094}
@@ -200,12 +200,12 @@ GameObject:
   - 114: {fileID: 114000010195799080}
   - 114: {fileID: 114000010269358436}
   m_Layer: 5
-  m_Name: Bombs
+  m_Name: KilledCops
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1000011209820008
 GameObject:
   m_ObjectHideFlags: 1
@@ -1360,7 +1360,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Bombs: 0'
+  m_Text: 'Destroyed Cops: 0'
 --- !u!114 &114000010269358436
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1486,7 +1486,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Cops: 0'
+  m_Text: 'Active Cops: 0'
 --- !u!114 &114000012073178932
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1960,8 +1960,8 @@ RectTransform:
   m_RootOrder: 4
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 100, y: -130}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 150, y: -130}
+  m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224000012015740512
 RectTransform:
@@ -2072,8 +2072,8 @@ RectTransform:
   m_RootOrder: 3
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -100, y: -100}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -150, y: -100}
+  m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224000013848722998
 RectTransform:

@@ -49,6 +49,7 @@ GameObject:
   - 114: {fileID: 11454206}
   - 114: {fileID: 11495004}
   - 136: {fileID: 136000012094319620}
+  - 114: {fileID: 114000011389927534}
   m_Layer: 0
   m_Name: Cop
   m_TagString: Cop
@@ -737,7 +738,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32b449f4adf5bc4b9e8438de830039a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 100
+  Speed: 140
   SidewaysCompensation: 0
   SuspensionStrength: 100
   TurningSpeed: 80
@@ -848,6 +849,18 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 127284}
   m_IsPrefabParent: 1
+--- !u!114 &114000011389927534
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 127284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 289e74c4189b6eb4e83f16b11b8ec392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MinY: -10
 --- !u!136 &136000012094319620
 CapsuleCollider:
   m_ObjectHideFlags: 1

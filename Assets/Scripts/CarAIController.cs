@@ -13,6 +13,7 @@ public class CarAIController : MonoBehaviour {
     }
 
     void Start() {
+        GameManager.CopCount++;
         Target = GameManager.Player.transform;
     }
 
@@ -25,5 +26,10 @@ public class CarAIController : MonoBehaviour {
         if (!col.CompareTag("FireHydrant")) return;
         CarController.Stabilise = false;
         // TODO move this away from here
+    }
+
+    void OnDestroy() {
+        GameManager.CopCount--;
+        GameManager.KilledCops++;
     }
 }

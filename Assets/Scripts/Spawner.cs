@@ -13,7 +13,6 @@ public class Spawner : MonoBehaviour {
     }
 
     void Spawn() {
-        GameManager.CopCount++;
         Instantiate(Original, transform.position, Quaternion.identity);
     }
 

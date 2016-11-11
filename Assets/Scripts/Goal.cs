@@ -9,7 +9,7 @@ public class Goal : MonoBehaviour {
         if (collision.collider.tag == "Player") {
             TargetManager.NewTarget();
             GameManager.Score++;
-            GameManager.BombCount++;
+            GameManager.KilledCops++;
         }
     }
 }

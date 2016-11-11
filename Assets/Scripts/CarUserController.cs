@@ -48,10 +48,10 @@ public class CarUserController : MonoBehaviour {
     }
 
     void Bomb() {
-        if (GameManager.BombCount <= 0) return;
+        if (GameManager.KilledCops <= 0) return;
 
         // decrease bomb counter
-        GameManager.BombCount--;
+        GameManager.KilledCops--;
 
         // create the explosion object
         Instantiate(Explosion, transform.position, Quaternion.identity);
