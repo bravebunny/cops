@@ -747,6 +747,7 @@ MonoBehaviour:
   Drag: 5
   StabilisationStrenght: 30
   Stabilise: 1
+  Grounded: 0
   Blocked: 0
   carMovementDirection: 0
 --- !u!114 &11495004
@@ -760,9 +761,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7c11f639cee0c54d9cb91ad3b810ca8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinImpulse: 5
+  MinImpulse: 15
+  MinHeight: 10
   Explosion: {fileID: 136990, guid: ee50d64cd8a647145a669be56d20bd3d, type: 2}
-  Enabled: 0
+  CheckRate: 0.5
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

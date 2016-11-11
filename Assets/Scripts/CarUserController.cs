@@ -26,7 +26,7 @@ public class CarUserController : MonoBehaviour {
         float negative = CrossPlatformInputManager.GetAxis("Reverse");
         Accel = positive - negative;
 
-        if (CrossPlatformInputManager.GetButtonDown("Bomb")) Bomb();
+        //if (CrossPlatformInputManager.GetButtonDown("Bomb")) Bomb();
 
         if (BustedLevel > 0) BustedLevel -= BustedDecRate;
 
