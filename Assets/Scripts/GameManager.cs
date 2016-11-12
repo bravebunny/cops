@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class GameManager : MonoBehaviour {
     public Canvas UI;
@@ -62,7 +63,7 @@ public class GameManager : MonoBehaviour {
     }
 
     private void Update () {
-        if (Input.GetKeyDown(KeyCode.Return)) {
+        if (CrossPlatformInputManager.GetButton("Start")) {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
