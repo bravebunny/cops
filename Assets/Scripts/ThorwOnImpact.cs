@@ -7,7 +7,6 @@ public class ThorwOnImpact : MonoBehaviour {
     float ForwardMultiplier = 0.75f;
 
 	void OnCollisionEnter(Collision col) {
-        Debug.Log("cmon");
         Rigidbody body = col.transform.GetComponent<Rigidbody>();
         if (body == null) return;
         Vector3 up = Vector3.up * UpMultiplier;
