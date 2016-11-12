@@ -42,7 +42,7 @@ public class CameraController : MonoBehaviour
                 carDirection = 1;
             }
             else {
-                carDirection = System.Math.Max(1, target.GetComponent<CarController>().carMovementDirection * -0.1);
+                carDirection = System.Math.Max(1, target.GetComponent<CarController>().carMovementDirection * -0.05);
             }
         } else {
             if (carDirection < 0) {
