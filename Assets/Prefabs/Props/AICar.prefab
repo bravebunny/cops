@@ -15,6 +15,7 @@ GameObject:
   - 136: {fileID: 13646008}
   - 82: {fileID: 8240776}
   - 114: {fileID: 11494448}
+  - 114: {fileID: 114000012963981224}
   m_Layer: 0
   m_Name: AICar
   m_TagString: Untagged
@@ -281,3 +282,15 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 143026}
   m_IsPrefabParent: 1
+--- !u!114 &114000012963981224
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 143026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 289e74c4189b6eb4e83f16b11b8ec392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MinY: -10

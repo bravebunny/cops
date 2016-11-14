@@ -12,4 +12,8 @@ public class Goal : MonoBehaviour {
             GameManager.KilledCops++;
         }
     }
+
+    void OnDestroy() {
+        TargetManager.NewTarget();
+    }
 }
