@@ -62,7 +62,10 @@ public class TiledLoader : MonoBehaviour {
             }
         }
         if (CombineMeshes) GetComponent<CombineChildren>().Combine();
-        foreach (Transform child in transform) child.gameObject.isStatic = true;
+        foreach (Transform child in transform) {
+            child.gameObject.isStatic = true;
+            child.gameObject.layer = gameObject.layer;
+        }
     }
 
     public void Clear() {
