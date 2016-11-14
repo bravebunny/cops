@@ -55,6 +55,9 @@ public class TiledLoader : MonoBehaviour {
                     BuildingGenerator bg = instance.GetComponent<BuildingGenerator>();
                     if (bg != null) bg.Generate();
 
+                    Track track = instance.GetComponentInChildren<Track>();
+                    if (track != null) track.CreatePillars();
+
                 }
             }
         }
