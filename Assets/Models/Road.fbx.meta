@@ -24,6 +24,7 @@ ModelImporter:
     100032: TrainStraight
     100034: CurveIron
     100036: StraightIron
+    100038: Pillars
     400000: Deadend
     400002: Intersection
     400004: Junction
@@ -43,6 +44,7 @@ ModelImporter:
     400032: TrainStraight
     400034: CurveIron
     400036: StraightIron
+    400038: Pillars
     2300000: Deadend
     2300002: Intersection
     2300004: Junction
@@ -61,6 +63,7 @@ ModelImporter:
     2300030: TrainStraight
     2300032: CurveIron
     2300034: StraightIron
+    2300036: Pillars
     3300000: Deadend
     3300002: Intersection
     3300004: Junction
@@ -79,6 +82,7 @@ ModelImporter:
     3300030: TrainStraight
     3300032: CurveIron
     3300034: StraightIron
+    3300036: Pillars
     4300000: Intersection
     4300002: Junction
     4300004: Turn
@@ -97,6 +101,7 @@ ModelImporter:
     4300030: TrainStraight
     4300032: CurveIron
     4300034: StraightIron
+    4300036: Pillars
     6400000: Deadend
     6400002: Intersection
     6400004: Junction
