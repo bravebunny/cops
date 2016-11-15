@@ -17,7 +17,6 @@ public class OpenGate : MonoBehaviour {
     void FixedUpdate() {
         if (Close) {
             desireRotation.eulerAngles = new Vector3(0, 0, 0);
-            transform.rotation = Quaternion.Lerp(transform.rotation, desireRotation, Speed);
 
             timeLeft -= Time.deltaTime;
             if (timeLeft < 0) {
@@ -26,8 +25,10 @@ public class OpenGate : MonoBehaviour {
 
         } else {
             desireRotation.eulerAngles = new Vector3(0, 0, 35);
-            transform.rotation = Quaternion.Lerp(transform.rotation, desireRotation, Speed);
         }
+
+        transform.parent.rotation = Quaternion.Lerp(transform.parent.rotation, desireRotation, Speed);
+        transform.parent.parent.GetChild(3).rotation = Quaternion.Lerp(transform.parent.rotation, desireRotation, Speed);
 
     }
 
