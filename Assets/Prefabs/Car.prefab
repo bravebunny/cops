@@ -97,6 +97,7 @@ GameObject:
   - 81: {fileID: 8104566}
   - 136: {fileID: 13661472}
   - 114: {fileID: 11438122}
+  - 114: {fileID: 114000013537218628}
   m_Layer: 0
   m_Name: Car
   m_TagString: Player
@@ -681,6 +682,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 435458}
   m_RootOrder: 1
+--- !u!114 &114000013537218628
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 177384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7ccd27d78831a947b567a991424ec1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MinY: -4
+  MinVelocity: 30
+  ImpulseForce: 1.5
+  Resistance: 4
+  Splash: {fileID: 1000014163652314, guid: cdd09be91ad60e4409f821ab0f07380a, type: 2}
 --- !u!135 &135000013713950072
 SphereCollider:
   m_ObjectHideFlags: 1
