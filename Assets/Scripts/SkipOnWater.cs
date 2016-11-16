@@ -21,8 +21,10 @@ public class SkipOnWater : MonoBehaviour {
             transform.position = newPosition;
             Vector3 force = (Vector3.down * ImpulseForce * Body.velocity.y) - (velocity.normalized * Resistance);
             Vector3 forcePosition = transform.position - velocity.normalized;
+            Body.AddTorque(transform.right * ImpulseForce * 1000);
             Body.AddForceAtPosition(force, forcePosition, ForceMode.Impulse);
-            Instantiate(Splash, transform.position, Quaternion.identity);
+            GameObject splash = (GameObject) Instantiate(Splash);
+            splash.transform.position = transform.position;
         }
 	}
 }
