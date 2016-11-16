@@ -45,7 +45,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1000013108603262
 GameObject:
@@ -152,7 +152,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013671929482}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -87.31147, y: 0.0000002312704, z: -167.37183}
+  m_LocalPosition: {x: 224.13206, y: 0.00000085579677, z: 76.8767}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -258,3 +258,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   A: {fileID: 4000012452751544}
   B: {fileID: 4000012496494964}
+  CheckIfBridge: 0
+  Pillars: {fileID: 0}
