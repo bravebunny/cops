@@ -4,6 +4,7 @@ using System.Collections;
 public class OpenGate : MonoBehaviour {
     public float Speed = 0.1F;
     public float timeLeft = 5;
+    public Transform gate2;
     float initialTimeLeft = 5;
 
     Quaternion desireRotation = Quaternion.identity;
@@ -28,7 +29,7 @@ public class OpenGate : MonoBehaviour {
         }
 
         transform.parent.rotation = Quaternion.Lerp(transform.parent.rotation, desireRotation, Speed);
-        transform.parent.parent.GetChild(3).rotation = Quaternion.Lerp(transform.parent.rotation, desireRotation, Speed);
+        gate2.rotation = Quaternion.Lerp(gate2.rotation, desireRotation, Speed);
 
     }
 

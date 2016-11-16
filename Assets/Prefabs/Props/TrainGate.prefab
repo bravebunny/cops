@@ -414,6 +414,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 0.1
   timeLeft: 5
+  gate2: {fileID: 4000013372599784}
 --- !u!114 &114000013841521312
 MonoBehaviour:
   m_ObjectHideFlags: 1
