@@ -28,13 +28,13 @@ public class CarUserController : MonoBehaviour {
 
         //if (CrossPlatformInputManager.GetButtonDown("Bomb")) Bomb();
 
-        if (BustedLevel > 0) BustedLevel -= BustedDecRate;
-
         // temporary way to drown player
         if (transform.position.y < -10) BustedLevel = int.MaxValue;
     }
 
     void FixedUpdate() {
+        if (BustedLevel > 0) BustedLevel -= BustedDecRate;
+
         Car.Move(Steering, Accel);
     }
 
