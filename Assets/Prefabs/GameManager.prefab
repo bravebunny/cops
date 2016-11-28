@@ -410,6 +410,7 @@ GameObject:
   - 92: {fileID: 92000012864026378}
   - 114: {fileID: 114000010306026930}
   - 114: {fileID: 114000012591519234}
+  - 45: {fileID: 45000012265021484}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -579,10 +580,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012866755702}
-  m_LocalRotation: {x: 0.018509898, y: 0.7068644, z: -0.018509904, w: 0.70686454}
-  m_LocalPosition: {x: -232.2, y: 10.4, z: -100}
+  m_LocalRotation: {x: 0.026176957, y: 0.9996574, z: -0.0000000055879354, w: 0.00000017881393}
+  m_LocalPosition: {x: -75.9, y: 45.7, z: 469.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 3, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180.00002, z: 2.913}
   m_Children:
   - {fileID: 4000011935214574}
   - {fileID: 4000012494084650}
@@ -621,7 +622,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010534773234}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -72, y: 1, z: 190}
+  m_LocalPosition: {x: -72.1, y: 5.44, z: 193.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_Children:
@@ -870,6 +871,14 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012661455878}
   m_Mesh: {fileID: 4300000, guid: da93d370bfa4e7c48b5070af15369512, type: 3}
+--- !u!45 &45000012265021484
+Skybox:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012866755702}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 2100000, guid: f2861ca601849ef4c827c47338438ccc, type: 2}
 --- !u!82 &82000010299836456
 AudioSource:
   m_ObjectHideFlags: 1
@@ -1389,7 +1398,7 @@ MonoBehaviour:
   target: {fileID: 0}
   SmoothTime: 0.2
   Distance: 20
-  Height: 5
+  Height: 10
   collisionLayer:
     serializedVersion: 2
     m_Bits: 512
