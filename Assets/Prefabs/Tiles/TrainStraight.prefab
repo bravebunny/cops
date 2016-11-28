@@ -258,5 +258,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   A: {fileID: 4000012452751544}
   B: {fileID: 4000012496494964}
-  CheckIfBridge: 0
-  Pillars: {fileID: 0}
+  CheckIfBridge: 1
+  Pillars: {fileID: 1000013113710704, guid: a6de36dae327f2e47b9bd626c1eb1b2f, type: 2}

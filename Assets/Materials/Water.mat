@@ -105,7 +105,7 @@ Material:
       second: 0.02
     - first:
         name: _RandomHeight
-      second: 1
+      second: 0.1
     - first:
         name: _RandomSpeed
       second: 3
@@ -120,7 +120,7 @@ Material:
       second: 0
     - first:
         name: _WaveHeight
-      second: -1.04
+      second: 0.5
     - first:
         name: _WaveLength
       second: 2.5
@@ -137,6 +137,9 @@ Material:
     - first:
         name: _EmissionColor
       second: {r: 0, g: 0, b: 0, a: 1}
+    - first:
+        name: _InvFadeParemeter
+      second: {r: 1.5, g: 0, b: 0, a: 0}
     - first:
         name: _SpecColor
       second: {r: 0.12975776, g: 0.58823526, b: 0.32263446, a: 1}

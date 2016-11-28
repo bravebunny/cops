@@ -14,6 +14,10 @@ Shader "Trolltunga/LowPolyWaves 2.0"
 		_WaveSpeed("Wave speed", Float) = 1.0
 		_RandomHeight("Random height", Float) = 0.5
 		_RandomSpeed("Random Speed", Float) = 0.5
+
+        // foam stuff
+        _InvFadeParemeter("Auto blend parameter (Edge, Shore, Distance scale)", Vector) = (0.2 ,0.39, 0.5, 1.0)
+
 	}
 	SubShader 
 	{
@@ -23,6 +27,10 @@ Shader "Trolltunga/LowPolyWaves 2.0"
 
     	Pass 
     	{
+            Blend SrcAlpha OneMinusSrcAlpha
+            ZTest LEqual
+            ZWrite Off
+            Cull Off
 
 			CGPROGRAM
 			#include "UnityCG.cginc"
@@ -39,6 +47,10 @@ Shader "Trolltunga/LowPolyWaves 2.0"
 			{
 				return frac(sin(dot(co.xyz ,float3(19.9128,75.2,34.5122))) * 12765.5213);
 			}
+
+            // foam stuff
+            sampler2D_float _CameraDepthTexture;
+            uniform float4 _InvFadeParemeter;
 
 			float _WaveLength;
 			float _WaveHeight;
@@ -66,6 +78,7 @@ Shader "Trolltunga/LowPolyWaves 2.0"
     			float2  uv : TEXCOORD0;            
 				float3 diffuseColor : TEXCOORD1;
 				float3 specularColor : TEXCOORD2;
+                float4 screenPos : TEXCOORD3;
 			};
 
 			v2g vert(appdata_full v)
@@ -133,6 +146,7 @@ Shader "Trolltunga/LowPolyWaves 2.0"
 				OUT.uv = IN[0].uv;
 				OUT.diffuseColor = ambientLighting + diffuseReflection;
 				OUT.specularColor = specularReflection;
+                OUT.screenPos = ComputeScreenPos(OUT.pos);
 				triStream.Append(OUT);
 
 				OUT.pos = mul(UNITY_MATRIX_MVP, IN[1].pos);
@@ -140,6 +154,7 @@ Shader "Trolltunga/LowPolyWaves 2.0"
 				OUT.uv = IN[1].uv;
 				OUT.diffuseColor = ambientLighting + diffuseReflection;
 				OUT.specularColor = specularReflection;
+                OUT.screenPos = ComputeScreenPos(OUT.pos);
 				triStream.Append(OUT);
 
 				OUT.pos = mul(UNITY_MATRIX_MVP, IN[2].pos);
@@ -147,14 +162,24 @@ Shader "Trolltunga/LowPolyWaves 2.0"
 				OUT.uv = IN[2].uv;
 				OUT.diffuseColor = ambientLighting + diffuseReflection;
 				OUT.specularColor = specularReflection;
+                OUT.screenPos = ComputeScreenPos(OUT.pos);
 				triStream.Append(OUT);
 				
 			}
 			
-			half4 frag(g2f IN) : COLOR
-			{
-				return float4(IN.specularColor +
-				IN.diffuseColor, 1.0);
+            half4 frag(g2f IN) : COLOR
+            {
+                float4 color = float4(IN.specularColor + IN.diffuseColor, 1.0);
+
+                half4 edgeBlendFactors = half4(1.0, 0.0, 0.0, 0.0);
+                half depth = SAMPLE_DEPTH_TEXTURE_PROJ(_CameraDepthTexture, UNITY_PROJ_COORD(IN.screenPos));
+                depth = LinearEyeDepth(depth);
+                edgeBlendFactors = saturate(_InvFadeParemeter * (depth - IN.screenPos.w));
+                edgeBlendFactors.y = 1.0 - edgeBlendFactors.y;
+                
+                color.rgb += 1.0 - edgeBlendFactors.x;
+
+				return color;
 			}
 			
 			ENDCG
