@@ -1,0 +1,42 @@
+{ "height":9,
+ "layers":[
+        {
+         "data":[22, 22, 22, 22, 3, 22, 22, 22, 22, 22, 22, 22, 22, 3, 22, 22, 22, 22, 22, 22, 22, 22, 3, 22, 22, 22, 22, 22, 22, 22, 22, 3, 22, 22, 22, 22, 1, 1, 1, 1, 7, 1, 1, 1, 1, 22, 22, 22, 22, 3, 22, 22, 22, 22, 22, 22, 22, 22, 3, 22, 22, 22, 22, 22, 22, 22, 22, 3, 22, 22, 22, 22, 22, 22, 22, 22, 3, 22, 22, 22, 22],
+         "height":9,
+         "name":"0",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":9,
+         "x":0,
+         "y":0
+        }],
+ "nextobjectid":1,
+ "orientation":"orthogonal",
+ "properties":
+    {
+
+    },
+ "renderorder":"right-down",
+ "tileheight":24,
+ "tilesets":[
+        {
+         "firstgid":1,
+         "image":"tilemap.png",
+         "imageheight":192,
+         "imagewidth":120,
+         "margin":0,
+         "name":"tilemap",
+         "properties":
+            {
+
+            },
+         "spacing":0,
+         "tilecount":40,
+         "tileheight":24,
+         "tilewidth":24
+        }],
+ "tilewidth":24,
+ "version":1,
+ "width":9
+}

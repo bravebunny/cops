@@ -35,9 +35,9 @@ public class TiledLoader : MonoBehaviour {
             JSONArray map = json["layers"][layer]["data"].AsArray;
             string layerName = json["layers"][layer]["name"];
             layerObject.name = "Layer" + layerName;
-            int depth = int.Parse(layerName);
+            int depth;
+            if (!int.TryParse(layerName, out depth)) depth = 0;
             if (depth != PreviousDepth) CurrentDepth += LayerDepth * LayerScales[depth].y;
-            Debug.Log("current depth" + depth + ": " + CurrentDepth);
             PreviousDepth = depth;
             for (int x = 0; x < width; x++) {
                 for (int y = 0; y < height; y++) {
@@ -72,7 +72,7 @@ public class TiledLoader : MonoBehaviour {
                 }
             }
             if (CombineMeshes) combine.Combine();
-            layerObject.transform.localScale = LayerScales[depth];
+            if (LayerScales.Length > 0 && LayerScales[depth] != null) layerObject.transform.localScale = LayerScales[depth];
         }
         foreach (Transform child in transform) {
             child.gameObject.isStatic = true;
