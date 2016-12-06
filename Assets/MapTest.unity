@@ -268,9 +268,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Chunks:
-  - {fileID: 4900000, guid: adaeee4a0063fb94791184e529d7dd06, type: 3}
-  - {fileID: 4900000, guid: 3d227eabce4c5c14da12976d3b69272e, type: 3}
-  - {fileID: 4900000, guid: f53c0b67ecbafe142a5c6edba17670d5, type: 3}
+  - TiledMap: {fileID: 4900000, guid: adaeee4a0063fb94791184e529d7dd06, type: 3}
+    top: 0
+    right: 1
+    bottom: 0
+    left: 0
+    rotation: 0
+  - TiledMap: {fileID: 4900000, guid: 3d227eabce4c5c14da12976d3b69272e, type: 3}
+    top: 0
+    right: 1
+    bottom: 1
+    left: 1
+    rotation: 0
+  - TiledMap: {fileID: 4900000, guid: f53c0b67ecbafe142a5c6edba17670d5, type: 3}
+    top: 1
+    right: 0
+    bottom: 1
+    left: 0
+    rotation: 0
+  - TiledMap: {fileID: 4900000, guid: d62f07a4e6e6c2845bce9b00167f14e4, type: 3}
+    top: 0
+    right: 1
+    bottom: 1
+    left: 0
+    rotation: 0
   Loader: {fileID: 147808, guid: 597f48b6d55fd74409639251f17bf2af, type: 2}
   SizeX: 10
   SizeZ: 10
