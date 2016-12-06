@@ -15,7 +15,7 @@ public class RandomMap : MonoBehaviour {
     Voxel[,] Voxels;
 
     private IEnumerator Generate() {
-        WaitForSeconds wait = new WaitForSeconds(0.1f);
+        WaitForSeconds wait = new WaitForSeconds(0f);
         for (int x = 0; x < SizeX; x++) {
             for (int z = 0; z < SizeZ; z++) {
                 CreateChunk(x, z);
@@ -43,7 +43,14 @@ public class RandomMap : MonoBehaviour {
             }
         }
 
-        StartCoroutine(Generate());
+        PopulateVoxels();
+
+        for (int x = 0; x < SizeX; x++) {
+            for (int z = 0; z < SizeZ; z++) {
+                CreateChunk(x, z);
+            }
+        }
+        //StartCoroutine(Generate());
     }
 
     void CreateChunk(int x, int z) {
@@ -127,7 +134,7 @@ public class RandomMap : MonoBehaviour {
     }
 
     public class Voxel {
-        public bool value;
+        public bool value = false;
         public Vector3 Position;
         public Vector3 ZCorner;
         public Vector3 XCorner;
@@ -136,11 +143,46 @@ public class RandomMap : MonoBehaviour {
             Position = new Vector3(x * size, 0, z * size);
             ZCorner = Position + Vector3.forward * size;
             XCorner = Position + Vector3.right * size;
-            value = RandomBool();
         }
+    }
 
-        bool RandomBool() {
-            return Random.value < 0.5;
+    int MinLenght = 2;
+    int MaxLength = 5;
+    int Size = 500;
+    float StepSize = 1;
+
+    int xDiff = 0, yDiff = 0;
+    int currentX = 0, currentY = 0;
+
+    void PopulateVoxels () {
+        for (int i = 0; i < Size; i++) {
+            CreateStraightRoad();
+            PickDirection();
+        }
+    }
+
+    void CreateStraightRoad() {
+        int length = Random.Range(MinLenght, MaxLength);
+        for (int e = 0; e < length; e++) {
+            currentX += xDiff;
+            currentY += yDiff;
+            if (currentX < 0 || currentX >= Voxels.GetLength(0) ||
+                currentY < 0 || currentY >= Voxels.GetLength(1)) {
+                PickDirection();
+                return;
+            }
+            Voxels[currentX, currentY].value = true;
+        }
+    }
+
+    void PickDirection() {
+        int ran = Random.Range(0, 2) * 2;
+        if (xDiff == 0) {
+            xDiff = 1 - ran;
+            yDiff = 0;
+        } else {
+            yDiff = 1 - ran;
+            xDiff = 0;
         }
     }
 
@@ -148,11 +190,7 @@ public class RandomMap : MonoBehaviour {
         if (Voxels == null) return;
         foreach (Voxel v in Voxels) {
             Gizmos.color = v.value ? Color.blue : Color.black;
-            Gizmos.DrawCube(v.Position, Vector3.one * 10);
-            /*Gizmos.color = v.left ? Color.blue : Color.black;
-            Gizmos.DrawLine(v.Position, v.ZCorner);
-            Gizmos.color = v.top ? Color.blue : Color.black;
-            Gizmos.DrawLine(v.Position, v.XCorner);*/
+            Gizmos.DrawCube(v.Position, Vector3.one * 3);
         }
     }
 }
