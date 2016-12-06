@@ -7,18 +7,20 @@ public class Targets : MonoBehaviour {
     public float MarkerHeight = 2;
     Transform Target;
     AudioSource CollectSound;
+    MissionsAbstract CurrentMission;
+    bool ArrowDisplay = false; //show Arrow on Screen 
 
-	void Start() {
+
+    void Start() {
         CollectSound = GetComponent<AudioSource>();
-        NewTarget();
 	}
 
+    public void SetMission(MissionsAbstract currentMission, bool arrowDisplay) {
+        CurrentMission = currentMission;
+        ArrowDisplay = arrowDisplay;
+    }
+
     public void NewTarget() {
-        // remove goal behavior from previous target
-        if (Target) {
-            CollectSound.Play();
-            Destroy(Target.GetComponent<Goal>());
-        }
 
         // pick new target randomly from children
         int index = Random.Range(0, transform.childCount);
@@ -34,5 +36,20 @@ public class Targets : MonoBehaviour {
 
         // make the arrow point to the new target
         Arrow.Target = Target;
+
+        //show Arrow on Screen 
+        if (ArrowDisplay) { 
+            TargetMarker.gameObject.SetActive(true);
+            Arrow.gameObject.gameObject.SetActive(true);
+        }
+    }
+
+    public void DestroyTarget() {
+        // remove goal behavior from previous target
+        //CollectSound.Play();
+        Destroy(Target.GetComponent<Goal>());
+        TargetMarker.gameObject.SetActive(false); //probabily remove this after
+        Arrow.gameObject.gameObject.SetActive(false); //probabily remove this after
+        CurrentMission.EndMission();
     }
 }
