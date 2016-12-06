@@ -15,16 +15,6 @@ public class RandomMap : MonoBehaviour {
     Voxel[,] Voxels;
     float Seed;
 
-    private IEnumerator Generate() {
-        WaitForSeconds wait = new WaitForSeconds(0f);
-        for (int x = 0; x < SizeX; x++) {
-            for (int z = 0; z < SizeZ; z++) {
-                CreateChunk(x, z);
-                yield return wait;
-            }
-        }
-    }
-
     void Start () {
         Seed = Random.value;
 
@@ -53,7 +43,6 @@ public class RandomMap : MonoBehaviour {
                 CreateChunk(x, z);
             }
         }
-        //StartCoroutine(Generate());
     }
 
     void CreateChunk(int x, int z) {
@@ -74,8 +63,10 @@ public class RandomMap : MonoBehaviour {
             if (chunk.top == top &&
                 chunk.right == right &&
                 chunk.bottom == bottom &&
-                chunk.left == left)
+                chunk.left == left) {
                 InstantiateChunk(chunk, current.Position);
+                return;
+            }
         }
     }
 
