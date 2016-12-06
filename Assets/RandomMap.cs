@@ -13,6 +13,7 @@ public class RandomMap : MonoBehaviour {
     public float ChunkSize = 9;
     public float TileSize = 4;
     Voxel[,] Voxels;
+    float Seed;
 
     private IEnumerator Generate() {
         WaitForSeconds wait = new WaitForSeconds(0f);
@@ -25,6 +26,8 @@ public class RandomMap : MonoBehaviour {
     }
 
     void Start () {
+        Seed = Random.value;
+
         Chunks = new Chunk[BaseChunks.Length * 4];
 
         for (int i = 0; i < BaseChunks.Length; i++) {
@@ -154,35 +157,13 @@ public class RandomMap : MonoBehaviour {
     int xDiff = 0, yDiff = 0;
     int currentX = 0, currentY = 0;
 
-    void PopulateVoxels () {
-        for (int i = 0; i < Size; i++) {
-            CreateStraightRoad();
-            PickDirection();
-        }
-    }
-
-    void CreateStraightRoad() {
-        int length = Random.Range(MinLenght, MaxLength);
-        for (int e = 0; e < length; e++) {
-            currentX += xDiff;
-            currentY += yDiff;
-            if (currentX < 0 || currentX >= Voxels.GetLength(0) ||
-                currentY < 0 || currentY >= Voxels.GetLength(1)) {
-                PickDirection();
-                return;
+    void PopulateVoxels() {
+        for (int x = 0; x < SizeX; x++) {
+            for (int z = 0; z < SizeZ; z++) {
+                float perlin = Mathf.PerlinNoise(x + Seed, z + Seed);
+                //Debug.Log("perlin: " + perlin);
+                if (perlin > 0.35) Voxels[x, z].value = true;
             }
-            Voxels[currentX, currentY].value = true;
-        }
-    }
-
-    void PickDirection() {
-        int ran = Random.Range(0, 2) * 2;
-        if (xDiff == 0) {
-            xDiff = 1 - ran;
-            yDiff = 0;
-        } else {
-            yDiff = 1 - ran;
-            xDiff = 0;
         }
     }
 
