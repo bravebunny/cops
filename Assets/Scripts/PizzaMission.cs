@@ -3,8 +3,12 @@ using System.Collections;
 using System;
 
 public class PizzaMission : MissionsAbstract {
-    public override void InitiateMission() {
+
+    MissionManager MM;
+
+    public override void InitiateMission(MissionManager missionManager) {
         Debug.Log("Initiate Pizza Mission press space to skip");
+        MM = missionManager;
     }
 
     public override void EndMission() {
@@ -13,7 +17,7 @@ public class PizzaMission : MissionsAbstract {
 
     void Update() {
         if (Input.GetKeyDown("space"))
-            MissionManager.EndCurrentMission();
+            MM.EndCurrentMission();
     }
 
     public override string GetDisplayText() {

@@ -6,8 +6,8 @@ public class MissionManager : MonoBehaviour {
     public GameObject MissionObject;
     public Text DisplayText;
 
-    static MissionsAbstract RandomMission;
-    static MissionsAbstract[] MissionsList;
+    MissionsAbstract RandomMission;
+    MissionsAbstract[] MissionsList;
 
     // Use this for initialization
     void Start () {
@@ -16,15 +16,14 @@ public class MissionManager : MonoBehaviour {
     }
 
 
-    public static void RandomizeMission() {
+    public void RandomizeMission() {
         Debug.Log("##RANDOMMMMM##");
         RandomMission = MissionsList[Random.Range(0, MissionsList.Length)];
-        RandomMission.InitiateMission();
-        //setDisplayText();
+        RandomMission.InitiateMission(this);
+        setDisplayText();
     }
 
-    public static void EndCurrentMission() {
-        RandomMission.EndMission();
+    public void EndCurrentMission() {
         RandomizeMission();
     }
 

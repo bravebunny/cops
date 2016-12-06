@@ -2,7 +2,7 @@
 
 public abstract class MissionsAbstract : MonoBehaviour{
 
-    public abstract void InitiateMission();
+    public abstract void InitiateMission(MissionManager missionManager);
 
     public abstract void EndMission();
 

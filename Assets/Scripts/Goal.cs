@@ -6,9 +6,9 @@ public class Goal : MonoBehaviour {
 
     void OnCollisionEnter(Collision collision) {
         if (collision.collider.tag == "Player") {
-            MissionManager.EndCurrentMission();
             GameManager.Score++;
             GameManager.KilledCops++;
+            TargetManager.DestroyTarget();
         }
     }
 
