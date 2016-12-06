@@ -10,16 +10,10 @@ public class Targets : MonoBehaviour {
 
 	void Start() {
         CollectSound = GetComponent<AudioSource>();
-        NewTarget();
+        //NewTarget();
 	}
 
     public void NewTarget() {
-        // remove goal behavior from previous target
-        if (Target) {
-            CollectSound.Play();
-            Destroy(Target.GetComponent<Goal>());
-        }
-
         // pick new target randomly from children
         int index = Random.Range(0, transform.childCount);
         Target = transform.GetChild(index);
@@ -31,8 +25,18 @@ public class Targets : MonoBehaviour {
         // add marker that follows target around
         TargetMarker.position = Target.position + Vector3.up * MarkerHeight;
         TargetMarker.SetParent(Target);
+        TargetMarker.gameObject.SetActive(true);
 
         // make the arrow point to the new target
         Arrow.Target = Target;
+        Arrow.gameObject.gameObject.SetActive(true);
+    }
+
+    public void DestroyTarget() {
+        // remove goal behavior from previous target
+        //CollectSound.Play();
+        Destroy(Target.GetComponent<Goal>());
+        TargetMarker.gameObject.SetActive(false); //probabily remove this after
+        Arrow.gameObject.gameObject.SetActive(false); //probabily remove this after
     }
 }
