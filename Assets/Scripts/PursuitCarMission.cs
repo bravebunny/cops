@@ -3,15 +3,15 @@ using UnityEngine;
 
 public class PursuitCarMission :  MissionsAbstract {
 
-    public GameObject Cars;
+    public GameObject Target;
     MissionManager MM;
 
     public override void InitiateMission(MissionManager missionManager) {
         Debug.Log("Initiate Pursuit Car Mission");
 
         MM = missionManager;
-        Cars.GetComponent<Targets>().SetMission(this, true);
-        Cars.GetComponent<Targets>().NewTarget();
+        MM.TargetScript.SetMission(this, true);
+        MM.TargetScript.GetComponent<Targets>().NewTarget(Target);
     }
 
     public override void EndMission() {
