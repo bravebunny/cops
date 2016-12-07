@@ -12,11 +12,17 @@ public class RandomMap : MonoBehaviour {
     public int SizeZ = 10;
     public float ChunkSize = 9;
     public float TileSize = 4;
+
+    public float CityRadius = 5;
+    public float CityMinPerlin = 0.35f;
+    public float IslandRadius = 0.0001f;
+    public float IslandMinPerlin = 0.05f;
+
     Voxel[,] Voxels;
     float Seed;
 
     void Start () {
-        Seed = Random.value;
+        Seed = Random.Range(0.2f, 0.8f);
 
         Chunks = new Chunk[BaseChunks.Length * 4];
 
@@ -40,7 +46,11 @@ public class RandomMap : MonoBehaviour {
 
         for (int x = 0; x < SizeX; x++) {
             for (int z = 0; z < SizeZ; z++) {
-                CreateChunk(x, z);
+                float perlin = Mathf.PerlinNoise(x + Seed, z + Seed);
+                float distance = Vector2.Distance(new Vector2(x, z), new Vector2(SizeX / 2, SizeZ / 2));
+                distance *= distance * distance * distance;
+                // create chunks only inside the island
+                if (perlin > IslandMinPerlin + IslandRadius * distance) CreateChunk(x, z);
             }
         }
     }
@@ -69,17 +79,6 @@ public class RandomMap : MonoBehaviour {
             }
         }
     }
-
-    /*
-    Chunk PickChunkX(Voxel current, Voxel x) {
-        List<Chunk> validChunks = new List<Chunk>();
-        foreach (Chunk chunk in Chunks) {
-            if (chunk.left == current.top && chunk.bottom == x.left)
-                validChunks.Add(chunk);
-        }
-        int index = Random.Range(0, validChunks.Count);
-        return validChunks[index];
-    }*/
 
     void InstantiateChunk(Chunk chunk, Vector3 position) {
         GameObject instance = Instantiate<GameObject>(Loader);
@@ -152,8 +151,9 @@ public class RandomMap : MonoBehaviour {
         for (int x = 0; x < SizeX; x++) {
             for (int z = 0; z < SizeZ; z++) {
                 float perlin = Mathf.PerlinNoise(x + Seed, z + Seed);
-                //Debug.Log("perlin: " + perlin);
-                if (perlin > 0.35) Voxels[x, z].value = true;
+                float distance = Vector2.Distance(new Vector2(x, z), new Vector2(SizeX / 2, SizeZ / 2));
+                // activate voxels that should have roads
+                if (perlin > CityMinPerlin && distance < CityRadius) Voxels[x, z].value = true;
             }
         }
     }

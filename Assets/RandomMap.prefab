@@ -97,7 +97,7 @@ MonoBehaviour:
     left: 0
     rotation: 0
   Loader: {fileID: 147808, guid: 597f48b6d55fd74409639251f17bf2af, type: 2}
-  SizeX: 10
-  SizeZ: 10
-  ChunkSize: 5
+  SizeX: 30
+  SizeZ: 30
+  ChunkSize: 3
   TileSize: 12
