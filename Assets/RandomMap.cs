@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 
 public class RandomMap : MonoBehaviour {
-    public Chunk[] BaseChunks;
+    public TextAsset[] BaseChunks;
     public Chunk[] Chunks;
     public Chunk Empty;
     public GameObject Loader;
@@ -22,6 +22,71 @@ public class RandomMap : MonoBehaviour {
     float Seed;
     int SeedRange = 10000;
     float SeedOffset = 0.5f;
+
+
+    public class Voxel {
+        public int value = 1;
+        public Vector3 Position;
+        public Vector3 ZCorner;
+        public Vector3 XCorner;
+
+        public Voxel(int x, int z, float size) {
+            Position = new Vector3(x * size, 0, z * size);
+            ZCorner = Position + Vector3.forward * size;
+            XCorner = Position + Vector3.right * size;
+        }
+    }
+
+
+    [System.Serializable]
+    public class Chunk {
+        public TextAsset TiledMap;
+        public int top;
+        public int right;
+        public int bottom;
+        public int left;
+        public int rotation;
+
+        public Chunk(Chunk chunk) {
+            TiledMap = chunk.TiledMap;
+            top = chunk.top;
+            right = chunk.right;
+            bottom = chunk.bottom;
+            left = chunk.left;
+        }
+
+        public Chunk(TextAsset tiledMap) {
+            TiledMap = tiledMap;
+            // get the values of this chunk from the file name
+            char[] chars = tiledMap.name.ToCharArray();
+            int length = chars.Length;
+            int offset = 48; // used to convert from char to int
+            left = chars[length - 1] - offset;
+            bottom = chars[length - 2] - offset;
+            right = chars[length - 3] - offset;
+            top = chars[length - 4] - offset;
+            //Debug.Log(ToString());
+        }
+
+        public void SetRotation(int rotation) {
+            for (int i = 0; i < rotation; i++) Rotate();
+        }
+
+        public void Rotate() {
+            //Debug.Log("Before rotation: " + ToString());
+            int oldTop = top;
+            top = left;
+            left = bottom;
+            bottom = right;
+            right = oldTop;
+            rotation++;
+            //Debug.Log("After rotation: " + ToString());
+        }
+
+        public override string ToString() {
+            return TiledMap.name + ": " + top + "," + right + "," + bottom + "," + left;
+        }
+    }
 
     void Start () {
         // create a large integer number for the perlin noise seed
@@ -61,12 +126,12 @@ public class RandomMap : MonoBehaviour {
 
     void CreateChunk(int x, int z) {
         Voxel current = Voxels[x, z];
-        if (!current.value) {
+        if (current.value == 1) {
             InstantiateChunk(Empty, current.Position);
             return;
         }
 
-        bool top = false, right = false, bottom = false, left = false;
+        int top = 1, right = 1, bottom = 1, left = 1;
         if (z + 1 < Voxels.GetLength(1)) top = Voxels[x, z + 1].value;
         if (x + 1 < Voxels.GetLength(0)) right = Voxels[x + 1, z].value;
         if (z > 0) bottom = Voxels[x, z - 1].value;
@@ -93,56 +158,6 @@ public class RandomMap : MonoBehaviour {
         tl.transform.eulerAngles = Vector3.up * chunk.rotation * 90;
     }
 
-    [System.Serializable]
-    public class Chunk {
-        public TextAsset TiledMap;
-        public bool top;
-        public bool right;
-        public bool bottom;
-        public bool left;
-        public int rotation;
-
-        public Chunk(Chunk chunk) {
-            TiledMap = chunk.TiledMap;
-            top = chunk.top;
-            right = chunk.right;
-            bottom = chunk.bottom;
-            left = chunk.left;
-        }
-
-        public void SetRotation(int rotation) {
-            for (int i = 0; i < rotation; i++) RotateRight();
-        }
-
-        public void RotateRight() {
-            //Debug.Log("Before rotation: " + ToString());
-            bool oldTop = top;
-            top = left;
-            left = bottom;
-            bottom = right;
-            right = oldTop;
-            rotation++;
-            //Debug.Log("After rotation: " + ToString());
-        }
-
-        public string ToString() {
-            return top + "," + right + "," + bottom + "," + left;
-        }
-    }
-
-    public class Voxel {
-        public bool value = false;
-        public Vector3 Position;
-        public Vector3 ZCorner;
-        public Vector3 XCorner;
-
-        public Voxel (int x, int z, float size) {
-            Position = new Vector3(x * size, 0, z * size);
-            ZCorner = Position + Vector3.forward * size;
-            XCorner = Position + Vector3.right * size;
-        }
-    }
-
     int MinLenght = 2;
     int MaxLength = 5;
     int Size = 500;
@@ -157,7 +172,7 @@ public class RandomMap : MonoBehaviour {
                 float perlin = Mathf.PerlinNoise(x + Seed, z + Seed);
                 float distance = Vector2.Distance(new Vector2(x, z), new Vector2(SizeX / 2, SizeZ / 2));
                 // activate voxels that should have roads
-                if (perlin > CityMinPerlin && distance < CityRadius) Voxels[x, z].value = true;
+                if (perlin > CityMinPerlin && distance < CityRadius) Voxels[x, z].value = 2;
             }
         }
     }
@@ -165,7 +180,7 @@ public class RandomMap : MonoBehaviour {
     void OnDrawGizmos() {
         if (Voxels == null) return;
         foreach (Voxel v in Voxels) {
-            Gizmos.color = v.value ? Color.blue : Color.black;
+            Gizmos.color = v.value == 1 ? Color.blue : Color.black;
             Gizmos.DrawCube(v.Position, Vector3.one * 3);
         }
     }
