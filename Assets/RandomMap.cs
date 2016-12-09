@@ -20,9 +20,13 @@ public class RandomMap : MonoBehaviour {
 
     Voxel[,] Voxels;
     float Seed;
+    int SeedRange = 10000;
+    float SeedOffset = 0.5f;
 
     void Start () {
-        Seed = Random.Range(0.2f, 0.8f);
+        // create a large integer number for the perlin noise seed
+        // the offset isn't random because it affects the density of the noise
+        Seed = Random.Range(1, SeedRange) + SeedOffset;
 
         Chunks = new Chunk[BaseChunks.Length * 4];
 
