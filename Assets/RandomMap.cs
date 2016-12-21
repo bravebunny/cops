@@ -129,8 +129,8 @@ public class RandomMap : MonoBehaviour {
             }
         }
 
-        PopulateVoxels(CityMinPerlin, CityRadius, CityVoxels);
-        PopulateVoxels(IslandMinPerlin, IslandRadius, IslandVoxels);
+        PopulateVoxels(CityMinPerlin, CityRadius, CityVoxels, ROAD);
+        PopulateVoxels(IslandMinPerlin, IslandRadius, IslandVoxels, GROUND);
 
 
         for (int x = 0; x < SizeX; x++) {
@@ -196,24 +196,24 @@ public class RandomMap : MonoBehaviour {
     int xDiff = 0, yDiff = 0;
     int currentX = 0, currentY = 0;
 
-    void PopulateVoxels(float minPerlin, float radius, Voxel[,] voxels) {
+    void PopulateVoxels(float minPerlin, float radius, Voxel[,] voxels, int value) {
         for (int x = 0; x < SizeX; x++) {
             for (int z = 0; z < SizeZ; z++) {
                 float perlin = Mathf.PerlinNoise(x + Seed, z + Seed);
                 float distance = Vector2.Distance(new Vector2(x, z), new Vector2(SizeX / 2, SizeZ / 2));
                 // activate voxels that should have roads
-                if (perlin > minPerlin && distance < radius) voxels[x, z].Value = 2;
+                if (perlin > minPerlin && distance < radius) voxels[x, z].Value = value;
             }
         }
     }
 
     void OnDrawGizmos() {
-        if (CityVoxels == null) return;
-        foreach (Voxel v in CityVoxels) {
+        if (IslandVoxels == null) return;
+        foreach (Voxel v in IslandVoxels) {
             Color color;
-            if (v.Value == 1) color = Color.blue;
-            else if (v.Value == 0) color = Color.black;
-            else color = Color.green;
+            if (v.Value == EMPTY) color = Color.blue;
+            else if (v.Value == GROUND) color = Color.green;
+            else color = Color.black;
             Gizmos.color = color;
             Gizmos.DrawCube(v.Position, Vector3.one * 3);
         }
