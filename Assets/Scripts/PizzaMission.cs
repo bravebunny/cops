@@ -5,29 +5,30 @@ using System.Collections.Generic;
 
 public class PizzaMission : MissionsAbstract {
 
-    public List<GameObject> Targets;
+    public List<MissionTargets> MissionTargets;
     MissionManager MM;
 
     int TargetIndex = 0;
 
     public override void InitiateMission(MissionManager missionManager, int targetIndex = 0) {
         TargetIndex = targetIndex;
-        Debug.Log("Initiate Pizza Mission");
+        Debug.Log("Initiate " + MissionTargets[targetIndex].MissionDescription);
         MM = missionManager;
         MM.TargetScript.SetMission(this, true, true);
-        MM.TargetScript.GetComponent<Targets>().NewTarget(Targets[targetIndex]);
+        MM.TargetScript.GetComponent<Targets>().NewTarget(MissionTargets[targetIndex].Target);
     }
 
     public override void EndMission() {
         Debug.Log("End Pizza Mission");
         //CollectSound.Play();
-        if (Targets.Count - (TargetIndex + 1) == 0)
+        if (MissionTargets.Count - (TargetIndex + 1) == 0)
             MM.EndCurrentMission(false);
         else
             MM.EndCurrentMission(true, TargetIndex);
     }
 
     public override string GetDisplayText() {
-        return "pizza";
+        Debug.Log("TargetIndex: " + TargetIndex);
+        return MissionTargets[TargetIndex].MissionDescription;
     }
 }

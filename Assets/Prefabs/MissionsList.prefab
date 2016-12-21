@@ -53,9 +53,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b1be903358c4941b6669ede11bed10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Targets:
-  - {fileID: 0}
-  - {fileID: 0}
+  MissionTargets:
+  - Target: {fileID: 0}
+    MissionDescription: Pizza
+  - Target: {fileID: 0}
+    MissionDescription: Delivery
 --- !u!114 &114000012068068948
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -81,5 +83,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a67f9000358762418d488ca77b926cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Targets:
-  - {fileID: 0}
+  MissionTargets:
+  - Target: {fileID: 0}
+    MissionDescription: Car
