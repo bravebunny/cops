@@ -20,7 +20,7 @@ public class Road : MonoBehaviour {
         Vector3 origin = transform.position + Vector3.up * 4;
         Vector3 forward = -transform.up + direction * slope;
         bool ray = Physics.Raycast(origin, forward, out hit, 20, RoadLayers);
-        Debug.DrawLine(origin, origin + forward * 5);
+        //Debug.DrawLine(origin, origin + forward * 5);
         if (ray && (hit.transform.tag == "Road")) {
             Connections.Add(hit.transform.position);
         }
