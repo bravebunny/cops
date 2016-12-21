@@ -129,8 +129,8 @@ public class RandomMap : MonoBehaviour {
             }
         }
 
-        PopulateVoxels(CityMinPerlin, CityRadius, CityVoxels, ROAD);
-        PopulateVoxels(IslandMinPerlin, IslandRadius, IslandVoxels, GROUND);
+        PopulateVoxels(CityMinPerlin, CityRadius, CityVoxels, ROAD, 1);
+        PopulateVoxels(IslandMinPerlin, IslandRadius, IslandVoxels, GROUND, 4);
 
 
         for (int x = 0; x < SizeX; x++) {
@@ -180,8 +180,7 @@ public class RandomMap : MonoBehaviour {
     void CreateChunk(int x, int z) {
 
         Voxel current = CityVoxels[x, z];
-        if (current.Value == 1) {
-            InstantiateChunk(Empty, current.Position);
+        if (current.Value == GROUND) {
             return;
         }
 
@@ -227,13 +226,15 @@ public class RandomMap : MonoBehaviour {
     int xDiff = 0, yDiff = 0;
     int currentX = 0, currentY = 0;
 
-    void PopulateVoxels(float minPerlin, float radius, Voxel[,] voxels, int value) {
+    void PopulateVoxels(float minPerlin, float radius, Voxel[,] voxels, int value, float distanceFactor) {
         for (int x = 0; x < SizeX; x++) {
             for (int z = 0; z < SizeZ; z++) {
                 float perlin = Mathf.PerlinNoise(x + Seed, z + Seed);
                 float distance = Vector2.Distance(new Vector2(x, z), new Vector2(SizeX / 2, SizeZ / 2));
+                distance = Mathf.Pow(distance, distanceFactor);
+                perlin /= distance;
                 // activate voxels that should have roads
-                if (perlin > minPerlin && distance < radius) voxels[x, z].Value = value;
+                if (perlin > minPerlin /*&& distance < radius*/) voxels[x, z].Value = value;
             }
         }
     }
