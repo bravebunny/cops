@@ -132,6 +132,21 @@ public class RandomMap : MonoBehaviour {
         PopulateVoxels(CityMinPerlin, CityRadius, CityVoxels, ROAD, 1);
         PopulateVoxels(IslandMinPerlin, IslandRadius, IslandVoxels, GROUND, 5);
 
+        // avoid having roads on top of island holes
+        for (int x = 0; x < SizeX; x++) {
+            for (int z = 0; z < SizeZ; z++) {
+                if (CityVoxels[x, z].Value != GROUND) {
+                    IslandVoxels[x, z].Value = GROUND;
+                    /*IslandVoxels[x - 1, z].Value = GROUND;
+                    IslandVoxels[x, z - 1].Value = GROUND;
+                    IslandVoxels[x - 1, z - 1].Value = GROUND;*/
+                    IslandVoxels[x + 1, z].Value = GROUND;
+                    IslandVoxels[x, z + 1].Value = GROUND;
+                    IslandVoxels[x + 1, z + 1].Value = GROUND;
+                }
+            }
+        }
+
 
         for (int x = 0; x < SizeX; x++) {
             for (int z = 0; z < SizeZ; z++) {
@@ -148,13 +163,8 @@ public class RandomMap : MonoBehaviour {
     }
 
     void CreateIslandChunk(int x, int z) {
-
-        if (CityVoxels[x, z].Value != GROUND) return;
-
         Voxel current = IslandVoxels[x, z];
-        /*if (current.Value == EMPTY) {
-            return;
-        }*/
+        if (CityVoxels[x, z].Value != GROUND) return;
 
         /*foreach (Chunk chunk in Chunks) {
             Debug.Log(chunk.TiledMap.name);

@@ -76,9 +76,9 @@ MonoBehaviour:
   SizeZ: 30
   ChunkSize: 3
   TileSize: 12
-  CityRadius: 5
+  CityRadius: 7
   CityMinPerlin: 0.3
-  IslandRadius: 20
+  IslandRadius: 6
   IslandMinPerlin: 0.00001
   CityChunks: []
   GroundChunks: []
