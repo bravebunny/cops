@@ -11,7 +11,7 @@ public class PursuitCarMission :  MissionsAbstract {
         Debug.Log("Initiate Pursuit Car Mission");
 
         MM = missionManager;
-        MM.TargetScript.SetMission(this, true); //Set mission on Targets script 
+        MM.TargetScript.SetMission(this); //Set mission on Targets script 
         MM.TargetScript.GetComponent<Targets>().NewTarget(Target); //Set target in Targets script
         CollectSound = Target.GetComponent<AudioSource>();
     }

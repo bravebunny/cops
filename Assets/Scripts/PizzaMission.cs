@@ -8,19 +8,16 @@ public class PizzaMission : MissionsAbstract {
     MissionManager MM;
 
     public override void InitiateMission(MissionManager missionManager) {
-        Debug.Log("Initiate Pizza Mission press space to skip");
+        Debug.Log("Initiate Pizza Mission");
         MM = missionManager;
-        MM.TargetScript.SetMission(this, true);
+        MM.TargetScript.SetMission(this, true, true);
         MM.TargetScript.GetComponent<Targets>().NewTarget(Target);
     }
 
     public override void EndMission() {
         Debug.Log("End Pizza Mission");
-    }
-
-    void Update() {
-        if (Input.GetKeyDown("space"))
-            MM.EndCurrentMission();
+        //CollectSound.Play();
+        MM.EndCurrentMission();
     }
 
     public override string GetDisplayText() {

@@ -12,6 +12,14 @@ public class Goal : MonoBehaviour {
         }
     }
 
+    void OnTriggerEnter(Collider collider) {
+        if (collider.tag == "Player") {
+            GameManager.Score++;
+            GameManager.KilledCops++;
+            TargetManager.DestroyTarget();
+        }
+    }
+
     void OnDestroy() {
         //TargetManager.NewTarget();
     }

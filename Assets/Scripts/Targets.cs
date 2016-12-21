@@ -5,13 +5,18 @@ public class Targets : MonoBehaviour {
     public LookAt Arrow;
     public Transform TargetMarker;
     public float MarkerHeight = 2;
+
     Transform Target;
     MissionsAbstract CurrentMission;
-    bool ArrowDisplay = false; //show Arrow on Screen 
+    //show Arrow on Screen 
+    bool ArrowDisplay = false;
+    //requires disabling render of mission's object after the mission is completed
+    bool RequireDisabledRender = false; 
 
-    public void SetMission(MissionsAbstract currentMission, bool arrowDisplay) {
+    public void SetMission(MissionsAbstract currentMission, bool arrowDisplay = true, bool requireDisabledRender = false) {
         CurrentMission = currentMission;
         ArrowDisplay = arrowDisplay;
+        RequireDisabledRender = requireDisabledRender;
 
         //show Arrow on Screen 
         if (ArrowDisplay) {
@@ -41,9 +46,17 @@ public class Targets : MonoBehaviour {
         // make the arrow point to the new target
         Arrow.Target = Target;
 
+        if (RequireDisabledRender) {
+            Target.gameObject.GetComponent<MeshRenderer>().enabled = true;
+        }
+
     }
 
     public void DestroyTarget() {
+        //disable render of the mission object
+        if (RequireDisabledRender) {
+            Target.gameObject.GetComponent<MeshRenderer>().enabled = false;
+        }
         // remove goal behavior from previous target
         Destroy(Target.GetComponent<Goal>());
         CurrentMission.EndMission();
