@@ -52,52 +52,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BaseChunks:
-  - TiledMap: {fileID: 4900000, guid: adaeee4a0063fb94791184e529d7dd06, type: 3}
-    top: 0
-    right: 1
-    bottom: 0
-    left: 0
-    rotation: 0
-  - TiledMap: {fileID: 4900000, guid: 3d227eabce4c5c14da12976d3b69272e, type: 3}
-    top: 0
-    right: 1
-    bottom: 1
-    left: 1
-    rotation: 0
-  - TiledMap: {fileID: 4900000, guid: f53c0b67ecbafe142a5c6edba17670d5, type: 3}
-    top: 1
-    right: 0
-    bottom: 1
-    left: 0
-    rotation: 0
-  - TiledMap: {fileID: 4900000, guid: d62f07a4e6e6c2845bce9b00167f14e4, type: 3}
-    top: 0
-    right: 1
-    bottom: 1
-    left: 0
-    rotation: 0
-  - TiledMap: {fileID: 4900000, guid: e96230071a52fb44b8d69a73d0dfbdc4, type: 3}
-    top: 1
-    right: 1
-    bottom: 1
-    left: 1
-    rotation: 0
-  - TiledMap: {fileID: 4900000, guid: 084c754816537744fa8164a6dae6a2ba, type: 3}
-    top: 0
-    right: 0
-    bottom: 0
-    left: 0
-    rotation: 0
+  - {fileID: 4900000, guid: 1d7d4a607d1f1144187665e8a76b19b9, type: 3}
+  - {fileID: 4900000, guid: 435b93a9c1886b5418363d33ca127760, type: 3}
+  - {fileID: 4900000, guid: 45392270b43231246aef287a1ea2ff52, type: 3}
+  - {fileID: 4900000, guid: 1f1144edfdde8ad4cb585131de1778ea, type: 3}
+  - {fileID: 4900000, guid: 983e0cea5d2074f449d1474d3ee71790, type: 3}
+  - {fileID: 4900000, guid: eebef3abd7c5b7e409869d70e11c82f2, type: 3}
   Chunks: []
   Empty:
-    TiledMap: {fileID: 4900000, guid: 084c754816537744fa8164a6dae6a2ba, type: 3}
-    top: 0
-    right: 0
-    bottom: 0
-    left: 0
+    TiledMap: {fileID: 4900000, guid: 983e0cea5d2074f449d1474d3ee71790, type: 3}
+    top: 1
+    right: 1
+    bottom: 1
+    left: 1
     rotation: 0
   Loader: {fileID: 147808, guid: 597f48b6d55fd74409639251f17bf2af, type: 2}
   SizeX: 30
   SizeZ: 30
   ChunkSize: 3
   TileSize: 12
+  CityRadius: 5
+  CityMinPerlin: 0.35
+  IslandRadius: 0.0001
+  IslandMinPerlin: 0.05

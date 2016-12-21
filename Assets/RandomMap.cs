@@ -119,17 +119,24 @@ public class RandomMap : MonoBehaviour {
                 float distance = Vector2.Distance(new Vector2(x, z), new Vector2(SizeX / 2, SizeZ / 2));
                 distance *= distance * distance * distance;
                 // create chunks only inside the island
-                if (perlin > IslandMinPerlin + IslandRadius * distance) CreateChunk(x, z);
+                //if (perlin > IslandMinPerlin + IslandRadius * distance) CreateChunk(x, z);
+
+                CreateChunk(x, z);
             }
         }
     }
 
     void CreateChunk(int x, int z) {
+
         Voxel current = Voxels[x, z];
         if (current.value == 1) {
             InstantiateChunk(Empty, current.Position);
             return;
         }
+
+        /*foreach (Chunk chunk in Chunks) {
+            Debug.Log(chunk.TiledMap.name);
+        }*/
 
         int top = 1, right = 1, bottom = 1, left = 1;
         if (z + 1 < Voxels.GetLength(1)) top = Voxels[x, z + 1].value;
@@ -137,8 +144,9 @@ public class RandomMap : MonoBehaviour {
         if (z > 0) bottom = Voxels[x, z - 1].value;
         if (x > 0) left = Voxels[x - 1, z].value;
         
-        List<Chunk> validChunks = new List<Chunk>();
+        //List<Chunk> validChunks = new List<Chunk>();
         foreach (Chunk chunk in Chunks) {
+            //Debug.Log(chunk.TiledMap.name);
             if (chunk.top == top &&
                 chunk.right == right &&
                 chunk.bottom == bottom &&
@@ -154,6 +162,7 @@ public class RandomMap : MonoBehaviour {
         instance.transform.position = position;
         TiledLoader tl = instance.GetComponent<TiledLoader>();
         tl.Map = chunk.TiledMap;
+        //Debug.Log(chunk.TiledMap.name);
         tl.Build();
         tl.transform.eulerAngles = Vector3.up * chunk.rotation * 90;
     }
