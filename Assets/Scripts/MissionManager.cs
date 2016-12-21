@@ -29,8 +29,10 @@ public class MissionManager : MonoBehaviour {
         setDisplayText();
     }
 
-    public void EndCurrentMission() {
-        RandomizeMission();
+    public void EndCurrentMission(bool nextPhase = false, int targetIndex = 0) {
+        if (nextPhase)
+            RandomMission.InitiateMission(this, targetIndex + 1);
+        else RandomizeMission();
     }
 
      void setDisplayText() {
