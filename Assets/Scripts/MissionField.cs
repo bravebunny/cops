@@ -6,7 +6,7 @@ public class MissionField : MonoBehaviour {
     public Transform WantedParent;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
         gameObject.transform.parent = WantedParent;
     }
 	
