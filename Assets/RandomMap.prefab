@@ -80,5 +80,7 @@ MonoBehaviour:
   CityMinPerlin: 0.3
   IslandRadius: 6
   IslandMinPerlin: 0.00001
+  GroundLevels: 3
+  LevelHeight: 4.5
   CityChunks: []
   GroundChunks: []

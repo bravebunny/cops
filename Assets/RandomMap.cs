@@ -17,6 +17,8 @@ public class RandomMap : MonoBehaviour {
     public float CityMinPerlin = 0.35f;
     public float IslandRadius = 0.0001f;
     public float IslandMinPerlin = 0.05f;
+    public int GroundLevels = 3;
+    public float LevelHeight = 4;
 
     public Chunk[] CityChunks;
     public Chunk[] GroundChunks;
@@ -24,7 +26,7 @@ public class RandomMap : MonoBehaviour {
     const int EMPTY = 0, GROUND = 1, ROAD = 2;
 
     Voxel[,] CityVoxels;
-    Voxel[,] IslandVoxels;
+    Voxel[][,] IslandVoxels;
     float Seed;
     int SeedRange = 10000;
     float SeedOffset = 0.5f;
@@ -113,27 +115,44 @@ public class RandomMap : MonoBehaviour {
 
         // initialize voxels
         CityVoxels = new Voxel[SizeX, SizeZ];
-        IslandVoxels = new Voxel[SizeX, SizeZ];
+        IslandVoxels = new Voxel[GroundLevels][,];
+        for (int i = 0; i < GroundLevels; i++) {
+            IslandVoxels[i] = new Voxel[SizeX, SizeZ];
+        }
+
         float size = ChunkSize * TileSize;
         for (int x = 0; x < SizeX; x++) {
             for (int z = 0; z < SizeZ; z++) {
                 CityVoxels[x, z] = new Voxel(x, z, size, GROUND);
-                IslandVoxels[x, z] = new Voxel(x, z, size, EMPTY);
+                for (int y = 0; y < GroundLevels; y++)
+                    IslandVoxels[y][x, z] = new Voxel(x, z, size, EMPTY);
             }
         }
 
         // assign pseudo-random values to the voxels
         PopulateVoxels(CityMinPerlin, CityRadius, CityVoxels, ROAD, 1);
-        PopulateVoxels(IslandMinPerlin, IslandRadius, IslandVoxels, GROUND, 5);
+        for (int y = 0; y < GroundLevels; y++)
+            PopulateVoxels(IslandMinPerlin / (y + 1), IslandRadius, IslandVoxels[y], GROUND, 5);
 
-        // avoid having roads on top of island holes
+        // avoid having roads on top of island holes on the topmost level, 0
         for (int x = 0; x < SizeX; x++) {
             for (int z = 0; z < SizeZ; z++) {
                 if (CityVoxels[x, z].Value != GROUND) {
-                    IslandVoxels[x, z].Value = GROUND;
-                    IslandVoxels[x + 1, z].Value = GROUND;
-                    IslandVoxels[x, z + 1].Value = GROUND;
-                    IslandVoxels[x + 1, z + 1].Value = GROUND;
+                    IslandVoxels[0][x, z].Value = GROUND;
+                    IslandVoxels[0][x + 1, z].Value = GROUND;
+                    IslandVoxels[0][x, z + 1].Value = GROUND;
+                    IslandVoxels[0][x + 1, z + 1].Value = GROUND;
+                }
+                for (int y = 1; y < GroundLevels; y++) {
+                    if (IslandVoxels[y-1][x, z].Value == GROUND) {
+                        IslandVoxels[y][x, z].Value = GROUND;
+                        IslandVoxels[y][x + 1, z].Value = GROUND;
+                        IslandVoxels[y][x, z + 1].Value = GROUND;
+                        IslandVoxels[y][x + 1, z + 1].Value = GROUND;
+                        IslandVoxels[y][x - 1, z].Value = GROUND;
+                        IslandVoxels[y][x, z - 1].Value = GROUND;
+                        IslandVoxels[y][x - 1, z - 1].Value = GROUND;
+                    }
                 }
             }
         }
@@ -145,22 +164,23 @@ public class RandomMap : MonoBehaviour {
                 float distance = Vector2.Distance(new Vector2(x, z), new Vector2(SizeX / 2, SizeZ / 2));
                 distance *= distance * distance * distance;
                 CreateCityChunk(x, z);
-                CreateIslandChunk(x, z);
+                for (int y = 0; y < GroundLevels; y++)
+                    CreateIslandChunk(x, y, z);
             }
         }
     }
 
-    void CreateIslandChunk(int x, int z) {
-        Voxel current = IslandVoxels[x, z];
+    void CreateIslandChunk(int x, int y, int z) {
+        Voxel current = IslandVoxels[y][x, z];
         if (CityVoxels[x, z].Value != GROUND) return;
 
         // look around this voxel to decide which chunks are valid
         int top, right, bottom, left;
         top = right = bottom = left = EMPTY;
-        if (z + 1 < IslandVoxels.GetLength(1) && x + 1 < IslandVoxels.GetLength(0)) top = IslandVoxels[x + 1, z + 1].Value;
-        if (x + 1 < IslandVoxels.GetLength(0)) right = IslandVoxels[x + 1, z].Value;
-        bottom = IslandVoxels[x, z].Value;
-        if (z + 1 < IslandVoxels.GetLength(1)) left = IslandVoxels[x, z + 1].Value;
+        if (z + 1 < IslandVoxels[y].GetLength(1) && x + 1 < IslandVoxels[y].GetLength(0)) top = IslandVoxels[y][x + 1, z + 1].Value;
+        if (x + 1 < IslandVoxels[y].GetLength(0)) right = IslandVoxels[y][x + 1, z].Value;
+        bottom = IslandVoxels[y][x, z].Value;
+        if (z + 1 < IslandVoxels[y].GetLength(1)) left = IslandVoxels[y][x, z + 1].Value;
 
         // pick a valid chunk for this voxel
         //List<Chunk> validChunks = new List<Chunk>();
@@ -169,7 +189,7 @@ public class RandomMap : MonoBehaviour {
                 chunk.right == right &&
                 chunk.bottom == bottom &&
                 chunk.left == left) {
-                InstantiateChunk(chunk, current.Position);
+                InstantiateChunk(chunk, current.Position - Vector3.up * y * LevelHeight);
                 return;
             }
         }
@@ -227,7 +247,7 @@ public class RandomMap : MonoBehaviour {
     }
 
     void OnDrawGizmos() {
-        for (int x = 0; x < SizeX; x++) {
+        /*for (int x = 0; x < SizeX; x++) {
             for (int z = 0; z < SizeZ; z++) {
                 Vector3 position = IslandVoxels[x, z].Position;
                 if (CityVoxels[x, z].Value == ROAD) {
@@ -237,7 +257,7 @@ public class RandomMap : MonoBehaviour {
                 else Gizmos.color = Color.blue;
                 Gizmos.DrawCube(position, Vector3.one * TileSize * ChunkSize / 5);
             }
-        }
+        }*/
 
     }
 }
