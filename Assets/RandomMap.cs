@@ -132,7 +132,7 @@ public class RandomMap : MonoBehaviour {
         // assign pseudo-random values to the voxels
         PopulateVoxels(CityMinPerlin, CityRadius, CityVoxels, ROAD, 1);
         for (int y = 0; y < GroundLevels; y++)
-            PopulateVoxels(IslandMinPerlin / (y + 1), IslandRadius, IslandVoxels[y], GROUND, 5);
+            PopulateVoxels(IslandMinPerlin / ((y + 1) / 2), IslandRadius, IslandVoxels[y], GROUND, 5);
 
         // avoid having roads on top of island holes on the topmost level, 0
         for (int x = 0; x < SizeX; x++) {
