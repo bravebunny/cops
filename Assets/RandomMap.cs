@@ -141,7 +141,38 @@ public class RandomMap : MonoBehaviour {
                 // create chunks only inside the island
                 //if (perlin > IslandMinPerlin + IslandRadius * distance) CreateChunk(x, z);
 
-                CreateChunk(x, z);
+                CreateIslandChunk(x, z);
+            }
+        }
+    }
+
+    void CreateIslandChunk(int x, int z) {
+
+        Voxel current = IslandVoxels[x, z];
+        /*if (current.Value == EMPTY) {
+            return;
+        }*/
+
+        /*foreach (Chunk chunk in Chunks) {
+            Debug.Log(chunk.TiledMap.name);
+        }*/
+
+        int top, right, bottom, left;
+        top = right = bottom = left = EMPTY;
+        if (z + 1 < IslandVoxels.GetLength(1) && x + 1 < IslandVoxels.GetLength(0)) top = IslandVoxels[x + 1, z + 1].Value;
+        if (x + 1 < IslandVoxels.GetLength(0)) right = IslandVoxels[x + 1, z].Value;
+        bottom = IslandVoxels[x, z].Value;
+        if (z + 1 < IslandVoxels.GetLength(1)) left = IslandVoxels[x, z + 1].Value;
+
+        //List<Chunk> validChunks = new List<Chunk>();
+        foreach (Chunk chunk in GroundChunks) {
+            //Debug.Log(chunk.TiledMap.name);
+            if (chunk.top == top &&
+                chunk.right == right &&
+                chunk.bottom == bottom &&
+                chunk.left == left) {
+                InstantiateChunk(chunk, current.Position);
+                return;
             }
         }
     }
