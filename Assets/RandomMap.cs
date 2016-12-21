@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class RandomMap : MonoBehaviour {
     public TextAsset[] BaseChunks;
-    public Chunk[] Chunks;
+    public TextAsset[] BaseGroundChunks;
     public Chunk Empty;
     public GameObject Loader;
     public int SizeX = 10;
@@ -18,19 +18,26 @@ public class RandomMap : MonoBehaviour {
     public float IslandRadius = 0.0001f;
     public float IslandMinPerlin = 0.05f;
 
-    Voxel[,] Voxels;
+    public Chunk[] CityChunks;
+    public Chunk[] GroundChunks;
+
+    const int EMPTY = 0, GROUND = 1, ROAD = 2;
+
+    Voxel[,] CityVoxels;
+    Voxel[,] IslandVoxels;
     float Seed;
     int SeedRange = 10000;
     float SeedOffset = 0.5f;
 
 
     public class Voxel {
-        public int value = 1;
+        public int Value = EMPTY;
         public Vector3 Position;
         public Vector3 ZCorner;
         public Vector3 XCorner;
 
-        public Voxel(int x, int z, float size) {
+        public Voxel(int x, int z, float size, int value) {
+            Value = value;
             Position = new Vector3(x * size, 0, z * size);
             ZCorner = Position + Vector3.forward * size;
             XCorner = Position + Vector3.right * size;
@@ -93,25 +100,38 @@ public class RandomMap : MonoBehaviour {
         // the offset isn't random because it affects the density of the noise
         Seed = Random.Range(1, SeedRange) + SeedOffset;
 
-        Chunks = new Chunk[BaseChunks.Length * 4];
+        CityChunks = new Chunk[BaseChunks.Length * 4];
+        GroundChunks = new Chunk[BaseGroundChunks.Length * 4];
 
         for (int i = 0; i < BaseChunks.Length; i++) {
             for (int rotation = 0; rotation < 4; rotation++) {
                 Chunk newChunk = new Chunk(BaseChunks[i]);
                 newChunk.SetRotation(rotation);
-                Chunks[i * 4 + rotation] = newChunk;
+                CityChunks[i * 4 + rotation] = newChunk;
             }
         }
 
-        Voxels = new Voxel[SizeX, SizeZ];
+        for (int i = 0; i < BaseGroundChunks.Length; i++) {
+            for (int rotation = 0; rotation < 4; rotation++) {
+                Chunk newChunk = new Chunk(BaseGroundChunks[i]);
+                newChunk.SetRotation(rotation);
+                GroundChunks[i * 4 + rotation] = newChunk;
+            }
+        }
+
+        CityVoxels = new Voxel[SizeX, SizeZ];
+        IslandVoxels = new Voxel[SizeX, SizeZ];
         float size = ChunkSize * TileSize;
         for (int x = 0; x < SizeX; x++) {
             for (int z = 0; z < SizeZ; z++) {
-                Voxels[x, z] = new Voxel(x, z, size);
+                CityVoxels[x, z] = new Voxel(x, z, size, GROUND);
+                IslandVoxels[x, z] = new Voxel(x, z, size, EMPTY);
             }
         }
 
-        PopulateVoxels();
+        PopulateVoxels(CityMinPerlin, CityRadius, CityVoxels);
+        PopulateVoxels(IslandMinPerlin, IslandRadius, IslandVoxels);
+
 
         for (int x = 0; x < SizeX; x++) {
             for (int z = 0; z < SizeZ; z++) {
@@ -128,8 +148,8 @@ public class RandomMap : MonoBehaviour {
 
     void CreateChunk(int x, int z) {
 
-        Voxel current = Voxels[x, z];
-        if (current.value == 1) {
+        Voxel current = CityVoxels[x, z];
+        if (current.Value == 1) {
             InstantiateChunk(Empty, current.Position);
             return;
         }
@@ -138,14 +158,15 @@ public class RandomMap : MonoBehaviour {
             Debug.Log(chunk.TiledMap.name);
         }*/
 
-        int top = 1, right = 1, bottom = 1, left = 1;
-        if (z + 1 < Voxels.GetLength(1)) top = Voxels[x, z + 1].value;
-        if (x + 1 < Voxels.GetLength(0)) right = Voxels[x + 1, z].value;
-        if (z > 0) bottom = Voxels[x, z - 1].value;
-        if (x > 0) left = Voxels[x - 1, z].value;
+        int top, right, bottom, left;
+        top = right = bottom = left = GROUND;
+        if (z + 1 < CityVoxels.GetLength(1)) top = CityVoxels[x, z + 1].Value;
+        if (x + 1 < CityVoxels.GetLength(0)) right = CityVoxels[x + 1, z].Value;
+        if (z > 0) bottom = CityVoxels[x, z - 1].Value;
+        if (x > 0) left = CityVoxels[x - 1, z].Value;
         
         //List<Chunk> validChunks = new List<Chunk>();
-        foreach (Chunk chunk in Chunks) {
+        foreach (Chunk chunk in CityChunks) {
             //Debug.Log(chunk.TiledMap.name);
             if (chunk.top == top &&
                 chunk.right == right &&
@@ -175,21 +196,25 @@ public class RandomMap : MonoBehaviour {
     int xDiff = 0, yDiff = 0;
     int currentX = 0, currentY = 0;
 
-    void PopulateVoxels() {
+    void PopulateVoxels(float minPerlin, float radius, Voxel[,] voxels) {
         for (int x = 0; x < SizeX; x++) {
             for (int z = 0; z < SizeZ; z++) {
                 float perlin = Mathf.PerlinNoise(x + Seed, z + Seed);
                 float distance = Vector2.Distance(new Vector2(x, z), new Vector2(SizeX / 2, SizeZ / 2));
                 // activate voxels that should have roads
-                if (perlin > CityMinPerlin && distance < CityRadius) Voxels[x, z].value = 2;
+                if (perlin > minPerlin && distance < radius) voxels[x, z].Value = 2;
             }
         }
     }
 
     void OnDrawGizmos() {
-        if (Voxels == null) return;
-        foreach (Voxel v in Voxels) {
-            Gizmos.color = v.value == 1 ? Color.blue : Color.black;
+        if (CityVoxels == null) return;
+        foreach (Voxel v in CityVoxels) {
+            Color color;
+            if (v.Value == 1) color = Color.blue;
+            else if (v.Value == 0) color = Color.black;
+            else color = Color.green;
+            Gizmos.color = color;
             Gizmos.DrawCube(v.Position, Vector3.one * 3);
         }
     }

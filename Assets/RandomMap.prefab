@@ -58,7 +58,12 @@ MonoBehaviour:
   - {fileID: 4900000, guid: 1f1144edfdde8ad4cb585131de1778ea, type: 3}
   - {fileID: 4900000, guid: 983e0cea5d2074f449d1474d3ee71790, type: 3}
   - {fileID: 4900000, guid: eebef3abd7c5b7e409869d70e11c82f2, type: 3}
-  Chunks: []
+  BaseGroundChunks:
+  - {fileID: 4900000, guid: d3ceae0a625954b429a876a6e2f43213, type: 3}
+  - {fileID: 4900000, guid: b02dbd4542cbd4842bfd5ecac537de7b, type: 3}
+  - {fileID: 4900000, guid: b2c0ef66233dfa64e821be053fca252c, type: 3}
+  - {fileID: 4900000, guid: b1a4a7b5cc5f8dc429c7cbae5036fc7e, type: 3}
+  - {fileID: 4900000, guid: 983e0cea5d2074f449d1474d3ee71790, type: 3}
   Empty:
     TiledMap: {fileID: 4900000, guid: 983e0cea5d2074f449d1474d3ee71790, type: 3}
     top: 1
