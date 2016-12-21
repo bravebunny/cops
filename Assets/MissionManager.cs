@@ -5,13 +5,19 @@ public class MissionManager : MonoBehaviour {
 
     public GameObject MissionObject;
     public Text DisplayText;
+    [HideInInspector]
+    public Targets TargetScript;
 
     MissionsAbstract RandomMission;
     MissionsAbstract[] MissionsList;
 
+    void Awake() {
+        MissionsList = MissionObject.GetComponents<MissionsAbstract>();
+        TargetScript = MissionObject.GetComponent<Targets>();
+    }
+
     // Use this for initialization
     void Start () {
-        MissionsList = MissionObject.GetComponents<MissionsAbstract>();
         RandomizeMission();
     }
 

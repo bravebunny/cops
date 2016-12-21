@@ -4,11 +4,14 @@ using System;
 
 public class PizzaMission : MissionsAbstract {
 
+    //public GameObject Target;
     MissionManager MM;
 
     public override void InitiateMission(MissionManager missionManager) {
         Debug.Log("Initiate Pizza Mission press space to skip");
         MM = missionManager;
+        MM.TargetScript.SetMission(this, false);
+        //MM.TargetScript.GetComponent<Targets>().NewTarget(Target);
     }
 
     public override void EndMission() {
