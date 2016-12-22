@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour {
     public Camera CameraInstance;
     public static Camera GameCamera;
 
+    public GameObject Van;
+
     public static int Score;
     public static int CopCount;
     public static int KilledCops = 10;
@@ -68,6 +70,9 @@ public class GameManager : MonoBehaviour {
         }
 
         if (Input.GetKeyDown(KeyCode.Escape)) Application.Quit();
+
+        if (Input.GetKeyDown(KeyCode.E)) Player.ReplaceModel(Van);
+
 
         if (roundEnded)
             return;
