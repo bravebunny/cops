@@ -35,7 +35,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010368954148}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -53,6 +53,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b1be903358c4941b6669ede11bed10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MissionTargets:
+  - Target: {fileID: 0}
+    MissionDescription: Pizza
+  - Target: {fileID: 0}
+    MissionDescription: Delivery
 --- !u!114 &114000012068068948
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -78,4 +83,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a67f9000358762418d488ca77b926cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target: {fileID: 0}
+  MissionTargets:
+  - Target: {fileID: 0}
+    MissionDescription: Car

@@ -1,29 +1,34 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using System.Collections.Generic;
 
 public class PizzaMission : MissionsAbstract {
 
-    //public GameObject Target;
+    public List<MissionTargets> MissionTargets;
     MissionManager MM;
 
-    public override void InitiateMission(MissionManager missionManager) {
-        Debug.Log("Initiate Pizza Mission press space to skip");
+    int TargetIndex = 0;
+
+    public override void InitiateMission(MissionManager missionManager, int targetIndex = 0) {
+        TargetIndex = targetIndex;
+        Debug.Log("Initiate " + MissionTargets[targetIndex].MissionDescription);
         MM = missionManager;
-        MM.TargetScript.SetMission(this, false);
-        //MM.TargetScript.GetComponent<Targets>().NewTarget(Target);
+        MM.TargetScript.SetMission(this, true, true);
+        MM.TargetScript.GetComponent<Targets>().NewTarget(MissionTargets[targetIndex].Target);
     }
 
     public override void EndMission() {
         Debug.Log("End Pizza Mission");
-    }
-
-    void Update() {
-        if (Input.GetKeyDown("space"))
-            MM.EndCurrentMission();
+        //CollectSound.Play();
+        if (MissionTargets.Count - (TargetIndex + 1) == 0)
+            MM.EndCurrentMission(false);
+        else
+            MM.EndCurrentMission(true, TargetIndex);
     }
 
     public override string GetDisplayText() {
-        return "pizza";
+        Debug.Log("TargetIndex: " + TargetIndex);
+        return MissionTargets[TargetIndex].MissionDescription;
     }
 }
