@@ -5,12 +5,17 @@ using UnityEngine;
 public class PursuitCarMission :  MissionsAbstract {
 
     public List<MissionTargets> MissionTargets; //Mission target
+    public GameObject MissionModel;
     MissionManager MM; //Mission Manager
     AudioSource CollectSound; //Sound that plays when mission's objective is completed 
 
     int TargetIndex = 0;
 
     public override void InitiateMission(MissionManager missionManager, int targetIndex = 0) {
+        if (MissionModel) {
+            GameManager.Player.ReplaceModel(MissionModel);
+        }
+
         Debug.Log("Initiate Pursuit Car Mission");
         TargetIndex = targetIndex;
 

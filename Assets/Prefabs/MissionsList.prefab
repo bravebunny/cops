@@ -58,6 +58,8 @@ MonoBehaviour:
     MissionDescription: Pizza
   - Target: {fileID: 0}
     MissionDescription: Delivery
+  MissionModel: {fileID: 1000010764997216, guid: dd3a3608a72753c4ca4b2afc13cb820f,
+    type: 2}
 --- !u!114 &114000012068068948
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -86,3 +88,5 @@ MonoBehaviour:
   MissionTargets:
   - Target: {fileID: 0}
     MissionDescription: Car
+  MissionModel: {fileID: 1000011047287490, guid: 0bfc365fdc6b7c046831b28a4e69b957,
+    type: 2}

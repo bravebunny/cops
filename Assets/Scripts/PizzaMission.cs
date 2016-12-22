@@ -6,11 +6,16 @@ using System.Collections.Generic;
 public class PizzaMission : MissionsAbstract {
 
     public List<MissionTargets> MissionTargets;
+    public GameObject MissionModel;
     MissionManager MM;
 
     int TargetIndex = 0;
 
     public override void InitiateMission(MissionManager missionManager, int targetIndex = 0) {
+        if (MissionModel) {
+            GameManager.Player.ReplaceModel(MissionModel);
+        }
+
         TargetIndex = targetIndex;
         Debug.Log("Initiate " + MissionTargets[targetIndex].MissionDescription);
         MM = missionManager;
