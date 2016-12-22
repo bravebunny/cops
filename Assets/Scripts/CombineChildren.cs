@@ -73,6 +73,7 @@ public class CombineChildren : MonoBehaviour {
                 arenderer.material = m;
 
                 go.AddComponent<MeshCollider>();
+                go.isStatic = true;
             }
         }
 

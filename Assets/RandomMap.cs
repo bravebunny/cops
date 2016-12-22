@@ -19,6 +19,7 @@ public class RandomMap : MonoBehaviour {
     public float IslandMinPerlin = 0.05f;
     public int GroundLevels = 3;
     public float LevelHeight = 4;
+    public Material[] LevelMaterials;
 
     public Chunk[] CityChunks;
     public Chunk[] GroundChunks;
@@ -27,6 +28,9 @@ public class RandomMap : MonoBehaviour {
 
     Voxel[,] CityVoxels;
     Voxel[][,] IslandVoxels;
+
+    Transform[] Island;
+
     float Seed;
     int SeedRange = 10000;
     float SeedOffset = 0.5f;
@@ -157,6 +161,13 @@ public class RandomMap : MonoBehaviour {
             }
         }
 
+        // create the parent objects
+        Island = new Transform[GroundLevels];
+        for (int y = 0; y < GroundLevels; y++) {
+            Island[y] = new GameObject().transform;
+            Island[y].name = "Island" + y;
+        }
+
 
         for (int x = 0; x < SizeX; x++) {
             for (int z = 0; z < SizeZ; z++) {
@@ -164,8 +175,20 @@ public class RandomMap : MonoBehaviour {
                 float distance = Vector2.Distance(new Vector2(x, z), new Vector2(SizeX / 2, SizeZ / 2));
                 distance *= distance * distance * distance;
                 CreateCityChunk(x, z);
-                for (int y = 0; y < GroundLevels; y++)
+                for (int y = 0; y < GroundLevels; y++) {
                     CreateIslandChunk(x, y, z);
+                }
+            }
+        }
+
+        // combine each layer
+        for (int y = 0; y < GroundLevels; y++) {
+            Island[y].gameObject.AddComponent<CombineChildren>().Combine();
+            if (LevelMaterials[y]) {
+                MeshRenderer[] renderers = Island[y].GetComponentsInChildren<MeshRenderer>();
+                foreach (MeshRenderer r in renderers) {
+                    r.material = LevelMaterials[y];
+                }
             }
         }
     }
@@ -189,7 +212,7 @@ public class RandomMap : MonoBehaviour {
                 chunk.right == right &&
                 chunk.bottom == bottom &&
                 chunk.left == left) {
-                InstantiateChunk(chunk, current.Position - Vector3.up * y * LevelHeight);
+                InstantiateChunk(chunk, current.Position - Vector3.up * y * LevelHeight, Island[y]);
                 return;
             }
         }
@@ -214,13 +237,13 @@ public class RandomMap : MonoBehaviour {
                 chunk.right == right &&
                 chunk.bottom == bottom &&
                 chunk.left == left) {
-                InstantiateChunk(chunk, current.Position);
+                InstantiateChunk(chunk, current.Position, Island[0]);
                 return;
             }
         }
     }
 
-    void InstantiateChunk(Chunk chunk, Vector3 position) {
+    void InstantiateChunk(Chunk chunk, Vector3 position, Transform parent) {
         GameObject instance = Instantiate<GameObject>(Loader);
         instance.transform.position = position;
         TiledLoader tl = instance.GetComponent<TiledLoader>();
@@ -228,6 +251,7 @@ public class RandomMap : MonoBehaviour {
         //Debug.Log(chunk.TiledMap.name);
         tl.Build();
         tl.transform.eulerAngles = Vector3.up * chunk.rotation * 90;
+        instance.transform.parent = parent;
     }
 
     void PopulateVoxels(float minPerlin, float radius, Voxel[,] voxels, int value, float distanceFactor) {

@@ -123,6 +123,7 @@ MonoBehaviour:
     obj: {fileID: 1000013316285204, guid: 05d9912b69e85d54bb4a673430097a6e, type: 2}
   TileSize: 12
   LayerDepth: 3
+  LayerScales: []
   CombineMeshes: 1
 --- !u!114 &11487940
 MonoBehaviour:
