@@ -14,13 +14,12 @@ public class GameManager : MonoBehaviour {
     public Text KilledCopsText;
 
     public GameObject PlayerPrefab;
+    public GameObject CarModel;
     public static CarUserController Player;
     public Transform StartPosition;
 
     public Camera CameraInstance;
     public static Camera GameCamera;
-
-    public GameObject Van;
 
     public static int Score;
     public static int CopCount;
@@ -38,6 +37,7 @@ public class GameManager : MonoBehaviour {
         playerObject.transform.position = StartPosition.position;
         playerObject.transform.rotation = StartPosition.transform.rotation;
         Player = playerObject.GetComponent<CarUserController>();
+        Player.ReplaceModel(CarModel);
         StartPosition.gameObject.SetActive(false);
         GameCamera = CameraInstance;
         CameraInstance.GetComponent<CameraController>().target = Player.transform;
@@ -70,9 +70,6 @@ public class GameManager : MonoBehaviour {
         }
 
         if (Input.GetKeyDown(KeyCode.Escape)) Application.Quit();
-
-        if (Input.GetKeyDown(KeyCode.E)) Player.ReplaceModel(Van);
-
 
         if (roundEnded)
             return;

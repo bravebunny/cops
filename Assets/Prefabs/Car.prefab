@@ -37,6 +37,7 @@ GameObject:
   - 4: {fileID: 4000012199014596}
   - 33: {fileID: 33000014125646792}
   - 23: {fileID: 23000010351941236}
+  - 114: {fileID: 114000011949103978}
   m_Layer: 0
   m_Name: Wheel1
   m_TagString: Untagged
@@ -54,6 +55,7 @@ GameObject:
   - 4: {fileID: 4000012237992520}
   - 33: {fileID: 33000010540582878}
   - 23: {fileID: 23000011589875996}
+  - 114: {fileID: 114000011426278770}
   m_Layer: 0
   m_Name: Wheel3
   m_TagString: Untagged
@@ -71,6 +73,7 @@ GameObject:
   - 4: {fileID: 4000013159433252}
   - 33: {fileID: 33000010374435524}
   - 23: {fileID: 23000013662974770}
+  - 114: {fileID: 114000010016648970}
   m_Layer: 0
   m_Name: Wheel0
   m_TagString: Untagged
@@ -105,6 +108,7 @@ GameObject:
   - 4: {fileID: 4000011544893210}
   - 33: {fileID: 33000011138924530}
   - 23: {fileID: 23000013127742218}
+  - 114: {fileID: 114000013673882198}
   m_Layer: 0
   m_Name: Wheel2
   m_TagString: Untagged
@@ -184,7 +188,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011047287490}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071067}
-  m_LocalPosition: {x: 0, y: 0.927, z: -0.45}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -383,6 +387,58 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011369985722}
   m_Mesh: {fileID: 4300002, guid: da93d370bfa4e7c48b5070af15369512, type: 3}
+--- !u!114 &114000010016648970
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013304310938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4c60e7315e59d34a85e26a32b160971, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SuspensionHeight: 0.8
+  SuspensionStrength: 100
+--- !u!114 &114000011426278770
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011652173904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4c60e7315e59d34a85e26a32b160971, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SuspensionHeight: 0.8
+  SuspensionStrength: 100
+--- !u!114 &114000011949103978
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011369985722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4c60e7315e59d34a85e26a32b160971, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SuspensionHeight: 0.8
+  SuspensionStrength: 100
+--- !u!114 &114000013673882198
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013757143936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4c60e7315e59d34a85e26a32b160971, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SuspensionHeight: 0.8
+  SuspensionStrength: 100
 --- !u!136 &136000013337899220
 CapsuleCollider:
   m_ObjectHideFlags: 1

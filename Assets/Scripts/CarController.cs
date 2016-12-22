@@ -96,12 +96,12 @@ public class CarController : MonoBehaviour {
         }
 
         //distance of the wheels to the car
-        Vector3 xDist = transform.forward;
+        /*Vector3 xDist = transform.forward;
         Vector3 zDist = -transform.right * 0.8f;
         Suspension(2, Body.position + (xDist + zDist));
         Suspension(3, Body.position + (-xDist + zDist));
         Suspension(0, Body.position + (xDist - zDist));
-        Suspension(1, Body.position + (-xDist - zDist));
+        Suspension(1, Body.position + (-xDist - zDist));*/
     }
 
 
