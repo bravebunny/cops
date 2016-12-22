@@ -6,7 +6,7 @@ public class UpwardsImpulseArea : MonoBehaviour {
 
     void OnTriggerStay (Collider col) {
         if (col.isTrigger) return;
-        Rigidbody body = col.GetComponent<Rigidbody>();
+        Rigidbody body = col.GetComponentInParent<Rigidbody>();
         body.AddForceAtPosition(Vector3.up * ImpulseStrenght, transform.position);
     }
 }
