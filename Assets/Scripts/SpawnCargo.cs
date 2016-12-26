@@ -3,10 +3,10 @@ using System.Collections;
 
 public class SpawnCargo : MonoBehaviour {
 
-    public Transform CargoVan;
+    public GameObject CargoVan;
 	
     public void Spawn(GameObject Cargo) {
        GameObject cargo = Instantiate<GameObject>(Cargo);
-       cargo.transform.position = CargoVan.position;
+       cargo.transform.position = CargoVan.transform.position;
     }
 }

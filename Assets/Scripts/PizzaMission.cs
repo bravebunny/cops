@@ -19,7 +19,7 @@ public class PizzaMission : MissionsAbstract {
         }
 
         if (Cargo) {
-            MissionModel.GetComponent<SpawnCargo>().Spawn(Cargo);
+            GameManager.Player.Model.GetComponent<SpawnCargo>().Spawn(Cargo);
         }
 
         TargetIndex = targetIndex;
