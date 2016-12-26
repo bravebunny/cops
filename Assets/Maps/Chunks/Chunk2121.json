@@ -10,6 +10,17 @@
          "width":3,
          "x":0,
          "y":0
+        }, 
+        {
+         "data":[0, 0, 31, 31, 0, 0, 31, 0, 0],
+         "height":3,
+         "name":"houses",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":3,
+         "x":0,
+         "y":0
         }],
  "nextobjectid":1,
  "orientation":"orthogonal",

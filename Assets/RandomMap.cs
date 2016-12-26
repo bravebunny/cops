@@ -183,7 +183,7 @@ public class RandomMap : MonoBehaviour {
 
         // combine each layer
         for (int y = 0; y < GroundLevels; y++) {
-            Island[y].gameObject.AddComponent<CombineChildren>().Combine();
+            //Island[y].gameObject.AddComponent<CombineChildren>().Combine();
             if (LevelMaterials[y]) {
                 MeshRenderer[] renderers = Island[y].GetComponentsInChildren<MeshRenderer>();
                 foreach (MeshRenderer r in renderers) {

@@ -15,6 +15,7 @@ ModelImporter:
     100014: DoorWall
     100016: WindowFrame
     100018: WindowWall
+    100020: Edge
     400000: //RootNode
     400002: Flat
     400004: Window
@@ -25,6 +26,7 @@ ModelImporter:
     400014: DoorWall
     400016: WindowFrame
     400018: WindowWall
+    400020: Edge
     2300000: Flat
     2300002: Window
     2300004: Glass
@@ -34,6 +36,7 @@ ModelImporter:
     2300012: DoorWall
     2300014: WindowFrame
     2300016: WindowWall
+    2300018: Edge
     3300000: Flat
     3300002: Window
     3300004: Glass
@@ -43,6 +46,7 @@ ModelImporter:
     3300012: DoorWall
     3300014: WindowFrame
     3300016: WindowWall
+    3300018: Edge
     4300000: Flat
     4300002: Window
     4300004: Glass
@@ -52,6 +56,7 @@ ModelImporter:
     4300012: WindowFrame
     4300014: WindowWall
     4300016: DoorWall
+    4300018: Edge
   materials:
     importMaterials: 0
     materialName: 0

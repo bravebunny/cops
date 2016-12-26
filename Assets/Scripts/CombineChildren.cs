@@ -77,8 +77,9 @@ public class CombineChildren : MonoBehaviour {
             }
         }
 
-        foreach (GameObject g in toDestroy) {
+        //TODO fix this
+        /*foreach (GameObject g in toDestroy) {
             DestroyImmediate(g);
-        }
+        }*/
     }
 }

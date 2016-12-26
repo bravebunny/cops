@@ -64,7 +64,10 @@ public class TiledLoader : MonoBehaviour {
                     instance.transform.position = position;
                     // if this is a building, we need to generate all the parts
                     BuildingGenerator bg = instance.GetComponent<BuildingGenerator>();
-                    if (bg != null) bg.Generate();
+                    if (bg != null) {
+                        bg.Generate();
+                        continue;
+                    }
 
                     Track track = instance.GetComponentInChildren<Track>();
                     if (track != null) track.CreatePillars();

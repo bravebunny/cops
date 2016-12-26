@@ -26,6 +26,7 @@ public class BuildingGenerator : MonoBehaviour {
             AddWalls(floor);
         }
         AddCeilling(height);
+        GetComponent<CombineChildren>().Combine();
 	}
 
     void AddObject(GameObject original, Vector3 position, Quaternion rotation) {

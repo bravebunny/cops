@@ -11,12 +11,14 @@ GameObject:
   - 114: {fileID: 11475004}
   - 33: {fileID: 3336172}
   - 23: {fileID: 2316442}
+  - 114: {fileID: 114000010448153124}
+  - 114: {fileID: 114000011284078206}
   m_Layer: 0
   m_Name: Building
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &412046
 Transform:
@@ -40,17 +42,20 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -98,3 +103,34 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 102990}
   m_IsPrefabParent: 1
+--- !u!114 &114000010448153124
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 102990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73230c4a44225574bb6b590d2bfbd761, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxVertexCount: 10000
+--- !u!114 &114000011284078206
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 102990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c26275dbbc1d049449c17c77370acf4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Materials:
+  - {fileID: 2100000, guid: 236199405a766478faa145afc45dc899, type: 2}
+  Colors:
+  - {r: 0.89705884, g: 0.869765, b: 0.79811853, a: 0}
+  - {r: 0.86764705, g: 0.62521625, b: 0.62521625, a: 0}
+  - {r: 0.56920415, g: 0.6025295, b: 0.8235294, a: 0}
+  - {r: 0.9117647, g: 0.8395448, b: 0.43576986, a: 0}
+  - {r: 0.59331745, g: 0.86764705, b: 0.5952094, a: 0}
