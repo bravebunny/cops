@@ -10,6 +10,7 @@ public class BuildingGenerator : MonoBehaviour {
     [Range(1,50)]
     public int MaxFloor = 4;
     public float FloorHeight = 2;
+    public float MaxDistanceFromCenter = 240f;
     float Scale = 2;
 
     Vector3[] Corners = {
@@ -20,12 +21,17 @@ public class BuildingGenerator : MonoBehaviour {
     };
 
 	public void Generate() {
-        int height = Random.Range(1, MaxFloor);
+        // distance from center affects building density
+        float distanceFromCenter = 1 - Vector3.Distance(transform.position, Vector3.zero) / MaxDistanceFromCenter;
+        //Debug.Log(distanceFromCenter);
+        float height = Random.Range(0, MaxFloor) * distanceFromCenter;
+        if (height < 0.5f) return;
 
         for (int floor = 0; floor < height; floor++) {
             AddWalls(floor);
         }
-        AddCeilling(height);
+        
+        AddCeilling((int) Mathf.Ceil(height));
         GetComponent<CombineChildren>().Combine();
 	}
 

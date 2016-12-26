@@ -124,7 +124,7 @@ MonoBehaviour:
   TileSize: 12
   LayerDepth: 3
   LayerScales: []
-  CombineMeshes: 0
+  CombineMeshes: 1
 --- !u!114 &11487940
 MonoBehaviour:
   m_ObjectHideFlags: 1

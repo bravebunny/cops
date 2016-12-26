@@ -12,6 +12,7 @@ public class RandomMap : MonoBehaviour {
     public int SizeZ = 10;
     public float ChunkSize = 9;
     public float TileSize = 4;
+    Vector3 Center;
 
     public float CityRadius = 5;
     public float CityMinPerlin = 0.35f;
@@ -92,6 +93,10 @@ public class RandomMap : MonoBehaviour {
     }
 
     void Start () {
+        float width = SizeX * TileSize * ChunkSize;
+        float height = SizeZ * TileSize * ChunkSize;
+        Center = new Vector3(width / 2, 0, height / 2);
+
         // create a large integer number for the perlin noise seed
         // the offset isn't random because it affects the density of the noise
         Seed = Random.Range(1, SeedRange) + SeedOffset;
@@ -246,7 +251,7 @@ public class RandomMap : MonoBehaviour {
 
     void InstantiateChunk(Chunk chunk, Vector3 position, Transform parent) {
         GameObject instance = Instantiate<GameObject>(Loader);
-        instance.transform.position = position;
+        instance.transform.position = position - Center;
         TiledLoader tl = instance.GetComponent<TiledLoader>();
         tl.Map = chunk.TiledMap;
         //Debug.Log(chunk.TiledMap.name);
