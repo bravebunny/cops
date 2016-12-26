@@ -7,13 +7,19 @@ public class PizzaMission : MissionsAbstract {
 
     public List<MissionTargets> MissionTargets;
     public GameObject MissionModel;
+    public GameObject Cargo;
     MissionManager MM;
 
     int TargetIndex = 0;
 
     public override void InitiateMission(MissionManager missionManager, int targetIndex = 0) {
+
         if (MissionModel) {
             GameManager.Player.ReplaceModel(MissionModel);
+        }
+
+        if (Cargo) {
+            MissionModel.GetComponent<SpawnCargo>().Spawn(Cargo);
         }
 
         TargetIndex = targetIndex;
@@ -31,7 +37,6 @@ public class PizzaMission : MissionsAbstract {
     }
 
     public override string GetDisplayText() {
-        Debug.Log("TargetIndex: " + TargetIndex);
         return MissionTargets[TargetIndex].MissionDescription;
     }
 }

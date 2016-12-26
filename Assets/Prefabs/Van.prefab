@@ -37,6 +37,12 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013340928508}
   - 136: {fileID: 136000010322148262}
+  - 65: {fileID: 65000010796799710}
+  - 65: {fileID: 65000012615425494}
+  - 65: {fileID: 65000013962827602}
+  - 65: {fileID: 65000012130794622}
+  - 65: {fileID: 65000010846109552}
+  - 114: {fileID: 114000011810011776}
   m_Layer: 0
   m_Name: Van
   m_TagString: Player
@@ -98,6 +104,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1000013500473852
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000010516317444}
+  m_Layer: 0
+  m_Name: Cargo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1000014177631160
 GameObject:
   m_ObjectHideFlags: 0
@@ -129,6 +150,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4000013340928508}
   m_RootOrder: 3
+--- !u!4 &4000010516317444
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013500473852}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.4, y: -1.3, z: 0.35}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000013340928508}
+  m_RootOrder: 5
 --- !u!4 &4000010917120828
 Transform:
   m_ObjectHideFlags: 1
@@ -197,6 +231,7 @@ Transform:
   - {fileID: 4000012138675382}
   - {fileID: 4000010306331466}
   - {fileID: 4000012794065208}
+  - {fileID: 4000010516317444}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!23 &23000010413351982
@@ -387,6 +422,66 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012388242888}
   m_Mesh: {fileID: 4300004, guid: da93d370bfa4e7c48b5070af15369512, type: 3}
+--- !u!65 &65000010796799710
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010764997216}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.2, y: 0.1, z: 2.2}
+  m_Center: {x: 2.6, y: -1.65, z: 0.34}
+--- !u!65 &65000010846109552
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010764997216}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.2, y: 2, z: 2.3}
+  m_Center: {x: 1.54, y: -0.42, z: 0.27}
+--- !u!65 &65000012130794622
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010764997216}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.2, y: 1, z: 2.3}
+  m_Center: {x: 3.8, y: -1.2, z: 0.27}
+--- !u!65 &65000012615425494
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010764997216}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.3, y: 1, z: 0.2}
+  m_Center: {x: 2.63, y: -1.2, z: 1.44}
+--- !u!65 &65000013962827602
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010764997216}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.3, y: 1, z: 0.2}
+  m_Center: {x: 2.63, y: -1.2, z: -0.83}
 --- !u!114 &114000010920272050
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -413,6 +508,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SuspensionHeight: 0.8
   SuspensionStrength: 100
+--- !u!114 &114000011810011776
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010764997216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b702cf7ad7ce744ba6a97a718f858e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CargoVan: {fileID: 4000010516317444}
 --- !u!114 &114000011842851008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -449,6 +556,6 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 1.28
-  m_Height: 7.45
+  m_Height: 4.5
   m_Direction: 0
-  m_Center: {x: 0.75, y: -0.22, z: 0}
+  m_Center: {x: -0.7, y: -0.22, z: 0}
