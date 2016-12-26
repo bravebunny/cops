@@ -17,14 +17,12 @@ public class PizzaMission : MissionsAbstract {
         }
 
         TargetIndex = targetIndex;
-        Debug.Log("Initiate " + MissionTargets[targetIndex].MissionDescription);
         MM = missionManager;
         MM.TargetScript.SetMission(this, true, true);
         MM.TargetScript.GetComponent<Targets>().NewTarget(MissionTargets[targetIndex].Target);
     }
 
     public override void EndMission() {
-        Debug.Log("End Pizza Mission");
         //CollectSound.Play();
         if (MissionTargets.Count - (TargetIndex + 1) == 0)
             MM.EndCurrentMission(false);

@@ -23,7 +23,6 @@ public class MissionManager : MonoBehaviour {
 
 
     public void RandomizeMission() {
-        Debug.Log("##RANDOMMMMM##");
         RandomMission = MissionsList[Random.Range(0, MissionsList.Length)];
         RandomMission.InitiateMission(this);
         setDisplayText();
