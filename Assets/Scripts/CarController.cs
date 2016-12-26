@@ -34,7 +34,13 @@ public class CarController : MonoBehaviour {
     void Awake () {
         Body = GetComponent<Rigidbody>();
         EngineSound = GetComponent<AudioSource>();
+
+        // Lowering the center of mass makes it harder to tip over
         Body.centerOfMass = Vector3.down;
+
+        // This prevents the collider shape and size from affecting
+        // how the physics behave
+        Body.inertiaTensor = Vector3.one;
     }
 
     public void Move (float steering, float accel) {
