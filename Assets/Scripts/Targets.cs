@@ -20,7 +20,6 @@ public class Targets : MonoBehaviour {
 
         //show Arrow on Screen 
         if (ArrowDisplay) {
-            Debug.Log("show target");
             TargetMarker.gameObject.SetActive(true);
             Arrow.gameObject.gameObject.SetActive(true);
         } else {

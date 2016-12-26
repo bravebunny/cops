@@ -16,7 +16,6 @@ public class PursuitCarMission :  MissionsAbstract {
             GameManager.Player.ReplaceModel(MissionModel);
         }
 
-        Debug.Log("Initiate Pursuit Car Mission");
         TargetIndex = targetIndex;
 
         MM = missionManager;
@@ -26,7 +25,6 @@ public class PursuitCarMission :  MissionsAbstract {
     }
 
     public override void EndMission() {
-        Debug.Log("End Pursuit Car Mission");
         CollectSound.Play();
         MM.EndCurrentMission();
     }
