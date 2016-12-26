@@ -13,6 +13,7 @@ TagManager:
   - UI
   - Road
   - TrainCurve
+  - Cargo
   layers:
   - Default
   - TransparentFX
