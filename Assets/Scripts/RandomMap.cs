@@ -92,7 +92,9 @@ public class RandomMap : MonoBehaviour {
         }
     }
 
-    void Start () {
+    public void Generate () {
+        Clear();
+
         float width = SizeX * TileSize * ChunkSize;
         float height = SizeZ * TileSize * ChunkSize;
         Center = new Vector3(width / 2, 0, height / 2);
@@ -171,7 +173,8 @@ public class RandomMap : MonoBehaviour {
         Island = new Transform[GroundLevels];
         for (int y = 0; y < GroundLevels; y++) {
             Island[y] = new GameObject().transform;
-            Island[y].name = "Island" + y;
+            Island[y].name = "Layer" + y;
+            Island[y].parent = transform;
         }
 
 
@@ -289,5 +292,11 @@ public class RandomMap : MonoBehaviour {
             }
         }*/
 
+    }
+
+    public void Clear() {
+        var children = new List<GameObject>();
+        foreach (Transform child in transform) children.Add(child.gameObject);
+        children.ForEach(child => DestroyImmediate(child));
     }
 }
