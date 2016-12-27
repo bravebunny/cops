@@ -60,6 +60,8 @@ MonoBehaviour:
     MissionDescription: Delivery
   MissionModel: {fileID: 1000010764997216, guid: dd3a3608a72753c4ca4b2afc13cb820f,
     type: 2}
+  Cargo: {fileID: 1000012264847344, guid: 69a3041c6db05d844bba52abec53f8dc, type: 2}
+  CargoVan: {fileID: 4000010516317444, guid: dd3a3608a72753c4ca4b2afc13cb820f, type: 2}
 --- !u!114 &114000012068068948
 MonoBehaviour:
   m_ObjectHideFlags: 1
