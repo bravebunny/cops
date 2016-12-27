@@ -7,7 +7,7 @@ public class Goal : MonoBehaviour {
     void OnCollisionEnter(Collision collision) {
         if (collision.collider.tag == "Player") {
             GameManager.Score++;
-            GameManager.KilledCops++;
+            //GameManager.KilledCops++;
             TargetManager.DestroyTarget();
         }
     }
@@ -15,12 +15,8 @@ public class Goal : MonoBehaviour {
     void OnTriggerEnter(Collider collider) {
         if (collider.tag == "Player") {
             GameManager.Score++;
-            GameManager.KilledCops++;
+            //GameManager.KilledCops++;
             TargetManager.DestroyTarget();
         }
-    }
-
-    void OnDestroy() {
-        //TargetManager.NewTarget();
     }
 }

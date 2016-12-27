@@ -29,6 +29,7 @@ public class MissionManager : MonoBehaviour {
     }
 
     public void MissionCompleted(bool nextPhase = false, int targetIndex = 0) {
+        Debug.Log("mission completed");
         if (nextPhase) {
             RandomMission.InitiateMission(this, targetIndex + 1);
             setDisplayText();
@@ -36,6 +37,7 @@ public class MissionManager : MonoBehaviour {
     }
 
     public void MissionFailed() {
+        Debug.Log("mission failed");
         TargetScript.MissionFailed(); //destroy current target
         RandomizeMission();
     }

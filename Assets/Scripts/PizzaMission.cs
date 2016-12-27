@@ -11,6 +11,7 @@ public class PizzaMission : MissionsAbstract {
     MissionManager MM;
 
     int TargetIndex = 0;
+    public int NumberOfFases = 2;
 
     public override void InitiateMission(MissionManager missionManager, int targetIndex = 0) {
 
@@ -26,9 +27,13 @@ public class PizzaMission : MissionsAbstract {
 
     public override void MissionCompleted() {
         //CollectSound.Play();
-        if (MissionTargets.Count - (TargetIndex + 1) == 0) {
+        if (TargetIndex == NumberOfFases - 1) {
+            if (Cargo) {
+                GameManager.Player.Model.GetComponent<SpawnCargo>().DestroyCargo();
+            }
             MM.MissionCompleted(false);
-        } else {
+            Debug.Log("END");
+        } else if (TargetIndex != NumberOfFases - 1) {
             MM.MissionCompleted(true, TargetIndex);
             if (Cargo) {
                 GameManager.Player.Model.GetComponent<SpawnCargo>().Spawn(Cargo, this);
