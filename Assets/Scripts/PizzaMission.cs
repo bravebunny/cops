@@ -18,22 +18,26 @@ public class PizzaMission : MissionsAbstract {
             GameManager.Player.ReplaceModel(MissionModel);
         }
 
-        if (Cargo) {
-            GameManager.Player.Model.GetComponent<SpawnCargo>().Spawn(Cargo);
-        }
-
         TargetIndex = targetIndex;
         MM = missionManager;
         MM.TargetScript.SetMission(this, true, true);
         MM.TargetScript.GetComponent<Targets>().NewTarget(MissionTargets[targetIndex].Target);
     }
 
-    public override void EndMission() {
+    public override void MissionCompleted() {
         //CollectSound.Play();
-        if (MissionTargets.Count - (TargetIndex + 1) == 0)
-            MM.EndCurrentMission(false);
-        else
-            MM.EndCurrentMission(true, TargetIndex);
+        if (MissionTargets.Count - (TargetIndex + 1) == 0) {
+            MM.MissionCompleted(false);
+        } else {
+            MM.MissionCompleted(true, TargetIndex);
+            if (Cargo) {
+                GameManager.Player.Model.GetComponent<SpawnCargo>().Spawn(Cargo, this);
+            }
+        }
+    }
+
+    public override void MissionFailed() {
+        MM.MissionFailed();
     }
 
     public override string GetDisplayText() {

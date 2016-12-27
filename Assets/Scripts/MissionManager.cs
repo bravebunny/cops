@@ -28,14 +28,19 @@ public class MissionManager : MonoBehaviour {
         setDisplayText();
     }
 
-    public void EndCurrentMission(bool nextPhase = false, int targetIndex = 0) {
+    public void MissionCompleted(bool nextPhase = false, int targetIndex = 0) {
         if (nextPhase) {
             RandomMission.InitiateMission(this, targetIndex + 1);
             setDisplayText();
         } else RandomizeMission();
     }
 
-     void setDisplayText() {
+    public void MissionFailed() {
+        TargetScript.MissionFailed(); //destroy current target
+        RandomizeMission();
+    }
+
+    void setDisplayText() {
         DisplayText.enabled = true;
         DisplayText.text = RandomMission.GetDisplayText();
     }

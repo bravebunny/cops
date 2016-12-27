@@ -48,7 +48,6 @@ public class Targets : MonoBehaviour {
         if (RequireDisabledRender) {
             Target.gameObject.GetComponent<MeshRenderer>().enabled = true;
         }
-
     }
 
     public void DestroyTarget() {
@@ -58,6 +57,15 @@ public class Targets : MonoBehaviour {
         }
         // remove goal behavior from previous target
         Destroy(Target.GetComponent<Goal>());
-        CurrentMission.EndMission();
+        CurrentMission.MissionCompleted();
+    }
+
+    public void MissionFailed() {
+        //disable render of the mission object
+        if (RequireDisabledRender) {
+            Target.gameObject.GetComponent<MeshRenderer>().enabled = false;
+        }
+        // remove goal behavior from previous target
+        Destroy(Target.GetComponent<Goal>());
     }
 }

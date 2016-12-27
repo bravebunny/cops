@@ -24,12 +24,16 @@ public class PursuitCarMission :  MissionsAbstract {
         CollectSound = MissionTargets[targetIndex].Target.GetComponent<AudioSource>();
     }
 
-    public override void EndMission() {
+    public override void MissionCompleted() {
         CollectSound.Play();
-        MM.EndCurrentMission();
+        MM.MissionCompleted();
     }
 
     public override string GetDisplayText() {
         return MissionTargets[TargetIndex].MissionDescription;
+    }
+
+    public override void MissionFailed() {
+        throw new NotImplementedException();
     }
 }

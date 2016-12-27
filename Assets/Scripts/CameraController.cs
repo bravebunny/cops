@@ -9,7 +9,7 @@ public class CameraController : MonoBehaviour
     public float Height = 10;
 
     public LayerMask collisionLayer;
-    public bool cameraBack = true;
+    public bool RearView = false;
     public bool debugDesiredCam;
     public bool debugAdjustedCam;
 
@@ -37,7 +37,7 @@ public class CameraController : MonoBehaviour
         carDirection = target.GetComponent<CarController>().carMovementDirection;
         carDirection = System.Math.Round(carDirection * 10) / 10;
 
-        if (cameraBack) {
+        if (!RearView) {
             if (carDirection >= 0) {
                 carDirection = 1;
             }
@@ -67,7 +67,7 @@ public class CameraController : MonoBehaviour
         adjustmentDistance = GetAdjustedDistancewithRayFrom(target.position);
 
         position = target.position;
-        if (cameraBack)
+        if (!RearView)
             position += Quaternion.Euler(target.eulerAngles.x, target.eulerAngles.y, 0) * new Vector3(0, Height, -Distance * (float) carDirection);
         else
             position += Quaternion.Euler(target.eulerAngles.x, target.eulerAngles.y, 0) * new Vector3(0, Height, -Distance * (float)-carDirection);
