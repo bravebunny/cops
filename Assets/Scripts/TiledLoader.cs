@@ -62,6 +62,7 @@ public class TiledLoader : MonoBehaviour {
 
                     instance.transform.parent = layerObject.transform;
                     instance.transform.position = position;
+                    instance.layer = layerObject.layer;
                     // if this is a building, we need to generate all the parts
                     BuildingGenerator bg = instance.GetComponent<BuildingGenerator>();
                     if (bg != null) {
@@ -75,11 +76,13 @@ public class TiledLoader : MonoBehaviour {
                 }
             }
             if (CombineMeshes) combine.Combine();
+            foreach (Transform child in layerObject.transform) {
+                child.gameObject.layer = gameObject.layer;
+            }
             if (LayerScales.Length > 0 && LayerScales[depth] != null) layerObject.transform.localScale = LayerScales[depth];
         }
         foreach (Transform child in transform) {
             child.gameObject.isStatic = true;
-            child.gameObject.layer = gameObject.layer;
         }
     }
 
