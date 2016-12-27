@@ -10,6 +10,17 @@
          "width":3,
          "x":0,
          "y":0
+        }, 
+        {
+         "data":[35, 35, 35, 35, 35, 35, 35, 35, 35],
+         "height":3,
+         "name":"props",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":3,
+         "x":0,
+         "y":0
         }],
  "nextobjectid":1,
  "orientation":"orthogonal",
