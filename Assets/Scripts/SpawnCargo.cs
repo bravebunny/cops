@@ -8,17 +8,17 @@ public class SpawnCargo : MonoBehaviour {
 
     private GameObject cargo;
 
-    private MissionsAbstract Mission;
+    private MissionManager MissionManager;
 
-    public void Spawn(GameObject Cargo, MissionsAbstract mission) {
+    public void Spawn(GameObject Cargo, MissionManager missionManager) {
         cargo = Instantiate<GameObject>(Cargo);
         cargo.transform.position = CargoVan.transform.position;
-        Mission = mission;
+        MissionManager = missionManager;
     }
 
     void OnTriggerExit(Collider collider) {
         if (collider.tag == "Cargo") {
-            Mission.MissionFailed();
+            MissionManager.MissionFailed();
             Destroy(collider, DestroyCargoTime);
         }
     }

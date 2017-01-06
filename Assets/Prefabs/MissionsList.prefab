@@ -61,7 +61,10 @@ MonoBehaviour:
   MissionModel: {fileID: 1000010764997216, guid: dd3a3608a72753c4ca4b2afc13cb820f,
     type: 2}
   Cargo: {fileID: 1000012264847344, guid: 69a3041c6db05d844bba52abec53f8dc, type: 2}
-  CargoVan: {fileID: 4000010516317444, guid: dd3a3608a72753c4ca4b2afc13cb820f, type: 2}
+  NumberOfFases: 2
+  CargoFase: 1
+  ShowArrow: 1
+  ShowTriggerPoint: 1
 --- !u!114 &114000012068068948
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -92,3 +95,8 @@ MonoBehaviour:
     MissionDescription: Car
   MissionModel: {fileID: 1000011047287490, guid: 0bfc365fdc6b7c046831b28a4e69b957,
     type: 2}
+  Cargo: {fileID: 0}
+  NumberOfFases: 1
+  CargoFase: 0
+  ShowArrow: 1
+  ShowTriggerPoint: 0

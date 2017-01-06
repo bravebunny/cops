@@ -1,15 +1,24 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class MissionManager : MonoBehaviour {
 
     public GameObject MissionObject;
     public Text DisplayText;
-    [HideInInspector]
-    public Targets TargetScript;
+    [HideInInspector] public Targets TargetScript;
 
-    MissionsAbstract RandomMission;
+    MissionsAbstract Mission;
     MissionsAbstract[] MissionsList;
+
+    List<MissionTargets> MissionTargets;
+    int NumberOfFases; //quantity of fases a mission have
+    int CurrentFase = 0;
+
+    GameObject Cargo;
+    int CargoFase;
+    bool UsesCargo = false;
+    bool CargoSpawned = false;
 
     void Awake() {
         MissionsList = MissionObject.GetComponents<MissionsAbstract>();
@@ -21,19 +30,56 @@ public class MissionManager : MonoBehaviour {
         RandomizeMission();
     }
 
-
     public void RandomizeMission() {
-        RandomMission = MissionsList[Random.Range(0, MissionsList.Length)];
-        RandomMission.InitiateMission(this);
-        setDisplayText();
+        Mission = MissionsList[Random.Range(0, MissionsList.Length)];
+        Mission.InitiateMission(this);
     }
 
-    public void MissionCompleted(bool nextPhase = false, int targetIndex = 0) {
-        Debug.Log("mission completed");
-        if (nextPhase) {
-            RandomMission.InitiateMission(this, targetIndex + 1);
-            setDisplayText();
-        } else RandomizeMission();
+    public void InitMission(MissionsAbstract currentMission, List<MissionTargets> missionTargets, GameObject missionModel = null, int numberOfFases = 1) {
+        TargetScript.SetMission(this); //send the current mission to the target script
+        if (missionModel != null)  GameManager.Player.ReplaceModel(missionModel); //change player model if needed
+
+        MissionTargets = missionTargets;
+        SetMissionTarget(); //Set mission target [default = 0]
+
+        NumberOfFases = numberOfFases;
+        CurrentFase = 0;
+
+        SetDisplayText();
+    }
+
+    public void SetCargo(GameObject cargo = null, int cargoFase = 0) {
+        Cargo = cargo;
+        CargoFase = cargoFase;
+        if (cargo != null) UsesCargo = true;
+    }
+
+
+    public void SetArrowDisplay(bool state) {
+        TargetScript.SetArrowDisplay(state);
+    }
+
+    public void SetTriggerPointDisplay(bool state) {
+        TargetScript.SetTriggerPointDisplay(state);
+    }
+
+    public void GoalCompleted() {
+        IncrementCurrentFase();
+        if (UsesCargo && CargoSpawned) {
+            GameManager.Player.Model.GetComponent<SpawnCargo>().DestroyCargo();
+            CargoSpawned = false;
+        }
+        if (IsMissionCompleted()) RandomizeMission();
+        else NextFase();
+    }
+
+    public void NextFase() {
+        if(UsesCargo && CargoFase == CurrentFase) {
+            GameManager.Player.Model.GetComponent<SpawnCargo>().Spawn(Cargo, this);
+            CargoSpawned = true;
+        }
+        SetMissionTarget(CurrentFase); // -1 because it's used for an index
+        SetDisplayText();
     }
 
     public void MissionFailed() {
@@ -42,8 +88,23 @@ public class MissionManager : MonoBehaviour {
         RandomizeMission();
     }
 
-    void setDisplayText() {
+    void SetDisplayText() {
         DisplayText.enabled = true;
-        DisplayText.text = RandomMission.GetDisplayText();
+        DisplayText.text = MissionTargets[CurrentFase].MissionDescription;
+    }
+
+    void SetMissionTarget(int targetIndex = 0) {
+        TargetScript.GetComponent<Targets>().NewTarget(MissionTargets[targetIndex].Target);
+    }
+
+    void IncrementCurrentFase() {
+        CurrentFase++;
+    }
+
+    bool IsMissionCompleted() {
+        if (CurrentFase == NumberOfFases)
+            return true;
+        else
+            return false;
     }
 }

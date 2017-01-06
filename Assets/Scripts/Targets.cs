@@ -7,25 +7,20 @@ public class Targets : MonoBehaviour {
     public float MarkerHeight = 2;
 
     Transform Target;
-    MissionsAbstract CurrentMission;
-    //show Arrow on Screen 
-    bool ArrowDisplay = false;
-    //requires disabling render of mission's object after the mission is completed
-    bool RequireDisabledRender = false; 
+    MissionManager MissionManager;
+    bool TriggerPointDisplay;
 
-    public void SetMission(MissionsAbstract currentMission, bool arrowDisplay = true, bool requireDisabledRender = false) {
-        CurrentMission = currentMission;
-        ArrowDisplay = arrowDisplay;
-        RequireDisabledRender = requireDisabledRender;
+    public void SetMission(MissionManager missionManager) {
+        MissionManager = missionManager;
+    }
 
-        //show Arrow on Screen 
-        if (ArrowDisplay) {
-            TargetMarker.gameObject.SetActive(true);
-            Arrow.gameObject.gameObject.SetActive(true);
-        } else {
-            TargetMarker.gameObject.SetActive(false);
-            Arrow.gameObject.gameObject.SetActive(false);
-        }
+    public void SetArrowDisplay(bool state) {
+        Arrow.gameObject.gameObject.SetActive(state);
+        TargetMarker.gameObject.SetActive(state);
+    }
+
+    public void SetTriggerPointDisplay(bool state) {
+        TriggerPointDisplay = state;
     }
 
     public void NewTarget(GameObject target) {
@@ -45,27 +40,27 @@ public class Targets : MonoBehaviour {
         // make the arrow point to the new target
         Arrow.Target = Target;
 
-        if (RequireDisabledRender) {
-            Target.gameObject.GetComponent<MeshRenderer>().enabled = true;
-        }
+        ManageTriggerPointDisplay(true);
     }
 
-    public void DestroyTarget() {
+    public void GoalCompleted() {
         //disable render of the mission object
-        if (RequireDisabledRender) {
-            Target.gameObject.GetComponent<MeshRenderer>().enabled = false;
-        }
+        ManageTriggerPointDisplay(false);
         // remove goal behavior from previous target
         Destroy(Target.GetComponent<Goal>());
-        CurrentMission.MissionCompleted();
+        MissionManager.GoalCompleted();
     }
 
     public void MissionFailed() {
         //disable render of the mission object
-        if (RequireDisabledRender) {
-            Target.gameObject.GetComponent<MeshRenderer>().enabled = false;
-        }
+        ManageTriggerPointDisplay(false);
         // remove goal behavior from previous target
         Destroy(Target.GetComponent<Goal>());
+    }
+
+    void ManageTriggerPointDisplay(bool state) {
+        if (TriggerPointDisplay) {
+            Target.gameObject.GetComponent<MeshRenderer>().enabled = state;
+        }
     }
 }

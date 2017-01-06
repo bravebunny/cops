@@ -1,51 +1,25 @@
 ﻿using UnityEngine;
-using System.Collections;
-using System;
 using System.Collections.Generic;
 
 public class PizzaMission : MissionsAbstract {
+    MissionManager MM;
 
     public List<MissionTargets> MissionTargets;
     public GameObject MissionModel;
     public GameObject Cargo;
-    MissionManager MM;
+    //public AudioSource CollectSound; //Sound that plays when mission's objective is completed
+    public int NumberOfFases;
+    public int CargoFase;
+    public bool ShowArrow;
+    public bool ShowTriggerPoint;
 
-    int TargetIndex = 0;
-    public int NumberOfFases = 2;
-
-    public override void InitiateMission(MissionManager missionManager, int targetIndex = 0) {
-
-        if (MissionModel) {
-            GameManager.Player.ReplaceModel(MissionModel);
-        }
-
-        TargetIndex = targetIndex;
+    public override void InitiateMission(MissionManager missionManager) {
         MM = missionManager;
-        MM.TargetScript.SetMission(this, true, true);
-        MM.TargetScript.GetComponent<Targets>().NewTarget(MissionTargets[targetIndex].Target);
-    }
 
-    public override void MissionCompleted() {
-        //CollectSound.Play();
-        if (TargetIndex == NumberOfFases - 1) {
-            if (Cargo) {
-                GameManager.Player.Model.GetComponent<SpawnCargo>().DestroyCargo();
-            }
-            MM.MissionCompleted(false);
-            Debug.Log("END");
-        } else if (TargetIndex != NumberOfFases - 1) {
-            MM.MissionCompleted(true, TargetIndex);
-            if (Cargo) {
-                GameManager.Player.Model.GetComponent<SpawnCargo>().Spawn(Cargo, this);
-            }
-        }
-    }
+        MM.InitMission(this, MissionTargets, MissionModel, NumberOfFases);
+        MM.SetCargo(Cargo, CargoFase);
 
-    public override void MissionFailed() {
-        MM.MissionFailed();
-    }
-
-    public override string GetDisplayText() {
-        return MissionTargets[TargetIndex].MissionDescription;
+        MM.SetArrowDisplay(ShowArrow);
+        MM.SetTriggerPointDisplay(ShowTriggerPoint);
     }
 }
