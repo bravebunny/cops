@@ -16,10 +16,10 @@ public class PizzaMission : MissionsAbstract {
     public override void InitiateMission(MissionManager missionManager) {
         MM = missionManager;
 
-        MM.InitMission(this, MissionTargets, MissionModel, NumberOfFases);
-        MM.SetCargo(Cargo, CargoFase);
-
         MM.SetArrowDisplay(ShowArrow);
         MM.SetTriggerPointDisplay(ShowTriggerPoint);
+        MM.SetCargo(Cargo, CargoFase);
+
+        MM.InitMission(this, MissionTargets, MissionModel, NumberOfFases);
     }
 }

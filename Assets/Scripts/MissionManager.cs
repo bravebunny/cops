@@ -27,6 +27,7 @@ public class MissionManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        TargetScript.SetMission(this);
         RandomizeMission();
     }
 
@@ -36,7 +37,6 @@ public class MissionManager : MonoBehaviour {
     }
 
     public void InitMission(MissionsAbstract currentMission, List<MissionTargets> missionTargets, GameObject missionModel = null, int numberOfFases = 1) {
-        TargetScript.SetMission(this); //send the current mission to the target script
         if (missionModel != null)  GameManager.Player.ReplaceModel(missionModel); //change player model if needed
 
         MissionTargets = missionTargets;
@@ -85,6 +85,7 @@ public class MissionManager : MonoBehaviour {
     public void MissionFailed() {
         Debug.Log("mission failed");
         TargetScript.MissionFailed(); //destroy current target
+        CargoSpawned = false;
         RandomizeMission();
     }
 
@@ -102,7 +103,7 @@ public class MissionManager : MonoBehaviour {
     }
 
     bool IsMissionCompleted() {
-        if (CurrentFase == NumberOfFases)
+        if (CurrentFase >= NumberOfFases)
             return true;
         else
             return false;
