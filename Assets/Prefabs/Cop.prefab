@@ -713,6 +713,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
+  LookDistance: 5
+  AvoidDistance: 1
+  ObstacleLayers:
+    serializedVersion: 2
+    m_Bits: 4294963199
 --- !u!114 &11454206
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -738,12 +743,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32b449f4adf5bc4b9e8438de830039a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 140
+  Speed: 100
   SidewaysCompensation: 0
   SuspensionStrength: 100
   TurningSpeed: 80
   MultiplyTurningByMovement: 1
-  DebugOn: 1
+  DebugOn: 0
   SuspensionHeight: 0.8
   Drag: 5
   StabilisationStrenght: 30
@@ -867,7 +872,7 @@ CapsuleCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 127284}
-  m_Material: {fileID: 13400000, guid: 9745de242b937c649913c1a6442c66c1, type: 2}
+  m_Material: {fileID: 13400000, guid: 35de9c987699d454f82d703834681462, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.94152546

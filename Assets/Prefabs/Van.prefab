@@ -21,7 +21,7 @@ GameObject:
   - 4: {fileID: 4000012417079232}
   - 33: {fileID: 33000010482723456}
   - 23: {fileID: 23000014148213544}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - 65: {fileID: 65000010846109552}
   - 65: {fileID: 65000010475328032}
   - 114: {fileID: 114000011810011776}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Van
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -62,7 +62,7 @@ GameObject:
   - 33: {fileID: 33000010200731304}
   - 23: {fileID: 23000014062887852}
   - 114: {fileID: 114000011261980840}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Wheel1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80,7 +80,7 @@ GameObject:
   - 33: {fileID: 33000014119973362}
   - 23: {fileID: 23000011916607892}
   - 114: {fileID: 114000014058412180}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Wheel3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   - 33: {fileID: 33000012166720868}
   - 23: {fileID: 23000010668043932}
   - 114: {fileID: 114000010920272050}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Wheel2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,7 +113,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010516317444}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cargo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,7 +131,7 @@ GameObject:
   - 33: {fileID: 33000010132990014}
   - 23: {fileID: 23000010413351982}
   - 114: {fileID: 114000011842851008}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Wheel0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -429,7 +429,7 @@ BoxCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010764997216}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 35de9c987699d454f82d703834681462, type: 2}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
@@ -453,7 +453,7 @@ BoxCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010764997216}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 35de9c987699d454f82d703834681462, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -465,7 +465,7 @@ BoxCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010764997216}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 35de9c987699d454f82d703834681462, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -477,7 +477,7 @@ BoxCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010764997216}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 35de9c987699d454f82d703834681462, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -489,7 +489,7 @@ BoxCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010764997216}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 35de9c987699d454f82d703834681462, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -566,7 +566,7 @@ CapsuleCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010764997216}
-  m_Material: {fileID: 13400000, guid: 9745de242b937c649913c1a6442c66c1, type: 2}
+  m_Material: {fileID: 13400000, guid: 35de9c987699d454f82d703834681462, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 1.28

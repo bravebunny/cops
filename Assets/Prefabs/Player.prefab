@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 432396}
   - 33: {fileID: 3351928}
   - 23: {fileID: 2393884}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Wheel2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ GameObject:
   - 4: {fileID: 436790}
   - 33: {fileID: 3307692}
   - 23: {fileID: 2342110}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Wheel1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - 4: {fileID: 427292}
   - 33: {fileID: 3359760}
   - 23: {fileID: 2369158}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Wheel0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,7 +61,7 @@ GameObject:
   - 4: {fileID: 405666}
   - 33: {fileID: 3310616}
   - 23: {fileID: 2373638}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77,7 +77,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 448158}
   - 136: {fileID: 136000010358626310}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: CarModel
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   - 81: {fileID: 8104566}
   - 114: {fileID: 11438122}
   - 114: {fileID: 114000013537218628}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   - 4: {fileID: 474836}
   - 33: {fileID: 3306730}
   - 23: {fileID: 2373430}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Wheel3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -539,7 +539,7 @@ MonoBehaviour:
   TurningSpeed: 0.6
   MultiplyTurningByMovement: 1
   DebugOn: 1
-  SuspensionHeight: 0.8
+  SuspensionHeight: 1.5
   Drag: 5
   StabilisationStrenght: 30
   Stabilise: 1
@@ -650,7 +650,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010145570164}
   - 135: {fileID: 135000013713950072}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: CopCountArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
