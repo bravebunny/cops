@@ -10,10 +10,10 @@ public class SpawnRandom : MonoBehaviour {
 
     void Start() {
         // check if there is nothing on top of this tile
-        Vector3 origin = transform.position + Vector3.up * height;
-        bool hit = Physics.Raycast(origin, Vector3.down, height - 0.1f);
+        //Vector3 origin = transform.position + Vector3.up * height;
+        /*bool hit = Physics.Raycast(origin, Vector3.down, height - 0.1f);
 
-        if (!hit) {
+        if (!hit) {*/
             foreach (Transform position in Positions) {
                 float random = Random.value;
                 if (random > Chance) {
@@ -22,7 +22,7 @@ public class SpawnRandom : MonoBehaviour {
                 }
                 Spawn(position);
             }
-        }
+        //}
         Clear();
     }
 

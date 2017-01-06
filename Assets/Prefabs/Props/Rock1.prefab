@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 132506}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 83.67082}
+  m_LocalScale: {x: 26.91883, y: 26.918823, z: 22.5232}
   m_LocalEulerAnglesHint: {x: -89.980194, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}

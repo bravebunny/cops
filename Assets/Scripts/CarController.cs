@@ -53,7 +53,7 @@ public class CarController : MonoBehaviour {
         Grounded = Physics.Raycast(Body.position, -transform.up, out raycastInfo, raycastDistance);
         bool notClimbing = Physics.Raycast(Body.position, -Vector3.up, out raycastInfo, raycastDistance);
 
-        if (DebugOn) Debug.DrawRay(Body.position, -transform.up, Color.red, -1, false);
+        if (DebugOn) Debug.DrawLine(Body.position, Body.position - transform.up * raycastDistance, Color.red, -1, false);
 
         if (accel != 0) DirectionVal = (int)(accel / Mathf.Abs(accel));
         else DirectionVal = 1;

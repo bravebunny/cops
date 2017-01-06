@@ -7,6 +7,7 @@ public class BuildingGenerator : MonoBehaviour {
     public GameObject[] UpperOnlyWalls;
     public GameObject[] GroundOnlyWalls;
     public GameObject[] Roofs;
+    public GameObject PropGroup;
     [Range(1,50)]
     public int MaxFloor = 4;
     public float FloorHeight = 2;
@@ -25,7 +26,10 @@ public class BuildingGenerator : MonoBehaviour {
         float distanceFromCenter = 1 - Vector3.Distance(transform.position, Vector3.zero) / MaxDistanceFromCenter;
         //Debug.Log(distanceFromCenter);
         float height = Random.Range(0, MaxFloor) * distanceFromCenter;
-        if (height < 0.5f) return;
+        if (height < 0.5f) {
+            CreatePropGroup();
+            return;
+        }
 
         for (int floor = 0; floor < height; floor++) {
             AddWalls(floor);
@@ -34,6 +38,12 @@ public class BuildingGenerator : MonoBehaviour {
         AddCeilling((int) Mathf.Ceil(height));
         GetComponent<CombineChildren>().Combine();
 	}
+
+    void CreatePropGroup() {
+        GameObject instance = Instantiate<GameObject>(PropGroup);
+        instance.transform.position = transform.position;
+        instance.transform.parent = transform;
+    }
 
     void AddObject(GameObject original, Vector3 position, Quaternion rotation) {
         GameObject obj = (GameObject)Instantiate(original, position, rotation);

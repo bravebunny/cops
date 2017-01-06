@@ -80,7 +80,7 @@ MonoBehaviour:
   CityMinPerlin: 0.3
   IslandRadius: 6
   IslandMinPerlin: 0.00001
-  GroundLevels: 3
+  SizeY: 3
   LevelHeight: 4.5
   LevelMaterials:
   - {fileID: 0}
