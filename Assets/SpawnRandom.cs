@@ -9,19 +9,19 @@ public class SpawnRandom : MonoBehaviour {
     public float height = 4.5f; // height that must be empty for spawning
 
     void Start() {
-        float random = Random.value;
-        if (random > Chance) {
-            Clear();
-            return;
-        }
-
         // check if there is nothing on top of this tile
         Vector3 origin = transform.position + Vector3.up * height;
         bool hit = Physics.Raycast(origin, Vector3.down, height - 0.1f);
 
         if (!hit) {
-            foreach (Transform position in Positions)
+            foreach (Transform position in Positions) {
+                float random = Random.value;
+                if (random > Chance) {
+                    Clear();
+                    return;
+                }
                 Spawn(position);
+            }
         }
         Clear();
     }

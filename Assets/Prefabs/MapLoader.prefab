@@ -111,7 +111,7 @@ MonoBehaviour:
   - angle: 0
     obj: {fileID: 1000013316285204, guid: 05d9912b69e85d54bb4a673430097a6e, type: 2}
   - angle: 0
-    obj: {fileID: 159496, guid: 90c9f1a17a3480143920ea9d6dbb4f0d, type: 2}
+    obj: {fileID: 0}
   - angle: 90
     obj: {fileID: 1000013671929482, guid: fb48b380f632d9447b4c3eadb0362073, type: 2}
   - angle: 0
