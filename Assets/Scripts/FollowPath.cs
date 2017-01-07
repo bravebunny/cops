@@ -10,7 +10,6 @@ public class FollowPath : MonoBehaviour {
     float ForwardCheckLength = 4f;
     Rigidbody Body;
     Road CurrentRoad;
-    bool Grounded;
     [HideInInspector] public Vector3 Target;
 
 	void Start() {
@@ -18,67 +17,53 @@ public class FollowPath : MonoBehaviour {
 	}
 	
 	void FixedUpdate() {
-        Road road = GetCurrentRoad();
-        if (road != CurrentRoad && road != null) {
-            CurrentRoad = road;
-            Target = PickTarget();
-        }
-        if (Grounded) MoveTowardsTarget();
+        MoveTowardsTarget();
         if (IsBlocked()) {
             Body.velocity = Vector3.zero;
             Target -= transform.forward * 3;
         }
-	}
+    }
 
     void MoveTowardsTarget() {
         Vector3 target = Target + transform.right * LaneWidth;
         Vector3 targetDirection;
+        Vector3 transformForward = transform.forward;
+        transformForward.y = 0;
         Vector3 forward;
-        Vector3 projectedForward = Vector3.ProjectOnPlane(transform.forward, Vector3.up);
 
-        bool targetBehind = Util.IsInFront(transform.position + transform.forward * 2, target, transform.forward);
+        bool targetBehind = Util.IsInFront(transform.position + transformForward * 2, target, transformForward);
         if (targetBehind) {
             targetDirection = -transform.right;
-            forward = projectedForward;
+            forward = transformForward;
         } else {
             targetDirection = Vector3.ProjectOnPlane((target - transform.position), Vector3.up);
             forward = targetDirection;
         }
+
+        Debug.DrawLine(transform.position, transform.position + forward, Color.blue, -1, false);
+
         Body.AddForce(forward.normalized * Speed, ForceMode.VelocityChange);
         Body.angularVelocity = Vector3.zero;
-        Body.AddTorque(Vector3.Cross(projectedForward, targetDirection) * RotationSpeed, ForceMode.Acceleration);
+        Body.AddTorque(Vector3.Cross(transformForward, targetDirection) * RotationSpeed, ForceMode.Acceleration);
         Body.AddTorque(Vector3.Cross(transform.up, Vector3.up) * RotationSpeed);
-
     }
 
     // pick one of the connections randomly
     Vector3 PickTarget() {
-        List<Vector3> connections = CurrentRoad.Connections;
-        if (connections.Count == 1) return CurrentRoad.Connections[0];
+        List<Transform> connections = CurrentRoad.Connections;
+        if (connections.Count == 1) return CurrentRoad.Connections[0].position;
 
         List<Vector3> targets = new List<Vector3>();
-        foreach (Vector3 connection in CurrentRoad.Connections) {
-            bool inFront = Util.IsInFront(connection, transform.position - transform.forward * 2, transform.forward);
-            if (inFront) targets.Add(connection);
+        foreach (Transform connection in CurrentRoad.Connections) {
+            bool inFront = Util.IsInFront(connection.position, transform.position - transform.forward * 2, transform.forward);
+            if (inFront) targets.Add(connection.position);
         }
         int count = targets.Count;
         if (count == 0) {
-            CurrentRoad = null;
-            return Vector3.zero;
+            return Target;
          }
         int index = Random.Range(0, targets.Count);
         return targets[index];
-    }
-
-    // get the road that's currently under the car
-    Road GetCurrentRoad() {
-        RaycastHit hit;
-        Vector3 origin = transform.position;
-        Vector3 direction = -transform.up;
-        Grounded = Physics.Raycast(origin, direction, out hit, MaxGroundDistance);
-        Debug.DrawLine(origin, origin + direction * MaxGroundDistance);
-        if (!Grounded) return null;
-        return hit.transform.GetComponent<Road>();
     }
 
     bool IsBlocked() {
@@ -88,5 +73,12 @@ public class FollowPath : MonoBehaviour {
         Debug.DrawLine(origin, origin + direction * ForwardCheckLength);
         bool ray = Physics.Raycast(origin, direction, out hit, ForwardCheckLength);
         return ray;
+    }
+
+    void OnTriggerEnter(Collider col) {
+        if (!col.CompareTag("Road")) return;
+        Debug.Log("found road");
+        CurrentRoad = col.gameObject.GetComponent<Road>();
+        Target = PickTarget();
     }
 }

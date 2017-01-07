@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 438016}
   - 33: {fileID: 3330476}
   - 23: {fileID: 2322650}
+  - 64: {fileID: 64000010496028630}
   m_Layer: 0
   m_Name: GroundSlopeCornerDown
   m_TagString: Untagged
@@ -77,3 +78,15 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 173852}
   m_IsPrefabParent: 1
+--- !u!64 &64000010496028630
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 173852}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_Mesh: {fileID: 4300014, guid: 2f1cdf33f347d5143bcd60558517aa04, type: 3}

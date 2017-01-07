@@ -30,6 +30,7 @@ GameObject:
   - 23: {fileID: 2346748}
   - 114: {fileID: 11418128}
   - 64: {fileID: 6430636}
+  - 65: {fileID: 65000011072001298}
   m_Layer: 9
   m_Name: Deadend
   m_TagString: Road
@@ -45,11 +46,12 @@ Transform:
   m_GameObject: {fileID: 139192}
   m_LocalRotation: {x: 0.00000008146036, y: -0.000000006357829, z: -5.1791104e-16,
     w: 1}
-  m_LocalPosition: {x: -173.96957, y: 1.8000051, z: -91.83623}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.6666667, y: 0.6666667, z: 0.6666667}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 490388}
+  - {fileID: 4000013909795218}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &490388
@@ -160,7 +162,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7fa45060ba0ba940bd622aac7fc96e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Connections: []
+  Connections:
+  - {fileID: 4000013909795218}
   RoadLayers:
     serializedVersion: 2
     m_Bits: 512
@@ -175,6 +178,35 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 139192}
   m_IsPrefabParent: 1
+--- !u!1 &1000014153329764
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000013909795218}
+  m_Layer: 9
+  m_Name: Connection0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4000013909795218
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014153329764}
+  m_LocalRotation: {x: 0.0000000051663704, y: 0.000000006357829, z: -3.284688e-17,
+    w: 1}
+  m_LocalPosition: {x: 18, y: 1.9058241e-21, z: -0.00000022888183}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 411008}
+  m_RootOrder: 1
 --- !u!64 &64000014246845442
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -187,3 +219,15 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 4300008, guid: 2f1cdf33f347d5143bcd60558517aa04, type: 3}
+--- !u!65 &65000011072001298
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 139192}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 15, y: 5, z: 12}
+  m_Center: {x: 1.5, y: 2.5, z: 0}
