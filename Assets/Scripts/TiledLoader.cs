@@ -64,11 +64,9 @@ public class TiledLoader : MonoBehaviour {
                     instance.transform.position = position;
                     instance.layer = layerObject.layer;
                     // check if this object has a script that needs to be run on map build
-                    RunOnMapBuild script = instance.GetComponent<RunOnMapBuild>();
-                    if (script != null) {
+                    RunOnMapBuild[] scripts = instance.GetComponents<RunOnMapBuild>();
+                    foreach (RunOnMapBuild script in scripts)
                         script.Run();
-                        continue;
-                    }
                 }
             }
             if (CombineMeshes) combine.Combine();

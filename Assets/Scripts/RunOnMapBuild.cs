@@ -9,9 +9,9 @@ public abstract class RunOnMapBuild : MonoBehaviour {
         Execute();
         // check if this script generated another one to run
         foreach (Transform child in transform) {
-            RunOnMapBuild next = child.GetComponent<RunOnMapBuild>();
-            if (next == null) continue;
-            next.Run();
+            RunOnMapBuild[] scripts = child.GetComponents<RunOnMapBuild>();
+            foreach (RunOnMapBuild script in scripts)
+                script.Run();
         }
     }
 }

@@ -5,7 +5,7 @@ public class ColorFromList : MonoBehaviour {
     public Material[] Materials; // randomize parts of the object with this material
     public Color[] Colors; // colors to choose from
     
-    void Start () {
+    void Start() {
         Renderer[] renderers = GetComponentsInChildren<Renderer>();
         foreach (Renderer renderer in renderers) {
             for (int i = 0; i < renderer.sharedMaterials.Length; i++) {

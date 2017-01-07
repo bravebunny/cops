@@ -37,6 +37,9 @@ public class BuildingGenerator : RunOnMapBuild {
         
         AddCeilling((int) Mathf.Ceil(height));
         GetComponent<CombineChildren>().Combine();
+        foreach (Transform child in transform) {
+            child.gameObject.isStatic = false;
+        }
 	}
 
     void CreatePropGroup() {
