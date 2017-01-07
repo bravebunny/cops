@@ -78,7 +78,7 @@ public class MissionManager : MonoBehaviour {
             GameManager.Player.Model.GetComponent<SpawnCargo>().Spawn(Cargo, this);
             CargoSpawned = true;
         }
-        SetMissionTarget(CurrentFase); // -1 because it's used for an index
+        SetMissionTarget(CurrentFase);
         SetDisplayText();
     }
 
@@ -92,6 +92,7 @@ public class MissionManager : MonoBehaviour {
     void SetDisplayText() {
         DisplayText.enabled = true;
         DisplayText.text = MissionTargets[CurrentFase].MissionDescription;
+        DisplayText.GetComponent<TextMissionTween>().StartTextTween();
     }
 
     void SetMissionTarget(int targetIndex = 0) {
