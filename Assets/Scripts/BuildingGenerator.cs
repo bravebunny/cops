@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class BuildingGenerator : MonoBehaviour {
+public class BuildingGenerator : RunOnMapBuild {
     public GameObject[] Walls;
     public GameObject[] UpperOnlyWalls;
     public GameObject[] GroundOnlyWalls;
@@ -21,7 +21,7 @@ public class BuildingGenerator : MonoBehaviour {
         Vector3.left + Vector3.back,
     };
 
-	public void Generate() {
+	public override void Execute() {
         // distance from center affects building density
         float distanceFromCenter = 1 - Vector3.Distance(transform.position, Vector3.zero) / MaxDistanceFromCenter;
         //Debug.Log(distanceFromCenter);

@@ -63,16 +63,12 @@ public class TiledLoader : MonoBehaviour {
                     instance.transform.parent = layerObject.transform;
                     instance.transform.position = position;
                     instance.layer = layerObject.layer;
-                    // if this is a building, we need to generate all the parts
-                    BuildingGenerator bg = instance.GetComponent<BuildingGenerator>();
-                    if (bg != null) {
-                        bg.Generate();
+                    // check if this object has a script that needs to be run on map build
+                    RunOnMapBuild script = instance.GetComponent<RunOnMapBuild>();
+                    if (script != null) {
+                        script.Run();
                         continue;
                     }
-
-                    Track track = instance.GetComponentInChildren<Track>();
-                    if (track != null) track.CreatePillars();
-
                 }
             }
             if (CombineMeshes) combine.Combine();

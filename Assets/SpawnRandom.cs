@@ -1,14 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SpawnRandom : MonoBehaviour {
+public class SpawnRandom : RunOnMapBuild {
     public GameObject[] Objects; // one of these will be spawned
     public Transform[] Positions; // where to spawn objects;
     public bool RandomAngle = true;
     public float Chance = 0.5f;
     public float height = 4.5f; // height that must be empty for spawning
+    public bool KeepSpawners = false;
 
-    void Start() {
+    public override void Execute() {
         // check if there is nothing on top of this tile
         //Vector3 origin = transform.position + Vector3.up * height;
         /*bool hit = Physics.Raycast(origin, Vector3.down, height - 0.1f);
@@ -39,8 +40,9 @@ public class SpawnRandom : MonoBehaviour {
 	}
 
     void Clear() {
+        if (KeepSpawners) return;
         // destroy the spawner objects, leaving the spawned ones
         foreach (Transform position in Positions)
-            Destroy(position.gameObject);
+            DestroyImmediate(position.gameObject);
     }
 }

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Track : MonoBehaviour {
+public class Track : RunOnMapBuild {
     public Transform A;
     public Transform B;
     public bool CheckIfBridge;
@@ -9,7 +9,7 @@ public class Track : MonoBehaviour {
     float MaxHeight = 0.1f;
     float HeightOffset = 0.0005f;
 
-    public void CreatePillars() {
+    public override void Execute() {
         if (!CheckIfBridge) return;
         RaycastHit info;
         bool hit = Physics.Raycast(transform.position + Vector3.up * HeightOffset, Vector3.down, out info);
