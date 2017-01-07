@@ -13,6 +13,7 @@ GameObject:
   - 23: {fileID: 2316442}
   - 114: {fileID: 114000010448153124}
   - 114: {fileID: 114000011284078206}
+  - 65: {fileID: 65000012421796056}
   m_Layer: 0
   m_Name: Building
   m_TagString: Untagged
@@ -105,6 +106,18 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 102990}
   m_IsPrefabParent: 1
+--- !u!65 &65000012421796056
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 102990}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8, y: 4, z: 8}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!114 &114000010448153124
 MonoBehaviour:
   m_ObjectHideFlags: 1

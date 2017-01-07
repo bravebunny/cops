@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 490388}
   - 33: {fileID: 3301730}
   - 23: {fileID: 2367634}
+  - 64: {fileID: 64000014246845442}
   m_Layer: 9
   m_Name: Sidewalk
   m_TagString: Untagged
@@ -174,3 +175,15 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 139192}
   m_IsPrefabParent: 1
+--- !u!64 &64000014246845442
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 124310}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_Mesh: {fileID: 4300008, guid: 2f1cdf33f347d5143bcd60558517aa04, type: 3}

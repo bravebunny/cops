@@ -40,12 +40,22 @@ public class BuildingGenerator : RunOnMapBuild {
         foreach (Transform child in transform) {
             child.gameObject.isStatic = false;
         }
-	}
+
+        // change the collider to fit the generated building
+        BoxCollider collider = GetComponent<BoxCollider>();
+        Vector3 size = collider.size;
+        size.y *= Mathf.Ceil(height);
+        collider.size = size;
+        Vector3 center = collider.center;
+        center.y = size.y / 2;
+        collider.center = center;
+    }
 
     void CreatePropGroup() {
         GameObject instance = Instantiate<GameObject>(PropGroup);
         instance.transform.position = transform.position;
         instance.transform.parent = transform;
+        DestroyImmediate(GetComponent<BoxCollider>());
     }
 
     void AddObject(GameObject original, Vector3 position, Quaternion rotation) {
