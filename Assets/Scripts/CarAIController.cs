@@ -26,6 +26,7 @@ public class CarAIController : MonoBehaviour {
     void UpdateDirection() {
         transform.LookAt(Target);
         Velocity = transform.forward * Speed;
+        Velocity.y = 0;
     }
 
     void FixedUpdate() {

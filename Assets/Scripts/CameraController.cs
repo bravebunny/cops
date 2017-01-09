@@ -68,9 +68,9 @@ public class CameraController : MonoBehaviour
 
         position = target.position;
         if (!RearView)
-            position += Quaternion.Euler(target.eulerAngles.x, target.eulerAngles.y, 0) * new Vector3(0, Height, -Distance * (float) carDirection);
+            position += Quaternion.Euler(0, target.eulerAngles.y, 0) * new Vector3(0, Height, -Distance * (float) carDirection);
         else
-            position += Quaternion.Euler(target.eulerAngles.x, target.eulerAngles.y, 0) * new Vector3(0, Height, -Distance * (float)-carDirection);
+            position += Quaternion.Euler(0, target.eulerAngles.y, 0) * new Vector3(0, Height, -Distance * (float)-carDirection);
 
         if (colliding) {
             ajustedDestination = target.position;
