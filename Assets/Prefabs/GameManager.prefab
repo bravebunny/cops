@@ -1495,11 +1495,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 256324e9fefbd2544be86dca6d8ab456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartXPosition: -600
   MidleXPosition: 0
-  EndXPosition: 600
   MidleSlowDistance: 20
   YPosition: 20
+  TextMovingTime: 0.5
+  TextSlowMoTime: 2
 --- !u!114 &114000011847680336
 MonoBehaviour:
   m_ObjectHideFlags: 1
