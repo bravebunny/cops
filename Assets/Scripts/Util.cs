@@ -13,4 +13,9 @@ public class Util {
         float dot = Vector3.Dot(heading, forward);
         return dot < 0;
     }
+
+    // checks if a layer belongs to a given mask
+    public static bool LayerInLayerMask(LayerMask mask, int layer) {
+        return mask.value == (mask.value | (1 << layer));
+    }
 }

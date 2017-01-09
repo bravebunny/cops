@@ -2,24 +2,17 @@
 using System.Collections;
 
 public class LookAtDelay : MonoBehaviour {
-
-    private Transform target;
     public float speed = 0.5F;
-    public float lookAtDistance = 1.0F;
+    public LayerMask Layers; // layers to look at
 
-    // Use this for initialization
-    void Start () {
-        target = GameManager.Player.transform;
-    }
-	
-	void Update () {
-        float distance = Vector3.Distance(transform.position, target.position);
+    void OnTriggerStay(Collider col) {
+        if (col.isTrigger || !Util.LayerInLayerMask(Layers, col.gameObject.layer)) return;
 
-        if (distance < lookAtDistance) {
-            Vector3 lookPos = target.position - transform.position;
+        foreach (Transform child in transform) {
+            Vector3 lookPos = col.transform.position - child.position;
             lookPos.y = 0;
             Quaternion rotation = Quaternion.LookRotation(lookPos);
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, speed * Time.deltaTime);
+            child.rotation = Quaternion.Slerp(child.rotation, rotation, speed * Time.deltaTime);
         }
     }
 }

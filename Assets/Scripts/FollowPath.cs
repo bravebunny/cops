@@ -4,43 +4,52 @@ using System.Collections.Generic;
 
 public class FollowPath : MonoBehaviour {
     public float Speed = 5;
-    public float MaxGroundDistance = 0.5f;
     public float RotationSpeed = 150;
     public float LaneWidth = 2.5f;
+
     float ForwardCheckLength = 4f;
     Rigidbody Body;
     Road CurrentRoad;
     [HideInInspector] public Vector3 Target;
+    [HideInInspector] public bool Blocked;
 
-	void Start() {
+    void Start() {
         Body = GetComponent<Rigidbody>();
 	}
 	
 	void FixedUpdate() {
         MoveTowardsTarget();
-        if (IsBlocked()) {
-            Body.velocity = Vector3.zero;
-            Target -= transform.forward * 3;
-        }
     }
 
-    void MoveTowardsTarget() {
-        Vector3 target = Target + transform.right * LaneWidth;
-        Vector3 targetDirection;
-        Vector3 transformForward = transform.forward;
-        transformForward.y = 0;
-        Vector3 forward;
+    public void Reverse() {
+        Body.velocity = Vector3.zero;
+        Target -= transform.forward * 3;
+    }
 
-        bool targetBehind = Util.IsInFront(transform.position + transformForward * 2, target, transformForward);
+    Vector3 transformForward;
+    Vector3 transformRight;
+    Vector3 target;
+    Vector3 position;
+    Vector3 targetDirection;
+    Vector3 forward;
+    void MoveTowardsTarget() {
+        transformForward = transform.forward;
+        transformRight = transform.right;
+        target = Target + transformRight * LaneWidth;
+        position = transform.position;
+        transformForward.y = 0;
+
+        bool targetBehind = Util.IsInFront(position + transformForward * 2, target, transformForward);
         if (targetBehind) {
-            targetDirection = -transform.right;
+            targetDirection = -transformRight;
             forward = transformForward;
         } else {
-            targetDirection = Vector3.ProjectOnPlane((target - transform.position), Vector3.up);
+            targetDirection = target - position;
+            targetDirection.y = 0;
             forward = targetDirection;
         }
 
-        Debug.DrawLine(transform.position, transform.position + forward, Color.blue, -1, false);
+        Debug.DrawLine(position, position + forward, Color.blue, -1, false);
 
         Body.AddForce(forward.normalized * Speed, ForceMode.VelocityChange);
         Body.angularVelocity = Vector3.zero;
@@ -66,18 +75,8 @@ public class FollowPath : MonoBehaviour {
         return targets[index];
     }
 
-    bool IsBlocked() {
-        RaycastHit hit;
-        Vector3 origin = transform.position + transform.forward + Vector3.up;
-        Vector3 direction = Vector3.ProjectOnPlane(transform.forward, Vector3.up); ;
-        Debug.DrawLine(origin, origin + direction * ForwardCheckLength);
-        bool ray = Physics.Raycast(origin, direction, out hit, ForwardCheckLength);
-        return ray;
-    }
-
     void OnTriggerEnter(Collider col) {
         if (!col.CompareTag("Road")) return;
-        Debug.Log("found road");
         CurrentRoad = col.gameObject.GetComponent<Road>();
         Target = PickTarget();
     }
