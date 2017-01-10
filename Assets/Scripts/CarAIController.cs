@@ -56,12 +56,6 @@ public class CarAIController : MonoBehaviour {
         }
     }
 
-    public void OnTriggerEnter(Collider col) {
-        if (!col.CompareTag("FireHydrant")) return;
-        //CarController.Stabilise = false;
-        // TODO move this away from here
-    }
-
     void OnDestroy() {
         GameManager.CopCount--;
         GameManager.KilledCops++;

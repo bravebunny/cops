@@ -5,15 +5,15 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 412046}
-  - 114: {fileID: 11475004}
-  - 33: {fileID: 3336172}
-  - 23: {fileID: 2316442}
-  - 114: {fileID: 114000010448153124}
-  - 114: {fileID: 114000011284078206}
-  - 65: {fileID: 65000012421796056}
+  - component: {fileID: 412046}
+  - component: {fileID: 11475004}
+  - component: {fileID: 3336172}
+  - component: {fileID: 2316442}
+  - component: {fileID: 114000010448153124}
+  - component: {fileID: 114000011284078206}
+  - component: {fileID: 65000012421796056}
   m_Layer: 0
   m_Name: Building
   m_TagString: Untagged
@@ -30,10 +30,10 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &2316442
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -48,7 +48,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 0}
-  m_SubsetIndices: 
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
@@ -56,7 +58,7 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
+  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -94,7 +96,7 @@ MonoBehaviour:
   PropGroup: {fileID: 1000013513568800, guid: 5dba988b22b939044be0db2ccbc297f0, type: 2}
   MaxFloor: 10
   FloorHeight: 4
-  MaxDistanceFromCenter: 240
+  MaxDistanceFromCenter: 100
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

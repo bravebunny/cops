@@ -2,7 +2,10 @@
 using System.Collections;
 
 public class CarController : MonoBehaviour {
-    public float Speed = 20;
+    float Speed;
+    public float OffRoadSpeed = 200;
+    public float RoadSpeed = 250;
+    public float RoadSpeedMultiplier = 1.5f;
     public float SidewaysCompensation = 0;
     public float SuspensionStrength = 5;
     public float TurningSpeed = 2;
@@ -34,6 +37,7 @@ public class CarController : MonoBehaviour {
     void Awake () {
         Body = GetComponent<Rigidbody>();
         EngineSound = GetComponent<AudioSource>();
+        Speed = RoadSpeed;
 
         // Lowering the center of mass makes it harder to tip over
         Body.centerOfMass = Vector3.down;
@@ -137,5 +141,15 @@ public class CarController : MonoBehaviour {
                 Debug.DrawLine(origin, origin + direction * SuspensionHeight, Color.white, -1, false);
             }
         }
+    }
+
+    void OnTriggerEnter(Collider col) {
+        if (!col.CompareTag("Road")) return;
+        Speed = RoadSpeed;
+    }
+
+    void OnTriggerExit(Collider col) {
+        if (!col.CompareTag("Road")) return;
+        Speed = OffRoadSpeed;
     }
 }
