@@ -174,7 +174,7 @@ static public class MeshColliderTools {
         mesh.triangles = resultTris.ToArray();
 
         mesh.RecalculateBounds();
-        mesh.Optimize();
+        ;
 
         // Debug.LogFormat("Simplify vert count: {0} vs. {1}", simplifiedNumVerts, origNumVerts);
     }
