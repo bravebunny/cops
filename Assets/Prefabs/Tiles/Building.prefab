@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 114000010448153124}
   - component: {fileID: 114000011284078206}
   - component: {fileID: 65000012421796056}
+  - component: {fileID: 114073262482357846}
   m_Layer: 0
   m_Name: Building
   m_TagString: Untagged
@@ -146,8 +147,19 @@ MonoBehaviour:
   Materials:
   - {fileID: 2100000, guid: 236199405a766478faa145afc45dc899, type: 2}
   Colors:
-  - {r: 0.89705884, g: 0.869765, b: 0.79811853, a: 0}
-  - {r: 0.86764705, g: 0.62521625, b: 0.62521625, a: 0}
-  - {r: 0.56920415, g: 0.6025295, b: 0.8235294, a: 0}
-  - {r: 0.9117647, g: 0.8395448, b: 0.43576986, a: 0}
-  - {r: 0.59331745, g: 0.86764705, b: 0.5952094, a: 0}
+  - {r: 0.89705884, g: 0.869765, b: 0.79811853, a: 1}
+  - {r: 0.86764705, g: 0.62521625, b: 0.62521625, a: 1}
+  - {r: 0.56920415, g: 0.6025295, b: 0.8235294, a: 1}
+  - {r: 0.9117647, g: 0.8395448, b: 0.43576986, a: 1}
+  - {r: 0.59331745, g: 0.86764705, b: 0.5952094, a: 1}
+--- !u!114 &114073262482357846
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 102990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6cbe3af7effd3a4b91caecd1af7b5b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

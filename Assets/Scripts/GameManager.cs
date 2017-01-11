@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour {
         StartPosition.gameObject.SetActive(false);
         GameCamera = CameraInstance;
         CameraInstance.GetComponent<CameraControllerTransparency>().target = Player.transform;
-        CameraInstance.GetComponent<CameraController>().target = Player.transform;
+        //CameraInstance.GetComponent<CameraController>().target = Player.transform;
     }
 
     private void Start() {
