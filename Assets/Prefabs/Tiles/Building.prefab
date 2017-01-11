@@ -96,7 +96,7 @@ MonoBehaviour:
   PropGroup: {fileID: 1000013513568800, guid: 5dba988b22b939044be0db2ccbc297f0, type: 2}
   MaxFloor: 10
   FloorHeight: 4
-  MaxDistanceFromCenter: 100
+  MaxDistanceFromCenter: 150
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
