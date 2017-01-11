@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour {
         Player.ReplaceModel(CarModel);
         StartPosition.gameObject.SetActive(false);
         GameCamera = CameraInstance;
+        CameraInstance.GetComponent<CameraControllerTransparency>().target = Player.transform;
         CameraInstance.GetComponent<CameraController>().target = Player.transform;
     }
 

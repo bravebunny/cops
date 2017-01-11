@@ -105,7 +105,10 @@ public class CameraController : MonoBehaviour
         {
             Ray ray = new Ray(fromPosition, clipPoints[i] - fromPosition);
             float distance = Vector3.Distance(clipPoints[i], fromPosition);
-            if (Physics.Raycast(ray, distance, collisionLayer)) return true;
+            RaycastHit rayCastInfo;
+            if (Physics.Raycast(ray, out rayCastInfo, distance, collisionLayer)) {
+                return true;
+            }
         }
         return false;
     }
@@ -129,7 +132,9 @@ public class CameraController : MonoBehaviour
     }
 
     public void CheckColliding(Vector3 targetPosition) {
-        if (CollisionDetectedAtClipPoints(desiredCameraClipPoints, targetPosition)) colliding = true;
+        if (CollisionDetectedAtClipPoints(desiredCameraClipPoints, targetPosition)) {
+            colliding = true;
+        } 
         else colliding = false;
     }
 }
