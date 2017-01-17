@@ -561,6 +561,9 @@ MonoBehaviour:
   StabilisationStrenght: 30
   Stabilise: 1
   Grounded: 0
+  CollisionLayers:
+    serializedVersion: 2
+    m_Bits: 4294963199
   Blocked: 0
   carMovementDirection: 0
 --- !u!1001 &100100000

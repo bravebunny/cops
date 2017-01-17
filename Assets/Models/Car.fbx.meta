@@ -11,27 +11,32 @@ ModelImporter:
     100006: wheel1
     100008: wheel2
     100010: wheel3
+    100012: Collider
     400000: Body
     400002: //RootNode
     400004: wheel0
     400006: wheel1
     400008: wheel2
     400010: wheel3
+    400012: Collider
     2300000: Body
     2300002: wheel0
     2300004: wheel1
     2300006: wheel2
     2300008: wheel3
+    2300010: Collider
     3300000: Body
     3300002: wheel0
     3300004: wheel1
     3300006: wheel2
     3300008: wheel3
+    3300010: Collider
     4300000: Body
     4300002: wheel1
     4300004: wheel3
     4300006: wheel0
     4300008: wheel2
+    4300010: Collider
   materials:
     importMaterials: 0
     materialName: 0
@@ -78,6 +83,7 @@ ModelImporter:
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
+    serializedVersion: 2
     human: []
     skeleton: []
     armTwist: 0.5
@@ -88,7 +94,10 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 0
   humanoidOversampling: 1

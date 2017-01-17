@@ -16,6 +16,7 @@ public class CarController : MonoBehaviour {
     public float StabilisationStrenght = 40;
     public bool Stabilise = true;
     public bool Grounded = false;
+    public LayerMask CollisionLayers;
 
     [HideInInspector] public bool Blocked = false;
     public float CurrentSpeed{ get {
@@ -54,7 +55,7 @@ public class CarController : MonoBehaviour {
 
         RaycastHit raycastInfo = new RaycastHit();
         float raycastDistance = SuspensionHeight + 1f;
-        Grounded = Physics.Raycast(Body.position, -transform.up, out raycastInfo, raycastDistance);
+        Grounded = Physics.Raycast(Body.position, -transform.up, out raycastInfo, raycastDistance, CollisionLayers);
         bool notClimbing = Physics.Raycast(Body.position, -Vector3.up, out raycastInfo, raycastDistance);
 
         if (DebugOn) Debug.DrawLine(Body.position, Body.position - transform.up * raycastDistance, Color.red, -1, false);

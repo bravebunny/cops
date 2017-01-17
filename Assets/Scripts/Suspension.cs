@@ -4,6 +4,7 @@ using System.Collections;
 public class Suspension : MonoBehaviour {
     public float SuspensionHeight;
     public float SuspensionStrength;
+    public LayerMask CollisionLayers;
     bool DebugOn = true;
     Rigidbody CarBody;
     Transform CarTransform;
@@ -28,7 +29,7 @@ public class Suspension : MonoBehaviour {
         Vector3 zDist = OriginOffset.x * CarTransform.right;
         Vector3 yDist = (OriginOffset.y) * CarTransform.up;
         Vector3 origin = CarTransform.position + xDist + zDist + yDist/1.5f;
-        bool grounded = Physics.Raycast(origin, direction, out info, SuspensionHeight);
+        bool grounded = Physics.Raycast(origin, direction, out info, SuspensionHeight, CollisionLayers);
 
         if (grounded) {
             transform.position = new Vector3(info.point.x, info.point.y + wheelHeight, info.point.z);
