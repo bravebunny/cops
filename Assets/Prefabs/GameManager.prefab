@@ -33,6 +33,7 @@ Transform:
   - {fileID: 4000010966267086}
   - {fileID: 4000013225090304}
   - {fileID: 224000013848722998}
+  - {fileID: 4919444365918994}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -137,6 +138,9 @@ MonoBehaviour:
   CarModel: {fileID: 1000011047287490, guid: 0bfc365fdc6b7c046831b28a4e69b957, type: 2}
   StartPosition: {fileID: 4000011673445542}
   CameraInstance: {fileID: 20000011774472094}
+  HousesInstance: {fileID: 1250255328977136}
+  PizzaPlacesInstance: {fileID: 1798956417658888}
+  TrafficCarsInstance: {fileID: 1037189778021082}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -180,7 +184,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1000010855385950
 GameObject:
   m_ObjectHideFlags: 1
@@ -579,6 +583,102 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1037189778021082
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4674337999413908}
+  m_Layer: 0
+  m_Name: CarMissions
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1162270276474246
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4919444365918994}
+  - component: {fileID: 114388637188790424}
+  - component: {fileID: 114155836689321516}
+  - component: {fileID: 114617870814112492}
+  m_Layer: 0
+  m_Name: Missions
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1250255328977136
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4921787782047214}
+  m_Layer: 0
+  m_Name: HouseDeliveryMissions
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1458230928246108
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4569026717658310}
+  m_Layer: 0
+  m_Name: MissionTargets
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1473888090234178
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4375639291585766}
+  - component: {fileID: 33449398697398602}
+  - component: {fileID: 23909936889037828}
+  - component: {fileID: 114299255592003916}
+  m_Layer: 0
+  m_Name: TargetMarker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1798956417658888
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4718310484393866}
+  m_Layer: 0
+  m_Name: PizzaMissions
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &4000010017653102
 Transform:
   m_ObjectHideFlags: 1
@@ -653,7 +753,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010534773234}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalPosition: {x: -63.9, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4000012457785958}
@@ -757,6 +857,89 @@ Transform:
   - {fileID: 4000013007532052}
   m_Father: {fileID: 449956}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4375639291585766
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1473888090234178}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.49999964, z: 0.7499993}
+  m_Children: []
+  m_Father: {fileID: 4919444365918994}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 89.980194, y: 0, z: 0}
+--- !u!4 &4569026717658310
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1458230928246108}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4718310484393866}
+  - {fileID: 4921787782047214}
+  - {fileID: 4674337999413908}
+  m_Father: {fileID: 4919444365918994}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4674337999413908
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1037189778021082}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4569026717658310}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4718310484393866
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1798956417658888}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4569026717658310}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4919444365918994
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1162270276474246}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4375639291585766}
+  - {fileID: 4569026717658310}
+  m_Father: {fileID: 449956}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4921787782047214
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1250255328977136}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4569026717658310}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &20000011524737298
 Camera:
@@ -892,6 +1075,37 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
+--- !u!23 &23909936889037828
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1473888090234178}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 151f7fcb2aaea8046b9ab9785c45a0f5, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
 --- !u!33 &33000010521245214
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -906,6 +1120,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012661455878}
   m_Mesh: {fileID: 4300000, guid: da93d370bfa4e7c48b5070af15369512, type: 3}
+--- !u!33 &33449398697398602
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1473888090234178}
+  m_Mesh: {fileID: 4300000, guid: cd0fe17630cd27b43b092e00c6bef0fb, type: 3}
 --- !u!45 &45000012265021484
 Skybox:
   m_ObjectHideFlags: 1
@@ -1992,7 +2213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32c6dd845ed2f543b156b19a70cb4b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionObject: {fileID: 0}
+  MissionObject: {fileID: 1162270276474246}
   DisplayText: {fileID: 114000012529535180}
   TargetScript: {fileID: 0}
 --- !u!114 &114000013982036024
@@ -2036,6 +2257,55 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114155836689321516
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1162270276474246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b1be903358c4941b6669ede11bed10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MissionTargets:
+  - Target: {fileID: 1798956417658888}
+    MissionDescription: Pizza
+  - Target: {fileID: 1250255328977136}
+    MissionDescription: Delivery
+  MissionModel: {fileID: 1000010764997216, guid: dd3a3608a72753c4ca4b2afc13cb820f,
+    type: 2}
+  Cargo: {fileID: 1000012264847344, guid: 69a3041c6db05d844bba52abec53f8dc, type: 2}
+  NumberOfFases: 2
+  CargoFase: 1
+  ShowArrow: 1
+  ShowTriggerPoint: 1
+--- !u!114 &114299255592003916
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1473888090234178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e81a7b68f3cc7a546b05b1d0fa3c0fa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Target: {fileID: 0}
+--- !u!114 &114388637188790424
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1162270276474246}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46801f358e28d5244b5d396d1d312612, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Arrow: {fileID: 114000013087254122}
+  TargetMarker: {fileID: 4375639291585766}
+  MarkerHeight: 5
 --- !u!114 &114415757308412352
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2052,6 +2322,27 @@ MonoBehaviour:
   Distance: 20
   Height: 10
   RearView: 0
+--- !u!114 &114617870814112492
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1162270276474246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a67f9000358762418d488ca77b926cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MissionTargets:
+  - Target: {fileID: 1037189778021082}
+    MissionDescription: Car
+  MissionModel: {fileID: 1000011047287490, guid: 0bfc365fdc6b7c046831b28a4e69b957,
+    type: 2}
+  Cargo: {fileID: 0}
+  NumberOfFases: 1
+  CargoFase: 0
+  ShowArrow: 1
+  ShowTriggerPoint: 0
 --- !u!124 &124000012553735066
 Behaviour:
   m_ObjectHideFlags: 1

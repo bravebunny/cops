@@ -15,6 +15,7 @@ public class HideChildren : MonoBehaviour {
     void Start() {
 
         MeshRend = new List<MeshRenderer>();
+
         for (int i = 0; i < transform.childCount; i++) {
             if (transform.GetChild(i).GetComponent<MeshRenderer>())
                 MeshRend.Add(transform.GetChild(i).GetComponent<MeshRenderer>());
@@ -95,7 +96,7 @@ public class HideChildren : MonoBehaviour {
 
     void SetOpaque() {
         foreach (Material mat in Material) {
-            if (mat) {
+            if (mat && mat.shader == ShaderToHide) {
                 Color32 saveColor = mat.GetColor("_Color");
                 mat.SetFloat("_Mode", 1);
                 mat.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.One);

@@ -9,16 +9,11 @@ public class BuildingGenerator : RunOnMapBuild {
     public GameObject[] Roofs;
     public GameObject Base;
     public GameObject PropGroup;
-    public Transform MissionTarget;
     [Range(1,50)]
     public int MaxFloor = 4;
     public float FloorHeight = 2;
     public float MaxDistanceFromCenter = 240f;
     float Scale = 2;
-
-    void Start() {
-        MissionTarget.parent = GameManager.Houses.transform;
-    }
 
     Vector3[] Corners = {
         Vector3.left + Vector3.forward,
