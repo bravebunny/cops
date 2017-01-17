@@ -7,7 +7,7 @@ public class StructureGenerator : MonoBehaviour {
     public int GridSize = 10;
     public float CellSize = 5;
 
-    void Start () {
+    void Awake () {
         float xz = -(GridSize * CellSize) / 2;
         Vector3 corner = new Vector3(xz, 0, xz);
         Vector3 extents = Vector3.one * CellSize / 2;

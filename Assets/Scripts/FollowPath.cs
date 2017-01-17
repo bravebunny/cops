@@ -15,6 +15,7 @@ public class FollowPath : MonoBehaviour {
 
     void Start() {
         Body = GetComponent<Rigidbody>();
+        transform.parent = GameManager.TrafficCars.transform;
 	}
 	
 	void FixedUpdate() {

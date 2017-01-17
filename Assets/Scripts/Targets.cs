@@ -61,6 +61,8 @@ public class Targets : MonoBehaviour {
     void ManageTriggerPointDisplay(bool state) {
         if (TriggerPointDisplay) {
             Target.gameObject.GetComponent<MeshRenderer>().enabled = state;
+            Target.gameObject.GetComponent<CapsuleCollider>().enabled = state;
+            //Target.gameObject.SetActive(state);
         }
     }
 }

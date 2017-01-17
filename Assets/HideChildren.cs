@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HideChildren : MonoBehaviour {
 
+    public Shader ShaderToHide;
     Material[] Material;
     bool FadeIn = false;
     bool FadeOut = false;
@@ -23,10 +24,10 @@ public class HideChildren : MonoBehaviour {
             foreach (Material mat in Material) {
                 if (mat) {
                     //child.GetComponent<Renderer>().enabled = false;
-                    mat.SetFloat("_Mode", 4);
+                    mat.SetFloat("_Mode", 2);
                     mat.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.One);
                     mat.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
-                    mat.SetInt("_ZWrite", 0);
+                    mat.SetInt("_ZWrite", 1);
                     mat.DisableKeyword("_ALPHATEST_ON");
                     mat.DisableKeyword("_ALPHABLEND_ON");
                     mat.EnableKeyword("_ALPHAPREMULTIPLY_ON");
@@ -54,7 +55,7 @@ public class HideChildren : MonoBehaviour {
     void FixedUpdate() {
         if (FadeIn) {
             foreach (Material mat in Material) {
-                if (mat) {
+                if (mat && mat.shader == ShaderToHide) {
                     Color32 saveColor = mat.GetColor("_Color");
                     if (saveColor.a != 255) {
                         saveColor.a += 5;
@@ -74,7 +75,7 @@ public class HideChildren : MonoBehaviour {
             }
         } else if (FadeOut) {
             foreach (Material mat in Material) {
-                if (mat) {
+                if (mat && mat.shader == ShaderToHide) {
                     Color saveColor = mat.color;
                     if (saveColor.a != 0) {
                         saveColor.a -= 0.1f;

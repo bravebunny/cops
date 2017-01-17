@@ -23,16 +23,22 @@ public class GameManager : MonoBehaviour {
 
     public static int Score;
     public static int CopCount;
-    public static int KilledCops = 10;
-
-    public static GameManager sInstance = null;
+    public static int KilledCops;
 
     bool duplicate = false;
     bool roundEnded = false;
     float InitialTimeScale = 1;
 
+    // Mission-related stuff
+    public static GameObject Houses;
+    public static GameObject PizzaPlaces;
+    public static GameObject TrafficCars;
+
+    public GameObject HousesInstance;
+    public GameObject PizzaPlacesInstance;
+    public GameObject TrafficCarsInstance;
+
     void Awake() {
-        sInstance = this;
         GameObject playerObject = Instantiate<GameObject>(PlayerPrefab);
         playerObject.transform.position = StartPosition.position;
         playerObject.transform.rotation = StartPosition.transform.rotation;
@@ -41,6 +47,9 @@ public class GameManager : MonoBehaviour {
         StartPosition.gameObject.SetActive(false);
         GameCamera = CameraInstance;
         CameraInstance.GetComponent<CameraControllerTransparency>().target = Player.transform;
+        Houses = HousesInstance;
+        PizzaPlaces = PizzaPlacesInstance;
+        TrafficCars = TrafficCarsInstance;
         //CameraInstance.GetComponent<CameraController>().target = Player.transform;
     }
 
