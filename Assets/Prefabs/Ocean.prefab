@@ -26,7 +26,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 131302}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071067}
-  m_LocalPosition: {x: 0, y: -3.2, z: 0}
+  m_LocalPosition: {x: 0, y: -3.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -106,3 +106,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SplashPrefab: {fileID: 1000014163652314, guid: cdd09be91ad60e4409f821ab0f07380a,
     type: 2}
+  MinVelocity: 30
+  ImpulseForce: 1.5
+  Resistance: 4
