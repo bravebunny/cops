@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 114000010448153124}
   - component: {fileID: 114000011284078206}
   - component: {fileID: 65000012421796056}
-  - component: {fileID: 114073262482357846}
+  - component: {fileID: 114502413773517360}
   m_Layer: 0
   m_Name: Building
   m_TagString: Untagged
@@ -152,7 +152,7 @@ MonoBehaviour:
   - {r: 0.56920415, g: 0.6025295, b: 0.8235294, a: 1}
   - {r: 0.9117647, g: 0.8395448, b: 0.43576986, a: 1}
   - {r: 0.59331745, g: 0.86764705, b: 0.5952094, a: 1}
---- !u!114 &114073262482357846
+--- !u!114 &114502413773517360
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
