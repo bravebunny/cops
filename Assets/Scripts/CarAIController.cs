@@ -7,6 +7,7 @@ public class CarAIController : MonoBehaviour {
     public float AvoidDistance = 1; // distance to add to the new direction to avoid obstacles
     public float Speed = 100;
     public float UpdateRate = 0.5f; // interval in seconds to update direction
+    float VelocityY = -1;
     public LayerMask ObstacleLayers;
     Vector3 Direction;
     Vector3 Velocity;
@@ -26,7 +27,9 @@ public class CarAIController : MonoBehaviour {
     void UpdateDirection() {
         transform.LookAt(Target);
         Velocity = transform.forward * Speed;
-        Velocity.y = 0;
+        // adjust velocity to decrease Inidial D drifting
+        Velocity -= transform.right * transform.InverseTransformDirection(Body.velocity).x;
+        Velocity.y = VelocityY;
     }
 
     void FixedUpdate() {
