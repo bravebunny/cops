@@ -7,6 +7,7 @@ public class BuildingGenerator : RunOnMapBuild {
     public GameObject[] UpperOnlyWalls;
     public GameObject[] GroundOnlyWalls;
     public GameObject[] Roofs;
+    public GameObject Base;
     public GameObject PropGroup;
     [Range(1,50)]
     public int MaxFloor = 4;
@@ -32,6 +33,7 @@ public class BuildingGenerator : RunOnMapBuild {
         }
 
         for (int floor = 0; floor < height; floor++) {
+            AddObject(Base, transform.position + Vector3.up * floor * FloorHeight);
             AddWalls(floor);
         }
         
@@ -64,7 +66,7 @@ public class BuildingGenerator : RunOnMapBuild {
     }
 
     void AddObject(GameObject original, Vector3 position) {
-        AddObject(original, position, Quaternion.identity);
+        AddObject(original, position, original.transform.rotation);
     }
 
     void AddCeilling(int height) {
