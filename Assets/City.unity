@@ -134,34 +134,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e1f2f7e7b434709468a9dfbeef5d528e, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &599566324
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 599566325}
-  m_Layer: 0
-  m_Name: PizzaMissions
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &599566325
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 599566324}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1650958123}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &714751076
 Prefab:
   m_ObjectHideFlags: 0
@@ -199,21 +171,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000011870064404, guid: abbcc93129b8bd74e915edb51e18d1fa, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: abbcc93129b8bd74e915edb51e18d1fa, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &832827526 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1000010368954148, guid: c1b3e61c41fc2ad448e917ea01bbc5f8,
-    type: 2}
-  m_PrefabInternal: {fileID: 1791141937}
---- !u!4 &832827530 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4000013403456432, guid: c1b3e61c41fc2ad448e917ea01bbc5f8,
-    type: 2}
-  m_PrefabInternal: {fileID: 1791141937}
 --- !u!1001 &1307973428
 Prefab:
   m_ObjectHideFlags: 0
@@ -251,75 +213,55 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000011204418552, guid: 97b200ea104d683499b42a84655e598e, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 97b200ea104d683499b42a84655e598e, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1435013862
+--- !u!1 &1685690466
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 1435013863}
+  - component: {fileID: 1685690468}
+  - component: {fileID: 1685690467}
   m_Layer: 0
-  m_Name: HouseDeliveryMissions
+  m_Name: StructureGenerator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1435013863
+--- !u!114 &1685690467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1685690466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe16b38fe3d5b649a3a69598fb56222, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Objects:
+  - {fileID: 159496, guid: 90c9f1a17a3480143920ea9d6dbb4f0d, type: 2}
+  - {fileID: 1000010569256934, guid: 1d84d0705ee6d0c43bb6658511a4d7cc, type: 2}
+  GridSize: 10
+  CellSize: 200
+--- !u!4 &1685690468
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1435013862}
+  m_GameObject: {fileID: 1685690466}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1650958123}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1612564599 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114000013087254122, guid: d487ae26dc8fdb84f9338635ecacc9d2,
-    type: 2}
-  m_PrefabInternal: {fileID: 1784082451}
-  m_Script: {fileID: 11500000, guid: e81a7b68f3cc7a546b05b1d0fa3c0fa2, type: 3}
---- !u!1 &1650958122
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1650958123}
-  m_Layer: 0
-  m_Name: Missions
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1650958123
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1650958122}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 832827530}
-  - {fileID: 599566325}
-  - {fileID: 1435013863}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1784082451
 Prefab:
@@ -360,90 +302,8 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114000013944708794, guid: d487ae26dc8fdb84f9338635ecacc9d2,
-        type: 2}
-      propertyPath: MissionObject
-      value: 
-      objectReference: {fileID: 832827526}
-    - target: {fileID: 114000010306026930, guid: d487ae26dc8fdb84f9338635ecacc9d2,
-        type: 2}
-      propertyPath: debugDesiredCam
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000010306026930, guid: d487ae26dc8fdb84f9338635ecacc9d2,
-        type: 2}
-      propertyPath: debugAdjustedCam
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d487ae26dc8fdb84f9338635ecacc9d2, type: 2}
-  m_IsPrefabParent: 0
---- !u!1001 &1791141937
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1650958123}
-    m_Modifications:
-    - target: {fileID: 4000013403456432, guid: c1b3e61c41fc2ad448e917ea01bbc5f8, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000013403456432, guid: c1b3e61c41fc2ad448e917ea01bbc5f8, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000013403456432, guid: c1b3e61c41fc2ad448e917ea01bbc5f8, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000013403456432, guid: c1b3e61c41fc2ad448e917ea01bbc5f8, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000013403456432, guid: c1b3e61c41fc2ad448e917ea01bbc5f8, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000013403456432, guid: c1b3e61c41fc2ad448e917ea01bbc5f8, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000013403456432, guid: c1b3e61c41fc2ad448e917ea01bbc5f8, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000013403456432, guid: c1b3e61c41fc2ad448e917ea01bbc5f8, type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000013144422694, guid: c1b3e61c41fc2ad448e917ea01bbc5f8,
-        type: 2}
-      propertyPath: MissionTargets.Array.data[0].Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000012068068948, guid: c1b3e61c41fc2ad448e917ea01bbc5f8,
-        type: 2}
-      propertyPath: Arrow
-      value: 
-      objectReference: {fileID: 1612564599}
-    - target: {fileID: 114000012068068948, guid: c1b3e61c41fc2ad448e917ea01bbc5f8,
-        type: 2}
-      propertyPath: TargetMarker
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000011216591246, guid: c1b3e61c41fc2ad448e917ea01bbc5f8,
-        type: 2}
-      propertyPath: MissionTargets.Array.data[0].Target
-      value: 
-      objectReference: {fileID: 599566324}
-    - target: {fileID: 114000011216591246, guid: c1b3e61c41fc2ad448e917ea01bbc5f8,
-        type: 2}
-      propertyPath: MissionTargets.Array.data[1].Target
-      value: 
-      objectReference: {fileID: 1435013862}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: c1b3e61c41fc2ad448e917ea01bbc5f8, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1815506224
 GameObject:
@@ -506,5 +366,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}

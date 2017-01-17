@@ -5,14 +5,14 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 487156}
-  - 33: {fileID: 3344602}
-  - 23: {fileID: 2340728}
-  - 64: {fileID: 6459596}
-  - 114: {fileID: 11453974}
-  - 135: {fileID: 13551332}
+  - component: {fileID: 487156}
+  - component: {fileID: 3344602}
+  - component: {fileID: 2340728}
+  - component: {fileID: 6459596}
+  - component: {fileID: 11453974}
+  - component: {fileID: 13551332}
   m_Layer: 0
   m_Name: CopSpawner
   m_TagString: Untagged
@@ -29,10 +29,10 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -206.24051, y: 0.0000033032538, z: -127.02763}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &2340728
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -47,7 +47,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 4ec5d40e959cf47c5a51fc8b3ed0763a, type: 2}
-  m_SubsetIndices: 
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
@@ -55,7 +57,7 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
+  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -80,6 +82,8 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 48d6089816847f042be1147ffd823fc3, type: 3}
 --- !u!114 &11453974
 MonoBehaviour:
@@ -93,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Original: {fileID: 127284, guid: a79dd81451c4440c8a018f2fbb97f00c, type: 2}
-  Rate: 10
+  Rate: 0
   Interval: 0.3
 --- !u!135 &13551332
 SphereCollider:
