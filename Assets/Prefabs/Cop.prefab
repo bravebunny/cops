@@ -736,7 +736,7 @@ MonoBehaviour:
   Target: {fileID: 0}
   LookDistance: 5
   AvoidDistance: 1
-  Speed: 70
+  Speed: 50
   UpdateRate: 0.2
   ObstacleLayers:
     serializedVersion: 2

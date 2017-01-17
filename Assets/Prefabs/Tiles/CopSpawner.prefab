@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Original: {fileID: 127284, guid: a79dd81451c4440c8a018f2fbb97f00c, type: 2}
-  Rate: 0
+  Rate: 10
   Interval: 0.3
 --- !u!135 &13551332
 SphereCollider:

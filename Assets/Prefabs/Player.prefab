@@ -548,8 +548,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32b449f4adf5bc4b9e8438de830039a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OffRoadSpeed: 200
-  RoadSpeed: 300
+  OffRoadSpeed: 150
+  RoadSpeed: 250
   RoadSpeedMultiplier: 1.5
   SidewaysCompensation: 0
   SuspensionStrength: 100
