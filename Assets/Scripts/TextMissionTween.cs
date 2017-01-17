@@ -4,13 +4,12 @@ using UnityEngine.UI;
 public class TextMissionTween : MonoBehaviour {
     public float MidleXPosition;
     public float MidleSlowDistance;
-    public float YPosition;
     public float TextMovingTime;
     public float TextSlowMoTime;
 
     public void StartTextTween() {
         gameObject.SetActive(true);
-        gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(-Screen.width, YPosition);
+        gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(-Screen.width * 0.8F, Screen.height * 0.3F);
         LeanTween.moveX(gameObject.GetComponent<RectTransform>(), MidleXPosition - MidleSlowDistance*0.5F, TextMovingTime).setEase(LeanTweenType.easeInExpo).setOnComplete(MiddleTween);
     }
 
@@ -20,8 +19,11 @@ public class TextMissionTween : MonoBehaviour {
     }
 
     void EaseOut() {
-        LeanTween.moveX(gameObject.GetComponent<RectTransform>(), Screen.width, TextMovingTime).setEase(LeanTweenType.easeOutExpo);
+        LeanTween.moveX(gameObject.GetComponent<RectTransform>(), Screen.width * 0.8F, TextMovingTime).setEase(LeanTweenType.easeOutExpo).setOnComplete(DisableText);
         gameObject.GetComponentInParent<Image>().enabled = false;
+    }
+
+    void DisableText() {
         gameObject.SetActive(false);
     }
 }
