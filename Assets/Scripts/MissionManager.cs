@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,9 +21,18 @@ public class MissionManager : MonoBehaviour {
     bool UsesCargo = false;
     bool CargoSpawned = false;
 
+    int MissionNumber = 0;
+
     void Awake() {
         MissionsList = MissionObject.GetComponents<MissionsAbstract>();
         TargetScript = MissionObject.GetComponent<Targets>();
+
+        for (int i = 0; i < MissionsList.Length; i++) {
+            MissionsAbstract temp = MissionsList[i];
+            int randomIndex = Random.Range(i, MissionsList.Length);
+            MissionsList[i] = MissionsList[randomIndex];
+            MissionsList[randomIndex] = temp;
+        }
     }
 
     // Use this for initialization
@@ -32,7 +42,12 @@ public class MissionManager : MonoBehaviour {
     }
 
     public void RandomizeMission() {
-        Mission = MissionsList[Random.Range(0, MissionsList.Length)];
+        MissionNumber = MissionNumber + 1;
+        if (MissionNumber >= MissionsList.Length) {
+            MissionNumber = 0;
+        }
+
+        Mission = MissionsList[MissionNumber];
         Mission.InitiateMission(this);
     }
 
