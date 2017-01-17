@@ -12,6 +12,5 @@ public class DestroyIfOutsideTrigger : MonoBehaviour {
             if (col.tag == Tag) destroy = false;
         }
         if (destroy) Destroy(gameObject);
-        Debug.Log("destroy");
     }
 }
