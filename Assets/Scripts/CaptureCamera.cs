@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CaptureCamera : MonoBehaviour {
     public Vector2 Speed;
-    public float RotationSpeed;
     public float SlowMoRate = 0.5f;
 
     float InitialDeltaTime;
