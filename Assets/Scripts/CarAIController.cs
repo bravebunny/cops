@@ -6,7 +6,9 @@ public class CarAIController : MonoBehaviour {
     public float UpdateRate = 0.5f; // interval in seconds to update direction
     public float MaxGroundDistance = 1f; // only updates direction if wihtin this distance from ground
     public LayerMask GroundLayers; // layers that count as ground
+    public float GroundedDrag = 7; // angular drag while grounded
 
+    float AirDrag;
     bool Grounded;
     ExplodeOnImpact ImpactExplosion;
     float VelocityY = -1;
@@ -18,6 +20,7 @@ public class CarAIController : MonoBehaviour {
         ImpactExplosion = GetComponent<ExplodeOnImpact>();
         Body = GetComponent<Rigidbody>();
         Body.centerOfMass = Vector3.down;
+        AirDrag = Body.angularDrag;
     }
 
     void Start() {
@@ -29,8 +32,13 @@ public class CarAIController : MonoBehaviour {
     }
 
     void UpdateDirection() {
+        // update direction and drag, depending on grounded state
         Grounded = Physics.Raycast(transform.position, -transform.up, MaxGroundDistance);
-        if (!Grounded) return;
+        if (Grounded) Body.angularDrag = GroundedDrag;
+        else {
+            Body.angularDrag = AirDrag;
+            return;
+        }
 
         transform.LookAt(Target);
         Velocity = transform.forward * Speed;
