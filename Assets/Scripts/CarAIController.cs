@@ -7,6 +7,7 @@ public class CarAIController : MonoBehaviour {
     public float MaxGroundDistance = 1f; // only updates direction if wihtin this distance from ground
     public LayerMask GroundLayers; // layers that count as ground
 
+    bool Grounded;
     ExplodeOnImpact ImpactExplosion;
     float VelocityY = -1;
     Vector3 Direction;
@@ -28,7 +29,8 @@ public class CarAIController : MonoBehaviour {
     }
 
     void UpdateDirection() {
-        if (!Grounded()) return;
+        Grounded = Physics.Raycast(transform.position, -transform.up, MaxGroundDistance);
+        if (!Grounded) return;
 
         transform.LookAt(Target);
         Velocity = transform.forward * Speed;
@@ -37,11 +39,8 @@ public class CarAIController : MonoBehaviour {
         Velocity.y = VelocityY;
     }
 
-    bool Grounded() {
-        return Physics.Raycast(transform.position, -transform.up, MaxGroundDistance);
-    }
-
     void FixedUpdate() {
+        if (!Grounded) return;
         Body.AddForce(Velocity);
     }
 
