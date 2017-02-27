@@ -21,7 +21,7 @@ public class Explosion : MonoBehaviour {
         // apply explosion force to surrounding objects
         Collider[] colliders = Physics.OverlapSphere(transform.position, Radius);
         foreach (Collider hit in colliders) {
-            Rigidbody rb = hit.GetComponent<Rigidbody>();
+            Rigidbody rb = hit.GetComponentInParent<Rigidbody>();
             if (rb != null)
                 rb.AddExplosionForce(Power, transform.position, Radius, VerticalModifier);
         }

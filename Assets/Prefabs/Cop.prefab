@@ -622,7 +622,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7c11f639cee0c54d9cb91ad3b810ca8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinImpulse: 15
+  MinImpulse: 10
   MinHeight: 10
   Explosion: {fileID: 136990, guid: ee50d64cd8a647145a669be56d20bd3d, type: 2}
   CheckRate: 0.5

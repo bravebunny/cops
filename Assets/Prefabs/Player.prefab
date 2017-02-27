@@ -424,7 +424,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 177384}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 1.2
   m_Drag: 1
   m_AngularDrag: 7
   m_UseGravity: 1
@@ -548,12 +548,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32b449f4adf5bc4b9e8438de830039a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OffRoadSpeed: 150
-  RoadSpeed: 250
+  OffRoadSpeed: 200
+  RoadSpeed: 300
   RoadSpeedMultiplier: 1.5
   SidewaysCompensation: 0
   SuspensionStrength: 100
-  TurningSpeed: 0.6
+  TurningSpeed: 0.85
   MultiplyTurningByMovement: 1
   DebugOn: 1
   SuspensionHeight: 1.5
